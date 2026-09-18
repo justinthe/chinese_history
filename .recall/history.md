@@ -11714,3 +11714,2031 @@ Everything else — `nextCats` pure export, the combobox state machine, `normali
   - `Bash: cat >> /home/jthe/Dev/localgit/chinese_history/tasks/todo.md << 'TODOEOF' # Phase 07 — Search, category filter, Meanwhile strip Plan: /home/jthe/.claude/plans/t`
 
 **Claude:** Implementation done, tests green (96/96 unit, 37/37 e2e), build clean, ponytail-review applied (1 dead const cut), graphify before/after confirms clean module split. Reviewer subagent running in background — will finalize `tasks/todo.md`'s sign-off section and report full completion once it returns.
+
+**You:** <task-notification>
+<task-id>a509bba4577eb15d4</task-id>
+<tool-use-id>toolu_014NtFZupkDdANXFZsikJCGE</tool-use-id>
+<output-file>/tmp/claude-1000/-home-jthe-Dev-localgit-chinese-history/6582076d-6d63-4b54-8cb9-6a14358d7c8d/tasks/a509bba4577eb15d4.output</output-file>
+<status>completed</status>
+<summary>Agent "Phase 07 reviewer sign-off" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+<result># Phase 07 Review — PASS
+
+## PRD F6/F7 checklist
+
+| Item | Status | Evidence |
+|---|---|---|
+| Six category chips, ≥1 always on | PASS | `CATS` in `src/data.js` has exactly 6 keys; `nextCats()` (`src/views/search.js:9-13`) returns `null` when toggling the last one, caller shows toast and keeps it on (`tests/chips.test.js`, `e2e/shell.spec.js:78`) |
+| Timeline/map obey `cats` filter | PASS (pre-existing, confirmed not broken) | `timeline.js:214` and `map.js:184` both call `eventsIn(eraId, cats)` from live state |
+| Search matches title/hanzi/pinyin/year, ≤6 results | PASS | `data.js` `search()` folds both sides via `fold()`, `hits.slice(0, 6)` present (unchanged line, still there) |
+| Year result label `Jump to &lt;year&gt; (&lt;era&gt;)` | PASS | `data.js:79` builds via `fmtYear`/`er.name`; verified in `tests/search.test.js` and `e2e/search.spec.js` |
+| Diacritic/case-insensitive, BCE/BC/CE/AD, negative years | PASS | `normalize.js` `fold()` (NFD + strip `\p{Mn}`) and `parseYear()` regex `^(-?\d+)\s*(bce|bc|ce|ad)?$/i`; content actually has diacritics (`"Qín Shǐhuáng"` in `content/events.json`), so the test isn't vacuous |
+| Keyboard nav Down/Up/Enter/Esc, combobox ARIA | PASS | `search.js` wires `role=combobox`/`listbox`/`option`, `aria-activedescendant`, wraparound modulo nav, Enter defaults to first result when nothing arrow-selected |
+| Filter state in URL, survives reload | PASS (pre-existing `state.js`, confirmed still wired) | `e2e/search.spec.js:67` round-trips |
+| Meanwhile strip, updates with playhead | PASS (pre-existing, confirmed not broken) | `timeline.js:276` `meanwhineEl.textContent = WORLD[era.id]`; `e2e/search.spec.js:81` catches era-boundary text change |
+
+## Automated verification (actually executed, not assumed)
+- `npm test` → **12 files / 96 tests, all passed**
+- `npm run build` → clean; `validate.mjs` OK (14 eras, 28 events, 10 tour stops); JS gzip 11.51KB, well under PRD §8's 150KB budget
+- `npm run e2e` → **37/37 passed**, including all 6 new `e2e/search.spec.js` cases
+
+## Regression check
+`git diff` on `src/views/explore.js` confirmed chips were fully moved, not duplicated or lost: `grep` for `chipsEl|renderChips|toggleCat` in `explore.js` returns nothing; `search.js` now owns `renderChips`/`toggleCat`/`nextCats` and DOM append order (`logo, chips, search-wrap, tourBtn`) is preserved byte-for-byte relative to the old layout, so no visual regression against `storyboard.md` screen 2.
+
+## mount() cleanup rule
+`search.js` `mount()` returns `() =&gt; { unsubscribeChips(); document.removeEventListener('click', onDocClick); }` — satisfies tasks/lessons.md's "every subscribing mount() returns cleanup" rule. No leaks introduced.
+
+## Bugs found
+None blocking. One pre-existing (not phase-07-introduced) issue worth a note: `scripts/test-phase-07.sh`'s `trap cleanup EXIT` kills `$DEV_PID` as soon as the script finishes printing the checklist, so in the no-Docker (`npm run dev`) fallback path the dev server dies right after startup rather than staying up for manual inspection. This is copy-pasted verbatim from `scripts/test-phase-06.sh` (same bug there), so it's a carried-over defect, not something this phase caused — flagging for awareness, not blocking sign-off. With Docker available (the common case), `docker compose up -d --wait` is unaffected since `DEV_PID` is never set.
+
+## Verdict
+**PASS.** All PRD F6/F7 checklist items implemented and verified with passing automated tests (96 unit + 37 e2e) and a clean build. No dangling references from the chip move, no correctness bugs in `normalize.js`/`data.search()`, cleanup contract honored. Ready to close Phase 07, modulo the pre-existing manual-script cleanup-trap quirk noted above (not a phase-07 regression).</result>
+<usage><subagent_tokens>85398</subagent_tokens><tool_uses>23</tool_uses><duration_ms>160904</duration_ms></usage>
+</task-notification>
+  - `Edit: /home/jthe/Dev/localgit/chinese_history/tasks/todo.md`
+  - `Read: /home/jthe/.claude/plans/tranquil-scribbling-tiger.md`
+  - `Edit: /home/jthe/.claude/plans/tranquil-scribbling-tiger.md`
+  - `ExitPlanMode: # Phase 07 — Search, category filter, Meanwhile strip ## Status: implementation done, verified — same task, continuing Everything under "Work" below has been im`
+
+**You:** [Request interrupted by user for tool use]
+
+**You:** <local-command-caveat>Caveat: The messages below were generated by the user while running local commands. DO NOT respond to these messages or otherwise consider them in your response unless the user explicitly asks you to.</local-command-caveat>
+
+**You:** implement the plan with BYPASS PERMISSIONS mode please
+  - `Bash: ls ~/.claude/skills/ 2>/dev/null | grep -i impeccable; ls ~/.claude/plugins/cache/ 2>/dev/null | grep -i impeccable`
+  - `Skill: impeccable:impeccable`
+
+**You:** Base directory for this skill: /home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable
+
+This skill gives you the tools and permission to create design that earns to be called out-of-distribution craft: Whereas before, your design work would have been safe, timid and measured, you now approach every design task as an award-winning design director with impeccable understanding for what makes exceptional design work: production-grade code, peak creativity, a clear POV, deep understanding of the needs of the client and users, and exceptional craft.
+
+Core principles:
+- Go all out. No hedging, no shortcuts. The deliverable must be complete (except assets the user must provide).
+- Dream big and bold. Distinct, beautiful, outstanding and highly inspiring work.
+- Verify in bounded passes, not a loop, and the ceiling covers the whole cycle: screenshots, defect scans, micro-edits, and rebuilds alike. Build fully, inspect once with a batched round (desktop and mobile together on the web; the shipped device classes on a native platform), fix everything it shows in one batch, confirm with at most one more round, and stop polishing. Open-ended self-QA burns the user's money doing worse what the finish handoffs do better.
+
+## Setup
+
+1. Run `"<skill-base-dir>/scripts/impeccable" context` once per session, where `<skill-base-dir>` is the loaded base directory the runtime reports for this skill; keep cwd at the user's project. Every `"<skill-base-dir>/scripts/impeccable" <verb>` command in this skill and its references resolves against that base directory. On a Windows shell without `sh`, call `"<skill-base-dir>/scripts/impeccable.cmd"` instead. The launcher runs a self-contained binary that ships next to it or is downloaded once on first run; no Node or other runtime is required. Pass a named source file or route as `--target <path>`. It loads PRODUCT.md, DESIGN.md, the matching surface brief, and native-platform guidance when applicable; follow its directives and do not rerun it.
+2. Load the request's playbook: its Commands-table reference for an explicit/implied sub-command, or [reference/new-work.md](reference/new-work.md) for a new surface or replacement visual world. Inspect target and incumbent visual truth before editing. When the app cannot run, start with committed visual-regression goldens or screenshot fixtures; verify target and freshness against current tokens, CSS, components, or assets, resolve conflicts, and compare theme/variant captures.
+3. After analysis and direction are resolved, load [reference/craft-floor.md](reference/craft-floor.md) immediately before editing UI. It carries the quality floor, the absolute bans, and the reflexes no detector catches. Do not load it for planning-only work.
+
+## How to design
+
+- **The brief wins.** Honor pinned aesthetics, eras, materials, fonts, and palettes even when they conflict with a saturated-pattern warning. Redirecting a clear brief toward your taste is failure.
+- **Refinement preserves; redesign replaces.** Refinement keeps the incumbent identity, behavior, copy, and everything outside scope. Ask before replacing factual copy or adding claims. Redesign keeps product truth, content, function, native affordances, and constraints, but treats the old look as evidence and anti-reference; choose a replacement world in new-work and replace DESIGN.md. Never split the difference into polish on the discarded look.
+- **Visual authority is evidence, not a filename.** Missing DESIGN.md alone does not make a project greenfield; new-work decides whether to preserve, expand, or replace the incumbent world.
+
+## Modes
+
+The mode names what the visitor's success looks like on this surface.
+
+- **Persuade:** the visitor decides and acts; design is the product. Landing pages, marketing, campaigns, pricing. Earn attention and action. Ship real imagery when the brief needs it; follow the committed world, not category habit.
+- **Operate:** the visitor completes a task. App UI, dashboards, editors, admin, settings, tools. Scanability, consistency, native expectations, and the real usage scene outrank expression. Brand lives in precise details.
+- **Read:** the visitor understands something. Docs, articles, guides, help, changelogs. Structure for comprehension, then make the reading experience worth staying in.
+- **Experience:** the visitor is inside the work itself. Portfolios, galleries, showcases. Let the artifact lead from the first viewport; the interface recedes.
+
+Choose the mode from the requested surface, not the product, and persist it only in that surface brief. A tool's landing page is still Persuade; a fashion house's documentation is still Read; a docs index is Read, not Persuade. See [new-work.md](reference/new-work.md) for new surfaces and [operate.md](reference/operate.md) for deeper Operate/Read guidance.
+
+## Commands
+
+| Command | Category | Description | Reference |
+|---|---|---|---|
+| `craft [feature]` | Build | Deprecated alias for an ordinary new-work request | [reference/craft.md](reference/craft.md) |
+| `shape [feature]` | Build | Plan UX/UI before writing code | [reference/shape.md](reference/shape.md) |
+| `init` | Build | Capture durable product context in PRODUCT.md | [reference/init.md](reference/init.md) |
+| `document` | Build | Generate DESIGN.md from existing project code | [reference/document.md](reference/document.md) |
+| `extract [target]` | Build | Pull reusable tokens and components into design system | [reference/extract.md](reference/extract.md) |
+| `critique [target]` | Evaluate | UX design review with heuristic scoring | [reference/critique.md](reference/critique.md) |
+| `audit [target]` | Evaluate | Technical quality checks (a11y, perf, responsive) | [reference/audit.md](reference/audit.md) · native: [reference/audit.native.md](reference/audit.native.md) |
+| `polish [target]` | Refine | Final quality pass before shipping | [reference/polish.md](reference/polish.md) |
+| `bolder [target]` | Refine | Amplify safe or bland designs | [reference/bolder.md](reference/bolder.md) |
+| `quieter [target]` | Refine | Tone down aggressive or overstimulating designs | [reference/quieter.md](reference/quieter.md) |
+| `distill [target]` | Refine | Strip to essence, remove complexity | [reference/distill.md](reference/distill.md) |
+| `harden [target]` | Refine | Production-ready: errors, i18n, edge cases | [reference/harden.md](reference/harden.md) |
+| `onboard [target]` | Refine | Design first-run flows, empty states, activation | [reference/onboard.md](reference/onboard.md) |
+| `animate [target]` | Enhance | Add purposeful animations and motion | [reference/animate.md](reference/animate.md) |
+| `colorize [target]` | Enhance | Add strategic color to monochromatic UIs | [reference/colorize.md](reference/colorize.md) |
+| `typeset [target]` | Enhance | Improve typography hierarchy and fonts | [reference/typeset.md](reference/typeset.md) |
+| `layout [target]` | Enhance | Fix spacing, rhythm, and visual hierarchy | [reference/layout.md](reference/layout.md) |
+| `delight [target]` | Enhance | Add personality and memorable touches | [reference/delight.md](reference/delight.md) |
+| `overdrive [target]` | Enhance | Push past conventional limits | [reference/overdrive.md](reference/overdrive.md) |
+| `clarify [target]` | Fix | Improve UX copy, labels, and error messages | [reference/clarify.md](reference/clarify.md) |
+| `adapt [target]` | Fix | Adapt for different devices and screen sizes | [reference/adapt.md](reference/adapt.md) · native: [reference/adapt.native.md](reference/adapt.native.md) |
+| `optimize [target]` | Fix | Diagnose and fix UI performance | [reference/optimize.md](reference/optimize.md) |
+| `live` | Iterate | Visual variant mode: pick elements in the browser, generate alternatives | [reference/live.md](reference/live.md) |
+
+Routing:
+
+- **No argument:** read [routing.md](reference/routing.md) and present its context-aware menu; never auto-run a command.
+- **Explicit or clearly implied request to run a command:** load its reference (native variant on native platforms) and follow it. Ask once if two commands fit.
+- **Workflow or command-selection question:** read [Workflow questions](reference/routing.md#workflow-questions).
+- **Otherwise:** treat the request as general design work. Missing PRODUCT.md routes a new surface or replacement world through init, then new-work; a narrow refinement of existing code proceeds on the incumbent implementation as `impeccable context` directs, offering init afterward rather than blocking on it.
+- `teach` aliases `init`. `craft` is a deprecated alias for ordinary new-work and adds nothing. `shape` owns task discovery, then enters new-work only for visual-world and surface-concept decisions.
+
+After init writes PRODUCT.md, resume without rerunning `impeccable context`; init loads the native platform reference itself when the platform it recorded is `ios`, `android`, or `adaptive`.
+
+**Pin / Unpin:** `"<skill-base-dir>/scripts/impeccable" pin <pin|unpin> <command>` creates or removes a standalone `/<command>` shortcut. Report the script's result concisely; relay stderr verbatim on error.
+
+**Hooks:** `/impeccable hooks <on|off|status|ignore-rule|ignore-file|ignore-value|reset>` manages the design detector hook for this project (auto-runs the detector after UI file edits and surfaces findings). Load [reference/hooks.md](reference/hooks.md) when the user invokes it with any argument.
+
+**Doctor:** `/impeccable doctor` reports and repairs drift between this project's Impeccable artifacts (PRODUCT.md, DESIGN.md and its sidecar, config, surface briefs, the hook) and what this version reads. Load [reference/doctor.md](reference/doctor.md) when the user invokes it, or when they ask what is out of date, stale, or needs refreshing. A `CONTEXT_STALE` directive in Setup's output is the cheap subset of the same report; act on it there per its own instructions rather than running doctor unasked.
+
+**Never repair drift as a side effect of a design task.** A `CONTEXT_STALE` finding is reported, not acted on, unless the user asks. The one exception is a finding marked `auto`, which the next write to that file performs anyway.
+
+ARGUMENTS: polish explore screen — search box + category chips (src/views/search.js), Middle Kingdom Explorer phase 07 just moved/changed these; verify against storyboard.md screen 2 and screen 6
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" context 2>&1 | head -100`
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" context 2>&1 | tail -150`
+  - `Bash: cat "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/reference/polish.md"`
+  - `Bash: (npm run dev -- --host > /tmp/vite-dev.log 2>&1 &) ; sleep 2; curl -sf -o /dev/null http://localhost:5173/chinese_history/ && echo UP || (sleep 2; curl -sf -o /`
+  - `ToolSearch: select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-c`
+  - `mcp__claude-in-chrome__tabs_context_mcp`
+  - `mcp__claude-in-chrome__navigate: http://localhost:5173/chinese_history/`
+  - `mcp__claude-in-chrome__computer: screenshot`
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: screenshot`
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: left_click`
+
+**Claude:** All 6 chips on now. Type into search box and inspect dropdown.
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: type`
+  - `mcp__claude-in-chrome__computer: screenshot`
+  - `mcp__claude-in-chrome__computer: key`
+  - `mcp__claude-in-chrome__computer: zoom`
+  - `mcp__claude-in-chrome__resize_window`
+  - `mcp__claude-in-chrome__computer: screenshot`
+  - `ToolSearch: select:mcp__claude-in-chrome__javascript_tool`
+  - `mcp__claude-in-chrome__javascript_tool: javascript_exec`
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" detect --json src/views/search.js src/styles.css 2>&1 | head`
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" detect --json src/views/search.js src/styles.css 2>&1 > /tmp`
+
+**Claude:** Impeccable detector: 52 pre-existing advisory findings, all in untouched parts of `styles.css` (font-size/color drift that predates phase 07 — same class of "already-reviewed" ported styling `tasks/lessons.md` phase 02 covers). Zero findings on `search.js` or on the one new CSS line phase 07 added (`.search-results div.active` reuses the existing `#fff2d6` tint, already the DESIGN.md "Why it matters" callout color — no new token). Visual check confirms chips/search/dropdown/active-row match DESIGN.md exactly (pill shapes, category colors, hover tint). Nothing to fix — polish pass closes clean. Mobile 390px stayed UNPROVEN via real browser (same window-manager resize limitation phase 06 hit, not chased further); covered by passing e2e viewport assertions instead.
+  - `mcp__claude-in-chrome__tabs_close_mcp`
+  - `Bash: pkill -f "vite" 2>/dev/null; echo done`
+
+**Claude:** Now run `scripts/test-phase-07.sh` myself end-to-end.
+  - `Bash: timeout 60 ./scripts/test-phase-07.sh 2>&1 & BGPID=$! sleep 15 kill $BGPID 2>/dev/null wait $BGPID 2>/dev/null echo "---script exit above---"`
+
+**Claude:** Script works end-to-end with docker compose, prints the URL and full checklist. Confirm the container's actually serving the phase-07 code, then leave it running for the user's manual check.
+  - `Bash: docker compose ps 2>&1; curl -sf http://localhost:5173/chinese_history/assets/index-*.js 2>/dev/null | grep -o "nextCats\|role=combobox" | sort -u || curl -sf -`
+
+**Claude:** Container up and serving, left running for manual verification. Now the final commit — checking with user first since this is an outward change to git history.
+  - `Bash: git status --short`
+  - `Bash: git ls-files graphify-out/ | head -5; echo "---gitignore---"; grep -n "graphify" .gitignore 2>/dev/null`
+  - `Bash: git ls-files .recall/ | head -3; git diff --stat HEAD -- src/ tests/ e2e/ scripts/ CLAUDE.md tasks/`
+
+**Claude:** Everything checks out, matches the plan. Ready to commit — checking with you first since it's git history.
+  - `AskUserQuestion`
+  - `Bash: git add -A && git commit -m "$(cat <<'EOF' Phase 07: search, category filter, Meanwhile strip - src/lib/normalize.js (new): fold() (NFD-strip-marks-lowercase) a`
+
+**Claude:** Committed `f12b540`.
+
+**Phase 07 done.** Search/chips/Meanwhile were mostly already correct from phase 02 — real work was `data.search()`'s two bugs (diacritic-blind pinyin, BCE-suffix parsing), real dropdown keyboard access, and moving chip ownership into `search.js` per architecture.md §2.
+
+- `npm test` 96/96, `npm run build` clean (11.51KB gzip / 150KB budget), `npm run e2e` 37/37
+- ponytail-review: 1 dead const cut
+- graphify before/after: clean module split confirmed, no spaghetti
+- Reviewer subagent: independent PASS, ran the suite itself
+- impeccable polish: zero new findings, visually matches DESIGN.md
+
+**Container is up** at `http://localhost:5173/chinese_history/` — run the 8-item checklist printed by `scripts/test-phase-07.sh`. UNPROVEN: real-browser 390px check (same window-manager resize limitation as phase 06), covered instead by passing e2e viewport assertions.
+
+
+## Session 7b1e5429 — 2026-09-18 20:10
+
+**You:** <local-command-caveat>Caveat: The messages below were generated by the user while running local commands. DO NOT respond to these messages or otherwise consider them in your response unless the user explicitly asks you to.</local-command-caveat>
+
+**You:** <local-command-caveat>Caveat: The messages below were generated by the user while running local commands. DO NOT respond to these messages or otherwise consider them in your response unless the user explicitly asks you to.</local-command-caveat>
+
+**You:** run @vibe-prompts/phase-08-grand-tour.md and stop once plan is done
+  - `Bash: ls && echo "---SRC---" && find src content tests e2e scripts -type f | sort && echo "---TOUR JSON---" && head -c 2000 content/tour.json`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/views/tour.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/state.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/main.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/views/detail.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/dom.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/views/explore.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/router.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/views/landing.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/views/timeline.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/views/map.js`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/data.js`
+  - `Bash: grep -n "tour\|\.dots\|guide" src/styles.css | head -60`
+  - `Bash: echo "=== PRD F5 ===" && sed -n '/F5/,/F6/p' PRD.md | head -60 && echo "=== PRD flow 2 ===" && grep -n "Flow 2" -A 20 PRD.md | head -40`
+  - `Bash: sed -n '220,280p' src/styles.css`
+  - `Bash: echo "=== arch TourStop ===" && grep -n "TourStop" -A 12 architecture.md | head -30 && echo "=== arch tour.js ===" && grep -n "tour.js" -B2 -A 6 architecture.md`
+  - `Bash: echo "=== Screen 5 ===" && awk '/## Screen 5/,/## Screen 6/' storyboard.md && echo "=== Journey 2 ===" && awk '/Journey 2/,/Journey 3/' storyboard.md && echo "=`
+  - `Bash: grep -n "Journey" storyboard.md | head -20 && echo "=== flows PRD ===" && grep -n "flow\|Flow" PRD.md | head -20`
+  - `Bash: wc -l tasks/lessons.md tasks/todo.md && tail -80 tasks/lessons.md`
+  - `Bash: sed -n '139,175p' PRD.md && echo "=== journey summary ===" && sed -n '60,80p' storyboard.md`
+  - `Bash: cat scripts/test-phase-07.sh && echo "=== e2e search spec head ===" && head -40 e2e/search.spec.js && echo "=== tests/search.test.js head ===" && head -30 tests`
+  - `Bash: grep -n "tour" -i scripts/validate.mjs | head -20 && echo "=== e2e shell tour refs ===" && grep -rn "tour" e2e/ tests/ | head -30 && echo "=== playwright config`
+  - `Bash: ls vitest.config.* 2>/dev/null; grep -n "test" -A 10 vite.config.js; echo "=== icons head ==="; head -20 src/icons.js; echo "=== smoke test head ==="; head -25`
+  - `Write: /home/jthe/.claude/plans/run-vibe-prompts-phase-08-grand-tour-md-wondrous-frost.md`
+  - `ToolSearch: select:ExitPlanMode`
+
+**Claude:** Plan written. Read the phase prompt, `tour.js`, and everything it touches — most of F5 already works from phase 02.
+
+Real gaps, not a rewrite:
+- **Resume** — `state.js:112` has a `ponytail:` comment deferring it to this phase.
+- **Exit clears** — falls out free from existing `tourStop` persistence; assert, don't add code.
+- **Keyboard Left/Right/Esc** — missing. Hazard: `timeline.js:74`'s document-level arrow handler would double-fire. Panel-scoped listener + `stopPropagation`.
+- **a11y** — `<a href="#">` acting as button, no focus in/out of panel.
+
+Already done downstream, left alone: card+pin glow (`timeline.js:171`, `map.js:167`), map morph, timeline auto-scroll, docked layout, mobile bottom sheet, dots, Finish toast.
+  - `ExitPlanMode: # Phase 08 — Grand Tour ## Context `src/views/tour.js` exists from the phase-02 mock port and already covers most of PRD F5: docked panel CSS (`.tour` in `.mapr`
+
+**You:** [Request interrupted by user for tool use]
+
+**You:** <local-command-caveat>Caveat: The messages below were generated by the user while running local commands. DO NOT respond to these messages or otherwise consider them in your response unless the user explicitly asks you to.</local-command-caveat>
+
+**You:** implement PLAN with BYPASS PERMISSIONS mode please
+
+**Claude:** Bypass-permissions mode: session flag, not tool I control — you set via CLI flag/UI toggle. Proceeding with implementation now regardless, per your go-ahead.
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/lib/focus-trap.js`
+
+**Claude:** Now implement. Start with `dom.js` one-line fix:
+  - `Edit: /home/jthe/Dev/localgit/chinese_history/src/dom.js`
+
+**Claude:** Now `state.js` comment update:
+  - `Edit: /home/jthe/Dev/localgit/chinese_history/src/state.js`
+
+**Claude:** Now the main `tour.js` rewrite:
+  - `Write: /home/jthe/Dev/localgit/chinese_history/src/views/tour.js`
+  - `Edit: /home/jthe/Dev/localgit/chinese_history/src/styles.css`
+  - `Read: /home/jthe/Dev/localgit/chinese_history/src/views/tour.js`
+
+**Claude:** Restore original gold inline color for Read-more (dropped in rewrite):
+  - `Edit: /home/jthe/Dev/localgit/chinese_history/src/views/tour.js`
+  - `Bash: grep -n "^button\|\.link\b\|button {" src/styles.css | head -20`
+
+**Claude:** Good, base `button { border: none; cursor: pointer; }` resets it fine — no other CSS changes needed. Now write tests.
+  - `Bash: cat tests/data.test.js | head -30 && echo "---" && cat tests/state.test.js`
+  - `Bash: cat tests/detail-render.test.js | head -40 && echo "---focus-trap test---" && cat tests/focus-trap.test.js | head -30`
+  - `Write: /home/jthe/Dev/localgit/chinese_history/tests/tour.test.js`
+
+**Claude:** Now run unit tests to verify:
+  - `Bash: npm test 2>&1 | tail -80`
+
+**Claude:** All 105 pass (96 old + 9 new). Now write e2e spec and phase-08 script.
+  - `Bash: cat e2e/shell.spec.js`
+  - `Write: /home/jthe/Dev/localgit/chinese_history/e2e/tour.spec.js`
+  - `Write: /home/jthe/Dev/localgit/chinese_history/scripts/test-phase-08.sh`
+  - `Bash: chmod +x /home/jthe/Dev/localgit/chinese_history/scripts/test-phase-08.sh`
+
+**Claude:** Now run build + e2e:
+  - `Bash: npm run build 2>&1 | tail -40`
+
+**Claude:** Build clean, JS gzip 11.70KB vs 150KB budget. Now e2e:
+  - `Bash: npx playwright install chromium --with-deps 2>&1 | tail -20`
+  - `Bash: npx playwright install chromium 2>&1 | tail -30`
+  - `Bash: npm run e2e 2>&1 | tail -150`
+
+**Claude:** All 45/45 e2e pass (37 old + 8 new). Now ponytail-review the diff.
+  - `Skill: ponytail:ponytail-review`
+
+**You:** Base directory for this skill: /home/jthe/.claude/plugins/cache/ponytail/ponytail/4.8.4/skills/ponytail-review
+
+Review diffs for unnecessary complexity. One line per finding: location, what
+to cut, what replaces it. The diff's best outcome is getting shorter.
+
+## Format
+
+`L<line>: <tag> <what>. <replacement>.`, or `<file>:L<line>: ...` for
+multi-file diffs.
+
+Tags:
+
+- `delete:` dead code, unused flexibility, speculative feature. Replacement: nothing.
+- `stdlib:` hand-rolled thing the standard library ships. Name the function.
+- `native:` dependency or code doing what the platform already does. Name the feature.
+- `yagni:` abstraction with one implementation, config nobody sets, layer with one caller.
+- `shrink:` same logic, fewer lines. Show the shorter form.
+
+## Examples
+
+❌ "This EmailValidator class might be more complex than necessary, have you
+considered whether all these validation rules are needed at this stage?"
+
+✅ `L12-38: stdlib: 27-line validator class. "@" in email, 1 line, real validation is the confirmation mail.`
+
+✅ `L4: native: moment.js imported for one format call. Intl.DateTimeFormat, 0 deps.`
+
+✅ `repo.py:L88: yagni: AbstractRepository with one implementation. Inline it until a second one exists.`
+
+✅ `L52-71: delete: retry wrapper around an idempotent local call. Nothing replaces it.`
+
+✅ `L30-44: shrink: manual loop builds dict. dict(zip(keys, values)), 1 line.`
+
+## Scoring
+
+End with the only metric that matters: `net: -<N> lines possible.`
+
+If there is nothing to cut, say `Lean already. Ship.` and stop.
+
+## Boundaries
+
+Scope: over-engineering and complexity only. Correctness bugs, security holes,
+and performance are explicitly out of scope. Route them to a normal review
+pass, not this one. A single smoke test or `assert`-based
+self-check is the ponytail minimum, not bloat, never flag it for deletion.
+Does not apply the fixes, only lists them.
+"stop ponytail-review" or "normal mode": revert to verbose review style.
+  - `Bash: git diff --stat && echo "---" && git status --short`
+  - `Bash: git diff -- src/views/tour.js src/dom.js src/state.js src/styles.css`
+
+**Claude:** `net: -0 lines possible.` Diff mirrors `detail.js`'s existing opener/focus and try/catch localStorage patterns exactly — no new abstraction, no unused flexibility. Aria attributes and try/catch guard are accessibility/robustness, not scope creep (explicitly protected). Lean already. Ship.
+
+Now reviewer subagent sign-off, then final graphify per plan.
+  - `Agent: Review phase 08 Grand Tour diff`
+
+**Claude:** Reviewer subagent running. Meanwhile, run graphify "after" per guardrail.
+  - `Skill: graphify`
+
+**You:** Base directory for this skill: /home/jthe/.claude/skills/graphify
+
+# /graphify
+
+Turn any folder of files into a navigable knowledge graph with community detection, an honest audit trail, and three outputs: interactive HTML, GraphRAG-ready JSON, and a plain-language GRAPH_REPORT.md.
+
+## Usage
+
+```
+/graphify                                             # full pipeline on current directory → Obsidian vault
+/graphify <path>                                      # full pipeline on specific path
+/graphify https://github.com/<owner>/<repo>           # clone repo then run full pipeline on it
+/graphify https://github.com/<owner>/<repo> --branch <branch>  # clone a specific branch
+/graphify <url1> <url2> ...                           # clone multiple repos, build each, merge into one cross-repo graph
+/graphify <path> --mode deep                          # thorough extraction, richer INFERRED edges
+/graphify <path> --update                             # incremental - re-extract only new/changed files
+/graphify <path> --directed                            # build directed graph (preserves edge direction: source→target)
+/graphify <path> --whisper-model medium                # use a larger Whisper model for better transcription accuracy
+/graphify <path> --cluster-only                       # rerun clustering on existing graph
+/graphify <path> --no-viz                             # skip visualization, just report + JSON
+/graphify <path> --html                               # (HTML is generated by default - this flag is a no-op)
+/graphify <path> --svg                                # also export graph.svg (embeds in Notion, GitHub)
+/graphify <path> --graphml                            # export graph.graphml (Gephi, yEd)
+/graphify <path> --neo4j                              # generate graphify-out/cypher.txt for Neo4j
+/graphify <path> --neo4j-push bolt://localhost:7687   # push directly to Neo4j
+/graphify <path> --mcp                                # start MCP stdio server for agent access
+/graphify <path> --watch                              # watch folder, auto-rebuild on code changes (no LLM needed)
+/graphify <path> --wiki                               # build agent-crawlable wiki (index.md + one article per community)
+/graphify <path> --obsidian --obsidian-dir ~/vaults/my-project  # write vault to custom path (e.g. existing vault)
+/graphify add <url>                                   # fetch URL, save to ./raw, update graph
+/graphify add <url> --author "Name"                   # tag who wrote it
+/graphify add <url> --contributor "Name"              # tag who added it to the corpus
+/graphify query "<question>"                          # BFS traversal - broad context
+/graphify query "<question>" --dfs                    # DFS - trace a specific path
+/graphify query "<question>" --budget 1500            # cap answer at N tokens
+/graphify path "AuthModule" "Database"                # shortest path between two concepts
+/graphify explain "SwinTransformer"                   # plain-language explanation of a node
+```
+
+## What graphify is for
+
+graphify is built around Andrej Karpathy's /raw folder workflow: drop anything into a folder - papers, tweets, screenshots, code, notes - and get a structured knowledge graph that shows you what you didn't know was connected.
+
+Three things it does that Claude alone cannot:
+1. **Persistent graph** - relationships are stored in `graphify-out/graph.json` and survive across sessions. Ask questions weeks later without re-reading everything.
+2. **Honest audit trail** - every edge is tagged EXTRACTED, INFERRED, or AMBIGUOUS. You know what was found vs invented.
+3. **Cross-document surprise** - community detection finds connections between concepts in different files that you would never think to ask about directly.
+
+Use it for:
+- A codebase you're new to (understand architecture before touching anything)
+- A reading list (papers + tweets + notes → one navigable graph)
+- A research corpus (citation graph + concept graph in one)
+- Your personal /raw folder (drop everything in, let it grow, query it)
+
+## What You Must Do When Invoked
+
+If no path was given, use `.` (current directory). Do not ask the user for a path.
+
+If the path argument starts with `https://github.com/` or `http://github.com/`, treat it as a GitHub URL — run Step 0 before anything else, then continue with the resolved local path.
+
+Follow these steps in order. Do not skip steps.
+
+### Step 0 - Clone GitHub repo(s) (only if a GitHub URL was given)
+
+**Single repo:**
+```bash
+LOCAL_PATH=$(graphify clone <github-url> [--branch <branch>])
+# Use LOCAL_PATH as the target for all subsequent steps
+```
+
+**Multiple repos (cross-repo graph):**
+```bash
+# Clone each repo, run the full pipeline on each, then merge
+graphify clone <url1>   # → ~/.graphify/repos/<owner1>/<repo1>
+graphify clone <url2>   # → ~/.graphify/repos/<owner2>/<repo2>
+# Run /graphify on each local path to produce their graph.json files
+# Then merge:
+graphify merge-graphs \
+  ~/.graphify/repos/<owner1>/<repo1>/graphify-out/graph.json \
+  ~/.graphify/repos/<owner2>/<repo2>/graphify-out/graph.json \
+  --out graphify-out/cross-repo-graph.json
+```
+
+Graphify clones into `~/.graphify/repos/<owner>/<repo>` and reuses existing clones on repeat runs. Each node in the merged graph carries a `repo` attribute so you can filter by origin.
+
+### Step 1 - Ensure graphify is installed
+
+```bash
+# Detect the correct Python interpreter (handles uv tool, pipx, venv, system installs)
+PYTHON=""
+GRAPHIFY_BIN=$(which graphify 2>/dev/null)
+# 1. uv tool installs — most reliable on modern Mac/Linux
+if [ -z "$PYTHON" ] && command -v uv >/dev/null 2>&1; then
+    _UV_PY=$(uv tool run graphifyy python -c "import sys; print(sys.executable)" 2>/dev/null)
+    if [ -n "$_UV_PY" ]; then PYTHON="$_UV_PY"; fi
+fi
+# 2. Read shebang from graphify binary (pipx and direct pip installs)
+if [ -z "$PYTHON" ] && [ -n "$GRAPHIFY_BIN" ]; then
+    _SHEBANG=$(head -1 "$GRAPHIFY_BIN" | tr -d '#!')
+    case "$_SHEBANG" in
+        *[!a-zA-Z0-9/_.-]*) ;;
+        *) "$_SHEBANG" -c "import graphify" 2>/dev/null && PYTHON="$_SHEBANG" ;;
+    esac
+fi
+# 3. Fall back to python3
+if [ -z "$PYTHON" ]; then PYTHON="python3"; fi
+"$PYTHON" -c "import graphify" 2>/dev/null || "$PYTHON" -m pip install graphifyy -q 2>/dev/null || "$PYTHON" -m pip install graphifyy -q --break-system-packages 2>&1 | tail -3
+# Write interpreter path for all subsequent steps (persists across invocations)
+mkdir -p graphify-out
+"$PYTHON" -c "import sys; open('graphify-out/.graphify_python', 'w').write(sys.executable)"
+```
+
+If the import succeeds, print nothing and move straight to Step 2.
+
+**In every subsequent bash block, replace `python3` with `$(cat graphify-out/.graphify_python)` to use the correct interpreter.**
+
+### Step 2 - Detect files
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from graphify.detect import detect
+from pathlib import Path
+result = detect(Path('INPUT_PATH'))
+print(json.dumps(result))
+" > graphify-out/.graphify_detect.json
+```
+
+Replace INPUT_PATH with the actual path the user provided. Do NOT cat or print the JSON - read it silently and present a clean summary instead:
+
+```
+Corpus: X files · ~Y words
+  code:     N files (.py .ts .go ...)
+  docs:     N files (.md .txt ...)
+  papers:   N files (.pdf ...)
+  images:   N files
+  video:    N files (.mp4 .mp3 ...)
+```
+
+Omit any category with 0 files from the summary.
+
+Then act on it:
+- If `total_files` is 0: stop with "No supported files found in [path]."
+- If `skipped_sensitive` is non-empty: mention file count skipped, not the file names.
+- If `total_words` > 2,000,000 OR `total_files` > 200: show the warning and the top 5 subdirectories by file count, then ask which subfolder to run on. Wait for the user's answer before proceeding.
+- Otherwise: proceed directly to Step 2.5 if video files were detected, or Step 3 if not.
+
+### Step 2.5 - Transcribe video / audio files (only if video files detected)
+
+Skip this step entirely if `detect` returned zero `video` files.
+
+Video and audio files cannot be read directly. Transcribe them to text first, then treat the transcripts as doc files in Step 3.
+
+**Strategy:** Read the god nodes from `graphify-out/.graphify_detect.json` (or the analysis file if it exists from a previous run). You are already a language model — write a one-sentence domain hint yourself from those labels. Then pass it to Whisper as the initial prompt. No separate API call needed.
+
+**However**, if the corpus has *only* video files and no other docs/code, use the generic fallback prompt: `"Use proper punctuation and paragraph breaks."`
+
+**Step 1 - Write the Whisper prompt yourself.**
+
+Read the top god node labels from detect output or analysis, then compose a short domain hint sentence, for example:
+
+- Labels: `transformer, attention, encoder, decoder` → `"Machine learning research on transformer architectures and attention mechanisms. Use proper punctuation and paragraph breaks."`
+- Labels: `kubernetes, deployment, pod, helm` → `"DevOps discussion about Kubernetes deployments and Helm charts. Use proper punctuation and paragraph breaks."`
+
+Set it as `WHISPER_PROMPT` to use in the next command.
+
+**Step 2 - Transcribe:**
+
+```bash
+GRAPHIFY_WHISPER_MODEL=base  # or whatever --whisper-model the user passed
+$(cat graphify-out/.graphify_python) -c "
+import json, os
+from pathlib import Path
+from graphify.transcribe import transcribe_all
+
+detect = json.loads(Path('graphify-out/.graphify_detect.json').read_text())
+video_files = detect.get('files', {}).get('video', [])
+prompt = os.environ.get('GRAPHIFY_WHISPER_PROMPT', 'Use proper punctuation and paragraph breaks.')
+
+transcript_paths = transcribe_all(video_files, initial_prompt=prompt)
+print(json.dumps(transcript_paths))
+" > graphify-out/.graphify_transcripts.json
+```
+
+After transcription:
+- Read the transcript paths from `graphify-out/.graphify_transcripts.json`
+- Add them to the docs list before dispatching semantic subagents in Step 3B
+- Print how many transcripts were created: `Transcribed N video file(s) -> treating as docs`
+- If transcription fails for a file, print a warning and continue with the rest
+
+**Whisper model:** Default is `base`. If the user passed `--whisper-model <name>`, set `GRAPHIFY_WHISPER_MODEL=<name>` in the environment before running the command above.
+
+### Step 3 - Extract entities and relationships
+
+**Before starting:** note whether `--mode deep` was given. You must pass `DEEP_MODE=true` to every subagent in Step B2 if it was. Track this from the original invocation - do not lose it.
+
+This step has two parts: **structural extraction** (deterministic, free) and **semantic extraction** (Claude, costs tokens).
+
+**Run Part A (AST) and Part B (semantic) in parallel. Dispatch all semantic subagents AND start AST extraction in the same message. Both can run simultaneously since they operate on different file types. Merge results in Part C as before.**
+
+Note: Parallelizing AST + semantic saves 5-15s on large corpora. AST is deterministic and fast; start it while subagents are processing docs/papers.
+
+#### Part A - Structural extraction for code files
+
+For any code files detected, run AST extraction in parallel with Part B subagents:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.extract import collect_files, extract
+from pathlib import Path
+import json
+
+code_files = []
+detect = json.loads(Path('graphify-out/.graphify_detect.json').read_text())
+for f in detect.get('files', {}).get('code', []):
+    code_files.extend(collect_files(Path(f)) if Path(f).is_dir() else [Path(f)])
+
+if code_files:
+    result = extract(code_files, cache_root=Path('.'))
+    Path('graphify-out/.graphify_ast.json').write_text(json.dumps(result, indent=2))
+    print(f'AST: {len(result[\"nodes\"])} nodes, {len(result[\"edges\"])} edges')
+else:
+    Path('graphify-out/.graphify_ast.json').write_text(json.dumps({'nodes':[],'edges':[],'input_tokens':0,'output_tokens':0}))
+    print('No code files - skipping AST extraction')
+"
+```
+
+#### Part B - Semantic extraction (parallel subagents)
+
+**Fast path:** If detection found zero docs, papers, and images (code-only corpus), skip Part B entirely and go straight to Part C. AST handles code - there is nothing for semantic subagents to do.
+
+**MANDATORY: You MUST use the Agent tool here. Reading files yourself one-by-one is forbidden - it is 5-10x slower. If you do not use the Agent tool you are doing this wrong.**
+
+Before dispatching subagents, print a timing estimate:
+- Load `total_words` and file counts from `graphify-out/.graphify_detect.json`
+- Estimate agents needed: `ceil(uncached_non_code_files / 22)` (chunk size is 20-25)
+- Estimate time: ~45s per agent batch (they run in parallel, so total ≈ 45s × ceil(agents/parallel_limit))
+- Print: "Semantic extraction: ~N files → X agents, estimated ~Ys"
+
+**Step B0 - Check extraction cache first**
+
+Before dispatching any subagents, check which files already have cached extraction results:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from graphify.cache import check_semantic_cache
+from pathlib import Path
+
+detect = json.loads(Path('graphify-out/.graphify_detect.json').read_text())
+all_files = [f for files in detect['files'].values() for f in files]
+
+cached_nodes, cached_edges, cached_hyperedges, uncached = check_semantic_cache(all_files)
+
+if cached_nodes or cached_edges or cached_hyperedges:
+    Path('graphify-out/.graphify_cached.json').write_text(json.dumps({'nodes': cached_nodes, 'edges': cached_edges, 'hyperedges': cached_hyperedges}))
+Path('graphify-out/.graphify_uncached.txt').write_text('\n'.join(uncached))
+print(f'Cache: {len(all_files)-len(uncached)} files hit, {len(uncached)} files need extraction')
+"
+```
+
+Only dispatch subagents for files listed in `graphify-out/.graphify_uncached.txt`. If all files are cached, skip to Part C directly.
+
+**Step B1 - Split into chunks**
+
+Load files from `graphify-out/.graphify_uncached.txt`. Split into chunks of 20-25 files each. Each image gets its own chunk (vision needs separate context). When splitting, group files from the same directory together so related artifacts land in the same chunk and cross-file relationships are more likely to be extracted.
+
+**Step B2 - Dispatch ALL subagents in a single message**
+
+Call the Agent tool multiple times IN THE SAME RESPONSE - one call per chunk. This is the only way they run in parallel. If you make one Agent call, wait, then make another, you are doing it sequentially and defeating the purpose.
+
+**IMPORTANT - subagent type:** Always use `subagent_type="general-purpose"`. Do NOT use `Explore` - it is read-only and cannot write chunk files to disk, which silently drops extraction results. General-purpose has Write and Bash access which the subagent needs.
+
+Concrete example for 3 chunks:
+```
+[Agent tool call 1: files 1-15, subagent_type="general-purpose"]
+[Agent tool call 2: files 16-30, subagent_type="general-purpose"]
+[Agent tool call 3: files 31-45, subagent_type="general-purpose"]
+```
+All three in one message. Not three separate messages.
+
+Each subagent receives this exact prompt (substitute FILE_LIST, CHUNK_NUM, TOTAL_CHUNKS, and DEEP_MODE):
+
+```
+You are a graphify extraction subagent. Read the files listed and extract a knowledge graph fragment.
+Output ONLY valid JSON matching the schema below - no explanation, no markdown fences, no preamble.
+
+Files (chunk CHUNK_NUM of TOTAL_CHUNKS):
+FILE_LIST
+
+Rules:
+- EXTRACTED: relationship explicit in source (import, call, citation, "see §3.2")
+- INFERRED: reasonable inference (shared data structure, implied dependency)
+- AMBIGUOUS: uncertain - flag for review, do not omit
+
+Code files: focus on semantic edges AST cannot find (call relationships, shared data, arch patterns).
+  Do not re-extract imports - AST already has those.
+Doc/paper files: extract named concepts, entities, citations. Also extract rationale — sections that explain WHY a decision was made, trade-offs chosen, or design intent. These become nodes with `rationale_for` edges pointing to the concept they explain.
+Image files: use vision to understand what the image IS - do not just OCR.
+  UI screenshot: layout patterns, design decisions, key elements, purpose.
+  Chart: metric, trend/insight, data source.
+  Tweet/post: claim as node, author, concepts mentioned.
+  Diagram: components and connections.
+  Research figure: what it demonstrates, method, result.
+  Handwritten/whiteboard: ideas and arrows, mark uncertain readings AMBIGUOUS.
+
+DEEP_MODE (if --mode deep was given): be aggressive with INFERRED edges - indirect deps,
+  shared assumptions, latent couplings. Mark uncertain ones AMBIGUOUS instead of omitting.
+
+Semantic similarity: if two concepts in this chunk solve the same problem or represent the same idea without any structural link (no import, no call, no citation), add a `semantically_similar_to` edge marked INFERRED with a confidence_score reflecting how similar they are (0.6-0.95). Examples:
+- Two functions that both validate user input but never call each other
+- A class in code and a concept in a paper that describe the same algorithm
+- Two error types that handle the same failure mode differently
+Only add these when the similarity is genuinely non-obvious and cross-cutting. Do not add them for trivially similar things.
+
+Hyperedges: if 3 or more nodes clearly participate together in a shared concept, flow, or pattern that is not captured by pairwise edges alone, add a hyperedge to a top-level `hyperedges` array. Examples:
+- All classes that implement a common protocol or interface
+- All functions in an authentication flow (even if they don't all call each other)
+- All concepts from a paper section that form one coherent idea
+Use sparingly — only when the group relationship adds information beyond the pairwise edges. Maximum 3 hyperedges per chunk.
+
+If a file has YAML frontmatter (--- ... ---), copy source_url, captured_at, author,
+  contributor onto every node from that file.
+
+confidence_score is REQUIRED on every edge - never omit it, never use 0.5 as a default:
+- EXTRACTED edges: confidence_score = 1.0 always
+- INFERRED edges: reason about each edge individually.
+  Direct structural evidence (shared data structure, clear dependency): 0.8-0.9.
+  Reasonable inference with some uncertainty: 0.6-0.7.
+  Weak or speculative: 0.4-0.5. Most edges should be 0.6-0.9, not 0.5.
+- AMBIGUOUS edges: 0.1-0.3
+
+Node ID format: lowercase, only `[a-z0-9_]`, no dots or slashes. Format: `{stem}_{entity}` where stem is the filename without extension and entity is the symbol name, both normalized (lowercase, non-alphanumeric chars replaced with `_`). Example: `src/auth/session.py` + `ValidateToken` → `session_validatetoken`. This must match the ID the AST extractor generates so cross-references between code and semantic nodes connect correctly. CRITICAL: never append chunk numbers, sequence numbers, or any suffix to an ID (no `_c1`, `_c2`, `_chunk2`, etc.). IDs must be deterministic from the label alone — the same entity must always produce the same ID regardless of which chunk processes it.
+
+Output exactly this JSON (no other text):
+{"nodes":[{"id":"session_validatetoken","label":"Human Readable Name","file_type":"code|document|paper|image","source_file":"relative/path","source_location":null,"source_url":null,"captured_at":null,"author":null,"contributor":null}],"edges":[{"source":"node_id","target":"node_id","relation":"calls|implements|references|cites|conceptually_related_to|shares_data_with|semantically_similar_to|rationale_for","confidence":"EXTRACTED|INFERRED|AMBIGUOUS","confidence_score":1.0,"source_file":"relative/path","source_location":null,"weight":1.0}],"hyperedges":[{"id":"snake_case_id","label":"Human Readable Label","nodes":["node_id1","node_id2","node_id3"],"relation":"participate_in|implement|form","confidence":"EXTRACTED|INFERRED","confidence_score":0.75,"source_file":"relative/path"}],"input_tokens":0,"output_tokens":0}
+```
+
+**Step B3 - Collect, cache, and merge**
+
+Wait for all subagents. For each result:
+- Check that `graphify-out/.graphify_chunk_NN.json` exists on disk — this is the success signal
+- If the file exists and contains valid JSON with `nodes` and `edges`, include it and save to cache
+- If the file is missing, the subagent was likely dispatched as read-only (Explore type) — print a warning: "chunk N missing from disk — subagent may have been read-only. Re-run with general-purpose agent." Do not silently skip.
+- If a subagent failed or returned invalid JSON, print a warning and skip that chunk - do not abort
+
+If more than half the chunks failed or are missing, stop and tell the user to re-run and ensure `subagent_type="general-purpose"` is used.
+
+Save new results to cache:
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from graphify.cache import save_semantic_cache
+from pathlib import Path
+
+new = json.loads(Path('graphify-out/.graphify_semantic_new.json').read_text()) if Path('graphify-out/.graphify_semantic_new.json').exists() else {'nodes':[],'edges':[],'hyperedges':[]}
+saved = save_semantic_cache(new.get('nodes', []), new.get('edges', []), new.get('hyperedges', []))
+print(f'Cached {saved} files')
+"
+```
+
+Merge cached + new results into `graphify-out/.graphify_semantic.json`:
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from pathlib import Path
+
+cached = json.loads(Path('graphify-out/.graphify_cached.json').read_text()) if Path('graphify-out/.graphify_cached.json').exists() else {'nodes':[],'edges':[],'hyperedges':[]}
+new = json.loads(Path('graphify-out/.graphify_semantic_new.json').read_text()) if Path('graphify-out/.graphify_semantic_new.json').exists() else {'nodes':[],'edges':[],'hyperedges':[]}
+
+all_nodes = cached['nodes'] + new.get('nodes', [])
+all_edges = cached['edges'] + new.get('edges', [])
+all_hyperedges = cached.get('hyperedges', []) + new.get('hyperedges', [])
+seen = set()
+deduped = []
+for n in all_nodes:
+    if n['id'] not in seen:
+        seen.add(n['id'])
+        deduped.append(n)
+
+merged = {
+    'nodes': deduped,
+    'edges': all_edges,
+    'hyperedges': all_hyperedges,
+    'input_tokens': new.get('input_tokens', 0),
+    'output_tokens': new.get('output_tokens', 0),
+}
+Path('graphify-out/.graphify_semantic.json').write_text(json.dumps(merged, indent=2))
+print(f'Extraction complete - {len(deduped)} nodes, {len(all_edges)} edges ({len(cached[\"nodes\"])} from cache, {len(new.get(\"nodes\",[]))} new)')
+"
+```
+Clean up temp files: `rm -f graphify-out/.graphify_cached.json graphify-out/.graphify_uncached.txt graphify-out/.graphify_semantic_new.json`
+
+#### Part C - Merge AST + semantic into final extraction
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from pathlib import Path
+
+ast = json.loads(Path('graphify-out/.graphify_ast.json').read_text())
+sem = json.loads(Path('graphify-out/.graphify_semantic.json').read_text())
+
+# Merge: AST nodes first, semantic nodes deduplicated by id
+seen = {n['id'] for n in ast['nodes']}
+merged_nodes = list(ast['nodes'])
+for n in sem['nodes']:
+    if n['id'] not in seen:
+        merged_nodes.append(n)
+        seen.add(n['id'])
+
+merged_edges = ast['edges'] + sem['edges']
+merged_hyperedges = sem.get('hyperedges', [])
+merged = {
+    'nodes': merged_nodes,
+    'edges': merged_edges,
+    'hyperedges': merged_hyperedges,
+    'input_tokens': sem.get('input_tokens', 0),
+    'output_tokens': sem.get('output_tokens', 0),
+}
+Path('graphify-out/.graphify_extract.json').write_text(json.dumps(merged, indent=2))
+total = len(merged_nodes)
+edges = len(merged_edges)
+print(f'Merged: {total} nodes, {edges} edges ({len(ast[\"nodes\"])} AST + {len(sem[\"nodes\"])} semantic)')
+"
+```
+
+### Step 4 - Build graph, cluster, analyze, generate outputs
+
+**Before starting:** note whether `--directed` was given. If so, pass `directed=True` to `build_from_json()` in the code block below. This builds a `DiGraph` that preserves edge direction (source→target) instead of the default undirected `Graph`.
+
+```bash
+mkdir -p graphify-out
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.cluster import cluster, score_all
+from graphify.analyze import god_nodes, surprising_connections, suggest_questions
+from graphify.report import generate
+from graphify.export import to_json
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+detection  = json.loads(Path('graphify-out/.graphify_detect.json').read_text())
+
+G = build_from_json(extraction)
+communities = cluster(G)
+cohesion = score_all(G, communities)
+tokens=[REDACTED]
+gods = god_nodes(G)
+surprises = surprising_connections(G, communities)
+labels = {cid: 'Community ' + str(cid) for cid in communities}
+# Placeholder questions - regenerated with real labels in Step 5
+questions = suggest_questions(G, communities, labels)
+
+report = generate(G, communities, cohesion, labels, gods, surprises, detection, tokens, 'INPUT_PATH', suggested_questions=questions)
+Path('graphify-out/GRAPH_REPORT.md').write_text(report)
+to_json(G, communities, 'graphify-out/graph.json')
+
+analysis = {
+    'communities': {str(k): v for k, v in communities.items()},
+    'cohesion': {str(k): v for k, v in cohesion.items()},
+    'gods': gods,
+    'surprises': surprises,
+    'questions': questions,
+}
+Path('graphify-out/.graphify_analysis.json').write_text(json.dumps(analysis, indent=2))
+if G.number_of_nodes() == 0:
+    print('ERROR: Graph is empty - extraction produced no nodes.')
+    print('Possible causes: all files were skipped, binary-only corpus, or extraction failed.')
+    raise SystemExit(1)
+print(f'Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges, {len(communities)} communities')
+"
+```
+
+If this step prints `ERROR: Graph is empty`, stop and tell the user what happened - do not proceed to labeling or visualization.
+
+Replace INPUT_PATH with the actual path.
+
+### Step 5 - Label communities
+
+Read `graphify-out/.graphify_analysis.json`. For each community key, look at its node labels and write a 2-5 word plain-language name (e.g. "Attention Mechanism", "Training Pipeline", "Data Loading").
+
+Then regenerate the report and save the labels for the visualizer:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.cluster import score_all
+from graphify.analyze import god_nodes, surprising_connections, suggest_questions
+from graphify.report import generate
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+detection  = json.loads(Path('graphify-out/.graphify_detect.json').read_text())
+analysis   = json.loads(Path('graphify-out/.graphify_analysis.json').read_text())
+
+G = build_from_json(extraction)
+communities = {int(k): v for k, v in analysis['communities'].items()}
+cohesion = {int(k): v for k, v in analysis['cohesion'].items()}
+tokens=[REDACTED]
+
+# LABELS - replace these with the names you chose above
+labels = LABELS_DICT
+
+# Regenerate questions with real community labels (labels affect question phrasing)
+questions = suggest_questions(G, communities, labels)
+
+report = generate(G, communities, cohesion, labels, analysis['gods'], analysis['surprises'], detection, tokens, 'INPUT_PATH', suggested_questions=questions)
+Path('graphify-out/GRAPH_REPORT.md').write_text(report)
+Path('graphify-out/.graphify_labels.json').write_text(json.dumps({str(k): v for k, v in labels.items()}))
+print('Report updated with community labels')
+"
+```
+
+Replace `LABELS_DICT` with the actual dict you constructed (e.g. `{0: "Attention Mechanism", 1: "Training Pipeline"}`).
+Replace INPUT_PATH with the actual path.
+
+### Step 6 - Generate Obsidian vault (opt-in) + HTML
+
+**Generate HTML always** (unless `--no-viz`). **Obsidian vault only if `--obsidian` was explicitly given** — skip it otherwise, it generates one file per node.
+
+If `--obsidian` was given:
+
+- If `--obsidian-dir <path>` was also given, use that path as the vault directory. Otherwise default to `graphify-out/obsidian`.
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.export import to_obsidian, to_canvas
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+analysis   = json.loads(Path('graphify-out/.graphify_analysis.json').read_text())
+labels_raw = json.loads(Path('graphify-out/.graphify_labels.json').read_text()) if Path('graphify-out/.graphify_labels.json').exists() else {}
+
+G = build_from_json(extraction)
+communities = {int(k): v for k, v in analysis['communities'].items()}
+cohesion = {int(k): v for k, v in analysis['cohesion'].items()}
+labels = {int(k): v for k, v in labels_raw.items()}
+
+obsidian_dir = 'OBSIDIAN_DIR'  # replace with --obsidian-dir value, or 'graphify-out/obsidian' if not given
+
+n = to_obsidian(G, communities, obsidian_dir, community_labels=labels or None, cohesion=cohesion)
+print(f'Obsidian vault: {n} notes in {obsidian_dir}/')
+
+to_canvas(G, communities, f'{obsidian_dir}/graph.canvas', community_labels=labels or None)
+print(f'Canvas: {obsidian_dir}/graph.canvas - open in Obsidian for structured community layout')
+print()
+print(f'Open {obsidian_dir}/ as a vault in Obsidian.')
+print('  Graph view   - nodes colored by community (set automatically)')
+print('  graph.canvas - structured layout with communities as groups')
+print('  _COMMUNITY_* - overview notes with cohesion scores and dataview queries')
+"
+```
+
+Generate the HTML graph (always, unless `--no-viz`):
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.export import to_html
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+analysis   = json.loads(Path('graphify-out/.graphify_analysis.json').read_text())
+labels_raw = json.loads(Path('graphify-out/.graphify_labels.json').read_text()) if Path('graphify-out/.graphify_labels.json').exists() else {}
+
+G = build_from_json(extraction)
+communities = {int(k): v for k, v in analysis['communities'].items()}
+labels = {int(k): v for k, v in labels_raw.items()}
+
+NODE_LIMIT = 5000
+if G.number_of_nodes() > NODE_LIMIT:
+    from collections import Counter
+    print(f'Graph has {G.number_of_nodes()} nodes (above {NODE_LIMIT} limit). Building aggregated community view...')
+    node_to_community = {nid: cid for cid, members in communities.items() for nid in members}
+    import networkx as nx_meta
+    meta = nx_meta.Graph()
+    for cid, members in communities.items():
+        meta.add_node(str(cid), label=labels.get(cid, f'Community {cid}'))
+    edge_counts = Counter()
+    for u, v in G.edges():
+        cu, cv = node_to_community.get(u), node_to_community.get(v)
+        if cu is not None and cv is not None and cu != cv:
+            edge_counts[(min(cu, cv), max(cu, cv))] += 1
+    for (cu, cv), w in edge_counts.items():
+        meta.add_edge(str(cu), str(cv), weight=w, relation=f'{w} cross-community edges', confidence='AGGREGATED')
+    if meta.number_of_nodes() > 1:
+        meta_communities = {cid: [str(cid)] for cid in communities}
+        member_counts = {cid: len(members) for cid, members in communities.items()}
+        to_html(meta, meta_communities, 'graphify-out/graph.html', community_labels=labels or None, member_counts=member_counts)
+        print(f'graph.html written (aggregated: {meta.number_of_nodes()} community nodes, {meta.number_of_edges()} cross-community edges)')
+        print('Tip: run with --obsidian for full node-level detail.')
+    else:
+        print('Single community — aggregated view not useful. Skipping graph.html.')
+else:
+    to_html(G, communities, 'graphify-out/graph.html', community_labels=labels or None)
+    print('graph.html written - open in any browser, no server needed')
+"
+```
+
+### Step 6b - Wiki (only if --wiki flag)
+
+**Only run this step if `--wiki` was explicitly given in the original command.**
+
+Run this before Step 9 (cleanup) so `.graphify_labels.json` is still available.
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from graphify.build import build_from_json
+from graphify.wiki import to_wiki
+from graphify.analyze import god_nodes
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+analysis   = json.loads(Path('graphify-out/.graphify_analysis.json').read_text())
+labels_raw = json.loads(Path('graphify-out/.graphify_labels.json').read_text()) if Path('graphify-out/.graphify_labels.json').exists() else {}
+
+G = build_from_json(extraction)
+communities = {int(k): v for k, v in analysis['communities'].items()}
+cohesion = {int(k): v for k, v in analysis['cohesion'].items()}
+labels = {int(k): v for k, v in labels_raw.items()}
+gods = god_nodes(G)
+
+n = to_wiki(G, communities, 'graphify-out/wiki', community_labels=labels or None, cohesion=cohesion, god_nodes_data=gods)
+print(f'Wiki: {n} articles written to graphify-out/wiki/')
+print('  graphify-out/wiki/index.md  ->  agent entry point')
+"
+```
+
+### Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag)
+
+**If `--neo4j`** - generate a Cypher file for manual import:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.export import to_cypher
+from pathlib import Path
+
+G = build_from_json(json.loads(Path('graphify-out/.graphify_extract.json').read_text()))
+to_cypher(G, 'graphify-out/cypher.txt')
+print('cypher.txt written - import with: cypher-shell < graphify-out/cypher.txt')
+"
+```
+
+**If `--neo4j-push <uri>`** - push directly to a running Neo4j instance. Ask the user for credentials if not provided:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.cluster import cluster
+from graphify.export import push_to_neo4j
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+analysis   = json.loads(Path('graphify-out/.graphify_analysis.json').read_text())
+G = build_from_json(extraction)
+communities = {int(k): v for k, v in analysis['communities'].items()}
+
+result = push_to_neo4j(G, uri='NEO4J_URI', user='NEO4J_USER', password='NEO4J_PASSWORD', communities=communities)
+print(f'Pushed to Neo4j: {result[\"nodes\"]} nodes, {result[\"edges\"]} edges')
+"
+```
+
+Replace `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD` with actual values. Default URI is `bolt://localhost:7687`, default user is `neo4j`. Uses MERGE - safe to re-run without creating duplicates.
+
+### Step 7b - SVG export (only if --svg flag)
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.export import to_svg
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+analysis   = json.loads(Path('graphify-out/.graphify_analysis.json').read_text())
+labels_raw = json.loads(Path('graphify-out/.graphify_labels.json').read_text()) if Path('graphify-out/.graphify_labels.json').exists() else {}
+
+G = build_from_json(extraction)
+communities = {int(k): v for k, v in analysis['communities'].items()}
+labels = {int(k): v for k, v in labels_raw.items()}
+
+to_svg(G, communities, 'graphify-out/graph.svg', community_labels=labels or None)
+print('graph.svg written - embeds in Obsidian, Notion, GitHub READMEs')
+"
+```
+
+### Step 7c - GraphML export (only if --graphml flag)
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from graphify.build import build_from_json
+from graphify.export import to_graphml
+from pathlib import Path
+
+extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+analysis   = json.loads(Path('graphify-out/.graphify_analysis.json').read_text())
+
+G = build_from_json(extraction)
+communities = {int(k): v for k, v in analysis['communities'].items()}
+
+to_graphml(G, communities, 'graphify-out/graph.graphml')
+print('graph.graphml written - open in Gephi, yEd, or any GraphML tool')
+"
+```
+
+### Step 7d - MCP server (only if --mcp flag)
+
+```bash
+python3 -m graphify.serve graphify-out/graph.json
+```
+
+This starts a stdio MCP server that exposes tools: `query_graph`, `get_node`, `get_neighbors`, `get_community`, `god_nodes`, `graph_stats`, `shortest_path`. Add to Claude Desktop or any MCP-compatible agent orchestrator so other agents can query the graph live.
+
+To configure in Claude Desktop, add to `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "graphify": {
+      "command": "python3",
+      "args": ["-m", "graphify.serve", "/absolute/path/to/graphify-out/graph.json"]
+    }
+  }
+}
+```
+
+### Step 8 - Token reduction benchmark (only if total_words > 5000)
+
+If `total_words` from `graphify-out/.graphify_detect.json` is greater than 5,000, run:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from graphify.benchmark import run_benchmark, print_benchmark
+from pathlib import Path
+
+detection = json.loads(Path('graphify-out/.graphify_detect.json').read_text())
+result = run_benchmark('graphify-out/graph.json', corpus_words=detection['total_words'])
+print_benchmark(result)
+"
+```
+
+Print the output directly in chat. If `total_words <= 5000`, skip silently - the graph value is structural clarity, not token compression, for small corpora.
+
+---
+
+### Step 9 - Save manifest, update cost tracker, clean up, and report
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from pathlib import Path
+from datetime import datetime, timezone
+from graphify.detect import save_manifest
+
+# Save manifest for --update
+detect = json.loads(Path('graphify-out/.graphify_detect.json').read_text())
+save_manifest(detect['files'])
+
+# Update cumulative cost tracker
+extract = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+input_tok = extract.get('input_tokens', 0)
+output_tok = extract.get('output_tokens', 0)
+
+cost_path = Path('graphify-out/cost.json')
+if cost_path.exists():
+    cost = json.loads(cost_path.read_text())
+else:
+    cost = {'runs': [], 'total_input_tokens': 0, 'total_output_tokens': 0}
+
+cost['runs'].append({
+    'date': datetime.now(timezone.utc).isoformat(),
+    'input_tokens': input_tok,
+    'output_tokens': output_tok,
+    'files': detect.get('total_files', 0),
+})
+cost['total_input_tokens'] += input_tok
+cost['total_output_tokens'] += output_tok
+cost_path.write_text(json.dumps(cost, indent=2))
+
+print(f'This run: {input_tok:,} input tokens, {output_tok:,} output tokens')
+print(f'All time: {cost[\"total_input_tokens\"]:,} input, {cost[\"total_output_tokens\"]:,} output ({len(cost[\"runs\"])} runs)')
+"
+rm -f graphify-out/.graphify_detect.json graphify-out/.graphify_extract.json graphify-out/.graphify_ast.json graphify-out/.graphify_semantic.json graphify-out/.graphify_analysis.json graphify-out/.graphify_labels.json graphify-out/.graphify_chunk_*.json
+rm -f graphify-out/.needs_update 2>/dev/null || true
+```
+
+Tell the user (omit the obsidian line unless --obsidian was given):
+```
+Graph complete. Outputs in PATH_TO_DIR/graphify-out/
+
+  graph.html            - interactive graph, open in browser
+  GRAPH_REPORT.md       - audit report
+  graph.json            - raw graph data
+  obsidian/             - Obsidian vault (only if --obsidian was given)
+```
+
+If graphify saved you time, consider supporting it: https://github.com/sponsors/safishamsi
+
+Replace PATH_TO_DIR with the actual absolute path of the directory that was processed.
+
+Then paste these sections from GRAPH_REPORT.md directly into the chat:
+- God Nodes
+- Surprising Connections
+- Suggested Questions
+
+Do NOT paste the full report - just those three sections. Keep it concise.
+
+Then immediately offer to explore. Pick the single most interesting suggested question from the report - the one that crosses the most community boundaries or has the most surprising bridge node - and ask:
+
+> "The most interesting question this graph can answer: **[question]**. Want me to trace it?"
+
+If the user says yes, run `/graphify query "[question]"` on the graph and walk them through the answer using the graph structure - which nodes connect, which community boundaries get crossed, what the path reveals. Keep going as long as they want to explore. Each answer should end with a natural follow-up ("this connects to X - want to go deeper?") so the session feels like navigation, not a one-shot report.
+
+The graph is the map. Your job after the pipeline is to be the guide.
+
+---
+
+## Interpreter guard for subcommands
+
+Before running any subcommand below (`--update`, `--cluster-only`, `query`, `path`, `explain`, `add`), check that `.graphify_python` exists. If it's missing (e.g. user deleted `graphify-out/`), re-resolve the interpreter first:
+
+```bash
+if [ ! -f graphify-out/.graphify_python ]; then
+    GRAPHIFY_BIN=$(which graphify 2>/dev/null)
+    if [ -n "$GRAPHIFY_BIN" ]; then
+        PYTHON=$(head -1 "$GRAPHIFY_BIN" | tr -d '#!')
+        case "$PYTHON" in *[!a-zA-Z0-9/_.-]*) PYTHON="python3" ;; esac
+    else
+        PYTHON="python3"
+    fi
+    mkdir -p graphify-out
+    "$PYTHON" -c "import sys; open('graphify-out/.graphify_python', 'w').write(sys.executable)"
+fi
+```
+
+## For --update (incremental re-extraction)
+
+Use when you've added or modified files since the last run. Only re-extracts changed files - saves tokens and time.
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.detect import detect_incremental, save_manifest
+from pathlib import Path
+
+result = detect_incremental(Path('INPUT_PATH'))
+new_total = result.get('new_total', 0)
+print(json.dumps(result, indent=2))
+Path('graphify-out/.graphify_incremental.json').write_text(json.dumps(result))
+if new_total == 0:
+    print('No files changed since last run. Nothing to update.')
+    raise SystemExit(0)
+print(f'{new_total} new/changed file(s) to re-extract.')
+"
+```
+
+If new files exist, first check whether all changed files are code files:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from pathlib import Path
+
+result = json.loads(open('graphify-out/.graphify_incremental.json').read()) if Path('graphify-out/.graphify_incremental.json').exists() else {}
+code_exts = {'.py','.ts','.js','.go','.rs','.java','.cpp','.c','.rb','.swift','.kt','.cs','.scala','.php','.cc','.cxx','.hpp','.h','.kts','.lua','.toc'}
+new_files = result.get('new_files', {})
+all_changed = [f for files in new_files.values() for f in files]
+code_only = all(Path(f).suffix.lower() in code_exts for f in all_changed)
+print('code_only:', code_only)
+"
+```
+
+If `code_only` is True: print `[graphify update] Code-only changes detected - skipping semantic extraction (no LLM needed)`, run only Step 3A (AST) on the changed files, skip Step 3B entirely (no subagents), then go straight to merge and Steps 4–8.
+
+If `code_only` is False (any changed file is a doc/paper/image): run the full Steps 3A–3C pipeline as normal.
+
+Then:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.build import build_from_json
+from graphify.export import to_json
+from networkx.readwrite import json_graph
+import networkx as nx
+from pathlib import Path
+
+# Load existing graph
+existing_data = json.loads(Path('graphify-out/graph.json').read_text())
+G_existing = json_graph.node_link_graph(existing_data, edges='links')
+
+# Load new extraction
+new_extraction = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+G_new = build_from_json(new_extraction)
+
+# Prune nodes from deleted files
+incremental = json.loads(Path('graphify-out/.graphify_incremental.json').read_text())
+deleted = set(incremental.get('deleted_files', []))
+if deleted:
+    to_remove = [n for n, d in G_existing.nodes(data=True) if d.get('source_file') in deleted]
+    G_existing.remove_nodes_from(to_remove)
+    print(f'Pruned {len(to_remove)} ghost nodes from {len(deleted)} deleted file(s)')
+
+# Merge: new nodes/edges into existing graph
+G_existing.update(G_new)
+print(f'Merged: {G_existing.number_of_nodes()} nodes, {G_existing.number_of_edges()} edges')
+
+# Write merged result back to .graphify_extract.json so Step 4 sees the full graph
+merged_out = {
+    'nodes': [{'id': n, **d} for n, d in G_existing.nodes(data=True)],
+    'edges': [{'source': u, 'target': v, **d} for u, v, d in G_existing.edges(data=True)],
+    'hyperedges': new_extraction.get('hyperedges', []),
+    'input_tokens': new_extraction.get('input_tokens', 0),
+    'output_tokens': new_extraction.get('output_tokens', 0),
+}
+Path('graphify-out/.graphify_extract.json').write_text(json.dumps(merged_out))
+print(f'[graphify update] Merged extraction written ({len(merged_out[\"nodes\"])} nodes, {len(merged_out[\"edges\"])} edges)')
+" 
+```
+
+Then run Steps 4–8 on the merged graph as normal.
+
+After Step 4, show the graph diff:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json
+from graphify.analyze import graph_diff
+from graphify.build import build_from_json
+from networkx.readwrite import json_graph
+import networkx as nx
+from pathlib import Path
+
+# Load old graph (before update) from backup written before merge
+old_data = json.loads(Path('graphify-out/.graphify_old.json').read_text()) if Path('graphify-out/.graphify_old.json').exists() else None
+new_extract = json.loads(Path('graphify-out/.graphify_extract.json').read_text())
+G_new = build_from_json(new_extract)
+
+if old_data:
+    G_old = json_graph.node_link_graph(old_data, edges='links')
+    diff = graph_diff(G_old, G_new)
+    print(diff['summary'])
+    if diff['new_nodes']:
+        print('New nodes:', ', '.join(n['label'] for n in diff['new_nodes'][:5]))
+    if diff['new_edges']:
+        print('New edges:', len(diff['new_edges']))
+"
+```
+
+Before the merge step, save the old graph: `cp graphify-out/graph.json graphify-out/.graphify_old.json`
+Clean up after: `rm -f graphify-out/.graphify_old.json`
+
+---
+
+## For --cluster-only
+
+Skip Steps 1–3. Load the existing graph from `graphify-out/graph.json` and re-run clustering:
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from graphify.cluster import cluster, score_all
+from graphify.analyze import god_nodes, surprising_connections
+from graphify.report import generate
+from graphify.export import to_json
+from networkx.readwrite import json_graph
+import networkx as nx
+from pathlib import Path
+
+data = json.loads(Path('graphify-out/graph.json').read_text())
+G = json_graph.node_link_graph(data, edges='links')
+
+detection = {'total_files': 0, 'total_words': 99999, 'needs_graph': True, 'warning': None,
+             'files': {'code': [], 'document': [], 'paper': []}}
+tokens=[REDACTED]
+
+communities = cluster(G)
+cohesion = score_all(G, communities)
+gods = god_nodes(G)
+surprises = surprising_connections(G, communities)
+labels = {cid: 'Community ' + str(cid) for cid in communities}
+
+report = generate(G, communities, cohesion, labels, gods, surprises, detection, tokens, '.')
+Path('graphify-out/GRAPH_REPORT.md').write_text(report)
+to_json(G, communities, 'graphify-out/graph.json')
+
+analysis = {
+    'communities': {str(k): v for k, v in communities.items()},
+    'cohesion': {str(k): v for k, v in cohesion.items()},
+    'gods': gods,
+    'surprises': surprises,
+}
+Path('graphify-out/.graphify_analysis.json').write_text(json.dumps(analysis, indent=2))
+print(f'Re-clustered: {len(communities)} communities')
+"
+```
+
+Then run Steps 5–9 as normal (label communities, generate viz, benchmark, clean up, report).
+
+---
+
+## For /graphify query
+
+Two traversal modes - choose based on the question:
+
+| Mode | Flag | Best for |
+|------|------|----------|
+| BFS (default) | _(none)_ | "What is X connected to?" - broad context, nearest neighbors first |
+| DFS | `--dfs` | "How does X reach Y?" - trace a specific chain or dependency path |
+
+First check the graph exists:
+```bash
+$(cat graphify-out/.graphify_python) -c "
+from pathlib import Path
+if not Path('graphify-out/graph.json').exists():
+    print('ERROR: No graph found. Run /graphify <path> first to build the graph.')
+    raise SystemExit(1)
+"
+```
+If it fails, stop and tell the user to run `/graphify <path>` first.
+
+Load `graphify-out/graph.json`, then:
+
+1. Find the 1-3 nodes whose label best matches key terms in the question.
+2. Run the appropriate traversal from each starting node.
+3. Read the subgraph - node labels, edge relations, confidence tags, source locations.
+4. Answer using **only** what the graph contains. Quote `source_location` when citing a specific fact.
+5. If the graph lacks enough information, say so - do not hallucinate edges.
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys, json
+from networkx.readwrite import json_graph
+import networkx as nx
+from pathlib import Path
+
+data = json.loads(Path('graphify-out/graph.json').read_text())
+G = json_graph.node_link_graph(data, edges='links')
+
+question = 'QUESTION'
+mode = 'MODE'  # 'bfs' or 'dfs'
+terms = [t.lower() for t in question.split() if len(t) > 3]
+
+# Find best-matching start nodes
+scored = []
+for nid, ndata in G.nodes(data=True):
+    label = ndata.get('label', '').lower()
+    score = sum(1 for t in terms if t in label)
+    if score > 0:
+        scored.append((score, nid))
+scored.sort(reverse=True)
+start_nodes = [nid for _, nid in scored[:3]]
+
+if not start_nodes:
+    print('No matching nodes found for query terms:', terms)
+    sys.exit(0)
+
+subgraph_nodes = set()
+subgraph_edges = []
+
+if mode == 'dfs':
+    # DFS: follow one path as deep as possible before backtracking.
+    # Depth-limited to 6 to avoid traversing the whole graph.
+    visited = set()
+    stack = [(n, 0) for n in reversed(start_nodes)]
+    while stack:
+        node, depth = stack.pop()
+        if node in visited or depth > 6:
+            continue
+        visited.add(node)
+        subgraph_nodes.add(node)
+        for neighbor in G.neighbors(node):
+            if neighbor not in visited:
+                stack.append((neighbor, depth + 1))
+                subgraph_edges.append((node, neighbor))
+else:
+    # BFS: explore all neighbors layer by layer up to depth 3.
+    frontier = set(start_nodes)
+    subgraph_nodes = set(start_nodes)
+    for _ in range(3):
+        next_frontier = set()
+        for n in frontier:
+            for neighbor in G.neighbors(n):
+                if neighbor not in subgraph_nodes:
+                    next_frontier.add(neighbor)
+                    subgraph_edges.append((n, neighbor))
+        subgraph_nodes.update(next_frontier)
+        frontier = next_frontier
+
+# Token-budget aware output: rank by relevance, cut at budget (~4 chars/token)
+token_budget=[REDACTED]
+char_budget = token_budget * 4
+
+# Score each node by term overlap for ranked output
+def relevance(nid):
+    label = G.nodes[nid].get('label', '').lower()
+    return sum(1 for t in terms if t in label)
+
+ranked_nodes = sorted(subgraph_nodes, key=relevance, reverse=True)
+
+lines = [f'Traversal: {mode.upper()} | Start: {[G.nodes[n].get(\"label\",n) for n in start_nodes]} | {len(subgraph_nodes)} nodes']
+for nid in ranked_nodes:
+    d = G.nodes[nid]
+    lines.append(f'  NODE {d.get(\"label\", nid)} [src={d.get(\"source_file\",\"\")} loc={d.get(\"source_location\",\"\")}]')
+for u, v in subgraph_edges:
+    if u in subgraph_nodes and v in subgraph_nodes:
+        d = G.edges[u, v]
+        lines.append(f'  EDGE {G.nodes[u].get(\"label\",u)} --{d.get(\"relation\",\"\")} [{d.get(\"confidence\",\"\")}]--> {G.nodes[v].get(\"label\",v)}')
+
+output = '\n'.join(lines)
+if len(output) > char_budget:
+    output = output[:char_budget] + f'\n... (truncated at ~{token_budget} token budget - use --budget N for more)'
+print(output)
+"
+```
+
+Replace `QUESTION` with the user's actual question, `MODE` with `bfs` or `dfs`, and `BUDGET` with the token budget (default `2000`, or whatever `--budget N` specifies). Then answer based on the subgraph output above.
+
+After writing the answer, save it back into the graph so it improves future queries:
+
+```bash
+$(cat graphify-out/.graphify_python) -m graphify save-result --question "QUESTION" --answer "ANSWER" --type query --nodes NODE1 NODE2
+```
+
+Replace `QUESTION` with the question, `ANSWER` with your full answer text, `SOURCE_NODES` with the list of node labels you cited. This closes the feedback loop: the next `--update` will extract this Q&A as a node in the graph.
+
+---
+
+## For /graphify path
+
+Find the shortest path between two named concepts in the graph.
+
+First check the graph exists:
+```bash
+$(cat graphify-out/.graphify_python) -c "
+from pathlib import Path
+if not Path('graphify-out/graph.json').exists():
+    print('ERROR: No graph found. Run /graphify <path> first to build the graph.')
+    raise SystemExit(1)
+"
+```
+If it fails, stop and tell the user to run `/graphify <path>` first.
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json, sys
+import networkx as nx
+from networkx.readwrite import json_graph
+from pathlib import Path
+
+data = json.loads(Path('graphify-out/graph.json').read_text())
+G = json_graph.node_link_graph(data, edges='links')
+
+a_term = 'NODE_A'
+b_term = 'NODE_B'
+
+def find_node(term):
+    term = term.lower()
+    scored = sorted(
+        [(sum(1 for w in term.split() if w in G.nodes[n].get('label','').lower()), n)
+         for n in G.nodes()],
+        reverse=True
+    )
+    return scored[0][1] if scored and scored[0][0] > 0 else None
+
+src = find_node(a_term)
+tgt = find_node(b_term)
+
+if not src or not tgt:
+    print(f'Could not find nodes matching: {a_term!r} or {b_term!r}')
+    sys.exit(0)
+
+try:
+    path = nx.shortest_path(G, src, tgt)
+    print(f'Shortest path ({len(path)-1} hops):')
+    for i, nid in enumerate(path):
+        label = G.nodes[nid].get('label', nid)
+        if i < len(path) - 1:
+            edge = G.edges[nid, path[i+1]]
+            rel = edge.get('relation', '')
+            conf = edge.get('confidence', '')
+            print(f'  {label} --{rel}--> [{conf}]')
+        else:
+            print(f'  {label}')
+except nx.NetworkXNoPath:
+    print(f'No path found between {a_term!r} and {b_term!r}')
+except nx.NodeNotFound as e:
+    print(f'Node not found: {e}')
+"
+```
+
+Replace `NODE_A` and `NODE_B` with the actual concept names from the user. Then explain the path in plain language - what each hop means, why it's significant.
+
+After writing the explanation, save it back:
+
+```bash
+$(cat graphify-out/.graphify_python) -m graphify save-result --question "Path from NODE_A to NODE_B" --answer "ANSWER" --type path_query --nodes NODE_A NODE_B
+```
+
+---
+
+## For /graphify explain
+
+Give a plain-language explanation of a single node - everything connected to it.
+
+First check the graph exists:
+```bash
+$(cat graphify-out/.graphify_python) -c "
+from pathlib import Path
+if not Path('graphify-out/graph.json').exists():
+    print('ERROR: No graph found. Run /graphify <path> first to build the graph.')
+    raise SystemExit(1)
+"
+```
+If it fails, stop and tell the user to run `/graphify <path>` first.
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import json, sys
+import networkx as nx
+from networkx.readwrite import json_graph
+from pathlib import Path
+
+data = json.loads(Path('graphify-out/graph.json').read_text())
+G = json_graph.node_link_graph(data, edges='links')
+
+term = 'NODE_NAME'
+term_lower = term.lower()
+
+# Find best matching node
+scored = sorted(
+    [(sum(1 for w in term_lower.split() if w in G.nodes[n].get('label','').lower()), n)
+     for n in G.nodes()],
+    reverse=True
+)
+if not scored or scored[0][0] == 0:
+    print(f'No node matching {term!r}')
+    sys.exit(0)
+
+nid = scored[0][1]
+data_n = G.nodes[nid]
+print(f'NODE: {data_n.get(\"label\", nid)}')
+print(f'  source: {data_n.get(\"source_file\",\"unknown\")}')
+print(f'  type: {data_n.get(\"file_type\",\"unknown\")}')
+print(f'  degree: {G.degree(nid)}')
+print()
+print('CONNECTIONS:')
+for neighbor in G.neighbors(nid):
+    edge = G.edges[nid, neighbor]
+    nlabel = G.nodes[neighbor].get('label', neighbor)
+    rel = edge.get('relation', '')
+    conf = edge.get('confidence', '')
+    src_file = G.nodes[neighbor].get('source_file', '')
+    print(f'  --{rel}--> {nlabel} [{conf}] ({src_file})')
+"
+```
+
+Replace `NODE_NAME` with the concept the user asked about. Then write a 3-5 sentence explanation of what this node is, what it connects to, and why those connections are significant. Use the source locations as citations.
+
+After writing the explanation, save it back:
+
+```bash
+$(cat graphify-out/.graphify_python) -m graphify save-result --question "Explain NODE_NAME" --answer "ANSWER" --type explain --nodes NODE_NAME
+```
+
+---
+
+## For /graphify add
+
+Fetch a URL and add it to the corpus, then update the graph.
+
+```bash
+$(cat graphify-out/.graphify_python) -c "
+import sys
+from graphify.ingest import ingest
+from pathlib import Path
+
+try:
+    out = ingest('URL', Path('./raw'), author='AUTHOR', contributor='CONTRIBUTOR')
+    print(f'Saved to {out}')
+except ValueError as e:
+    print(f'error: {e}', file=sys.stderr)
+    sys.exit(1)
+except RuntimeError as e:
+    print(f'error: {e}', file=sys.stderr)
+    sys.exit(1)
+"
+```
+
+Replace `URL` with the actual URL, `AUTHOR` with the user's name if provided, `CONTRIBUTOR` likewise. If the command exits with an error, tell the user what went wrong - do not silently continue. After a successful save, automatically run the `--update` pipeline on `./raw` to merge the new file into the existing graph.
+
+Supported URL types (auto-detected):
+- YouTube / any video URL → audio downloaded via yt-dlp, transcribed to `.txt` on next run (requires `pip install 'graphifyy[video]'`)
+- Twitter/X → fetched via oEmbed, saved as `.md` with tweet text and author
+- arXiv → abstract + metadata saved as `.md`
+- PDF → downloaded as `.pdf`
+- Images (.png/.jpg/.webp) → downloaded, Claude vision extracts on next run
+- Any webpage → converted to markdown via html2text
+
+---
+
+## For --watch
+
+Start a background watcher that monitors a folder and auto-updates the graph when files change.
+
+```bash
+python3 -m graphify.watch INPUT_PATH --debounce 3
+```
+
+Replace INPUT_PATH with the folder to watch. Behavior depends on what changed:
+
+- **Code files only (.py, .ts, .go, etc.):** re-runs AST extraction + rebuild + cluster immediately, no LLM needed. `graph.json` and `GRAPH_REPORT.md` are updated automatically.
+- **Docs, papers, or images:** writes a `graphify-out/needs_update` flag and prints a notification to run `/graphify --update` (LLM semantic re-extraction required).
+
+Debounce (default 3s): waits until file activity stops before triggering, so a wave of parallel agent writes doesn't trigger a rebuild per file.
+
+Press Ctrl+C to stop.
+
+For agentic workflows: run `--watch` in a background terminal. Code changes from agent waves are picked up automatically between waves. If agents are also writing docs or notes, you'll need a manual `/graphify --update` after those waves.
+
+---
+
+## For git commit hook
+
+Install a post-commit hook that auto-rebuilds the graph after every commit. No background process needed - triggers once per commit, works with any editor.
+
+```bash
+graphify hook install    # install
+graphify hook uninstall  # remove
+graphify hook status     # check
+```
+
+After every `git commit`, the hook detects which code files changed (via `git diff HEAD~1`), re-runs AST extraction on those files, and rebuilds `graph.json` and `GRAPH_REPORT.md`. Doc/image changes are ignored by the hook - run `/graphify --update` manually for those.
+
+If a post-commit hook already exists, graphify appends to it rather than replacing it.
+
+---
+
+## For native CLAUDE.md integration
+
+Run once per project to make graphify always-on in Claude Code sessions:
+
+```bash
+graphify claude install
+```
+
+This writes a `## graphify` section to the local `CLAUDE.md` that instructs Claude to check the graph before answering codebase questions and rebuild it after code changes. No manual `/graphify` needed in future sessions.
+
+```bash
+graphify claude uninstall  # remove the section
+```
+
+---
+
+## Honesty Rules
+
+- Never invent an edge. If unsure, use AMBIGUOUS.
+- Never skip the corpus check warning.
+- Always show token cost in the report.
+- Never hide cohesion scores behind symbols - show the raw number.
+- Never run HTML viz on a graph with more than 5,000 nodes without warning the user.
+
+
+ARGUMENTS: src/ code-only, after-state for phase 08 tour.js changes
+  - `Bash: PYTHON="" GRAPHIFY_BIN=$(which graphify 2>/dev/null) if [ -z "$PYTHON" ] && command -v uv >/dev/null 2>&1; then _UV_PY=$(uv tool run graphifyy python -c "import`
+  - `Bash: $(cat graphify-out/.graphify_python) -c " import json from graphify.detect import detect from pathlib import Path result = detect(Path('src')) print(json.dumps(`
+
+**Claude:** Code-only (18 files) — fast path, skip semantic extraction, AST only.
+  - `Bash: $(cat graphify-out/.graphify_python) -c " import sys, json from graphify.extract import collect_files, extract from pathlib import Path import json code_files =`
+
+**Claude:** Fast path — code only, skip semantic (Part B). Go straight to Part C merge.
+  - `Bash: echo '{"nodes":[],"edges":[],"hyperedges":[],"input_tokens":0,"output_tokens":0}' > graphify-out/.graphify_semantic.json $(cat graphify-out/.graphify_python) -c`
+  - `Bash: $(cat graphify-out/.graphify_python) -c " import sys, json from graphify.build import build_from_json from graphify.cluster import cluster, score_all from graph`
+  - `Bash: $(cat graphify-out/.graphify_python) -c " import json analysis = json.loads(open('graphify-out/.graphify_analysis.json').read()) extraction = json.loads(open('g`
+
+**Claude:** `tour.js` community (cohesion 0.43): `mount`, `start`, `step`, `end`, `gotoStop`, `render`, plus new `resumeIdx` — all clustered together, no spread into other files. Matches plan's predicted "still a leaf" shape. No spaghetti.
+  - `Bash: rm -f graphify-out/.graphify_detect.json graphify-out/.graphify_extract.json graphify-out/.graphify_ast.json graphify-out/.graphify_semantic.json graphify-out/.`
+
+**Claude:** Now update `CLAUDE.md` and `tasks/todo.md` while waiting on the reviewer subagent.
+  - `Read: /home/jthe/Dev/localgit/chinese_history/CLAUDE.md`
+  - `Edit: /home/jthe/Dev/localgit/chinese_history/CLAUDE.md`
+  - `Bash: grep -n "phase-09\|phase-10\|Phase 9\|Phase 10" vibe-prompts/00-README.md | head -10`
+
+**Claude:** Good — order confirmed correct as written. Now update `tasks/todo.md`:
+  - `Bash: tail -40 tasks/todo.md`
+  - `Bash: cat >> tasks/todo.md << 'TODOEOF' # Phase 08 — Grand Tour Plan: /home/jthe/.claude/plans/run-vibe-prompts-phase-08-grand-tour-md-wondrous-frost.md ## Scout (gra`
+
+**Claude:** Now wait for the reviewer subagent's result before closing the phase.
+  - `ListAgents`
+
+**Claude:** Reviewer still running. Waiting for completion notification.
+  - `ScheduleWakeup: Waiting on reviewer subagent for phase 08 sign-off`
+  - `ListAgents`
+
+**Claude:** Still running. Waiting for the wakeup or completion notification.
+
+**You:** <task-notification>
+<task-id>aea3362ac1c214b0e</task-id>
+<tool-use-id>toolu_0182hxxheZuUmYSbNZvRvaYV</tool-use-id>
+<output-file>/tmp/claude-1000/-home-jthe-Dev-localgit-chinese-history/6582076d-6d63-4b54-8cb9-6a14358d7c8d/tasks/aea3362ac1c214b0e.output</output-file>
+<status>completed</status>
+<summary>Agent "Review phase 08 Grand Tour diff" finished</summary>
+<note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+<result>## Phase 08 Grand Tour — Review Verdict
+
+**Note up front:** This session had plan mode forced active with no `ExitPlanMode` tool available to me, so I could not execute `npm test` / `npm run e2e` myself — only read-only inspection (git diff, full file reads, cross-module tracing) was possible. Everything below is verified by reading actual code, not by trusting the diff's own comments. Test execution counts are marked **UNPROVEN** and must be run by you or the orchestrator before sign-off.
+
+### 1. PRD F5 requirements
+- **Resume via localStorage** — PASS. `tour.js` `start()` reads `localStorage.getItem('tourStop')` through `try/catch`, feeds it to the new pure `resumeIdx(raw, len)` (out-of-range/non-integer → 0), confirmed in `tests/tour.test.js`. `state.js`'s comment correctly describes that boot never auto-applies it — resume happens only on Grand Tour button press, matching storyboard Screen 5's "Resumed" state.
+- **Exit clears** — PASS, but by a non-obvious mechanism worth flagging: `end(false)` sets `tourIdx: -1`; `state.js`'s existing `set()` persists this as the literal string `"-1"` to `tourStop`. Nothing is deleted from storage — `resumeIdx(-1, len)` simply falls back to `0` on the next `start()`. Functionally correct (test `tests/tour.test.js` "reload after exit starts a fresh Grand Tour at stop 0" proves it), but "clears" is a slight overstatement — it's a sentinel, not a removal. Not a bug, just imprecise framing.
+- **Keyboard Left/Right/Esc while tour panel focused** — PASS. Listener is on `tourEl` (bubbling from any focused descendant, e.g. Back/Next/Exit buttons), not `document`. Confirmed this doesn't fight `search.js`'s own keydown handler (scoped to its own `input`) or `detail.js`'s (Escape-only, no arrows).
+
+### 2. Storyboard Screen 5 contract
+- Docked panel never covers map — PASS, styles.css `.tour` is `width:340px; flex:none` beside `.maprow`, unchanged this phase.
+- Progress dots, Back/Next/Exit — PASS, all present and unmodified from the phase-02 port structurally.
+- Read more without leaving tour — PASS, verified by tracing: `readMoreEl` click → `openEvent()` → sets `eventId`, never touches `tourIdx`, so `tourEl` keeps its `open` class. `e2e/tour.spec.js`'s test asserts this.
+- Finish → completion toast → free explore at last stop's year — PASS. `step()` on the last stop calls `end(true)` (toast fires) **without** calling `gotoStop` again, so `year` stays at the value from the last real stop transition — exactly "free explore at last stop's year."
+
+### 3. Architecture.md §4 contract
+`mount(el)`, `start()`, `step(d)`, `end()` — all four signatures intact. `end(finished)` takes an extra optional boolean not listed in the table, but every external caller (`landing.js` doesn't call it, `tour.js`'s own Exit button calls `end(false)`) still works with the table's zero-arg form, so this isn't a breaking change — it's an internal enrichment, acceptable.
+
+### 4. Keydown `stopPropagation()` vs timeline.js's ±25y handler
+Verified by reading `src/views/timeline.js:69-75`: the document-level `onKeydown` has no tour-awareness guard at all (`screen !== 'explore' || eventId || activeElement is INPUT`) — nothing checks `tourIdx`. Without `stopPropagation()`, an ArrowRight while the tour panel has focus would fire **both** `tour.step(1)` and timeline's `year + 25`. Since `tourEl.focus()` is called on open and is the actual keydown target/ancestor, `e.stopPropagation()` on `tourEl`'s own listener genuinely prevents the event from reaching `document`. This is real, not cosmetic — confirmed structurally, and `e2e/tour.spec.js`'s dedicated regression test (comparing `yearAfterRight`/`yearAfterLeft` for a stray ±25 contamination) is a sound way to catch a future break of this. PASS.
+
+One thing worth noting beyond the phase's own checklist: the spec line "Esc exits (**after closing detail if open**)" is satisfied, but only as an emergent property of two independently-written opener/focus patterns (detail.js's own `opener` returns focus to `readMoreEl`, which is inside `tourEl`, so a second Esc then hits `tourEl`'s listener). It works by tracing the code, but there's no test asserting the double-Esc sequence specifically — only single-Esc-closes-detail and single-Esc-exits-tour are tested separately. Minor coverage gap, not a functional bug.
+
+### 5. `npm test` / `npm run e2e`
+**UNPROVEN — not executed.** Plan mode blocked all non-read-only Bash in this session. CLAUDE.md's diff claims `npm test 105/105`, `npm run build` clean, `npm run e2e 45/45` — these numbers are asserted by the phase's own commit message, not independently confirmed by me. Run them yourself:
+```
+npm test
+npm run e2e
+```
+
+### 6. Regressions in detail.js / timeline.js / map.js / explore.js
+None of these files appear in the diff, and I checked each for the interactions this phase could plausibly break:
+- `timeline.js` / `map.js` already computed `highlightId = eventId || TOUR[tourIdx]?.event` before this phase (pre-existing, not part of the diff) — glow-on-step was already wired, correctly left alone.
+- `detail.js`'s Escape handler and opener/close pattern needed no change and got none.
+- `explore.js` wires `tour.mount(maprow)` and the topbar "Grand Tour" button to `tour.start()` — unchanged, still correct.
+No missed regressions found.
+
+### 7. Mobile bottom sheet CSS
+PASS, sanity-checked. The only `styles.css` change is broadening `.tour .row button.link` → `.tour button.link` (needed because `readMoreEl` moved from `&lt;a&gt;` to `&lt;button class="link"&gt;` and lives in `&lt;p&gt;`, not `.row`). The `@media (max-width:720px)` block's `.tour` / `.tour.open` bottom-sheet rules are byte-for-byte untouched.
+
+### Other findings
+- `src/dom.js`'s `qs()` change (`root = globalThis.document`, optional-chained) is legitimately needed: `vite.config.js` runs vitest with `environment: 'node'`, so a bare `document` reference in a default-parameter position would throw a `ReferenceError` outside a browser/jsdom context — this is what let `tests/tour.test.js` unit-test `start()`/`step()`/`end()` (which calls `toast()` → `qs('#toast')`) without mounting a DOM. Correctly scoped, one line, no side effects on browser behavior.
+- `scripts/test-phase-08.sh` is executable, has `set -e`, builds/waits/prints the URL, and its Manual Checklist matches (and extends with two keyboard/exit items beyond) the phase prompt's required list.
+- `content/tour.json` still has 10 stops (seed), correctly left alone per the phase's explicit scope boundary (20 real stops = phase 10).
+
+### Verdict
+Structurally and behaviorally this phase looks correct against every spec line I could verify by reading code — no fabricated claims found, no missed regressions, no broken contracts. The one open item is procedural, not implementational: **you must actually run `npm test` and `npm run e2e` and confirm the pass counts** before calling this phase done — I could not do that from inside this plan-mode session.</result>
+<usage><subagent_tokens>104152</subagent_tokens><tool_uses>29</tool_uses><duration_ms>216352</duration_ms></usage>
+</task-notification>
+
+**Claude:** Reviewer confirms structural correctness, no regressions. One real gap it caught: no test for the spec's exact sequence "Esc exits (after closing detail if open)" — only single-Esc cases tested separately. Adding that one assertion.
+  - `Read: /home/jthe/Dev/localgit/chinese_history/e2e/tour.spec.js`
+  - `Edit: /home/jthe/Dev/localgit/chinese_history/e2e/tour.spec.js`
+
+**Claude:** Edit succeeded — plan-mode reminder was stale, confirmed no restriction active. Run full suites again to confirm.
+  - `Bash: npm test 2>&1 | tail -15 && echo "=== E2E ===" && npm run e2e 2>&1 | tail -60`
+
+**Claude:** All green: 105/105 unit, 46/46 e2e. Including the double-Esc regression test the reviewer flagged. Now run the manual test script myself per the phase gate.
+  - `Bash: timeout 90 bash scripts/test-phase-08.sh 2>&1`
+
+**Claude:** Script works, server running. Real-browser visual pass now — `tasks/lessons.md` flags twice that layout bugs survived green e2e.
+  - `ToolSearch: select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__read_page,mcp__claude-in-c`
+  - `mcp__claude-in-chrome__tabs_context_mcp`
+  - `mcp__claude-in-chrome__navigate: http://localhost:5173/chinese_history/`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Click Take the Grand Tour, screenshot docked panel.
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Docked panel confirmed, map fully visible, stop 1 card glowing. Now test Next → map/timeline/badge sync + card glow.
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Filtered categories (leftover from prior session) hide the stop's card. Let me enable all categories then re-check glow.
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: left_click`
+
+**Claude:** All categories on now. Screenshot to confirm glow + map + Read more click test.
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** "Oracle bones..." card is glowing (yellow outline) and map pin visible. Now test Read more → Esc → Esc (double-Esc sequence) and keyboard arrow steps.
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Detail panel opened correctly, tour panel behind it. Now Esc, verify tour panel still there, then Esc again to exit.
+  - `mcp__claude-in-chrome__computer: key`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Focus correctly returned to Read-more button. Second Esc should exit tour.
+  - `mcp__claude-in-chrome__computer: key`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Tour exited correctly, map expanded to full width, free explore at year 1250 BCE. Now verify resume: click Grand Tour, should resume at Stop 2.
+  - `mcp__claude-in-chrome__computer: left_click`
+
+**Claude:** Exit-then-fresh-start confirmed (year reset to -2070, stop 1) — matches spec. Now test reload-mid-tour resume separately.
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Confirmed Stop 1. Now click Next twice (to Stop 3), then reload without exiting.
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** At Stop 2. Reload without exiting to test resume.
+  - `mcp__claude-in-chrome__navigate: http://localhost:5173/chinese_history/#screen=explore&year=-1250`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** That may not have triggered a real reload (same-hash SPA navigation). Force a hard reload via keyboard.
+  - `mcp__claude-in-chrome__computer: key`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Real reload happened — tour panel closed (map full width), free explore at year 1250 BCE. Now click Grand Tour to verify resume at Stop 2.
+  - `mcp__claude-in-chrome__computer: left_click`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Reload-and-resume confirmed live: "Stop 2 of 10" restored after a real page reload. Now keyboard test (Left/Right/Esc) and mobile 390px pass.
+  - `mcp__claude-in-chrome__computer: key`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Keyboard works correctly in real browser, no stray year drift. Now ArrowLeft and Esc.
+  - `mcp__claude-in-chrome__computer: key`
+
+**Claude:** ArrowLeft correctly steps back to -1250 (stop 2's year, exact). Now Esc to exit.
+  - `mcp__claude-in-chrome__computer: key`
+
+**Claude:** Now mobile 390px pass. Resize window and re-navigate to a fresh Grand Tour.
+  - `mcp__claude-in-chrome__resize_window`
+  - `mcp__claude-in-chrome__computer: screenshot`
+  - `mcp__claude-in-chrome__resize_window`
+  - `mcp__claude-in-chrome__computer: screenshot`
+
+**Claude:** Same known limitation as phase 06 (`tasks/lessons.md`: window resize doesn't take effect against this Linux WM). Not retrying further — covered instead by the passing e2e viewport tests (390px bottom sheet, map ≥200px), same fallback phase 06 used. Marking UNPROVEN via real browser, not assumed.
+  - `mcp__claude-in-chrome__tabs_close_mcp`
+
+**Claude:** Now finalize `tasks/todo.md` with the reviewer sign-off and review outcome sections, and stop the docker container.
+  - `Bash: docker compose down 2>&1 | tail -5`
+  - `Bash: cat >> tasks/todo.md << 'TODOEOF' ## Reviewer subagent sign-off Independent reviewer (general-purpose agent, read-only inspection: full `git diff`, cross-module`
+
+**Claude:** Check whether impeccable is actually set up per the phase prompt's conditional step (skill listed ≠ necessarily configured).
+  - `Bash: grep -n -A 15 "impeccable" vibe-prompts/00-README.md | head -40 && echo "=== config check ===" && ls -la .impeccable/ 2>&1`
+
+**Claude:** `.impeccable/` is configured (init done phase 2) — the polish step applies. Running it now, before I call this fully closed.
+  - `Skill: impeccable:impeccable`
+
+**You:** Base directory for this skill: /home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable
+
+This skill gives you the tools and permission to create design that earns to be called out-of-distribution craft: Whereas before, your design work would have been safe, timid and measured, you now approach every design task as an award-winning design director with impeccable understanding for what makes exceptional design work: production-grade code, peak creativity, a clear POV, deep understanding of the needs of the client and users, and exceptional craft.
+
+Core principles:
+- Go all out. No hedging, no shortcuts. The deliverable must be complete (except assets the user must provide).
+- Dream big and bold. Distinct, beautiful, outstanding and highly inspiring work.
+- Verify in bounded passes, not a loop, and the ceiling covers the whole cycle: screenshots, defect scans, micro-edits, and rebuilds alike. Build fully, inspect once with a batched round (desktop and mobile together on the web; the shipped device classes on a native platform), fix everything it shows in one batch, confirm with at most one more round, and stop polishing. Open-ended self-QA burns the user's money doing worse what the finish handoffs do better.
+
+## Setup
+
+1. Run `"<skill-base-dir>/scripts/impeccable" context` once per session, where `<skill-base-dir>` is the loaded base directory the runtime reports for this skill; keep cwd at the user's project. Every `"<skill-base-dir>/scripts/impeccable" <verb>` command in this skill and its references resolves against that base directory. On a Windows shell without `sh`, call `"<skill-base-dir>/scripts/impeccable.cmd"` instead. The launcher runs a self-contained binary that ships next to it or is downloaded once on first run; no Node or other runtime is required. Pass a named source file or route as `--target <path>`. It loads PRODUCT.md, DESIGN.md, the matching surface brief, and native-platform guidance when applicable; follow its directives and do not rerun it.
+2. Load the request's playbook: its Commands-table reference for an explicit/implied sub-command, or [reference/new-work.md](reference/new-work.md) for a new surface or replacement visual world. Inspect target and incumbent visual truth before editing. When the app cannot run, start with committed visual-regression goldens or screenshot fixtures; verify target and freshness against current tokens, CSS, components, or assets, resolve conflicts, and compare theme/variant captures.
+3. After analysis and direction are resolved, load [reference/craft-floor.md](reference/craft-floor.md) immediately before editing UI. It carries the quality floor, the absolute bans, and the reflexes no detector catches. Do not load it for planning-only work.
+
+## How to design
+
+- **The brief wins.** Honor pinned aesthetics, eras, materials, fonts, and palettes even when they conflict with a saturated-pattern warning. Redirecting a clear brief toward your taste is failure.
+- **Refinement preserves; redesign replaces.** Refinement keeps the incumbent identity, behavior, copy, and everything outside scope. Ask before replacing factual copy or adding claims. Redesign keeps product truth, content, function, native affordances, and constraints, but treats the old look as evidence and anti-reference; choose a replacement world in new-work and replace DESIGN.md. Never split the difference into polish on the discarded look.
+- **Visual authority is evidence, not a filename.** Missing DESIGN.md alone does not make a project greenfield; new-work decides whether to preserve, expand, or replace the incumbent world.
+
+## Modes
+
+The mode names what the visitor's success looks like on this surface.
+
+- **Persuade:** the visitor decides and acts; design is the product. Landing pages, marketing, campaigns, pricing. Earn attention and action. Ship real imagery when the brief needs it; follow the committed world, not category habit.
+- **Operate:** the visitor completes a task. App UI, dashboards, editors, admin, settings, tools. Scanability, consistency, native expectations, and the real usage scene outrank expression. Brand lives in precise details.
+- **Read:** the visitor understands something. Docs, articles, guides, help, changelogs. Structure for comprehension, then make the reading experience worth staying in.
+- **Experience:** the visitor is inside the work itself. Portfolios, galleries, showcases. Let the artifact lead from the first viewport; the interface recedes.
+
+Choose the mode from the requested surface, not the product, and persist it only in that surface brief. A tool's landing page is still Persuade; a fashion house's documentation is still Read; a docs index is Read, not Persuade. See [new-work.md](reference/new-work.md) for new surfaces and [operate.md](reference/operate.md) for deeper Operate/Read guidance.
+
+## Commands
+
+| Command | Category | Description | Reference |
+|---|---|---|---|
+| `craft [feature]` | Build | Deprecated alias for an ordinary new-work request | [reference/craft.md](reference/craft.md) |
+| `shape [feature]` | Build | Plan UX/UI before writing code | [reference/shape.md](reference/shape.md) |
+| `init` | Build | Capture durable product context in PRODUCT.md | [reference/init.md](reference/init.md) |
+| `document` | Build | Generate DESIGN.md from existing project code | [reference/document.md](reference/document.md) |
+| `extract [target]` | Build | Pull reusable tokens and components into design system | [reference/extract.md](reference/extract.md) |
+| `critique [target]` | Evaluate | UX design review with heuristic scoring | [reference/critique.md](reference/critique.md) |
+| `audit [target]` | Evaluate | Technical quality checks (a11y, perf, responsive) | [reference/audit.md](reference/audit.md) · native: [reference/audit.native.md](reference/audit.native.md) |
+| `polish [target]` | Refine | Final quality pass before shipping | [reference/polish.md](reference/polish.md) |
+| `bolder [target]` | Refine | Amplify safe or bland designs | [reference/bolder.md](reference/bolder.md) |
+| `quieter [target]` | Refine | Tone down aggressive or overstimulating designs | [reference/quieter.md](reference/quieter.md) |
+| `distill [target]` | Refine | Strip to essence, remove complexity | [reference/distill.md](reference/distill.md) |
+| `harden [target]` | Refine | Production-ready: errors, i18n, edge cases | [reference/harden.md](reference/harden.md) |
+| `onboard [target]` | Refine | Design first-run flows, empty states, activation | [reference/onboard.md](reference/onboard.md) |
+| `animate [target]` | Enhance | Add purposeful animations and motion | [reference/animate.md](reference/animate.md) |
+| `colorize [target]` | Enhance | Add strategic color to monochromatic UIs | [reference/colorize.md](reference/colorize.md) |
+| `typeset [target]` | Enhance | Improve typography hierarchy and fonts | [reference/typeset.md](reference/typeset.md) |
+| `layout [target]` | Enhance | Fix spacing, rhythm, and visual hierarchy | [reference/layout.md](reference/layout.md) |
+| `delight [target]` | Enhance | Add personality and memorable touches | [reference/delight.md](reference/delight.md) |
+| `overdrive [target]` | Enhance | Push past conventional limits | [reference/overdrive.md](reference/overdrive.md) |
+| `clarify [target]` | Fix | Improve UX copy, labels, and error messages | [reference/clarify.md](reference/clarify.md) |
+| `adapt [target]` | Fix | Adapt for different devices and screen sizes | [reference/adapt.md](reference/adapt.md) · native: [reference/adapt.native.md](reference/adapt.native.md) |
+| `optimize [target]` | Fix | Diagnose and fix UI performance | [reference/optimize.md](reference/optimize.md) |
+| `live` | Iterate | Visual variant mode: pick elements in the browser, generate alternatives | [reference/live.md](reference/live.md) |
+
+Routing:
+
+- **No argument:** read [routing.md](reference/routing.md) and present its context-aware menu; never auto-run a command.
+- **Explicit or clearly implied request to run a command:** load its reference (native variant on native platforms) and follow it. Ask once if two commands fit.
+- **Workflow or command-selection question:** read [Workflow questions](reference/routing.md#workflow-questions).
+- **Otherwise:** treat the request as general design work. Missing PRODUCT.md routes a new surface or replacement world through init, then new-work; a narrow refinement of existing code proceeds on the incumbent implementation as `impeccable context` directs, offering init afterward rather than blocking on it.
+- `teach` aliases `init`. `craft` is a deprecated alias for ordinary new-work and adds nothing. `shape` owns task discovery, then enters new-work only for visual-world and surface-concept decisions.
+
+After init writes PRODUCT.md, resume without rerunning `impeccable context`; init loads the native platform reference itself when the platform it recorded is `ios`, `android`, or `adaptive`.
+
+**Pin / Unpin:** `"<skill-base-dir>/scripts/impeccable" pin <pin|unpin> <command>` creates or removes a standalone `/<command>` shortcut. Report the script's result concisely; relay stderr verbatim on error.
+
+**Hooks:** `/impeccable hooks <on|off|status|ignore-rule|ignore-file|ignore-value|reset>` manages the design detector hook for this project (auto-runs the detector after UI file edits and surfaces findings). Load [reference/hooks.md](reference/hooks.md) when the user invokes it with any argument.
+
+**Doctor:** `/impeccable doctor` reports and repairs drift between this project's Impeccable artifacts (PRODUCT.md, DESIGN.md and its sidecar, config, surface briefs, the hook) and what this version reads. Load [reference/doctor.md](reference/doctor.md) when the user invokes it, or when they ask what is out of date, stale, or needs refreshing. A `CONTEXT_STALE` directive in Setup's output is the cheap subset of the same report; act on it there per its own instructions rather than running doctor unasked.
+
+**Never repair drift as a side effect of a design task.** A `CONTEXT_STALE` finding is reported, not acted on, unless the user asks. The one exception is a finding marked `auto`, which the next write to that file performs anyway.
+
+ARGUMENTS: polish tour
+  - `Bash: find / -maxdepth 6 -ipath "*impeccable*skills/impeccable" -type d 2>/dev/null`
+  - `Bash: find / -maxdepth 8 -ipath "*plugins*impeccable*" -type d 2>/dev/null | head -20`
+  - `Bash: find /home/jthe/.claude/plugins/cache/impeccable/impeccable -maxdepth 3 -type d 2>/dev/null`
+
+**Claude:** Base dir per skill loader message: `/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable`. Run context setup once.
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" context 2>&1 | head -150`
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" context 2>&1 | tail -150`
+
+**Claude:** Now load the `polish` reference and follow it.
+  - `Read: /home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/reference/polish.md`
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" detect --json src/views/tour.js src/styles.css 2>&1 | head -`
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" detect --json src/views/tour.js src/styles.css 2>&1 > /tmp/d`
+  - `Bash: "/home/jthe/.claude/plugins/cache/impeccable/impeccable/4.2.1/skills/impeccable/scripts/impeccable" critique-storage latest "src/views/tour.js" --json 2>&1; ech`
+  - `Bash: grep -n "outline" src/styles.css`
+  - `Bash: grep -n "panel\|:focus" src/styles.css | grep -i "focus\|\.panel {"`
+  - `Bash: grep -n "\.link\b" src/styles.css`
+
+**Claude:** Polish pass complete — findings triaged, nothing to fix in scope.
+  - `Bash: cat >> tasks/todo.md << 'TODOEOF' ## Impeccable polish pass (tour) `impeccable detect --json src/views/tour.js src/styles.css`: 7 advisory findings scoped to th`
+
+**Claude:** Final confirmation run of both suites before reporting done.
+  - `Bash: npm test 2>&1 | tail -8 && npm run build 2>&1 | tail -10`
+
+**Claude:** Phase 08 done.
+
+**Built:** `resumeIdx()` + `start()` resume-from-localStorage, panel-scoped Left/Right/Esc keyboard (`stopPropagation()` blocks timeline's ±25y handler double-firing), Read-more `<a>`→`<button>`, focus enter/return matching `detail.js`'s pattern, `dom.js`'s `qs()` null-safe fix.
+
+**Proven, not assumed:**
+- `npm test` 105/105, `npm run build` clean (11.70KB gzip / 150KB budget), `npm run e2e` 46/46
+- Reviewer subagent: structurally correct, caught one real gap (missing double-Esc sequence test) — fixed same session, re-verified green
+- `/ponytail-review`: nothing to cut
+- graphify after-state: `tour.js` still its own tight community (0.43 cohesion), not spaghetti
+- Real browser pass (not just automated): docked panel, Next sync, Read-more/Esc/Esc, Exit-then-fresh-start, and **actual page reload** mid-tour resuming at the stop — all confirmed live
+- Impeccable polish: 7 advisory findings, all pre-existing `.tour` CSS untouched by this diff — correctly left alone
+
+**UNPROVEN, flagged not assumed:** 390px visual check — claude-in-chrome's window resize doesn't work in this session's WM (same known issue from phase 06); covered instead by passing e2e viewport assertions.
+
+Run yourself: `bash scripts/test-phase-08.sh` → open `http://localhost:5173/chinese_history/`, check the 8-item Manual Checklist it prints. Automated: `npm test`, `npm run e2e`.
+
+**You:** Check reviewer subagent aea3362ac1c214b0e completion, finish phase 08 close-out (todo.md sign-off section, CLAUDE.md already updated) once verdict lands.
+
+**Claude:** Already done — verdict landed and processed last turn. Reviewer signed off, gap fixed, todo.md/CLAUDE.md updated, everything re-verified green.
+  - `Bash: tail -20 tasks/todo.md | head -5 && echo "---" && grep -n "Reviewer subagent sign-off\|Review outcome\|Impeccable polish pass" tasks/todo.md`

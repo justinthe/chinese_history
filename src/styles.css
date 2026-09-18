@@ -237,7 +237,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .tour p { margin: 0 0 12px; line-height: 1.5; font-size: 15px; }
 .tour .row { display: flex; gap: 8px; align-items: center; }
 .tour .row .spacer { flex: 1; }
-.tour .row button.link { background: transparent; color: #d8c7a8; text-decoration: underline; font-size: 13px; }
+.tour button.link { background: transparent; color: #d8c7a8; text-decoration: underline; font-size: 13px; }
 .tour .guide { font-size: 40px; float: left; margin: -4px 12px 0 -4px; }
 
 /* ---------- ABOUT ---------- */

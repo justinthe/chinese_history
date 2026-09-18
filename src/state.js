@@ -109,9 +109,10 @@ export function subscribe(fn) {
   return () => subscribers.delete(fn);
 }
 
-// ponytail: stored tourStop is readable via localStorage but not auto-applied
-// on boot — resuming the tour panel itself is storyboard Screen 5 (phase 08).
-// Applying it here would silently reopen the tour on every visit.
+// tourStop is readable via localStorage but not auto-applied on boot —
+// tour.js's start() reads it (storyboard Screen 5 "Resumed" state: resume
+// happens when Grand Tour is pressed, not on page load). Applying it here
+// would silently reopen the tour on every visit.
 if (typeof window !== 'undefined') {
   window.addEventListener('hashchange', () => set(fromHash()));
 }

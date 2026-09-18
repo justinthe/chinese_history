@@ -9,8 +9,8 @@ export function el(tag, cls, text) {
   return e;
 }
 
-export function qs(sel, root = document) {
-  return root.querySelector(sel);
+export function qs(sel, root = globalThis.document) {
+  return root?.querySelector(sel);
 }
 
 /** Picks dark or light text for a hex background (WCAG-ish luminance threshold). */

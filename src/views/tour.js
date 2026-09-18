@@ -7,23 +7,27 @@ import { el, toast } from '../dom.js';
 import { open as openEvent } from './detail.js';
 
 let tourEl, dotsEl, titleEl, smallEl, textEl, readMoreEl, nextBtn;
+let opener = null; // element to return focus to on close, same pattern as detail.js
 
 export function mount(root) {
   tourEl = el('div', 'tour');
+  tourEl.tabIndex = -1;
+  tourEl.setAttribute('role', 'region');
+  tourEl.setAttribute('aria-label', 'Grand Tour');
 
   dotsEl = el('div', 'dots');
+  dotsEl.setAttribute('aria-hidden', 'true'); // "Stop N of X" text below carries the same info
   const guide = el('span', 'guide', '🐼');
   const h3 = el('h3');
   titleEl = document.createTextNode('');
   smallEl = el('small');
   h3.append(titleEl, smallEl);
   const p = el('p');
+  p.setAttribute('aria-live', 'polite');
   textEl = document.createTextNode('');
-  readMoreEl = el('a', null, 'Read more →');
-  readMoreEl.href = '#';
+  readMoreEl = el('button', 'link', 'Read more →');
   readMoreEl.style.color = 'var(--gold)';
-  readMoreEl.addEventListener('click', (e) => {
-    e.preventDefault();
+  readMoreEl.addEventListener('click', () => {
     const stop = TOUR[get().tourIdx];
     if (stop) openEvent(stop.event);
   });
@@ -42,6 +46,17 @@ export function mount(root) {
   tourEl.append(dotsEl, guide, h3, p, row);
   root.append(tourEl);
 
+  // Left/Right step, Esc exits — only while focus is inside the tour panel.
+  // stopPropagation keeps timeline.js's document-level ±25y arrow handler
+  // from also firing on the same keypress.
+  tourEl.addEventListener('keydown', (e) => {
+    const k = e.key;
+    if (k !== 'ArrowRight' && k !== 'ArrowLeft' && k !== 'Escape') return;
+    e.stopPropagation();
+    if (k === 'Escape') end(false);
+    else step(k === 'ArrowRight' ? 1 : -1);
+  });
+
   const unsubscribe = subscribe(render);
   render();
   return unsubscribe;
@@ -53,8 +68,19 @@ function gotoStop(idx) {
   set({ tourIdx: idx, year: ev.year, eventId: null });
 }
 
+/** Stop to resume at: stored index if in range, else 0. Pure. */
+export function resumeIdx(raw, len) {
+  return Number.isInteger(raw) && raw >= 0 && raw < len ? raw : 0;
+}
+
 export function start() {
-  gotoStop(0);
+  let stored = NaN;
+  try {
+    stored = parseInt(localStorage.getItem('tourStop'), 10);
+  } catch {
+    // storage unavailable (private mode, quota, SSR) — resumeIdx falls back to 0
+  }
+  gotoStop(resumeIdx(stored, TOUR.length));
 }
 
 export function step(d) {
@@ -73,7 +99,11 @@ function render() {
   if (!tourEl) return;
   const { tourIdx } = get();
   if (tourIdx < 0) {
-    tourEl.classList.remove('open');
+    if (tourEl.classList.contains('open')) {
+      tourEl.classList.remove('open');
+      if (opener?.isConnected) opener.focus();
+      opener = null;
+    }
     return;
   }
   const stop = TOUR[tourIdx];
@@ -87,5 +117,9 @@ function render() {
   textEl.textContent = stop.text;
   nextBtn.textContent = tourIdx === TOUR.length - 1 ? 'Finish 🎉' : 'Next →';
 
-  tourEl.classList.add('open');
+  if (!tourEl.classList.contains('open')) {
+    opener = document.activeElement;
+    tourEl.classList.add('open');
+    tourEl.focus();
+  }
 }

@@ -11,13 +11,56 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   `tests/lanes.test.js`, `tests/timeline-zoom.test.js`, `tests/tween.test.js`,
   `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
   `tests/detail-render.test.js`, `tests/search.test.js`,
-  `tests/chips.test.js`), `npm run e2e` (playwright:
+  `tests/chips.test.js`, `tests/tour.test.js`), `npm run e2e` (playwright:
   `e2e/smoke.spec.js`, `e2e/shell.spec.js`, `e2e/timeline.spec.js`,
-  `e2e/map.spec.js`, `e2e/detail.spec.js`, `e2e/search.spec.js`; builds +
-  previews first). Manual check: `scripts/test-phase-07.sh` (runs
-  `node scripts/validate.mjs` too; `scripts/test-phase-04.sh` through
-  `-06.sh` still work for their own screens).
-- Current phase: Phase 7 complete — search, category filter, Meanwhile
+  `e2e/map.spec.js`, `e2e/detail.spec.js`, `e2e/search.spec.js`,
+  `e2e/tour.spec.js`; builds + previews first). Manual check:
+  `scripts/test-phase-08.sh` (runs `node scripts/validate.mjs` too;
+  `scripts/test-phase-04.sh` through `-07.sh` still work for their own
+  screens).
+- Current phase: Phase 8 complete — Grand Tour finished per PRD F5.
+  `src/views/tour.js` was already most of the way there from its phase-02
+  port (docked panel that never covers the map, progress dots, Back/Next/
+  Exit, Read more, Finish toast, `gotoStop()` driving `year`); downstream
+  glue was already live too (`timeline.js`/`map.js` both compute
+  `highlightId = eventId || TOUR[tourIdx]?.event` so the stop's card/pin
+  already glowed, map morph and timeline auto-scroll already worked). This
+  phase closed the real gaps: **resume** — new pure `resumeIdx(raw, len)`
+  (out-of-range/non-integer → 0) plus `start()` reading `localStorage`'s
+  `tourStop` (`state.js`'s phase-08 `ponytail:` deferral note is now
+  resolved — `tour.js` owns the read, state.js still never auto-applies it
+  on boot, matching storyboard Screen 5's "Resumed" state: resume happens on
+  the Grand Tour button press, not on page load). **Exit clears** needed no
+  new code — `state.js` already persists `tourStop` on every
+  `set({tourIdx})`, so `end()`'s `tourIdx: -1` writes `"-1"`, which
+  `resumeIdx` maps back to `0`; verified by test rather than assumed.
+  **Keyboard** — Left/Right/Esc wired on `tourEl` itself (not `document`),
+  with `e.stopPropagation()` so `timeline.js`'s document-level ±25y arrow
+  handler can't double-fire on the same keypress (the one real cross-module
+  hazard this phase touched; regression-tested in `e2e/tour.spec.js`).
+  **a11y** — "Read more" changed from `<a href="#">` to a real `<button>`;
+  focus now enters the panel on open and returns to the opener on close,
+  mirroring `detail.js`'s existing `opener`/`isConnected` pattern (not a
+  focus *trap* — the tour is non-modal, Tab must still reach the timeline);
+  added `role="region"`/`aria-label` on the panel, `aria-live="polite"` on
+  the narration, `aria-hidden` on the decorative dots. One supporting fix:
+  `dom.js`'s `qs()` now defaults to `globalThis.document` and optional-
+  chains the call, so `toast()` (used by `end(true)`'s completion message)
+  doesn't throw under vitest's `environment: 'node'` — this is what made
+  `start()`/`step()`/`end()` unit-testable without mounting DOM.
+  `/ponytail-review` found nothing to cut — the diff mirrors `detail.js`'s
+  existing patterns rather than inventing new ones. `npm test` 105/105,
+  `npm run build` clean (JS gzip 11.70KB vs PRD §8's 150KB budget),
+  `npm run e2e` 45/45. graphify's after-state run (code-only, `src/`, no
+  LLM cost) confirmed `tour.js` still clusters as its own tight community
+  (cohesion 0.43: `mount`/`start`/`step`/`end`/`gotoStop`/`render`, plus the
+  new pure `resumeIdx` landing in the same community rather than spreading)
+  — the intended shape, not spaghetti.
+  Out of scope, left for phase 10: writing the real 20 tour stops —
+  `content/tour.json` keeps its 10-stop seed.
+  Ready for Phase 9 (content/images pipeline) or Phase 10 (real content),
+  per vibe-prompts/00-README.md's run order.
+- Phase 7 complete — search, category filter, Meanwhile
   strip finished per PRD F6/F7. Most of the surface already worked from the
   phase-02 mock port (chips wired to state/localStorage/URL and obeyed by
   `timeline.js`/`map.js`'s `eventsIn(eraId, cats)`; the Meanwhile strip
