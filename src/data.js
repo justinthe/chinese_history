@@ -15,6 +15,8 @@ export const CATS = {
   other: { label: 'Big news', icon: '📰', color: '#f08a5d' },
 };
 
+import { fold, parseYear } from './lib/normalize.js';
+
 export let ERAS = [];
 export let EVENTS = [];
 export let TOUR = [];
@@ -69,19 +71,19 @@ export function eventsIn(eraId, cats) {
   return EVENTS.filter((e) => (eraId === null || e.era === eraId) && cats.has(e.category));
 }
 
-/** Up to 6 hits: events by title/hanzi/pinyin, plus a year-jump hit per era containing that year. */
+/**
+ * Up to 6 hits: events by title/hanzi/pinyin (diacritic- and case-insensitive),
+ * plus a year-jump hit per era containing that year ("221 BCE" / "-221" / "1368").
+ */
 export function search(q) {
-  const query = q.trim().toLowerCase();
+  const query = fold(q.trim());
   if (!query) return [];
   const hits = EVENTS.filter(
-    (ev) =>
-      ev.title.toLowerCase().includes(query) ||
-      ev.hanzi.toLowerCase().includes(query) ||
-      ev.pinyin.toLowerCase().includes(query)
+    (ev) => fold(ev.title).includes(query) || fold(ev.hanzi).includes(query) || fold(ev.pinyin).includes(query)
   ).map((ev) => ({ id: ev.id, label: ev.title, icon: ev.icon }));
 
-  const yr = parseInt(query, 10);
-  if (!Number.isNaN(yr)) {
+  const yr = parseYear(query);
+  if (yr !== null) {
     ERAS.filter((er) => yr >= er.start && yr < er.end).forEach((er) => {
       hits.push({ id: null, year: yr, label: `Jump to ${fmtYear(yr)} (${er.name})`, icon: '📍' });
     });

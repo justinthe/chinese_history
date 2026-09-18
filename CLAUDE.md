@@ -10,12 +10,43 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   `tests/state.test.js`, `tests/data.test.js`, `tests/validate.test.js`,
   `tests/lanes.test.js`, `tests/timeline-zoom.test.js`, `tests/tween.test.js`,
   `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
-  `tests/detail-render.test.js`), `npm run e2e` (playwright:
+  `tests/detail-render.test.js`, `tests/search.test.js`,
+  `tests/chips.test.js`), `npm run e2e` (playwright:
   `e2e/smoke.spec.js`, `e2e/shell.spec.js`, `e2e/timeline.spec.js`,
-  `e2e/map.spec.js`, `e2e/detail.spec.js`; builds + previews first). Manual
-  check: `scripts/test-phase-06.sh` (runs `node scripts/validate.mjs` too;
-  `scripts/test-phase-04.sh`/`-05.sh` still work for their own screens).
-- Current phase: Phase 6 complete — event detail panel finished per PRD F4.
+  `e2e/map.spec.js`, `e2e/detail.spec.js`, `e2e/search.spec.js`; builds +
+  previews first). Manual check: `scripts/test-phase-07.sh` (runs
+  `node scripts/validate.mjs` too; `scripts/test-phase-04.sh` through
+  `-06.sh` still work for their own screens).
+- Current phase: Phase 7 complete — search, category filter, Meanwhile
+  strip finished per PRD F6/F7. Most of the surface already worked from the
+  phase-02 mock port (chips wired to state/localStorage/URL and obeyed by
+  `timeline.js`/`map.js`'s `eventsIn(eraId, cats)`; the Meanwhile strip
+  already read `WORLD[era.id]` per playhead move) — this phase closed the
+  real gaps. New `src/lib/normalize.js` (pure, unit-tested): `fold()`
+  (NFD-strip-marks-lowercase) makes `data.search()` diacritic-insensitive on
+  pinyin ("Qin Shihuang" now finds 秦始皇's toned `Qín Shǐhuáng`);
+  `parseYear()` replaces a bare `parseInt` so `'221 BCE'`/`'221 BC'` parse
+  to `-221` (previously only bare `-221` worked, and `'221 BCE'` silently
+  landed on the wrong side of year zero). Chips (`renderChips`/`toggleCat`,
+  now the pure exported `nextCats(cats, k)`) moved from `explore.js` into
+  `search.js` to match architecture.md §2's "filter chips + search box"
+  module ownership — confirmed with the user before moving working code;
+  `explore.js` is now a thin shell (graphify's after-pass shows it dropped
+  to a near-isolated 1-2-edge leaf, chips genuinely gone rather than
+  duplicated). The search dropdown gained real keyboard access: `role`
+  combobox/listbox/option ARIA wiring, `aria-activedescendant`, Down/Up
+  wrap-around, Enter picks the active (or first) row, Esc clears — was
+  click-only before except Esc. `search.js`'s `mount()` cleanup now also
+  unsubscribes the chips listener (tasks/lessons.md's "every mount() that
+  subscribes must return cleanup" rule). `npm test` 96/96, `npm run build`
+  clean (JS gzip 11.51KB vs PRD §8's 150KB budget), `npm run e2e` 37/37.
+  `/ponytail-review` cut one dead unused const (`ALL_CATS` in `search.js`,
+  never read). graphify's before/after run (code-only, `src/`, no LLM cost)
+  confirmed the intended shape: `search.js` clusters as its own tight
+  community (`mount`+`nextCats`, cohesion 0.50) and `normalize.js` groups
+  with `data.js` as its only consumer — no spaghetti.
+  Ready for Phase 8 (Grand Tour).
+- Phase 6 complete — event detail panel finished per PRD F4.
   `src/views/detail.js` was already most of the way there from its phase-02
   port (badges, title, hanzi/pinyin, body, why-it-matters, related chips,
   Esc/×/scrim-click, the `#event=<id>` hash round-trip from phase 03); this
