@@ -1,0 +1,71 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "mockup.html"
+        ],
+        "createdAt": "2026-09-18T06:04:34.241Z",
+        "reason": "Claude decided: user picked 'playful illustrated' warm style in interview; cream paper is the chosen palette"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "mockup.html"
+        ],
+        "createdAt": "2026-09-18T06:04:34.246Z",
+        "reason": "Claude decided: remaining 3px top/bottom borders are section dividers on topbar/timeline, not card accent tabs; card side-tabs were removed"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "mockup.html"
+        ],
+        "createdAt": "2026-09-18T06:04:34.251Z",
+        "reason": "Claude decided: remaining red-on-cream hits are h1 (76px) and 20px bold logo, large text where 3:1 applies; body-text contrast issues were fixed"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "mockup.html"
+        ],
+        "createdAt": "2026-09-18T06:04:34.257Z",
+        "reason": "Claude decided: 'timeline' is a scroll-layout container whose children are absolutely positioned; 'meanwhile' strip got 8px padding"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-18T06:57:03.715Z",
+        "reason": "pre-existing --paper design token (#fff7e8) from architecture.md/mockup.html, approved in Phase 0 (vibe-pipeline-state.md, 2026-09-18) — not a reflexive AI choice"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-09-18T07:24:06.379Z",
+        "reason": "Agent: ported verbatim from approved mockup.html, already adjudicated as section dividers not accent tabs (see mockup.html ignoreValues, same reasoning)"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "src/styles.css"
+        ],
+        "createdAt": "2026-09-18T07:24:06.385Z",
+        "reason": "Agent: ported verbatim from approved mockup.html's .timeline/.tour border-top dividers; same design already approved in mockup.html"
+      }
+    ]
+  }
+}

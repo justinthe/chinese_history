@@ -1,0 +1,652 @@
+[
+  {
+    "id": "yu",
+    "title": "Yu the Great tames the floods",
+    "hanzi": "大禹治水",
+    "pinyin": "Dà Yǔ zhì shuǐ",
+    "year": -2070,
+    "era": "xia",
+    "category": "nature",
+    "icon": "🌊",
+    "body": [
+      "Legend says the Yellow River flooded for years. Yu, instead of building dams like his father, dug channels to guide the water to sea. It took 13 years; he passed his own house three times without going in.",
+      "His reward: the throne, and the founding of the Xia dynasty. Whether Yu existed is debated. That the story shaped how China thinks about rulers and rivers is not."
+    ],
+    "whyItMatters": "The first Chinese story about what a good ruler does: fix the river.",
+    "xy": [
+      350,
+      180
+    ],
+    "related": [
+      "oracle",
+      "canal"
+    ],
+    "legendary": true
+  },
+  {
+    "id": "oracle",
+    "title": "Oracle bones: first Chinese writing",
+    "hanzi": "甲骨文",
+    "pinyin": "jiǎgǔwén",
+    "year": -1250,
+    "era": "shang",
+    "category": "tech",
+    "icon": "🐢",
+    "body": [
+      "Shang kings asked ancestors questions by carving them on turtle shells and ox bones, heating them, and reading the cracks. Will the harvest be good? Will the queen give birth safely?",
+      "Over 150,000 pieces survived. The characters are ancestors of the ones used today."
+    ],
+    "whyItMatters": "Chinese script is the oldest writing system still in use. It starts here.",
+    "xy": [
+      360,
+      190
+    ],
+    "related": [
+      "yu",
+      "paper"
+    ]
+  },
+  {
+    "id": "confucius",
+    "title": "Confucius is born",
+    "hanzi": "孔子",
+    "pinyin": "Kǒngzǐ",
+    "year": -551,
+    "era": "zhou",
+    "category": "people",
+    "icon": "🧙",
+    "body": [
+      "A minor official who never got the job he wanted. He spent his life teaching that good government comes from good people: respect your parents, do your duty, lead by example.",
+      "Nobody listened much while he lived. For the next 2,000 years, his ideas became the exam every official had to pass."
+    ],
+    "whyItMatters": "Confucianism is the operating system of East Asian culture.",
+    "xy": [
+      400,
+      200
+    ],
+    "related": [
+      "suntzu",
+      "qin"
+    ]
+  },
+  {
+    "id": "suntzu",
+    "title": "Sun Tzu writes The Art of War",
+    "hanzi": "孙子兵法",
+    "pinyin": "Sūnzǐ Bīngfǎ",
+    "year": -500,
+    "era": "zhou",
+    "category": "war",
+    "icon": "📕",
+    "body": [
+      "Thirteen short chapters on winning without fighting, knowing your enemy, and using terrain. Written during the Warring States, when everyone was fighting everyone.",
+      "Still assigned at West Point and in business schools."
+    ],
+    "whyItMatters": "The most-read military book in history, and it argues the best battle is the one you avoid.",
+    "xy": [
+      420,
+      260
+    ],
+    "related": [
+      "confucius",
+      "redcliffs"
+    ]
+  },
+  {
+    "id": "qin",
+    "title": "Qin Shi Huang unifies China",
+    "hanzi": "秦始皇",
+    "pinyin": "Qín Shǐhuáng",
+    "year": -221,
+    "era": "qin",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "The king of Qin conquers the last rival state and invents a new title: Huangdi, emperor. He standardises writing, coins, weights, even axle widths so carts fit the same ruts.",
+      "He also burns books, buries scholars, and dies searching for an elixir of immortality. His dynasty lasts 15 years. His idea of one China lasts 2,200."
+    ],
+    "whyItMatters": "The word \"China\" comes from Qin. So does the idea that China should be one country.",
+    "xy": [
+      255,
+      235
+    ],
+    "related": [
+      "wall",
+      "terracotta",
+      "confucius"
+    ]
+  },
+  {
+    "id": "wall",
+    "title": "Great Wall linked together",
+    "hanzi": "长城",
+    "pinyin": "Chángchéng",
+    "year": -214,
+    "era": "qin",
+    "category": "tech",
+    "icon": "🧱",
+    "body": [
+      "Existing walls from the Warring States are joined into a single barrier against northern nomads. Built of rammed earth by conscripts, hundreds of thousands die.",
+      "The stone wall tourists visit is Ming, 1,600 years later. The Qin wall is mostly gone."
+    ],
+    "whyItMatters": "Defines the northern edge of \"China\" for two millennia.",
+    "xy": [
+      330,
+      140
+    ],
+    "related": [
+      "qin",
+      "mongols"
+    ]
+  },
+  {
+    "id": "terracotta",
+    "title": "Terracotta Army buried",
+    "hanzi": "兵马俑",
+    "pinyin": "bīngmǎyǒng",
+    "year": -210,
+    "era": "qin",
+    "category": "other",
+    "icon": "🗿",
+    "body": [
+      "8,000 life-size clay soldiers, each with a different face, buried to guard the First Emperor in death. Found by farmers digging a well in 1974.",
+      "The tomb itself remains unopened. Ancient texts describe rivers of mercury inside. Soil tests show high mercury."
+    ],
+    "whyItMatters": "Best snapshot we have of a Qin army, down to the shoe treads.",
+    "xy": [
+      325,
+      255
+    ],
+    "related": [
+      "qin"
+    ]
+  },
+  {
+    "id": "silkroad",
+    "title": "Silk Road opens",
+    "hanzi": "丝绸之路",
+    "pinyin": "Sīchóu zhī Lù",
+    "year": -130,
+    "era": "han",
+    "category": "other",
+    "icon": "🐫",
+    "body": [
+      "Envoy Zhang Qian is sent west to find allies against the Xiongnu. He is captured for 10 years, escapes, and comes back with maps and stories of Central Asia.",
+      "Trade routes follow. Silk goes west; horses, grapes, and Buddhism come east."
+    ],
+    "whyItMatters": "First sustained link between China and the Mediterranean world.",
+    "xy": [
+      180,
+      190
+    ],
+    "related": [
+      "paper",
+      "zhenghe"
+    ]
+  },
+  {
+    "id": "paper",
+    "title": "Cai Lun invents paper",
+    "hanzi": "蔡伦",
+    "pinyin": "Cài Lún",
+    "year": 105,
+    "era": "han",
+    "category": "tech",
+    "icon": "📄",
+    "body": [
+      "A court eunuch mashes tree bark, hemp, rags and fishing nets into a pulp, spreads it thin, dries it. Cheap, light, writeable.",
+      "Paper takes 1,000 years to reach Europe via the Arab world."
+    ],
+    "whyItMatters": "Every book, banknote and exam paper for the next two millennia.",
+    "xy": [
+      310,
+      215
+    ],
+    "related": [
+      "oracle",
+      "printing"
+    ]
+  },
+  {
+    "id": "redcliffs",
+    "title": "Battle of Red Cliffs",
+    "hanzi": "赤壁之战",
+    "pinyin": "Chìbì zhī Zhàn",
+    "year": 208,
+    "era": "three",
+    "category": "war",
+    "icon": "🔥",
+    "body": [
+      "Warlord Cao Cao brings a huge northern army south to unify China. Two smaller rivals ally, chain his ships together with a fake defection, and set them on fire.",
+      "The defeat splits China into three kingdoms for 60 years. The story became Romance of the Three Kingdoms, the most-loved novel in Chinese."
+    ],
+    "whyItMatters": "Proof that a smaller, smarter force can beat a bigger one. China has told this story for 1,800 years.",
+    "xy": [
+      380,
+      280
+    ],
+    "related": [
+      "suntzu"
+    ]
+  },
+  {
+    "id": "canal",
+    "title": "Grand Canal completed",
+    "hanzi": "大运河",
+    "pinyin": "Dà Yùnhé",
+    "year": 605,
+    "era": "sui",
+    "category": "tech",
+    "icon": "🚣",
+    "body": [
+      "Emperor Yang links rivers into a 1,700 km canal joining the rice-rich south to the political north. Millions of forced labourers, huge death toll.",
+      "The dynasty collapses under the cost. The canal runs for 1,400 years and is still used."
+    ],
+    "whyItMatters": "Longest canal in the world. Fed every capital city after it.",
+    "xy": [
+      400,
+      230
+    ],
+    "related": [
+      "yu",
+      "threegorges"
+    ]
+  },
+  {
+    "id": "wuzetian",
+    "title": "Wu Zetian becomes emperor",
+    "hanzi": "武则天",
+    "pinyin": "Wǔ Zétiān",
+    "year": 690,
+    "era": "tang",
+    "category": "people",
+    "icon": "👸",
+    "body": [
+      "A concubine who became empress, then regent, then, at 66, declared herself emperor of her own dynasty. The only woman ever to hold the title.",
+      "Ruthless to rivals, competent at governing. She expanded the exam system and promoted talent over birth."
+    ],
+    "whyItMatters": "One woman broke the biggest glass ceiling in world history. Traditional historians hated her for it.",
+    "xy": [
+      300,
+      210
+    ],
+    "related": [
+      "confucius",
+      "gunpowder"
+    ]
+  },
+  {
+    "id": "gunpowder",
+    "title": "Gunpowder recorded",
+    "hanzi": "火药",
+    "pinyin": "huǒyào",
+    "year": 850,
+    "era": "tang",
+    "category": "tech",
+    "icon": "🧨",
+    "body": [
+      "Taoist alchemists looking for immortality mix saltpetre, sulphur and charcoal. A text warns it burned their hands and faces and burned down the house.",
+      "Used first for fireworks, then fire arrows, then bombs, then guns. Reaches Europe by the 1300s."
+    ],
+    "whyItMatters": "Immortality search produces the thing that ends knights and castles.",
+    "xy": [
+      320,
+      200
+    ],
+    "related": [
+      "wuzetian",
+      "printing",
+      "mongols"
+    ]
+  },
+  {
+    "id": "printing",
+    "title": "Bi Sheng invents movable type",
+    "hanzi": "活字印刷",
+    "pinyin": "huózì yìnshuā",
+    "year": 1040,
+    "era": "song",
+    "category": "tech",
+    "icon": "🖨️",
+    "body": [
+      "A commoner carves individual characters in clay, arranges them in a frame, prints, then reuses them. 400 years before Gutenberg.",
+      "It never fully replaces woodblock printing in China. Thousands of characters make sorting the type slow."
+    ],
+    "whyItMatters": "Song China printed more books than the rest of the world combined.",
+    "xy": [
+      360,
+      220
+    ],
+    "related": [
+      "paper",
+      "gunpowder"
+    ]
+  },
+  {
+    "id": "mongols",
+    "title": "Mongols conquer all of China",
+    "hanzi": "忽必烈",
+    "pinyin": "Hūbìliè (Kublai Khan)",
+    "year": 1279,
+    "era": "yuan",
+    "category": "war",
+    "icon": "🏹",
+    "body": [
+      "After 70 years of war, Kublai Khan, grandson of Genghis, destroys the last Song fleet at Yamen. The boy emperor is carried into the sea by a minister.",
+      "Kublai rules as a Chinese emperor from Beijing. Marco Polo visits and is not believed back home."
+    ],
+    "whyItMatters": "First time all of China is ruled by outsiders. Largest land empire ever.",
+    "xy": [
+      380,
+      340
+    ],
+    "related": [
+      "wall",
+      "gunpowder",
+      "zhenghe"
+    ]
+  },
+  {
+    "id": "zhenghe",
+    "title": "Zheng He sails to Africa",
+    "hanzi": "郑和下西洋",
+    "pinyin": "Zhèng Hé xià Xīyáng",
+    "year": 1405,
+    "era": "ming",
+    "category": "other",
+    "icon": "⛵",
+    "body": [
+      "A Muslim eunuch admiral leads 300 ships and 28,000 men to India, Arabia and East Africa. Brings back a giraffe.",
+      "Seven voyages, then the court bans them and burns the records. China turns inward as Europe turns out."
+    ],
+    "whyItMatters": "The great what-if of world history. China could have reached Europe first.",
+    "xy": [
+      430,
+      340
+    ],
+    "related": [
+      "silkroad",
+      "mongols",
+      "forbidden"
+    ]
+  },
+  {
+    "id": "forbidden",
+    "title": "Forbidden City completed",
+    "hanzi": "紫禁城",
+    "pinyin": "Zǐjìnchéng",
+    "year": 1420,
+    "era": "ming",
+    "category": "dynasty",
+    "icon": "🏯",
+    "body": [
+      "Yongle Emperor moves the capital to Beijing and builds 980 buildings on 72 hectares. Commoners forbidden to enter.",
+      "24 emperors rule from here until 1912. Now the most-visited museum in the world."
+    ],
+    "whyItMatters": "Physical centre of Chinese power for 500 years.",
+    "xy": [
+      400,
+      170
+    ],
+    "related": [
+      "zhenghe",
+      "shaanxi"
+    ]
+  },
+  {
+    "id": "shaanxi",
+    "title": "Shaanxi earthquake",
+    "hanzi": "嘉靖大地震",
+    "pinyin": "Jiājìng dà dìzhèn",
+    "year": 1556,
+    "era": "ming",
+    "category": "nature",
+    "icon": "🌋",
+    "body": [
+      "Around 830,000 people die in one night, the deadliest earthquake in recorded history. Most lived in yaodong, homes dug into loess cliffs, which collapsed.",
+      "A scholar who survived wrote the first earthquake safety advice: do not run outside immediately."
+    ],
+    "whyItMatters": "Deadliest earthquake ever. Changed how northern China built houses.",
+    "xy": [
+      290,
+      200
+    ],
+    "related": [
+      "forbidden",
+      "floods1931"
+    ]
+  },
+  {
+    "id": "opium",
+    "title": "First Opium War",
+    "hanzi": "鸦片战争",
+    "pinyin": "Yāpiàn Zhànzhēng",
+    "year": 1839,
+    "era": "qing",
+    "category": "war",
+    "icon": "💊",
+    "body": [
+      "Britain sells Indian opium to China to pay for tea. China bans it and destroys 1,000 tons. Britain sends gunboats.",
+      "China loses, cedes Hong Kong, opens ports. First of the \"unequal treaties\"."
+    ],
+    "whyItMatters": "Start of what China calls the Century of Humiliation. Still shapes foreign policy today.",
+    "xy": [
+      420,
+      360
+    ],
+    "related": [
+      "taiping",
+      "revolution"
+    ]
+  },
+  {
+    "id": "taiping",
+    "title": "Taiping Rebellion",
+    "hanzi": "太平天国",
+    "pinyin": "Tàipíng Tiānguó",
+    "year": 1850,
+    "era": "qing",
+    "category": "war",
+    "icon": "✝️",
+    "body": [
+      "A failed exam candidate declares himself the younger brother of Jesus and founds a Heavenly Kingdom. 14 years of civil war.",
+      "Death toll estimated 20 to 30 million, the deadliest civil war in history."
+    ],
+    "whyItMatters": "Bloodiest war of the 19th century, and few outside China have heard of it.",
+    "xy": [
+      400,
+      300
+    ],
+    "related": [
+      "opium",
+      "revolution"
+    ]
+  },
+  {
+    "id": "revolution",
+    "title": "Xinhai Revolution ends 2,000 years of emperors",
+    "hanzi": "辛亥革命",
+    "pinyin": "Xīnhài Gémìng",
+    "year": 1911,
+    "era": "roc",
+    "category": "dynasty",
+    "icon": "🎌",
+    "body": [
+      "An accidental bomb explosion in Wuhan triggers a mutiny. Provinces declare independence one by one. The 6-year-old Last Emperor abdicates.",
+      "Sun Yat-sen becomes first president of the Republic of China. Warlords take over within years."
+    ],
+    "whyItMatters": "End of imperial China. Beginning of a 40-year fight over what replaces it.",
+    "xy": [
+      380,
+      280
+    ],
+    "related": [
+      "taiping",
+      "prc"
+    ]
+  },
+  {
+    "id": "floods1931",
+    "title": "1931 China floods",
+    "hanzi": "江淮水灾",
+    "pinyin": "Jiāng-Huái shuǐzāi",
+    "year": 1931,
+    "era": "roc",
+    "category": "nature",
+    "icon": "🌧️",
+    "body": [
+      "Yangtze, Huai and Yellow rivers all flood after two years of drought then record rain. An area the size of England goes underwater.",
+      "Deaths estimated between 400,000 and 4 million counting disease and famine. Possibly the deadliest natural disaster ever."
+    ],
+    "whyItMatters": "Shows why every Chinese government since Yu the Great has obsessed over rivers.",
+    "xy": [
+      390,
+      290
+    ],
+    "related": [
+      "yu",
+      "shaanxi",
+      "threegorges"
+    ]
+  },
+  {
+    "id": "prc",
+    "title": "People's Republic founded",
+    "hanzi": "中华人民共和国",
+    "pinyin": "Zhōnghuá Rénmín Gònghéguó",
+    "year": 1949,
+    "era": "prc",
+    "category": "dynasty",
+    "icon": "🚩",
+    "body": [
+      "Mao Zedong proclaims the PRC from Tiananmen Gate after the Communists win the civil war. Chiang Kai-shek's Nationalists retreat to Taiwan.",
+      "Land reform, literacy campaigns, and one-party rule follow."
+    ],
+    "whyItMatters": "The state that exists today. Taiwan question dates from this moment.",
+    "xy": [
+      400,
+      170
+    ],
+    "related": [
+      "revolution",
+      "famine",
+      "reform"
+    ]
+  },
+  {
+    "id": "famine",
+    "title": "Great Leap Forward famine",
+    "hanzi": "大跃进",
+    "pinyin": "Dà Yuèjìn",
+    "year": 1959,
+    "era": "prc",
+    "category": "other",
+    "icon": "🌾",
+    "body": [
+      "Mao orders rapid industrialisation: backyard steel furnaces, giant collective farms, inflated harvest reports. Grain is exported while villages starve.",
+      "Deaths estimated 15 to 45 million, 1959 to 1961. Largest famine in history."
+    ],
+    "whyItMatters": "Deadliest policy failure of the 20th century. Rarely discussed openly in China.",
+    "xy": [
+      340,
+      240
+    ],
+    "related": [
+      "prc",
+      "cultural"
+    ]
+  },
+  {
+    "id": "cultural",
+    "title": "Cultural Revolution begins",
+    "hanzi": "文化大革命",
+    "pinyin": "Wénhuà Dà Gémìng",
+    "year": 1966,
+    "era": "prc",
+    "category": "other",
+    "icon": "📕",
+    "body": [
+      "Mao mobilises students as Red Guards to attack \"old\" culture and his rivals. Schools close, temples are smashed, millions are persecuted.",
+      "Ends with Mao's death in 1976. Deaths estimated 500,000 to 2 million. Officially called a catastrophe by the Party in 1981."
+    ],
+    "whyItMatters": "A lost decade that the reform era was a reaction against.",
+    "xy": [
+      400,
+      170
+    ],
+    "related": [
+      "famine",
+      "reform"
+    ]
+  },
+  {
+    "id": "reform",
+    "title": "Reform and Opening begins",
+    "hanzi": "改革开放",
+    "pinyin": "Gǎigé Kāifàng",
+    "year": 1978,
+    "era": "prc",
+    "category": "dynasty",
+    "icon": "📈",
+    "body": [
+      "Deng Xiaoping allows farmers to keep surplus, opens Special Economic Zones like Shenzhen to foreign investment. \"It doesn't matter if a cat is black or white, as long as it catches mice.\"",
+      "800 million people lifted out of poverty over 40 years, the fastest in history."
+    ],
+    "whyItMatters": "The single biggest economic transformation any country has had.",
+    "xy": [
+      430,
+      360
+    ],
+    "related": [
+      "cultural",
+      "tiananmen",
+      "threegorges"
+    ]
+  },
+  {
+    "id": "tiananmen",
+    "title": "Tiananmen Square protests",
+    "hanzi": "六四事件",
+    "pinyin": "Liù-Sì Shìjiàn",
+    "year": 1989,
+    "era": "prc",
+    "category": "other",
+    "icon": "🕯️",
+    "body": [
+      "Students occupy the square for seven weeks demanding political reform and an end to corruption. On June 3–4 the army clears Beijing with tanks and live fire.",
+      "Death toll unknown. Estimates range from several hundred to over a thousand. Discussion remains censored in mainland China."
+    ],
+    "whyItMatters": "Set the terms of modern China: economic freedom, political control.",
+    "xy": [
+      400,
+      170
+    ],
+    "related": [
+      "reform"
+    ]
+  },
+  {
+    "id": "threegorges",
+    "title": "Three Gorges Dam completed",
+    "hanzi": "三峡大坝",
+    "pinyin": "Sānxiá Dàbà",
+    "year": 2006,
+    "era": "prc",
+    "category": "tech",
+    "icon": "🏗️",
+    "body": [
+      "The largest power station on Earth spans the Yangtze. 1.3 million people relocated, 13 cities submerged.",
+      "Generates as much as 15 nuclear plants and controls the floods that killed millions in 1931."
+    ],
+    "whyItMatters": "Yu the Great's job, finished 4,000 years later with concrete.",
+    "xy": [
+      350,
+      290
+    ],
+    "related": [
+      "yu",
+      "canal",
+      "floods1931"
+    ]
+  }
+]

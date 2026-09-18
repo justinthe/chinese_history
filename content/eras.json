@@ -1,0 +1,213 @@
+[
+  {
+    "id": "xia",
+    "name": "Xia",
+    "hanzi": "夏",
+    "start": -2070,
+    "end": -1600,
+    "color": "#9b59b6",
+    "capital": "Erlitou (?)",
+    "capitalXY": [
+      340,
+      205
+    ],
+    "shape": "xia",
+    "oneLiner": "Legendary first dynasty. Archaeology says: something was here.",
+    "legendary": true
+  },
+  {
+    "id": "shang",
+    "name": "Shang",
+    "hanzi": "商",
+    "start": -1600,
+    "end": -1046,
+    "color": "#8e6e3f",
+    "capital": "Yin (Anyang)",
+    "capitalXY": [
+      355,
+      195
+    ],
+    "shape": "shang",
+    "oneLiner": "Bronze, oracle bones, and the first Chinese writing."
+  },
+  {
+    "id": "zhou",
+    "name": "Zhou",
+    "hanzi": "周",
+    "start": -1046,
+    "end": -256,
+    "color": "#3fa67a",
+    "capital": "Haojing → Luoyi",
+    "capitalXY": [
+      300,
+      215
+    ],
+    "shape": "zhou",
+    "oneLiner": "Longest dynasty. Confucius, Laozi, and endless warring states."
+  },
+  {
+    "id": "qin",
+    "name": "Qin",
+    "hanzi": "秦",
+    "start": -221,
+    "end": -206,
+    "color": "#e4493f",
+    "capital": "Xianyang",
+    "capitalXY": [
+      295,
+      205
+    ],
+    "shape": "qin",
+    "oneLiner": "First unified empire. Short, brutal, foundational."
+  },
+  {
+    "id": "han",
+    "name": "Han",
+    "hanzi": "汉",
+    "start": -206,
+    "end": 220,
+    "color": "#f4b942",
+    "capital": "Chang'an → Luoyang",
+    "capitalXY": [
+      300,
+      210
+    ],
+    "shape": "han",
+    "oneLiner": "Golden age. Silk Road, paper, and the name Chinese people still use."
+  },
+  {
+    "id": "three",
+    "name": "Three Kingdoms",
+    "hanzi": "三国",
+    "start": 220,
+    "end": 589,
+    "color": "#7f8c8d",
+    "capital": "Various",
+    "capitalXY": [
+      330,
+      220
+    ],
+    "shape": "three",
+    "oneLiner": "Civil war era, later the most famous novel in China."
+  },
+  {
+    "id": "sui",
+    "name": "Sui",
+    "hanzi": "隋",
+    "start": 589,
+    "end": 618,
+    "color": "#e67e22",
+    "capital": "Chang'an",
+    "capitalXY": [
+      300,
+      210
+    ],
+    "shape": "sui",
+    "oneLiner": "Reunification and the Grand Canal. Burned out fast."
+  },
+  {
+    "id": "tang",
+    "name": "Tang",
+    "hanzi": "唐",
+    "start": 618,
+    "end": 907,
+    "color": "#e4493f",
+    "capital": "Chang'an",
+    "capitalXY": [
+      300,
+      210
+    ],
+    "shape": "tang",
+    "oneLiner": "Cosmopolitan superpower. Poetry, Buddhism, a female emperor."
+  },
+  {
+    "id": "song",
+    "name": "Song",
+    "hanzi": "宋",
+    "start": 960,
+    "end": 1279,
+    "color": "#58a6e0",
+    "capital": "Kaifeng → Hangzhou",
+    "capitalXY": [
+      350,
+      215
+    ],
+    "shape": "song",
+    "oneLiner": "Economic and tech miracle. Lost the north, kept inventing."
+  },
+  {
+    "id": "yuan",
+    "name": "Yuan",
+    "hanzi": "元",
+    "start": 1279,
+    "end": 1368,
+    "color": "#2c3e50",
+    "capital": "Dadu (Beijing)",
+    "capitalXY": [
+      400,
+      170
+    ],
+    "shape": "yuan",
+    "oneLiner": "Mongol rule. Kublai Khan, Marco Polo, biggest borders ever."
+  },
+  {
+    "id": "ming",
+    "name": "Ming",
+    "hanzi": "明",
+    "start": 1368,
+    "end": 1644,
+    "color": "#3fa67a",
+    "capital": "Nanjing → Beijing",
+    "capitalXY": [
+      400,
+      170
+    ],
+    "shape": "ming",
+    "oneLiner": "Forbidden City, treasure fleets, then the doors close."
+  },
+  {
+    "id": "qing",
+    "name": "Qing",
+    "hanzi": "清",
+    "start": 1644,
+    "end": 1912,
+    "color": "#9b59b6",
+    "capital": "Beijing",
+    "capitalXY": [
+      400,
+      170
+    ],
+    "shape": "qing",
+    "oneLiner": "Manchu rule. Peak size, then a century of humiliation."
+  },
+  {
+    "id": "roc",
+    "name": "Republic",
+    "hanzi": "民国",
+    "start": 1912,
+    "end": 1949,
+    "color": "#f08a5d",
+    "capital": "Nanjing",
+    "capitalXY": [
+      410,
+      250
+    ],
+    "shape": "modern",
+    "oneLiner": "Warlords, invasion, civil war."
+  },
+  {
+    "id": "prc",
+    "name": "People's Republic",
+    "hanzi": "中华人民共和国",
+    "start": 1949,
+    "end": null,
+    "color": "#e4493f",
+    "capital": "Beijing",
+    "capitalXY": [
+      400,
+      170
+    ],
+    "shape": "modern",
+    "oneLiner": "Revolution, famine, reform, and the rise to superpower."
+  }
+]

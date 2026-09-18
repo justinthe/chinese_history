@@ -1,0 +1,20 @@
+{
+  "name": "middle-kingdom-explorer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/validate.mjs && vite build",
+    "validate": "node scripts/validate.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "screens": "node scripts/screenshot-mockup.mjs && node scripts/screenshot-states.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "playwright": "^1.63.0",
+    "vite": "^6.3.5",
+    "vitest": "^4.1.11"
+  }
+}

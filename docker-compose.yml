@@ -1,0 +1,11 @@
+services:
+  web:
+    image: node:20-alpine
+    user: "${UID:-1000}:${GID:-1000}"
+    working_dir: /app
+    volumes: [".:/app"]
+    command: sh -c "npm ci && npm run dev -- --host"
+    ports: ["5173:5173"]
+    environment:
+      - HOME=/tmp
+      - FETCH_USER_AGENT=MiddleKingdomExplorer/0.1 (https://github.com/justinthe/chinese_history; contact@example.com)

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-18T00:00:00Z",
+  "title": "Design System: Middle Kingdom Explorer",
+  "extensions": {
+    "colorMeta": {
+      "red": { "role": "primary", "displayName": "Signal Red", "canonical": "#d63a30" },
+      "gold": { "role": "secondary", "displayName": "Imperial Gold", "canonical": "#f4b942" },
+      "jade": { "role": "tertiary", "displayName": "Jade (Nature category)", "canonical": "#3fa67a" },
+      "sky": { "role": "tertiary", "displayName": "Sky Blue (Tech category)", "canonical": "#58a6e0" },
+      "plum": { "role": "tertiary", "displayName": "Plum (People category)", "canonical": "#9b59b6" },
+      "cat-other": { "role": "tertiary", "displayName": "Warm Orange (Other category)", "canonical": "#f08a5d" },
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#fff7e8" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#2b2118" },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#6b5a4a" },
+      "card": { "role": "neutral", "displayName": "Card White", "canonical": "#ffffff" },
+      "sea": { "role": "neutral", "displayName": "Map Sea", "canonical": "#cfe8f5" },
+      "land": { "role": "neutral", "displayName": "Map Land", "canonical": "#f6e2b4" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Landing hero H1 only." },
+      "title": { "displayName": "Title", "purpose": "Detail panel title, era label, tour heading." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy across teasers, panel, tour." },
+      "label": { "displayName": "Label", "purpose": "Chips, badges, buttons, legend tags." }
+    },
+    "shadows": [
+      { "name": "card", "value": "0 6px 0 rgba(43,33,24,.12)", "purpose": "Resting elevation for teaser cards, era label, year badge, close button." },
+      { "name": "button-primary", "value": "0 4px 0 #b0332b", "purpose": "Beneath the red primary button; collapses on press." },
+      { "name": "button-gold", "value": "0 4px 0 #c48f1f", "purpose": "Beneath the gold button." },
+      { "name": "button-ghost", "value": "0 4px 0 #ddd0b8", "purpose": "Beneath ghost/neutral pill controls." },
+      { "name": "event-card", "value": "0 3px 0 rgba(43,33,24,.12)", "purpose": "Compact timeline event cards." },
+      { "name": "modal", "value": "-10px 0 30px rgba(0,0,0,.15)", "purpose": "Detail panel edge against the scrim; the one blurred shadow." }
+    ],
+    "motion": [
+      { "name": "press", "value": "transform .1s", "purpose": "Button press collapse on :active." },
+      { "name": "panel-slide", "value": "transform .3s cubic-bezier(.22,1,.36,1)", "purpose": "Detail panel slide-in/out." },
+      { "name": "card-lift", "value": "transform .15s", "purpose": "Teaser card hover lift + rotate." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Red pill CTA with hard offset shadow and press-down active state.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">ᾞd Explore freely</button>",
+      "css": ".ds-btn-primary { background: #d63a30; color: #fff; font-weight: 800; font-size: 16px; padding: 12px 22px; border-radius: 999px; box-shadow: 0 4px 0 #b0332b; transition: transform .1s; border: none; } .ds-btn-primary:active { transform: translateY(3px); box-shadow: none; }"
+    },
+    {
+      "name": "Gold Button",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "Gold pill CTA reserved for the Grand Tour call to action.",
+      "html": "<button class=\"ds-btn ds-btn-gold\">🎒 Take the Grand Tour</button>",
+      "css": ".ds-btn-gold { background: #f4b942; color: #2b2118; font-weight: 800; font-size: 16px; padding: 12px 22px; border-radius: 999px; box-shadow: 0 4px 0 #c48f1f; transition: transform .1s; border: none; } .ds-btn-gold:active { transform: translateY(3px); box-shadow: none; }"
+    },
+    {
+      "name": "Category Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Filter chip; grayscale-dimmed when off, full color and text-contrast-aware when selected.",
+      "html": "<button class=\"ds-chip ds-chip-on\" style=\"background:#f4b942;color:#2b2118\">👑 Dynasty</button>",
+      "css": ".ds-chip { border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 800; border: none; transition: filter .15s, transform .1s; filter: grayscale(1) opacity(.55); } .ds-chip-on { filter: none; } .ds-chip:hover { transform: scale(1.05); }"
+    },
+    {
+      "name": "Teaser Card",
+      "kind": "card",
+      "refersTo": "card-teaser",
+      "description": "Landing-page fact card; rotates and lifts on hover.",
+      "html": "<div class=\"ds-card-teaser\"><div class=\"ds-card-icon\">📄</div><h2>Paper was a eunuch's idea</h2><p>Cai Lun, 105 CE.</p></div>",
+      "css": ".ds-card-teaser { background: #fff; border-radius: 18px; padding: 20px; box-shadow: 0 6px 0 rgba(43,33,24,.12); cursor: pointer; transition: transform .15s; } .ds-card-teaser:hover { transform: translateY(-4px) rotate(-1deg); } .ds-card-icon { font-size: 44px; } .ds-card-teaser h2 { font-family: Fredoka, Nunito, sans-serif; font-weight: 700; margin: 8px 0 4px; font-size: 18px; } .ds-card-teaser p { margin: 0; color: #6b5a4a; font-size: 14px; }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Small pill tag stacked at top of the detail panel (category, era, year, legendary).",
+      "html": "<span class=\"ds-badge\" style=\"background:#d63a30;color:#fff\">⚔️ Wars</span>",
+      "css": ".ds-badge { font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px; color: #fff; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Pill search field with left-inset emoji icon and sky-blue focus border.",
+      "html": "<div class=\"ds-search\"><input class=\"ds-search-input\" placeholder=\"Search a name or year\"></div>",
+      "css": ".ds-search { position: relative; } .ds-search-input { border: 2px solid #eadcc2; border-radius: 999px; padding: 8px 14px 8px 34px; font-size: 14px; width: 220px; outline: none; } .ds-search-input:focus { border-color: #58a6e0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Comic-Panel History Book",
+    "overview": "Middle Kingdom Explorer reads like an illustrated children's atlas rebuilt for adults: warm cream paper, thick candy-colored ink, and chunky solid-offset shadows that make every card feel like a physical panel sitting slightly off the page. The system is playful and tactile without going childish -- body copy stays plain and factual, while the chrome around it (buttons, chips, badges, the timeline itself) carries all the personality. Nothing in the shipped UI uses blur-based drop shadows, gradients-as-depth, or a muted archive palette; depth and hierarchy come entirely from flat color, solid hard-offset shadows, and pill/rounded geometry. Emoji glyphs are used throughout as the icon system -- a native, load-bearing device of this world's illustrated-atlas identity, not a placeholder.",
+    "keyCharacteristics": [
+      "Warm cream paper background throughout; never pure white as a page surface",
+      "Hard, solid (non-blurred) offset shadows on cards, buttons, and floating UI chrome",
+      "Fredoka for all display/heading text, Nunito for everything read at length",
+      "Pill-shaped (999px) buttons, chips, and badges; softly rounded (12-18px) cards and panels",
+      "Category color is a first-class UI signal carried consistently across chips, timeline, map, badges"
+    ],
+    "rules": [
+      { "name": "The One Category, One Color Rule", "body": "A category's color is identical everywhere it appears -- chip, timeline band, map pin, detail badge. Never reassign a category color contextually.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Fredoka is reserved for headings, labels, and UI chrome; Nunito is reserved for anything meant to be read as a sentence.", "section": "typography" },
+      { "name": "The Press-Down Rule", "body": "Every hard-offset button collapses its shadow and translates down on :active, simulating a physical button press.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use hard, zero-blur, solid-color offset shadows for anything at resting elevation; reserve blurred shadows for true modal/overlay layers only.",
+      "Do use pill radius (999px) for every interactive/tag element and 12-18px rounding for every container surface.",
+      "Do use Fredoka for headings/labels and Nunito for body copy; never mix within one text node.",
+      "Do keep one category to one color mapping consistent across chips, timeline bands, map pins, and badges.",
+      "Do use emoji glyphs as the icon system -- they are this world's native iconography."
+    ],
+    "donts": [
+      "Don't introduce blurred ambient drop shadows on resting cards or buttons -- it would erase the comic-panel identity that hard offsets establish.",
+      "Don't use pure white as a full-page background; the page surface is always the warm paper cream.",
+      "Don't introduce a new accent color for a UI element that already maps to a category color.",
+      "Don't use sharp (0px) corners or outline-only borders for surface separation; this system defines depth with color and shadow, not strokes."
+    ]
+  }
+}
