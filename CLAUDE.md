@@ -9,12 +9,55 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
 - Test commands: `npm test` (vitest: `tests/smoke.test.js`,
   `tests/state.test.js`, `tests/data.test.js`, `tests/validate.test.js`,
   `tests/lanes.test.js`, `tests/timeline-zoom.test.js`, `tests/tween.test.js`,
-  `tests/map-pins.test.js`), `npm run e2e` (playwright: `e2e/smoke.spec.js`,
-  `e2e/shell.spec.js`, `e2e/timeline.spec.js`, `e2e/map.spec.js`; builds +
-  previews first). Manual check: `scripts/test-phase-05.sh` (runs
-  `node scripts/validate.mjs` too; `scripts/test-phase-04.sh` still works for
-  the timeline).
-- Current phase: Phase 5 complete — map finished per PRD F3.
+  `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
+  `tests/detail-render.test.js`), `npm run e2e` (playwright:
+  `e2e/smoke.spec.js`, `e2e/shell.spec.js`, `e2e/timeline.spec.js`,
+  `e2e/map.spec.js`, `e2e/detail.spec.js`; builds + previews first). Manual
+  check: `scripts/test-phase-06.sh` (runs `node scripts/validate.mjs` too;
+  `scripts/test-phase-04.sh`/`-05.sh` still work for their own screens).
+- Current phase: Phase 6 complete — event detail panel finished per PRD F4.
+  `src/views/detail.js` was already most of the way there from its phase-02
+  port (badges, title, hanzi/pinyin, body, why-it-matters, related chips,
+  Esc/×/scrim-click, the `#event=<id>` hash round-trip from phase 03); this
+  phase closed the real gaps. A genuine focus trap — new `src/lib/focus-trap.js`
+  (pure, `doc` injected, same precedent as `lib/tween.js`) — installed only on
+  the closed→open transition, not re-armed on a related-chip navigation while
+  already open. Focus returns to the actual opener (`document.activeElement`
+  captured at open) with an `isConnected` guard, since map pins are rebuilt on
+  every render and a stale reference is real, not theoretical. The closed
+  panel now sets `inert` (not just the `.open` CSS class), so it's genuinely
+  out of the tab order rather than merely invisible — the same "visually
+  closed ≠ actually non-interactive" class of bug tasks/lessons.md's popover
+  lesson already covers. Prev/next switched from `visibility:hidden` to
+  `disabled`: a `visibility:hidden` button still matches
+  `focus-trap.js`'s `querySelectorAll` and `.focus()`-ing one is a silent
+  browser no-op, which would break the trap's wraparound at a category
+  boundary — `:not([disabled])` in the same selector excludes it for free.
+  (This is a disclosed, deliberate deviation from the phase prompt's literal
+  "hidden at ends" wording and the storyboard screenshot, flagged by the
+  reviewer subagent and kept — the visible-disabled state is what's shipped.)
+  New `src/icons.js`: one inline SVG glyph per `CATS` key, built with
+  `createElementNS` (never `innerHTML` — architecture.md §7), used only as the
+  detail hero's missing-image fallback. The hero itself now renders a real
+  `<img>` from `content/images.manifest.json` when an entry exists (one real
+  `qin` entry shipped, pointing at a new self-hosted `public/img/qin-detail.svg`,
+  so the manifest branch is checkable by hand and not just through a mocked
+  e2e route) with its credit/license line, and falls back to the category icon
+  plus a debug-level (not `console.error`) `diag()` log on a missing entry or
+  an `onerror`. Mobile: `.panel` gained a bottom-sheet override inside the
+  existing `@media (max-width:720px)` block, same pattern as `.tour.open`.
+  `mount()` now returns a cleanup (unsubscribe, remove the keydown listener,
+  release any live trap) — closing the tasks/lessons.md phase-02 gap this file
+  had carried since phase 02. `/ponytail-review` cut one unused parameter
+  (`icon()`'s `size`, no caller ever passed a non-default) and one dead export
+  (`focus-trap.js`'s `FOCUSABLE`, caught by the reviewer subagent). `npm test`
+  82/82, `npm run build` clean (JS gzip 11.10KB vs PRD §8's 150KB budget),
+  `npm run e2e` 31/31. UNPROVEN this phase (flagged, not assumed): a real
+  visual check of the 390px bottom sheet (claude-in-chrome's window resize
+  didn't take effect against this session's Linux window manager) — covered
+  instead by an e2e viewport test asserting the actual panel geometry, which
+  passed. Ready for Phase 7.
+- Phase 5 complete — map finished per PRD F3.
   `src/views/map.js`'s `morphTo` now matches architecture.md §4's real
   contract, `morphTo(shapeKey, color)` (was `morphTo(pointsArray, color)`,
   a phase-02 leftover) — it looks the key up in `SHAPES` and delegates the

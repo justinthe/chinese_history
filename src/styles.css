@@ -50,6 +50,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transition: transform .1s;
 }
 .btn:active { transform: translateY(3px); box-shadow: none; }
+.btn[disabled] { opacity: .35; pointer-events: none; }
 .btn.gold { background: var(--gold); color: var(--ink); box-shadow: 0 4px 0 #c48f1f; }
 .btn.ghost { background: #fff; color: var(--ink); box-shadow: 0 4px 0 #ddd0b8; }
 .btn.sm { padding: 8px 14px; font-size: 14px; }
@@ -205,7 +206,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .panel.open { transform: none; }
 .panel .close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: #fff; font-weight: 800; box-shadow: var(--shadow); z-index: 2; }
-.panel .art { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 110px; background: linear-gradient(135deg, #ffe9c4, #ffd6d3); }
+.panel .art { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 110px; background: linear-gradient(135deg, #ffe9c4, #ffd6d3); color: var(--ink); }
+.panel .art img { width: 100%; height: 100%; object-fit: cover; }
 .panel .content { padding: 20px 24px 40px; }
 .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
 .badge { font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px; color: #fff; }
@@ -218,6 +220,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .related button { background: #fff; border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 700; box-shadow: 0 3px 0 #ddd0b8; }
 .nav-row { display: flex; justify-content: space-between; margin-top: 24px; gap: 8px; }
 .credit { font-size: 12px; color: var(--ink-soft); margin-top: 12px; }
+.credit a { color: var(--ink-soft); }
 
 /* ---------- TOUR ---------- */
 .maprow { flex: 1; display: flex; min-height: 0; }
@@ -261,5 +264,12 @@ button { font-family: inherit; cursor: pointer; border: none; }
   .search input { width: 140px; }
   .era-label h2 { font-size: 20px; }
   .legend { display: none; }
+  /* PRD F4 / flow 8: detail panel becomes a bottom sheet on phones — same
+     pattern as .tour.open above. */
+  .panel {
+    top: auto; left: 0; right: 0; bottom: 0; width: 100%; max-height: 85dvh;
+    border-radius: 18px 18px 0 0; transform: translateY(100%);
+  }
+  .panel.open { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

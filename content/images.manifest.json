@@ -1,1 +1,13 @@
-{}
+{
+  "qin": {
+    "card": "img/qin-detail.svg",
+    "detail": "img/qin-detail.svg",
+    "alt": "Flat illustration of an emperor\u2019s crown above a ceremonial dais",
+    "credit": "Illustration: Middle Kingdom Explorer",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "sourceUrl": "",
+    "sourceHash": "sha256:placeholder",
+    "fetchedAt": "2026-09-18"
+  }
+}

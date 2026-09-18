@@ -189,3 +189,44 @@ Ran clean this time (scoped to `src/`, code-only corpus so no LLM subagents need
 
 ## Review outcome
 Phase 05 done. All three requirement gaps identified at plan time are closed: `morphTo` matches the architecture contract, pin de-overlap and keyboard accessibility are real (not stubs), and the zoom buttons do genuine viewBox math instead of a toast placeholder. Era label, capital star, year badge, and empty state — already correct from phase 02 — are unchanged. One item explicitly UNPROVEN and reported as such rather than assumed: a real OS/Firefox reduced-motion pass (only Chrome DevTools emulation available this session; the reduced-motion code path itself is unit- and e2e-tested).
+
+# Phase 06 — Event detail panel
+
+Plan: /home/jthe/.claude/plans/implement-vibe-prompts-phase-06-event-de-frolicking-harbor.md
+
+## Build
+- [x] `src/lib/focus-trap.js` (new) — pure `trap(container, doc)` Tab/Shift+Tab cycle, `doc` injected for node-testability (same precedent as `lib/tween.js`), returns a release closure
+- [x] `src/icons.js` (new) — one inline SVG glyph per `CATS` key, built with `createElementNS` (never `innerHTML`), missing-image fallback only
+- [x] `src/views/detail.js` — focus trap installed only on the closed→open transition (not re-armed on related-chip navigation while already open); `opener` (`document.activeElement`) captured on open, refocused on close with an `isConnected` guard (map pins get rebuilt on every render, so a stale reference is a real risk, not a theoretical one); `panelEl.inert` toggled (not just the `.open` CSS class) so the closed panel is genuinely out of the tab order, not just visually hidden; `imageFor(id, images)` and `neighbors(ev, events)` pulled out as pure, independently-testable exports; prev/next switched from `visibility:hidden` to `disabled` (see Reviewer sign-off below); local `diag()` at debug level (not `console.error` — e2e's console-error guard would fail on the expected common case of a missing manifest entry); `mount()` now returns a cleanup (unsubscribe + remove keydown + release any live trap), closing the tasks/lessons.md phase-02 gap this file had carried since phase 02
+- [x] `src/styles.css` — `.panel .art img`, `.credit a`, `.btn[disabled]`, and a mobile bottom-sheet `.panel` override inside the existing `@media (max-width:720px)` block (copied the `.tour.open` pattern)
+- [x] `content/images.manifest.json` — one real `qin` entry (architecture.md §3 shape) + `public/img/qin-detail.svg`, a small self-hosted flat illustration, so the manifest branch is checkable by hand and not just via a mocked e2e route (user's call, asked directly)
+- [x] `mount(el)` / `open(id)` / `close()` — verified unchanged, still match architecture.md §4
+
+## Tests
+- [x] `tests/focus-trap.test.js` — wrap-forward, wrap-backward (Shift+Tab), middle-of-list no-op, non-Tab keys ignored, empty-container no-op, cleanup removes the listener
+- [x] `tests/detail-render.test.js` — `imageFor()` against the real manifest (`qin` present, `wall` absent), `neighbors()` chronological ordering against real `content/events.json` (`confucius`/`wuzetian`, the only 2-event category, both end states), source-text check that neither `detail.js` nor `icons.js` ever assigns `.innerHTML`
+- [x] `e2e/detail.spec.js` (6 tests) — closed-state assertion written first per tasks/lessons.md's popover lesson (`#panel` not `.open`, `inert` true); card click → open, 12×Tab stays inside `#panel`, Esc closes + focus returns to the card; `#event=qin` shows the image + CC BY-SA credit line; `#event=wall` shows the SVG icon, zero `<img>`; prev/next disabled correctly at the `people` category's real boundaries; 390px viewport → panel bounding box is a full-width bottom sheet
+- [x] `scripts/test-phase-06.sh` — byte-identical 48-line prologue to phase-05's, phase-06's 7-item Manual Checklist appended
+- [x] `npm test` 82/82, `npm run build` clean (JS gzip 11.10KB vs PRD §8's 150KB budget), `npm run e2e` 31/31 (25 pre-existing + 6 new)
+
+## Ponytail review
+`/ponytail-review` on the diff: 1 finding — `icons.js`'s `icon(catKey, size=110)` took a `size` param no caller ever passed (both call sites in `detail.js` use the default). Cut it, hardcoded 110px (the one real call site's value). Net -1 line. Re-verified `npm test`/`build` green after.
+
+## Manual verification (browser, via claude-in-chrome)
+- [x] `#event=qin`: hero shows the manifest `<img>`, badges in storyboard order (Dynasty → Qin → 221 BCE), credit line "Image: Illustration: Middle Kingdom Explorer · CC BY-SA 4.0" with a working license link, Prev correctly greyed/disabled (qin is earliest in `dynasty`), Next enabled
+- [x] `#event=wall`: hero shows the tech category SVG icon, no `<img>`, empty credit line, both Prev/Next enabled
+- [x] 8×Tab with the panel open: `document.getElementById('panel').contains(document.activeElement)` true after every press (verified via javascript_tool, not just visually)
+- [x] Esc closes, hash drops `event=`, no console errors across the session
+- [ ] 390px bottom sheet — UNPROVEN visually this session: claude-in-chrome's `resize_window` didn't take effect against this Linux window manager (real viewport stayed ~1880px wide despite the request, confirmed via `window.innerWidth`). Not chased past 2 attempts per the tool's own guidance. Covered instead by `e2e/detail.spec.js`'s `test.use({viewport:{width:390,height:844}})` block, which passed and asserts the actual panel `boundingBox()` (x≈0, width>350, flush to the viewport bottom) — a real geometry check, not just a class-name check.
+
+## Reviewer subagent sign-off
+Independent reviewer (general-purpose agent, full static read against PRD §5 F4 / architecture.md §3+§4+§7 / storyboard screen 4 / tasks/lessons.md) passed every requirement in its checklist. Two findings:
+1. **Moderate, already resolved by plan-time decision:** the phase prompt's checklist wording and the storyboard screenshot show prev/next **hidden** at category ends; the shipped code makes them **disabled**-but-visible instead. This was a deliberate, disclosed trade-off from the approved plan (not an oversight the reviewer caught blind) — `visibility:hidden` buttons stay in `focus-trap.js`'s `querySelectorAll(FOCUSABLE)` match set (the selector doesn't check computed style) and calling `.focus()` on one is a browser no-op, which would silently break the trap's wraparound at a category boundary. `:not([disabled])` in the same selector correctly excludes a `disabled` button with no extra JS. Kept as `disabled`; flagging here so the visual deviation from the reference screenshot is explicit rather than silent.
+2. **Minor, fixed:** `focus-trap.js` exported `FOCUSABLE` with zero external importers. Un-exported (see Ponytail review — reviewer's finding, ponytail-shaped fix, applied together).
+It could not itself run `npm test`/`build`/`e2e` (same stale plan-mode restriction phase 04/05's reviewers hit) — I ran and passed all three myself, before and after both fixes above.
+
+## Graphify (end of phase)
+AST-only pass scoped to `src/` (code-only corpus, no LLM subagents needed): 89 nodes, 165 edges, 9 communities. `icons.js` is its own 3-node community with exactly one outbound edge (`icon()` → `detail.js`'s `render()`) — a clean leaf, same shape as `lanes.js`/`tween.js` from prior phases. `focus-trap.js` has exactly one outbound edge (`trap()` → `render()`) and clusters into `detail.js`'s community rather than standing alone, which is expected since it's a two-function module with a single real caller, not a sign of spaghetti. Noted but not chased: the AST extractor didn't resolve the pre-existing `timeline.js`/`map.js`/`tour.js`/`search.js` → `detail.js` `open()` import edges (an aliased-import resolution gap in the tool, same class of tool-side limitation phase 03/04 hit) — those call sites were independently confirmed unchanged and untouched this phase by the pre-build Explore recon, so this is a graphify blind spot, not a code regression.
+
+## Review outcome
+Phase 06 done. `src/views/detail.js` was already 90% of the way to PRD F4 from its phase-02 port; this phase closed the real gaps — a genuine focus trap (not just an `aria-modal` attribute), focus returned to the actual opener with a defensive `isConnected` check, the closed panel made truly non-interactive via `inert`, a real manifest image path with credit/license and a category-icon fallback (validated with both a real entry and a real miss), and the mobile bottom sheet. One disclosed, deliberate spec deviation (disabled vs. hidden prev/next, for focus-trap correctness) and one UNPROVEN item (390px visual check — covered by an equivalent, arguably stronger, e2e geometry assertion instead). `npm test` 82/82, `npm run build` clean, `npm run e2e` 31/31. Ready for Phase 07.
