@@ -9,6 +9,11 @@ import { CATS } from '../src/data.js';
 const CONTENT_DIR = fileURLToPath(new URL('../content/', import.meta.url));
 const CATEGORIES = Object.keys(CATS);
 
+// architecture.md §4: CC BY-SA requires attribution + "share alike" —
+// About's credits section (src/views/about.js) must literally carry this
+// word whenever any manifest image ships under a BY-SA license (rule 12).
+export const SA_NOTICE = 'ShareAlike';
+
 const ERA_REQUIRED = ['id', 'name', 'hanzi', 'start', 'end', 'color', 'capital', 'capitalXY', 'shape', 'oneLiner'];
 const EVENT_REQUIRED = [
   'id', 'title', 'hanzi', 'pinyin', 'year', 'era', 'category', 'icon', 'body', 'whyItMatters', 'xy', 'related',
@@ -34,7 +39,7 @@ function findAngleBracket(value, path, errors) {
 }
 
 /** Runs every PRD F8 / architecture §3 rule against loaded content. Returns an array of error strings (empty = valid). */
-export function validate({ eras, events, tour, shapes, world }) {
+export function validate({ eras, events, tour, shapes, world, images = {}, aboutSrc = '' }) {
   const errors = [];
   const eraIds = new Set(eras.map((e) => e.id));
   const eventIds = new Set(events.map((e) => e.id));
@@ -116,12 +121,22 @@ export function validate({ eras, events, tour, shapes, world }) {
     if (typeof world[e.id] !== 'string' || !world[e.id]) errors.push(`era ${e.id}: missing world.json entry`);
   });
 
+  // 12. any CC BY-SA manifest image requires the ShareAlike notice on About
+  // (architecture §4: "CC BY-SA images require the About page to carry the
+  // SA notice; validate checks this once any BY-SA image exists")
+  const hasBySa = Object.values(images).some((img) => /BY-SA/i.test(img.license || ''));
+  if (hasBySa && !aboutSrc.includes(SA_NOTICE)) {
+    errors.push(`images.manifest.json: a CC BY-SA image exists but About page is missing the '${SA_NOTICE}' notice`);
+  }
+
   return errors;
 }
 
 function readJSON(file) {
   return JSON.parse(readFileSync(`${CONTENT_DIR}${file}`, 'utf8'));
 }
+
+const ABOUT_SRC = fileURLToPath(new URL('../src/views/about.js', import.meta.url));
 
 function main() {
   const db = {
@@ -130,6 +145,8 @@ function main() {
     tour: readJSON('tour.json'),
     shapes: readJSON('map-shapes.json'),
     world: readJSON('world.json'),
+    images: readJSON('images.manifest.json'),
+    aboutSrc: readFileSync(ABOUT_SRC, 'utf8'),
   };
   const errors = validate(db);
   if (errors.length) {

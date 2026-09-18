@@ -1,5 +1,5 @@
 // architecture.md §4: landing.js — mount(el). Storyboard Screen 1.
-import { el, toast } from '../dom.js';
+import { el } from '../dom.js';
 import { go } from '../router.js';
 import { open as openEvent } from './detail.js';
 import { start as startTour } from './tour.js';
@@ -69,7 +69,7 @@ export function mount(root) {
   aboutLink.addEventListener('click', (e) => { e.preventDefault(); go('about'); });
   const creditsLink = el('a', null, 'Sources & credits');
   creditsLink.href = '#';
-  creditsLink.addEventListener('click', (e) => { e.preventDefault(); toast('Mockup: no sources page yet'); });
+  creditsLink.addEventListener('click', (e) => { e.preventDefault(); go('about'); });
   footer.append(aboutLink, ' · ', creditsLink);
 
   section.append(hero, teasers, howto, footer);

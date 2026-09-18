@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { validate } from '../scripts/validate.mjs';
+import { validate, SA_NOTICE } from '../scripts/validate.mjs';
 
 function baseDB() {
   return {
@@ -116,5 +116,19 @@ describe('validate: each rule has a failing fixture', () => {
     const db = clone(baseDB());
     delete db.world.a;
     expect(validate(db).some((e) => e.includes('missing world.json entry'))).toBe(true);
+  });
+
+  it('rejects a CC BY-SA manifest image when About is missing the ShareAlike notice', () => {
+    const db = clone(baseDB());
+    db.images = { x: { license: 'CC BY-SA 4.0' } };
+    db.aboutSrc = 'About page with no notice';
+    expect(validate(db).some((e) => e.includes(SA_NOTICE))).toBe(true);
+  });
+
+  it('allows a CC BY-SA manifest image when About carries the ShareAlike notice', () => {
+    const db = clone(baseDB());
+    db.images = { x: { license: 'CC BY-SA 4.0' } };
+    db.aboutSrc = `About page mentions ${SA_NOTICE} right here`;
+    expect(validate(db).some((e) => e.includes(SA_NOTICE))).toBe(false);
   });
 });

@@ -44,7 +44,11 @@
     "related": [
       "yu",
       "paper"
-    ]
+    ],
+    "image": {
+      "met": 44778,
+      "alt": "Carved jade water buffalo from Shang-era China"
+    }
   },
   {
     "id": "confucius",
@@ -137,7 +141,12 @@
     "related": [
       "qin",
       "mongols"
-    ]
+    ],
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Badaling_China_Great-Wall-of-China-01.jpg",
+      "license": "CC BY-NC 4.0",
+      "credit": "Photo, Wikimedia Commons (seed: rejected license, phase 10 replaces)"
+    }
   },
   {
     "id": "terracotta",
@@ -159,7 +168,12 @@
     ],
     "related": [
       "qin"
-    ]
+    ],
+    "image": {
+      "commons": "File:Terracotta Army Pit 1 - 2.jpg",
+      "alt": "Rows of terracotta soldiers standing in excavated Pit 1",
+      "focus": "center"
+    }
   },
   {
     "id": "silkroad",

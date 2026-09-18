@@ -2,12 +2,34 @@
   "qin": {
     "card": "img/qin-detail.svg",
     "detail": "img/qin-detail.svg",
-    "alt": "Flat illustration of an emperor\u2019s crown above a ceremonial dais",
+    "alt": "Flat illustration of an emperor’s crown above a ceremonial dais",
     "credit": "Illustration: Middle Kingdom Explorer",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "sourceUrl": "",
     "sourceHash": "sha256:placeholder",
+    "fetchedAt": "2026-09-18"
+  },
+  "oracle": {
+    "card": "img/oracle-card.webp",
+    "detail": "img/oracle-detail.webp",
+    "alt": "Carved jade water buffalo from Shang-era China",
+    "credit": "Gift of John M. Crawford Jr., 1976",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://www.metmuseum.org/art/collection/search/44778",
+    "sourceHash": "sha256:5dc60d9835d6ede0970c22697eb25b6c742a90d864c5d099ce222ba821bc5a16",
+    "fetchedAt": "2026-09-18"
+  },
+  "terracotta": {
+    "card": "img/terracotta-card.webp",
+    "detail": "img/terracotta-detail.webp",
+    "alt": "Rows of terracotta soldiers standing in excavated Pit 1",
+    "credit": "Maros M r a z (Maros), Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATerracotta%20Army%20Pit%201%20-%202.jpg",
+    "sourceHash": "sha256:745fa126b45ad416a094c7aca0c905b8820b133107240d15f59af17c8fd4f96b",
     "fetchedAt": "2026-09-18"
   }
 }

@@ -11,13 +11,75 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   `tests/lanes.test.js`, `tests/timeline-zoom.test.js`, `tests/tween.test.js`,
   `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
   `tests/detail-render.test.js`, `tests/search.test.js`,
-  `tests/chips.test.js`, `tests/tour.test.js`), `npm run e2e` (playwright:
-  `e2e/smoke.spec.js`, `e2e/shell.spec.js`, `e2e/timeline.spec.js`,
-  `e2e/map.spec.js`, `e2e/detail.spec.js`, `e2e/search.spec.js`,
-  `e2e/tour.spec.js`; builds + previews first). Manual check:
-  `scripts/test-phase-08.sh` (runs `node scripts/validate.mjs` too;
+  `tests/chips.test.js`, `tests/tour.test.js`, `tests/fetch-images.test.js`),
+  `npm run e2e` (playwright: `e2e/smoke.spec.js`, `e2e/shell.spec.js`,
+  `e2e/timeline.spec.js`, `e2e/map.spec.js`, `e2e/detail.spec.js`,
+  `e2e/search.spec.js`, `e2e/tour.spec.js`; builds + previews first).
+  Build-time image pipeline: `node scripts/fetch-images.mjs [--only <id>]
+  [--force] [--dry-run] [--allow-missing]` (needs `FETCH_USER_AGENT` env for
+  real fetches; `sharp` devDependency). Manual check: `scripts/test-phase-09.sh`
+  (also `scripts/test-phase-08.sh`, runs `node scripts/validate.mjs` too;
   `scripts/test-phase-04.sh` through `-07.sh` still work for their own
   screens).
+- Current phase: Phase 9 complete — build-time image pipeline finished per
+  PRD F8/F9. New `scripts/fetch-images.mjs` mirrors `validate.mjs`'s shape
+  (pure exports `canonicalLicense`/`sourceHash`/`run()` + a guarded `main()`)
+  and resolves an event's `image` field through one of four DI'd source
+  modules in `scripts/lib/sources/` — `commons.mjs` (Wikimedia API, strips
+  the HTML that `extmetadata.Artist`/`Credit` embed), `met.mjs` (gates on
+  `isPublicDomain === true` only, per architecture §4 — not license text),
+  `url.mjs` (host allowlist + author-supplied license/credit), `local.mjs`
+  (AI illustrations, exempt from the license allowlist, never downloaded).
+  `run()` merges into `content/images.manifest.json` — it only ever writes
+  keys for events it processed, so the phase-06 hand-written `qin` entry
+  (SVG, `sourceHash: placeholder`) survives untouched; verified by test, not
+  assumed. Idempotency keys off `sourceHash` (order-independent hash of the
+  ImageSource object) plus the webp files actually existing; `--force`
+  bypasses it, `--only`/`--dry-run`/`--allow-missing` do what their names
+  say. Architecture §7's build-script rules are all live: identifying
+  `User-Agent` (`FETCH_USER_AGENT` env), ~1 req/s throttle shared across
+  metadata and download calls, `Content-Type` and 20MB checks before any
+  `sharp` call, resize/webp quality steps down (80→60→45) until under PRD
+  §8's card/detail KB budgets — a still-too-big image is a reported failure,
+  never a silent overage. `scripts/validate.mjs` gained rule 12: any BY-SA
+  manifest license requires the literal word "ShareAlike" in `about.js`'s
+  *source* (not just the rendered page) — proven by temporarily deleting the
+  notice and watching validate fail, then restoring it. `src/views/about.js`
+  now renders a real Credits list from `IMAGES` (data.js) via `el()`, never
+  `innerHTML`; the landing footer's "Sources & credits" mockup toast now
+  really routes to it (storyboard Screen 1's spec, not a leftover stub).
+  Three real seed events prove the pipeline end to end (phase 10 writes the
+  other ~147): `terracotta` (Commons, CC BY-SA 3.0, real Terracotta Army
+  photo), `oracle` (Met, public domain, jade water buffalo), `wall`
+  (a real Commons-hosted URL declared CC BY-NC 4.0 — deliberately rejected,
+  `ponytail:`-flagged for phase 10 to replace with an allowlisted source).
+  The committed `content/images.report.json` shows exactly 2 fetched / 1
+  rejected as the deliverable asks, exit code 1 on that state (plain run)
+  vs 0 with `--allow-missing`. `npm test` 136/136 (14 files, new
+  `tests/fetch-images.test.js` covers the license matcher table, sourceHash
+  stability, each source module against a fixture — including the Commons
+  HTML-stripping and Met `isPublicDomain: false` cases — and `run()`'s
+  fetch/skip/reject/manifest-shape/merge-not-clobber behavior, no network in
+  any unit test), `npm run build` clean, `npm run e2e` 48/48 (2 new rows in
+  `e2e/shell.spec.js` for the Credits section and the un-stubbed footer
+  link). Browser pass confirmed: terracotta's detail panel shows the real
+  photo with its credit line, About lists all three manifest images with
+  license links and the ShareAlike notice, and a fresh-load Network tab
+  shows only `localhost:5173` + inlined `data:` font requests — zero
+  third-party runtime calls (PRD §8 / architecture §7). `/ponytail-review`
+  cut an IIFE in `about.js`'s credit-link rendering (inline anchor
+  construction, shrunk to match the license-link branch's plain local-var
+  style) and a 7× repeated deps-object literal in the new test file
+  (factored into a `baseDeps()` fixture, same precedent as
+  `tests/validate.test.js`'s `baseDB()`). graphify's code-only pass (scoped
+  to `scripts/` + `src/views/about.js`, no LLM cost) confirmed the four
+  source modules each cluster as their own isolated cohesion-1.00 leaf
+  community, connected to `fetch-images.mjs` only via `imports_from` edges —
+  the intended shape, not spread/spaghetti.
+  Out of scope, left for phase 10: choosing/fetching images for the other
+  ~147 events (`wall`'s NC-licensed seed stays rejected as a marked
+  placeholder until then).
+  Ready for Phase 10 (real content) per vibe-prompts/00-README.md's run order.
 - Current phase: Phase 8 complete — Grand Tour finished per PRD F5.
   `src/views/tour.js` was already most of the way there from its phase-02
   port (docked panel that never covers the map, progress dots, Back/Next/

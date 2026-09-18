@@ -1,0 +1,19 @@
+{
+  "fetched": [
+    {
+      "id": "oracle"
+    },
+    {
+      "id": "terracotta"
+    }
+  ],
+  "skipped": [],
+  "rejected": [
+    {
+      "id": "wall",
+      "reason": "license 'CC BY-NC 4.0' not in allowlist"
+    }
+  ],
+  "failed": [],
+  "ranAt": "2026-09-18T13:35:29.910Z"
+}

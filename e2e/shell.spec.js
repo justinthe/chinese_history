@@ -75,6 +75,20 @@ test('journey 9: about page and back', async ({ page }) => {
   await expect(page.locator('#landing')).toBeVisible();
 });
 
+// Phase 09: About's credits section (PRD F9) and the footer's real link to it.
+test('about page lists image credits with license links', async ({ page }) => {
+  await page.locator('.footer-links a', { hasText: 'About this project' }).click();
+  await expect(page.locator('#about h2', { hasText: 'Credits' })).toBeVisible();
+  const rows = page.locator('.credits-list li');
+  expect(await rows.count()).toBeGreaterThan(0);
+  await expect(page.locator('.credits-list a').first()).toHaveAttribute('href', /.+/);
+});
+
+test('footer "Sources & credits" link goes to the About credits, not a toast stub', async ({ page }) => {
+  await page.locator('.footer-links a', { hasText: 'Sources & credits' }).click();
+  await expect(page.locator('#about h2', { hasText: 'Credits' })).toBeVisible();
+});
+
 test('turning off the last category chip is blocked with a toast', async ({ page }) => {
   await page.locator('.hero .actions .btn', { hasText: 'Explore freely' }).click();
   const chips = page.locator('.chips .chip');
