@@ -50,9 +50,18 @@ export function mount(root) {
 
   const teasers = el('div', 'teasers');
   TEASERS.forEach((t) => {
+    // A heading isn't valid inside a <button> — role="button" + tabindex + Enter/Space
+    // matches map.js's pin pattern, same reasoning: keyboard access without breaking markup.
     const card = el('div', 'teaser');
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `${t.title} — open this event`);
     card.append(el('div', 'big', t.icon), el('h2', null, t.title), el('p', null, t.text));
-    card.addEventListener('click', () => { go('explore'); openEvent(t.eventId); });
+    const openTeaser = () => { go('explore'); openEvent(t.eventId); };
+    card.addEventListener('click', openTeaser);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTeaser(); }
+    });
     teasers.append(card);
   });
 

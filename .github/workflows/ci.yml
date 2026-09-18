@@ -19,8 +19,15 @@ jobs:
       - run: npm run validate
       - run: npm test
       - run: npm run build
+      - name: Check gzipped JS budget (PRD §8: <= 150 KB)
+        run: |
+          size=$(gzip -c dist/assets/*.js | wc -c)
+          echo "JS gzip size: $size bytes"
+          [ "$size" -le 153600 ] || { echo "over 150 KB budget"; exit 1; }
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e
+      - name: Lighthouse CI (perf >= 90, a11y >= 95 — architecture.md §6)
+        run: npx lhci autorun
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'

@@ -15,8 +15,10 @@ export function mount(root) {
   screen.className = 'screen active';
   const section = el('div', 'explore-shell');
 
-  const topbar = el('div', 'topbar');
-  const logo = el('div', 'logo', '🐉 Middle Kingdom');
+  screen.append(el('h1', 'sr-only', 'Explore — Middle Kingdom Explorer'));
+
+  const topbar = el('header', 'topbar');
+  const logo = el('button', 'logo', '🐉 Middle Kingdom');
   logo.addEventListener('click', () => go('landing'));
   const tourBtn = el('button', 'btn gold sm', '🎒 Grand Tour');
   tourBtn.addEventListener('click', () => tour.start());

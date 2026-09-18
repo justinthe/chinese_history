@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'">
 <title>Middle Kingdom Explorer</title>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/chinese_history/fonts/fredoka.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/chinese_history/fonts/nunito.woff2">
 <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body>
-<div id="app"></div>
-<div class="toast" id="toast"></div>
+<a class="skip" href="#app">Skip to content</a>
+<main id="app" tabindex="-1"></main>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>

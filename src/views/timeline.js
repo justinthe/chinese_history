@@ -3,7 +3,7 @@
 // timeline pane and there's no separate module for it in architecture §1/§8.
 import { ERAS, TOUR, WORLD, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
 import { get, set, subscribe, YEAR_MIN, YEAR_MAX, clampPxPerYear } from '../state.js';
-import { el, textOn } from '../dom.js';
+import { el, textOn, reduceMotion } from '../dom.js';
 import { open as openEvent } from './detail.js';
 import { assignLanes } from '../lib/lanes.js';
 
@@ -23,16 +23,16 @@ export function mount(root) {
 
   const tools = el('div', 'tl-tools');
   const leftBtn = el('button', 'wide', '◀');
-  leftBtn.title = 'Scroll left';
+  leftBtn.title = leftBtn.ariaLabel = 'Scroll left';
   leftBtn.addEventListener('click', () => pan(-1));
   const rightBtn = el('button', 'wide', '▶');
-  rightBtn.title = 'Scroll right';
+  rightBtn.title = rightBtn.ariaLabel = 'Scroll right';
   rightBtn.addEventListener('click', () => pan(1));
   const zoomInBtn = el('button', null, '＋');
-  zoomInBtn.title = 'Zoom in';
+  zoomInBtn.title = zoomInBtn.ariaLabel = 'Zoom in';
   zoomInBtn.addEventListener('click', () => zoom(1.5));
   const zoomOutBtn = el('button', null, '－');
-  zoomOutBtn.title = 'Zoom out';
+  zoomOutBtn.title = zoomOutBtn.ariaLabel = 'Zoom out';
   zoomOutBtn.addEventListener('click', () => zoom(1 / 1.5));
   tools.append(leftBtn, rightBtn, zoomInBtn, zoomOutBtn);
 
@@ -133,7 +133,7 @@ function installDrag(sc, drag) {
 }
 
 export function pan(dir) {
-  tlScrollEl.scrollBy({ left: dir * tlScrollEl.clientWidth * 0.6, behavior: 'smooth' });
+  tlScrollEl.scrollBy({ left: dir * tlScrollEl.clientWidth * 0.6, behavior: reduceMotion() ? 'auto' : 'smooth' });
 }
 
 export function zoom(f) {
@@ -146,7 +146,7 @@ export function scrollToYear(y, instant) {
   const { pxPerYear } = get();
   tlScrollEl.scrollTo({
     left: (y - YEAR_MIN) * pxPerYear - tlScrollEl.clientWidth / 2,
-    behavior: instant ? 'auto' : 'smooth',
+    behavior: instant || reduceMotion() ? 'auto' : 'smooth',
   });
 }
 
@@ -188,7 +188,7 @@ function layoutFull(pxPerYear, cats, lanes) {
   const x = (y) => (y - YEAR_MIN) * pxPerYear;
 
   bandEls = ERAS.map((e) => {
-    const b = el('div', 'band');
+    const b = el('button', 'band');
     b.style.left = x(e.start) + 'px';
     const w = Math.max(4, x(e.end) - x(e.start) - 2);
     b.style.width = w + 'px';
@@ -199,6 +199,7 @@ function layoutFull(pxPerYear, cats, lanes) {
     const label = e.name.length * 8 + 16 <= w ? e.name : '';
     b.textContent = label + (e.legendary ? ' ✨' : '');
     b.title = `${e.name} ${fmtYear(e.start)} – ${fmtYear(e.end)}`;
+    b.setAttribute('aria-label', `${e.name}, ${fmtYear(e.start)} to ${fmtYear(e.end)}`);
     b.addEventListener('click', () => set({ year: e.start }));
     tlInnerEl.append(b);
     return { el: b, eraId: e.id };

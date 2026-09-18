@@ -1,7 +1,7 @@
 // architecture.md §4: map.js — mount(el), morphTo(shapeKey, color).
 import { CATS, SHAPES, TOUR, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
 import { get, subscribe } from '../state.js';
-import { el } from '../dom.js';
+import { el, reduceMotion } from '../dom.js';
 import { open as openEvent } from './detail.js';
 import { tween } from '../lib/tween.js';
 
@@ -129,6 +129,9 @@ export function mount(root) {
   eraLabel.append(h2, eraLineEl, capLine);
 
   yearBadgeEl = el('div', 'year-badge');
+  yearBadgeEl.setAttribute('role', 'status');
+  yearBadgeEl.setAttribute('aria-live', 'polite');
+  yearBadgeEl.setAttribute('aria-atomic', 'true');
 
   const legend = el('div', 'legend');
   legend.append(el('span', null, '⭐ capital'));
@@ -214,8 +217,6 @@ function renderPins(era, cats, highlightId) {
   star.textContent = '⭐';
   capitalEl.append(star);
 }
-
-const reduceMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
 /** architecture.md §4 contract: morphTo(shapeKey, color) — shapeKey indexes content/map-shapes.json. */
 export function morphTo(shapeKey, color) {

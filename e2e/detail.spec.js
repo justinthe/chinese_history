@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { openCardByTitle } from './helpers.js';
 
 test.beforeEach(async ({ page }) => {
   const errors = [];
@@ -96,6 +97,32 @@ test('prev/next step chronologically within category, disabled at the ends', asy
   for (let i = 0; i < 40 && await next.isEnabled(); i++) await next.click();
   await expect(next).toBeDisabled();
   await expect(prev).toBeEnabled();
+});
+
+// Phase 11: opener-focusability fix for tasks/todo.md's logged bug — a
+// `.more-row` opener inside a `[popover=auto]` list auto-dismisses (and
+// becomes unfocusable) when the panel opens; detail.js should fall back to
+// the `.ev-more` chip that controls that popover. Qin is a dense era whose
+// events fold into "+N" clusters (CLAUDE.md phase 10), so openCardByTitle
+// is expected to go through the cluster path here, not a direct card.
+test('closing an event opened from a cluster popover returns focus to a focusable element', async ({ page }) => {
+  await page.goto('./');
+  await expect(page.locator('html')).toHaveAttribute('data-app', 'ready');
+  await page.locator('.hero .actions .btn', { hasText: 'Explore freely' }).click();
+  await page.evaluate(() => { location.hash = '#screen=explore&year=-215'; });
+  await expect(page.locator('#explore')).toBeVisible();
+
+  await openCardByTitle(page, 'Chen Sheng and Wu Guang spark rebellion');
+  const panel = page.locator('#panel');
+  await expect(panel).toHaveClass(/open/);
+
+  await page.keyboard.press('Escape');
+  await expect(panel).not.toHaveClass(/open/);
+  // Focus must land on the real .more-row opener (still focusable) or, if the
+  // popover auto-dismissed and made it unfocusable, on the .ev-more chip that
+  // controls it — never silently fall back to body/html.
+  const focusedClass = await page.evaluate(() => document.activeElement.className);
+  expect(focusedClass).toMatch(/more-row|ev-more/);
 });
 
 test.describe('mobile 390px', () => {

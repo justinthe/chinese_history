@@ -115,6 +115,18 @@ export function close() {
   if (get().eventId) set({ eventId: null });
 }
 
+/** Restores focus to the element that opened the panel. `isConnected` alone isn't enough:
+ *  an opener inside a `.more-list` [popover] auto-dismisses when the panel opens, which
+ *  makes its contents unfocusable (offsetParent null) while staying connected — falls back
+ *  to the `.ev-more` chip that controls that popover, which stays focusable throughout. */
+function focusOpener() {
+  if (!opener?.isConnected) return;
+  if (opener.offsetParent !== null) return opener.focus();
+  const popover = opener.closest('[popover]');
+  const chip = popover && document.querySelector(`[popovertarget="${popover.id}"]`);
+  chip?.focus();
+}
+
 function render() {
   const { eventId } = get();
 
@@ -122,9 +134,10 @@ function render() {
     panelEl.classList.remove('open');
     scrimEl.classList.remove('open');
     panelEl.inert = true;
+    document.getElementById('app').inert = false;
     releaseTrap?.();
     releaseTrap = null;
-    if (opener?.isConnected) opener.focus();
+    focusOpener();
     opener = null;
     lastId = null;
     return;
@@ -145,6 +158,7 @@ function render() {
     if (img) {
       const imgEl = el('img');
       imgEl.loading = 'lazy';
+      imgEl.decoding = 'async';
       imgEl.alt = img.alt;
       imgEl.src = img.src;
       imgEl.onerror = () => {
@@ -205,6 +219,7 @@ function render() {
     panelEl.classList.add('open');
     scrimEl.classList.add('open');
     panelEl.inert = false;
+    document.getElementById('app').inert = true; // scrim covers it visually; inert keeps AT out too
     panelEl.focus();
     releaseTrap = trap(panelEl);
   }

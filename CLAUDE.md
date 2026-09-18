@@ -11,21 +11,136 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   `tests/coverage.test.js`, `tests/lanes.test.js`, `tests/timeline-zoom.test.js`,
   `tests/tween.test.js`, `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
   `tests/detail-render.test.js`, `tests/search.test.js`,
-  `tests/chips.test.js`, `tests/tour.test.js`, `tests/fetch-images.test.js`;
-  146/146 green), `npm run e2e` (playwright: `e2e/smoke.spec.js`,
-  `e2e/shell.spec.js`, `e2e/timeline.spec.js`, `e2e/map.spec.js`,
-  `e2e/detail.spec.js`, `e2e/search.spec.js`, `e2e/tour.spec.js`, plus new
+  `tests/chips.test.js`, `tests/tour.test.js`, `tests/fetch-images.test.js`,
+  `tests/contrast.test.js`; 149/149 green), `npm run e2e` (playwright:
+  `e2e/smoke.spec.js`, `e2e/shell.spec.js`, `e2e/timeline.spec.js`,
+  `e2e/map.spec.js`, `e2e/detail.spec.js`, `e2e/search.spec.js`,
+  `e2e/tour.spec.js`, `e2e/a11y.spec.js`, `e2e/keyboard.spec.js`, plus
   `e2e/helpers.js` (shared `openCardByTitle()`, not a spec file itself);
-  builds + previews first; 48/48 green).
+  builds + previews first; 59/59 green). `npm run lighthouse` (`lhci
+  autorun` against `vite preview`, needs `@lhci/cli`; config in
+  `lighthouserc.json`).
   Build-time image pipeline: `node scripts/fetch-images.mjs [--only <id>]
   [--force] [--dry-run] [--allow-missing]` (needs `FETCH_USER_AGENT` env for
   real fetches; `sharp` devDependency). Coverage report:
   `node scripts/coverage.mjs` (also runs automatically at the end of
   `node scripts/validate.mjs`/`npm run build` — warnings only, never fails
-  the build). Manual check: `scripts/test-phase-10.sh` (also
-  `scripts/test-phase-09.sh`/`-08.sh`/`-04.sh` through `-07.sh` still work
-  for their own screens).
-- Current phase: Phase 10 complete — content fill to v1 scope, per PRD §4/§7
+  the build). Manual check: `scripts/test-phase-11.sh` (also
+  `scripts/test-phase-10.sh`/`-09.sh`/`-08.sh`/`-04.sh` through `-07.sh`
+  still work for their own screens).
+- Current phase: Phase 11 complete — responsive, accessibility, performance
+  pass per the phase-11 prompt and PRD §7/§8. Everything below was a real,
+  cited gap found by three parallel Explore audits at plan time — phases
+  04-10 had already shipped detail/tour as bottom sheets, a real focus trap,
+  ARIA on search/map/timeline/tour, and CSS-level `prefers-reduced-motion`,
+  so this phase closed what was left, not a rewrite.
+  **Responsive:** root cause at 360px was the topbar wrapping to ~3 lines
+  (chips `flex-wrap:wrap` with six always-visible labels), squeezing
+  `.mapwrap` toward its 200px floor. `.chips` now scrolls horizontally
+  (`flex-wrap:nowrap; overflow-x:auto; min-width:0` — the `min-width:0` is
+  the actual fix, since a flex child's default `min-width:auto` blocks
+  `overflow-x` from ever triggering, a real bug caught only by measuring
+  actual rendered widths via a throwaway Playwright script, not by reading
+  the CSS). This is a disclosed deviation from storyboard Screen 7's "wraps
+  to two rows" screenshot, confirmed with the user first. Also fixed:
+  `.search-results` no longer overflows a 360px viewport (was a fixed
+  300px), `.era-label` no longer overlaps the year badge, `.panel .art`
+  hero shrinks on the mobile bottom sheet, `.hero`/`.float` adjusted so
+  landing (which had zero mobile rules) doesn't crowd at 360px, and every
+  `:hover` rule that would otherwise stick on touch is now wrapped in
+  `@media (hover: hover)`.
+  **Accessibility:** real skip link + `<main>` landmark (`index.html`);
+  `.teaser` cards, the explore `.logo`, and timeline `.band`s were mouse-only
+  `<div>`s — now real keyboard targets (`.band`→`<button>`; teasers keep
+  their `<h2>` children so they're `role="button"`+Enter/Space, matching
+  `map.js`'s existing pin pattern rather than inventing a new one). The
+  toast and the map's year badge are now real live regions (`role="status"`,
+  `aria-live="polite"`) — the toast's old `display:none`↔`block` toggle
+  removed it from the accessibility tree between messages, so it never
+  actually announced; fixed via an opacity/pointer-events toggle instead.
+  Fixed the phase-10-deferred focus bug: `detail.js`'s close handler checked
+  `opener.isConnected` but not focusability — an opener inside a dismissed
+  `[popover=auto]` list stays connected yet unfocusable, so `.focus()`
+  silently no-op'd; now falls back to the `.ev-more` chip that controls
+  that popover (`e2e/detail.spec.js`'s strict `toBeFocused()`-equivalent
+  assertion, weakened in phase 10, is restored via a new cluster-path test).
+  `dom.js`'s `textOn()` used a raw non-linearized luminance approximation
+  that passed all six category colors but silently failed four era band
+  colors (`qin`/`tang`/`prc` at 3.94:1, `jin` at 4.39:1, `wudai` at 4.22:1,
+  against a ≥4.5:1 requirement) — rewrote it as real sRGB-linearized WCAG
+  contrast (`contrastRatio()`, new export) and minimally darkened those four
+  era hex values in `content/eras.json` (color only, no name/date/fact
+  changes — confirmed by `git diff` touching only `"color"` lines) until
+  every era and category clears 4.5:1, proven by new `tests/contrast.test.js`
+  rather than eyeballed. A live axe-core run (`e2e/a11y.spec.js`, WCAG 2.1
+  A/AA tags, 7 screens) caught one contrast failure axe alone would have
+  found but the color-token fix wouldn't have: `.band`'s inherited
+  `opacity: .9` was blending both text and background 10% toward the page
+  color, silently undercutting the just-fixed hex values — removed the
+  opacity (accessibility over the subtle dim aesthetic) rather than
+  re-tuning colors around it.
+  **Reduced motion:** the global CSS `*{transition:none}` rule couldn't
+  reach `timeline.js`'s two JS `scrollTo`/`scrollBy` calls (`behavior:
+  'smooth'` is a scroll option, not a CSS transition) — `pan()` and
+  `scrollToYear()` now both gate on a `reduceMotion()` helper, promoted from
+  `map.js`'s local copy into `dom.js` so it's shared, not duplicated, and
+  proven with a new `e2e/timeline.spec.js` test using Playwright's
+  `reducedMotion: 'reduce'` context option (checks a scroll settles
+  instantly instead of animating over several frames).
+  **Performance:** JS was already 11.7KB gzipped against the 150KB budget —
+  nothing to split, ponytail's "code-split nothing unless measured" resolved
+  to doing nothing. Real work: preloaded both self-hosted fonts (they lived
+  only inside `@font-face` in the stylesheet, so the browser couldn't start
+  fetching them until CSS had parsed — two serialized round-trips before
+  first paint), added `decoding="async"` to the one `<img>` in the app
+  (`loading="lazy"` was already there), and a real gzip-size assertion in
+  both `scripts/test-phase-11.sh` and `.github/workflows/ci.yml` (`gzip -c
+  dist/assets/*.js | wc -c` against 153600 bytes) rather than trusting
+  Vite's build-log column by eye.
+  **Lighthouse:** added `@lhci/cli` as a 6th devDependency (`architecture.md`
+  §5/§7 updated to match) with `lighthouserc.json` asserting
+  perf≥0.90/a11y≥0.95 against `vite preview`, wired into `.github/workflows/ci.yml`
+  as a real step — though `origin` is a Synology bare repo, not GitHub, so
+  that workflow never actually executes anywhere; the real proof is the
+  local `npm run lighthouse` run recorded this session: **Performance 99,
+  Accessibility 100, Best Practices 96, FCP 0.9s, LCP 2.0s** (report in
+  `lhci-report/`, gitignored). `npm test` 149/149 (146 existing +
+  `tests/contrast.test.js`'s 3), `npm run build` clean (JS 12.32KB gzip vs
+  150KB budget), `npm run e2e` 59/59 (48 existing + `e2e/a11y.spec.js`'s 7
+  screens × 0 WCAG 2.1 A/AA violations + `e2e/keyboard.spec.js`'s 2 journeys,
+  driven entirely by `page.keyboard`, no `.click()` calls). `/ponytail-review`
+  found 2 real findings (a stray double-blank-line left after promoting
+  `reduceMotion()` out of `map.js`; a redundant explicit `display:block` on
+  `.teaser`, already block by default) — both fixed, net −2 lines.
+  `graphify`'s after-state run confirmed `dom.js` grew into its own tight
+  single-file community (cohesion 0.53: `contrastRatio`/`luminance`/
+  `reduceMotion`/`textOn`/`toast`/`qs`) rather than any function spreading
+  into an unrelated module — the intended shape. A real-browser pass
+  (claude-in-chrome) confirmed: skip link works and is visually hidden until
+  focused, "Explore freely" and a teaser card both get a visible gold focus
+  ring, the explore screen's bands render fully opaque and legible, the
+  detail panel's close button gets a focus ring, and the Grand Tour panel's
+  dark theme still reads correctly. One **pre-existing, out-of-scope**
+  content bug surfaced during that pass and flagged rather than fixed per
+  this phase's content-edits-excluded boundary: `content/images.manifest.json`'s
+  `qin` entry has a duplicated credit string, `"Unknown authorUnknown
+  author, The British Library"` — a phase 9/10 authoring bug, logged in
+  `tasks/todo.md` for a future content pass. UNPROVEN this phase (flagged,
+  not assumed, same tool-side limitation phases 06/08/10 already
+  hit): a real 360px visual check — `claude-in-chrome`'s window resize did
+  not take effect against this Linux window manager (`window.innerWidth`
+  confirmed still ~1880px); covered instead by `e2e/shell.spec.js`'s and
+  `e2e/a11y.spec.js`'s real 360px viewport geometry/axe assertions, both
+  passing. Screen-reader announcement (VoiceOver/NVDA) is also UNPROVEN —
+  no such tool available this session; covered structurally by the new
+  `role="status"`/`aria-live` live regions and axe's 0-violations result,
+  handed to the user as the Manual Checklist's item 3.
+  Out of scope, left for a future phase: the pre-existing `qin` image-credit
+  string bug above, and closing the images-to-90% coverage gap (still 46.5%,
+  unchanged this phase — content edits were explicitly out of this phase's
+  scope boundary).
+  Ready for Phase 12 or v1 ship, per vibe-prompts/00-README.md's run order.
+- Prior phase: Phase 10 complete — content fill to v1 scope, per PRD §4/§7
   and the phase-10 prompt. `content/events.json` grew 28 → 157 (target
   ≥150); `content/eras.json` 14 → 18 gapless bands (added `wzhou`/`ezhou`
   splitting the old `zhou`, `jin`, `nanbei`, `wudai` filling the two year

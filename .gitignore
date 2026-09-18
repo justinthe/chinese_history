@@ -4,3 +4,5 @@ dist/
 .impeccable/hook.cache.json
 test-results/
 playwright-report/
+.lighthouseci/
+lhci-report/

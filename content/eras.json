@@ -66,7 +66,7 @@
     "hanzi": "秦",
     "start": -221,
     "end": -206,
-    "color": "#e4493f",
+    "color": "#e03024",
     "capital": "Xianyang",
     "capitalXY": [
       295,
@@ -111,7 +111,7 @@
     "hanzi": "晋",
     "start": 280,
     "end": 420,
-    "color": "#6c7a89",
+    "color": "#687583",
     "capital": "Luoyang → Jiankang",
     "capitalXY": [
       330,
@@ -156,7 +156,7 @@
     "hanzi": "唐",
     "start": 618,
     "end": 907,
-    "color": "#e4493f",
+    "color": "#e03024",
     "capital": "Chang'an",
     "capitalXY": [
       300,
@@ -171,7 +171,7 @@
     "hanzi": "五代",
     "start": 907,
     "end": 960,
-    "color": "#a67c52",
+    "color": "#926d48",
     "capital": "Kaifeng (mostly)",
     "capitalXY": [
       350,
@@ -261,7 +261,7 @@
     "hanzi": "中华人民共和国",
     "start": 1949,
     "end": null,
-    "color": "#e4493f",
+    "color": "#e03024",
     "capital": "Beijing",
     "capitalXY": [
       400,

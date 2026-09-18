@@ -133,8 +133,17 @@ test.describe('mobile 390px: tour becomes a bottom sheet, map stays usable', () 
 test.describe('360px viewport stays usable', () => {
   test.use({ viewport: { width: 360, height: 740 } });
 
-  test('chips wrap, map still ≥200px tall', async ({ page }) => {
+  // Phase 11: chips scroll horizontally instead of wrapping (disclosed deviation
+  // from storyboard Screen 7's screenshot) so the topbar stays one row and the
+  // map keeps its min-height, instead of a 3-row topbar squeezing it below 200px.
+  test('chip row is one line and scrolls, map still ≥200px tall', async ({ page }) => {
     await page.locator('.hero .actions .btn', { hasText: 'Explore freely' }).click();
+    const chips = page.locator('.chips');
+    const chipsBox = await chips.boundingBox();
+    expect(chipsBox.height).toBeLessThan(40); // one row of chips, not wrapped to several
+    const scrollWidth = await chips.evaluate((n) => n.scrollWidth);
+    const clientWidth = await chips.evaluate((n) => n.clientWidth);
+    expect(scrollWidth).toBeGreaterThan(clientWidth); // content overflows -> scrolls, doesn't wrap
     const mapBox = await page.locator('.mapwrap').boundingBox();
     expect(mapBox.height).toBeGreaterThanOrEqual(200);
   });

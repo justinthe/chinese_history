@@ -212,8 +212,9 @@ npm scripts:
 | `test` | `vitest run` |
 | `e2e` | `playwright test` against `vite preview` |
 | `screens` | Pipeline screenshot script for storyboard images |
+| `lighthouse` | `lhci autorun` against `vite preview` — phase 11, perf/a11y budget (§6) |
 
-Environments: `local` (dev server), `ci` (GitHub Actions: validate, test, build, e2e on PR; deploy on main), `prod` (GitHub Pages). No env-specific config beyond the Plausible flag `VITE_ANALYTICS=1`.
+Environments: `local` (dev server), `ci` (GitHub Actions: validate, test, build, e2e, lighthouse on PR; deploy on main), `prod` (GitHub Pages). No env-specific config beyond the Plausible flag `VITE_ANALYTICS=1`.
 
 ## 6. Observability Plan
 
@@ -235,7 +236,7 @@ No server, no user data, no secrets. Remaining surface:
 - **Content injection.** All JSON strings rendered via `textContent`, never `innerHTML`, except `body` paragraphs which are plain strings wrapped in `<p>` by code. No HTML allowed in content; validate rejects `<` in string fields.
 - **localStorage.** Only `tourStop` (int) and `cats` (string list), parsed defensively.
 - **Rate limiting / abuse.** Not applicable; static host handles it.
-- **Dependencies.** `npm audit` in CI; dev-only dependencies (`sharp`, `vite`, `vitest`, `playwright`) never ship to the browser. Zero runtime npm dependencies.
+- **Dependencies.** `npm audit` in CI; dev-only dependencies (`sharp`, `vite`, `vitest`, `playwright`, `@axe-core/playwright`, `@lhci/cli`) never ship to the browser. Zero runtime npm dependencies.
 
 ## 8. Dependency Graph
 

@@ -65,6 +65,15 @@
         ],
         "createdAt": "2026-09-18T07:24:06.385Z",
         "reason": "Agent: ported verbatim from approved mockup.html's .timeline/.tour border-top dividers; same design already approved in mockup.html"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-18T22:52:14.967Z",
+        "reason": "pre-existing #explore{overflow:hidden}/.screen{overflow:auto} from phase 02/04, not introduced by phase-11's skip-link/main-landmark edit; popovers already escape via native top-layer"
       }
     ]
   }

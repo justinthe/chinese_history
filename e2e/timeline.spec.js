@@ -22,6 +22,25 @@ function hashYear(page) {
   return Number(new URLSearchParams(hashParams(page)).get('year'));
 }
 
+test.describe('reduced motion', () => {
+  test.use({ reducedMotion: 'reduce' });
+
+  // src/views/timeline.js's scrollToYear()/pan() previously always passed
+  // behavior:'smooth' — the CSS-only `*{transition:none}` rule can't touch a
+  // JS scrollTo() call, so this was the one animation prefers-reduced-motion
+  // missed (tasks/todo.md). A smooth scroll takes several frames to settle;
+  // an instant one has already arrived by the very next tick.
+  test('a year jump scrolls instantly, not smoothly', async ({ page }) => {
+    const scroller = page.locator('.tl-scroll');
+    const band = page.locator('.band').nth(2); // an era away from the default view
+    await band.click();
+    const immediate = await scroller.evaluate((n) => n.scrollLeft);
+    await page.waitForTimeout(80);
+    const settled = await scroller.evaluate((n) => n.scrollLeft);
+    expect(immediate).toBe(settled);
+  });
+});
+
 test('mouse wheel over the timeline scrolls it sideways, page does not scroll', async ({ page }) => {
   const scroller = page.locator('.tl-scroll');
   const before = await scroller.evaluate((n) => n.scrollLeft);

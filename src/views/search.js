@@ -39,7 +39,9 @@ export function mount(root) {
   function renderResults() {
     results.textContent = '';
     if (!hits.length) {
-      results.append(el('div', null, 'No match'));
+      const empty = el('div', null, 'No match');
+      empty.setAttribute('role', 'presentation'); // a plain row isn't a valid child of role="listbox"
+      results.append(empty);
     } else {
       hits.forEach((h, i) => {
         const row = el('div', null, `${h.icon} ${h.label}`);
@@ -117,6 +119,7 @@ export function mount(root) {
       const chip = el('button', 'chip' + (cats.has(k) ? ' on' : ''), `${c.icon} ${c.label}`);
       chip.style.background = c.color;
       chip.style.color = textOn(c.color);
+      chip.setAttribute('aria-pressed', String(cats.has(k)));
       chip.addEventListener('click', () => toggleCat(k));
       chipsEl.append(chip);
     });

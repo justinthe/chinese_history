@@ -26,6 +26,7 @@ export function icon(catKey) {
     viewBox: '0 0 24 24', width: 110, height: 110,
     fill: 'none', stroke: 'currentColor', 'stroke-width': 1.5,
     'stroke-linecap': 'round', 'stroke-linejoin': 'round',
+    'aria-hidden': 'true', // decorative fallback; the category is already named in a badge
   });
   svg.append(...(SHAPES[catKey] || SHAPES.other)());
   return svg;
