@@ -1,23 +1,83 @@
 // architecture.md §4: map.js — mount(el), morphTo(shapeKey, color).
-import { SHAPES, TOUR, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
+import { CATS, SHAPES, TOUR, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
 import { get, subscribe } from '../state.js';
-import { el, toast } from '../dom.js';
+import { el } from '../dom.js';
 import { open as openEvent } from './detail.js';
+import { tween } from '../lib/tween.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
+const VB_W = 600, VB_H = 500;
+const ZOOM_MIN = 1, ZOOM_MAX = 2, ZOOM_STEP = 0.5;
 
-let territoryEl, pinsEl, capitalEl, eraNameEl, eraHanziEl, eraLineEl, eraCapEl, yearBadgeEl;
+let mapSvgEl, territoryEl, pinsEl, capitalEl, eraNameEl, eraHanziEl, eraLineEl, eraCapEl, yearBadgeEl;
 // SHAPES is empty until data.js's load() resolves (main.js awaits it before
 // mount), so this can't read SHAPES.qin at module-eval time like the old
 // mock-data.js version did — resolved lazily in mount() instead.
 let curShape = null;
 let lastEraId = null;
-let morphRaf;
+let stopMorph = () => {};
+let curZoom = ZOOM_MIN;
 
 function svgEl(tag, attrs) {
   const n = document.createElementNS(SVG_NS, tag);
   Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
   return n;
+}
+
+/**
+ * Nudges pins that fall within `minDist` px of an already-placed pin apart,
+ * along the vector between them, clamped inside the map viewBox. Pure, no
+ * DOM. O(n²) over the ≤ ~15 pins a single era ever has —
+ * ponytail: simple relaxation, revisit with a spatial grid only if an era
+ * ever needs 100s of pins at once.
+ */
+export function spreadPins(events, minDist = 24) {
+  const placed = [];
+  const out = events.map((ev, i) => {
+    let [px, py] = ev.xy;
+    // Push away from the *nearest* violator each pass (not just the first
+    // found) so settling against one placed pin can't leave it still
+    // overlapping another; enough passes to fully untangle a crowded era.
+    for (let iter = 0; iter < 30; iter++) {
+      let collider = null, minD = minDist;
+      for (const p of placed) {
+        const d = Math.hypot(p.px - px, p.py - py);
+        if (d < minD) { minD = d; collider = p; }
+      }
+      if (!collider) break;
+      let dx = px - collider.px, dy = py - collider.py;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 0.01) {
+        const angle = (i * 2.399963) % (Math.PI * 2); // golden-angle spread for exact overlaps
+        dx = Math.cos(angle);
+        dy = Math.sin(angle);
+      } else {
+        dx /= dist;
+        dy /= dist;
+      }
+      px = collider.px + dx * minDist;
+      py = collider.py + dy * minDist;
+    }
+    px = Math.max(20, Math.min(VB_W - 20, px));
+    py = Math.max(20, Math.min(VB_H - 20, py));
+    const placedPin = { ...ev, px, py };
+    placed.push(placedPin);
+    return placedPin;
+  });
+  return out;
+}
+
+/** viewBox string for a 1×–2× scale centred on the territory polygon's centroid, clamped to the map frame. */
+export function viewBoxFor(points, zoom) {
+  const z = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, zoom));
+  const xs = points.filter((_, i) => i % 2 === 0);
+  const ys = points.filter((_, i) => i % 2 === 1);
+  const cx = xs.reduce((a, b) => a + b, 0) / xs.length;
+  const cy = ys.reduce((a, b) => a + b, 0) / ys.length;
+  const w = VB_W / z, h = VB_H / z;
+  const minX = Math.max(0, Math.min(VB_W - w, cx - w / 2));
+  const minY = Math.max(0, Math.min(VB_H - h, cy - h / 2));
+  return `${minX} ${minY} ${w} ${h}`;
 }
 
 // Static background chrome (waves, land, rivers) — never contains data, so a
@@ -50,11 +110,13 @@ export function mount(root) {
   wrap.querySelector('#bg-korea').setAttribute('d', SHAPES.korea);
   wrap.querySelector('#bg-japan').setAttribute('d', SHAPES.japan);
   wrap.querySelector('#bg-rivers').setAttribute('d', SHAPES.rivers);
-  curShape = SHAPES.qin.slice();
+  mapSvgEl = wrap.querySelector('#map');
+  curShape = SHAPES[eraAt(get().year).shape].slice();
   territoryEl = wrap.querySelector('#territory');
   territoryEl.setAttribute('points', curShape.join(' '));
   pinsEl = wrap.querySelector('#pins');
   capitalEl = wrap.querySelector('#capital');
+  curZoom = ZOOM_MIN; // MAP_SVG's viewBox="0 0 600 500" already matches 1x, no reset needed
 
   const eraLabel = el('div', 'era-label');
   const h2 = el('h2');
@@ -69,13 +131,16 @@ export function mount(root) {
   yearBadgeEl = el('div', 'year-badge');
 
   const legend = el('div', 'legend');
-  ['⭐ capital', '⚔️ war', '🌊 disaster', '👤 figure', '⚙️ tech'].forEach((t) => legend.append(el('span', null, t)));
+  legend.append(el('span', null, '⭐ capital'));
+  Object.values(CATS).forEach((c) => legend.append(el('span', null, `${c.icon} ${c.label}`)));
 
   const controls = el('div', 'map-controls');
   const zoomIn = el('button', 'btn ghost sm', '＋');
-  zoomIn.addEventListener('click', () => toast('Mockup: would zoom map'));
+  zoomIn.setAttribute('aria-label', 'Zoom map in');
+  zoomIn.addEventListener('click', () => applyZoom(curZoom + ZOOM_STEP));
   const zoomOut = el('button', 'btn ghost sm', '－');
-  zoomOut.addEventListener('click', () => toast('Mockup: would zoom map'));
+  zoomOut.setAttribute('aria-label', 'Zoom map out');
+  zoomOut.addEventListener('click', () => applyZoom(curZoom - ZOOM_STEP));
   controls.append(zoomIn, zoomOut);
 
   wrap.append(eraLabel, yearBadgeEl, legend, controls);
@@ -84,7 +149,15 @@ export function mount(root) {
   lastEraId = null;
   const unsubscribe = subscribe(render);
   render();
-  return unsubscribe;
+  return () => {
+    unsubscribe();
+    stopMorph();
+  };
+}
+
+function applyZoom(zoom) {
+  curZoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, zoom));
+  mapSvgEl.setAttribute('viewBox', viewBoxFor(curShape, curZoom));
 }
 
 function render() {
@@ -101,7 +174,7 @@ function render() {
 
   if (era.id !== lastEraId) {
     lastEraId = era.id;
-    morphTo(SHAPES[era.shape], era.color);
+    morphTo(era.shape, era.color); // keeps the viewBox current via its onFrame; applyZoom() covers zoom clicks
   }
   renderPins(era, cats, highlightId);
 }
@@ -113,15 +186,26 @@ function renderPins(era, cats, highlightId) {
     pinsEl.append(svgEl('text', { x: 300, y: 460, 'text-anchor': 'middle', 'font-size': 15, class: 'map-empty' }));
     pinsEl.lastChild.textContent = 'No events in this era for the selected categories. Turn on more chips above.';
   } else {
-    events.forEach((ev) => {
-      const g = svgEl('g', { class: 'pin' + (highlightId === ev.id ? ' glow' : '') });
+    spreadPins(events).forEach((ev) => {
+      const g = svgEl('g', {
+        class: 'pin' + (highlightId === ev.id ? ' glow' : ''),
+        tabindex: '0',
+        role: 'button',
+        'aria-label': `${ev.title}, ${fmtYear(ev.year)}, ${CATS[ev.category].label}`,
+      });
       g.append(
-        svgEl('circle', { cx: ev.xy[0], cy: ev.xy[1], r: 16, fill: '#fff', stroke: catColor(ev.category), 'stroke-width': 3 })
+        svgEl('circle', { cx: ev.px, cy: ev.py, r: 16, fill: '#fff', stroke: catColor(ev.category), 'stroke-width': 3 })
       );
-      const txt = svgEl('text', { x: ev.xy[0], y: ev.xy[1] + 7, 'text-anchor': 'middle', 'font-size': 20 });
+      const txt = svgEl('text', { x: ev.px, y: ev.py + 7, 'text-anchor': 'middle', 'font-size': 20 });
       txt.textContent = ev.icon;
       g.append(txt);
       g.addEventListener('click', () => openEvent(ev.id));
+      g.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openEvent(ev.id);
+        }
+      });
       pinsEl.append(g);
     });
   }
@@ -133,24 +217,19 @@ function renderPins(era, cats, highlightId) {
 
 const reduceMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-export function morphTo(target, color) {
-  cancelAnimationFrame(morphRaf);
+/** architecture.md §4 contract: morphTo(shapeKey, color) — shapeKey indexes content/map-shapes.json. */
+export function morphTo(shapeKey, color) {
+  const target = SHAPES[shapeKey];
+  if (!target) return;
+  stopMorph();
   territoryEl.setAttribute('fill', color);
   territoryEl.setAttribute('stroke', color);
-  if (reduceMotion()) {
-    curShape = target.slice();
-    territoryEl.setAttribute('points', curShape.join(' '));
-    return;
-  }
-  const from = curShape.slice();
-  const t0 = performance.now();
-  const dur = 600;
-  const step = (now) => {
-    const k = Math.min(1, (now - t0) / dur);
-    const e = 1 - Math.pow(1 - k, 3);
-    curShape = from.map((v, i) => v + (target[i] - v) * e);
-    territoryEl.setAttribute('points', curShape.join(' '));
-    if (k < 1) morphRaf = requestAnimationFrame(step);
-  };
-  morphRaf = requestAnimationFrame(step);
+  stopMorph = tween(curShape, target, {
+    reduced: reduceMotion(),
+    onFrame(points) {
+      curShape = points;
+      territoryEl.setAttribute('points', curShape.join(' '));
+      mapSvgEl.setAttribute('viewBox', viewBoxFor(curShape, curZoom));
+    },
+  });
 }

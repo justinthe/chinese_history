@@ -149,3 +149,43 @@ explicitly UNPROVEN and reported as such rather than assumed: Firefox wheel
 behavior (no Firefox available this session) and true 60fps under the
 Performance panel (e2e proves a wall-clock budget, not frame timing). Phase 04
 done.
+
+# Phase 05 — Map
+
+Plan: /home/jthe/.claude/plans/giggly-weaving-stroustrup.md
+
+## Build
+- [x] `src/lib/tween.js` — pure point-array tween (easeOutCubic, lerpPoints, tween()), clock/raf/cancel injected for node-environment testing
+- [x] `morphTo(shapeKey, color)` — architecture.md §4 contract restored (was `morphTo(pointsArray, color)`); looks the key up in `SHAPES`, delegates animation to `tween()`
+- [x] `spreadPins(events, minDist=24)` — pure pin de-overlap, nudges colliding pins apart along their connecting vector, golden-angle fallback for exact overlaps, clamped to the 600×500 viewBox
+- [x] Pin accessibility — `tabindex="0"`, `role="button"`, `aria-label` (title/year/category), Enter/Space handler; `.pin:focus-visible` outline added to styles.css
+- [x] `viewBoxFor(points, zoom)` — pure 1×–2× viewBox centred on the territory centroid, clamped to the map frame; wired to the ＋/－ buttons (replacing the old `toast('Mockup: would zoom map')` stub) and to `morphTo`'s onFrame so a zoomed map tracks the tween
+- [x] Legend now derives from `CATS` (data.js) instead of a hardcoded 5-item list that had drifted from the six real categories
+- [x] `mount()`'s cleanup stops an in-flight tween (tasks/lessons.md phase-02 rule: every mount() that starts something async must clean it up)
+
+## Tests
+- [x] `tests/tween.test.js` — easeOutCubic endpoints/monotonicity, lerpPoints endpoints/midpoint/clamping, reduced-motion single-frame path (raf never called), fake-clock animation reaching the exact final frame, stop() cancels
+- [x] `tests/map-pins.test.js` — spreadPins (pairwise ≥24px, untouched when already separated, ids/order preserved, viewBox-clamped), eventsIn filtering contract against real content/*.json, viewBoxFor (1x/2x/edge-clamp/zoom-clamp)
+- [x] `e2e/map.spec.js` (7 tests) — Qin→Han morph changes+settles `#territory` points, reduced-motion instant swap, pin click opens `#panel`, pin Tab+Enter opens `#panel`, Nature-at-Qin empty state, Xia ✨ Legendary label, zoom +/− clamps at 1x/2x
+- [x] `npm test` 70/70, `npm run build` clean (JS gzip 10.19KB vs PRD §8's 150KB budget), `npm run e2e` 25/25
+
+## Ponytail review
+- `/ponytail-review` on the diff: 2 findings — `mount()` resetting the viewBox to `viewBoxFor(curShape, ZOOM_MIN)` right after `curZoom = ZOOM_MIN` (always equals the SVG template's own default, nothing replaces it), and `render()`'s `else`-branch recomputing the same viewBox on every non-era-change render tick (already kept current by `applyZoom()` and `morphTo`'s onFrame). Both deleted (net -3 lines); re-verified tests/build/e2e still green.
+
+## Manual verification (browser, via claude-in-chrome)
+- [x] Qin→Han scrub: territory grows northwest smoothly, capital line shows "Chang'an → Luoyang", "Meanwhile in the world" strip updates, all 6 legend categories present
+- [x] Pin click opens the detail panel (Cai Lun invents paper, at its correct pin)
+- [x] Zoom ＋ clamps at 2× (three clicks past the ceiling stayed at 2×); zoom − clamps at 1× (back to full "0 0 600 500")
+- [x] Nature-only filter at Han shows the map empty-state sentence
+- [x] Xia era card shows "✨ Legendary era."
+- [x] No console errors across the whole session
+- [ ] Firefox / real prefers-reduced-motion OS setting — UNPROVEN this session (Chrome-only tooling); covered instead by `page.emulateMedia({reducedMotion:'reduce'})` in e2e, which passes
+
+## Reviewer subagent sign-off
+Independent reviewer (general-purpose agent) verified from a full static read: `morphTo(shapeKey, color)` matches architecture.md §4 exactly with no stale array-argument caller anywhere; tween.js is pure and tested for endpoints + reduced-motion; spreadPins is wired into renderPins and tested for the 24px guarantee; pin a11y (tabindex/role/aria-label/Enter+Space) present with per-event icon so color is never the sole signal; zoom is real viewBox math, not the old toast stub; mount()'s cleanup stops the tween. Era label/capital star/year badge/empty state confirmed byte-identical to the pre-phase code. PASS on all 6 requested checks, zero defects found. It could not itself run `npm test`/`build`/`e2e` (inherited a stale plan-mode restriction, same class of harness limitation phase 04 hit) — I had already run and passed all three myself, both before and after the ponytail-review cleanup.
+
+## Graphify (end of phase)
+Ran clean this time (scoped to `src/`, code-only corpus so no LLM subagents needed): 81 nodes, 152 edges, 8 communities. Confirms the intended shape — `morphTo() --calls--> tween()` shows up as a genuine cross-file edge, `tween()` sits alone as its own single-node community (isolated, pure, zero other imports, exactly the "pure lib" design goal), and every map.js function (`applyZoom`, `morphTo`, `mount`, `reduceMotion`, `render`, `renderPins`, `spreadPins`) clusters into one cohesive community rather than spreading across the graph — not spaghetti. Report at `graphify-out/GRAPH_REPORT_phase05.md`, graph at `graphify-out/graph_phase05.json` (named separately from the phase-04 baseline files to avoid clobbering them).
+
+## Review outcome
+Phase 05 done. All three requirement gaps identified at plan time are closed: `morphTo` matches the architecture contract, pin de-overlap and keyboard accessibility are real (not stubs), and the zoom buttons do genuine viewBox math instead of a toast placeholder. Era label, capital star, year badge, and empty state — already correct from phase 02 — are unchanged. One item explicitly UNPROVEN and reported as such rather than assumed: a real OS/Firefox reduced-motion pass (only Chrome DevTools emulation available this session; the reduced-motion code path itself is unit- and e2e-tested).

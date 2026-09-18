@@ -8,11 +8,45 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   (serves http://localhost:5173/chinese_history/, bare `/` 302-redirects there).
 - Test commands: `npm test` (vitest: `tests/smoke.test.js`,
   `tests/state.test.js`, `tests/data.test.js`, `tests/validate.test.js`,
-  `tests/lanes.test.js`, `tests/timeline-zoom.test.js`), `npm run e2e`
-  (playwright: `e2e/smoke.spec.js`, `e2e/shell.spec.js`, `e2e/timeline.spec.js`;
-  builds + previews first). Manual check: `scripts/test-phase-04.sh` (runs
-  `node scripts/validate.mjs` too).
-- Current phase: Phase 4 complete — timeline finished per PRD F2.
+  `tests/lanes.test.js`, `tests/timeline-zoom.test.js`, `tests/tween.test.js`,
+  `tests/map-pins.test.js`), `npm run e2e` (playwright: `e2e/smoke.spec.js`,
+  `e2e/shell.spec.js`, `e2e/timeline.spec.js`, `e2e/map.spec.js`; builds +
+  previews first). Manual check: `scripts/test-phase-05.sh` (runs
+  `node scripts/validate.mjs` too; `scripts/test-phase-04.sh` still works for
+  the timeline).
+- Current phase: Phase 5 complete — map finished per PRD F3.
+  `src/views/map.js`'s `morphTo` now matches architecture.md §4's real
+  contract, `morphTo(shapeKey, color)` (was `morphTo(pointsArray, color)`,
+  a phase-02 leftover) — it looks the key up in `SHAPES` and delegates the
+  animation to the new `src/lib/tween.js` (pure, `now`/`raf`/`cancel`
+  injected so it's unit-testable under vitest's node environment; extracted
+  verbatim from map.js's old inline rAF loop). Pins: `spreadPins()` (pure,
+  in map.js) nudges any pins within 24px apart along their connecting
+  vector, golden-angle fallback when two pins share the exact same `xy`;
+  wired into `renderPins()`. Pins gained real keyboard access — `tabindex`,
+  `role="button"`, `aria-label` (title/year/category), Enter/Space handler —
+  replacing click-only `<g>`s; per-event icon still shown alongside the
+  stroke color so color is never the sole signal (PRD §8). Map zoom ＋/－
+  now does real `viewBoxFor()` math (1×–2× centred on the territory
+  centroid, clamped) instead of the old `toast('Mockup: would zoom map')`
+  stub. Legend now derives from `CATS` (data.js) instead of a hardcoded
+  5-item list that had drifted from the six real categories. `mount()`'s
+  cleanup stops an in-flight tween (tasks/lessons.md phase-02 rule). Era
+  label, capital star, year badge, and empty state — already correct from
+  phase 02 — are unchanged. `/ponytail-review` on the diff cut 2 redundant
+  viewBox recomputes (mount() resetting to what the SVG template already
+  had; render()'s per-tick reapply already covered by applyZoom/morphTo).
+  `npm test` 70/70, `npm run build` clean (JS gzip 10.19KB vs PRD §8's 150KB
+  budget), `npm run e2e` 25/25. graphify's end-of-phase run (scoped to
+  `src/`, code-only so no LLM cost) worked clean this time — no repeat of
+  phase 03/04's tool-side bugs — and confirmed `morphTo()→tween()` as a real
+  cross-file edge with `tween()` sitting alone as its own single-node
+  community (isolated, pure, the intended design), and every map.js function
+  clustering into one cohesive community rather than spreading — not
+  spaghetti. UNPROVEN this phase (flagged, not assumed): a real OS/Firefox
+  prefers-reduced-motion pass (only Chrome DevTools emulation available this
+  session; the code path itself is unit- and e2e-tested).
+  Ready for Phase 6 (detail panel).
   `src/lib/lanes.js` (new, pure, unit-tested) does sweep-line lane assignment
   with "+N more" overflow clustering — no two cards fully overlap at default
   zoom, crowded runs (e.g. Qin, PRC) fold into a native `popover` disclosure

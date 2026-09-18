@@ -131,6 +131,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .pin { cursor: pointer; transition: transform .15s; transform-origin: center; }
 .pin:hover text { font-size: 30px; }
 .pin.glow circle { animation: pulse 1s infinite; }
+.pin:focus-visible { outline: 3px solid var(--gold, #f4b942); outline-offset: 2px; }
 @keyframes pulse { 50% { r: 22; opacity: .5; } }
 
 /* timeline */
