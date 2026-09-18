@@ -26,10 +26,14 @@ test('click a card opens the panel; Tab never leaves it; Esc closes and returns 
   await page.locator('.hero .actions .btn', { hasText: 'Explore freely' }).click();
   await expect(page.locator('#explore')).toBeVisible();
 
-  const card = page.locator('.ev', { hasText: 'Qin Shi Huang unifies China' });
-  // Click the inner <b> (house pattern, shell.spec.js journey 1) — the
-  // playhead slider overlaps part of the button's own bounding box.
-  await page.locator('.ev b', { hasText: 'Qin Shi Huang unifies China' }).click();
+  // This test's purpose is generic focus-trap/focus-return behavior, not any
+  // specific event — use the first directly-rendered card rather than a named
+  // one. (Phase 10's content fill made several eras, including Qin, dense
+  // enough to cluster into "+N" popovers; a card inside a closed popover
+  // becomes unfocusable, which would make the focus-return assertion below
+  // fail for reasons unrelated to what this test actually checks.)
+  const card = page.locator('.ev').first();
+  await card.locator('b').click();
   const panel = page.locator('#panel');
   await expect(panel).toHaveClass(/open/);
 
@@ -45,7 +49,10 @@ test('click a card opens the panel; Tab never leaves it; Esc closes and returns 
 });
 
 test('event with a manifest entry shows the image and its credit/license line', async ({ page }) => {
-  await page.goto('./#event=qin');
+  // 'terracotta' is still CC BY-SA 3.0 (unchanged since phase 09); 'qin' now
+  // carries a real fetched Public-domain photo instead of the phase-06 SVG
+  // placeholder this test originally targeted.
+  await page.goto('./#event=terracotta');
   await expect(page.locator('html')).toHaveAttribute('data-app', 'ready');
   const panel = page.locator('#panel');
   await expect(panel).toHaveClass(/open/);
@@ -54,7 +61,10 @@ test('event with a manifest entry shows the image and its credit/license line', 
 });
 
 test('event without a manifest entry shows its category icon, no broken image', async ({ page }) => {
-  await page.goto('./#event=wall');
+  // 'gunpowder' has no Commons/Met source with an allowlisted license (phase-10
+  // content fill searched it repeatedly and found none) — a stable imageless
+  // fixture, unlike 'wall', which phase 10 gave a real image to.
+  await page.goto('./#event=gunpowder');
   await expect(page.locator('html')).toHaveAttribute('data-app', 'ready');
   const panel = page.locator('#panel');
   await expect(panel).toHaveClass(/open/);
@@ -63,6 +73,9 @@ test('event without a manifest entry shows its category icon, no broken image', 
 });
 
 test('prev/next step chronologically within category, disabled at the ends', async ({ page }) => {
+  // Phase 10 added many more 'people' events, so the first-in-category id
+  // shifted — assert the boundary behavior, not a hardcoded pair
+  // (tests/detail-render.test.js's unit test covers the same lesson).
   await page.goto('./#event=confucius');
   await expect(page.locator('html')).toHaveAttribute('data-app', 'ready');
   const panel = page.locator('#panel');
@@ -70,11 +83,17 @@ test('prev/next step chronologically within category, disabled at the ends', asy
 
   const prev = panel.locator('.nav-row button', { hasText: 'Prev' });
   const next = panel.locator('.nav-row button', { hasText: 'Next' });
+  await expect(prev).toBeEnabled();
+  await expect(next).toBeEnabled();
+
+  // Click Prev repeatedly until it disables — proves the chain terminates
+  // at a real first-in-category event without assuming which one.
+  for (let i = 0; i < 40 && await prev.isEnabled(); i++) await prev.click();
   await expect(prev).toBeDisabled();
   await expect(next).toBeEnabled();
 
-  await next.click();
-  await expect(panel.locator('h2')).toHaveText('Wu Zetian becomes emperor');
+  // Same from the other end via Next.
+  for (let i = 0; i < 40 && await next.isEnabled(); i++) await next.click();
   await expect(next).toBeDisabled();
   await expect(prev).toBeEnabled();
 });

@@ -1,19 +1,361 @@
 {
-  "fetched": [
+  "fetched": [],
+  "skipped": [
     {
-      "id": "oracle"
+      "id": "oracle",
+      "reason": "unchanged"
     },
     {
-      "id": "terracotta"
-    }
-  ],
-  "skipped": [],
-  "rejected": [
+      "id": "confucius",
+      "reason": "unchanged"
+    },
+    {
+      "id": "qin",
+      "reason": "unchanged"
+    },
     {
       "id": "wall",
-      "reason": "license 'CC BY-NC 4.0' not in allowlist"
+      "reason": "unchanged"
+    },
+    {
+      "id": "terracotta",
+      "reason": "unchanged"
+    },
+    {
+      "id": "silkroad",
+      "reason": "unchanged"
+    },
+    {
+      "id": "paper",
+      "reason": "unchanged"
+    },
+    {
+      "id": "redcliffs",
+      "reason": "unchanged"
+    },
+    {
+      "id": "canal",
+      "reason": "unchanged"
+    },
+    {
+      "id": "wuzetian",
+      "reason": "unchanged"
+    },
+    {
+      "id": "printing",
+      "reason": "unchanged"
+    },
+    {
+      "id": "mongols",
+      "reason": "unchanged"
+    },
+    {
+      "id": "zhenghe",
+      "reason": "unchanged"
+    },
+    {
+      "id": "forbidden",
+      "reason": "unchanged"
+    },
+    {
+      "id": "shaanxi",
+      "reason": "unchanged"
+    },
+    {
+      "id": "opium",
+      "reason": "unchanged"
+    },
+    {
+      "id": "taiping",
+      "reason": "unchanged"
+    },
+    {
+      "id": "prc",
+      "reason": "unchanged"
+    },
+    {
+      "id": "famine",
+      "reason": "unchanged"
+    },
+    {
+      "id": "reform",
+      "reason": "unchanged"
+    },
+    {
+      "id": "tiananmen",
+      "reason": "unchanged"
+    },
+    {
+      "id": "shang-bronze-casting",
+      "reason": "unchanged"
+    },
+    {
+      "id": "fu-hao",
+      "reason": "unchanged"
+    },
+    {
+      "id": "goujian",
+      "reason": "unchanged"
+    },
+    {
+      "id": "shangyang-reforms",
+      "reason": "unchanged"
+    },
+    {
+      "id": "dujiangyan",
+      "reason": "unchanged"
+    },
+    {
+      "id": "chen-sheng-uprising",
+      "reason": "unchanged"
+    },
+    {
+      "id": "seismoscope",
+      "reason": "unchanged"
+    },
+    {
+      "id": "records-grand-historian",
+      "reason": "unchanged"
+    },
+    {
+      "id": "han-xiongnu-war",
+      "reason": "unchanged"
+    },
+    {
+      "id": "wudi-confucianism",
+      "reason": "unchanged"
+    },
+    {
+      "id": "wang-mang",
+      "reason": "unchanged"
+    },
+    {
+      "id": "yellow-river-flood",
+      "reason": "unchanged"
+    },
+    {
+      "id": "cao-pi-founds-wei",
+      "reason": "unchanged"
+    },
+    {
+      "id": "yiling-battle",
+      "reason": "unchanged"
+    },
+    {
+      "id": "northern-expeditions",
+      "reason": "unchanged"
+    },
+    {
+      "id": "cao-cao-statesman",
+      "reason": "unchanged"
+    },
+    {
+      "id": "wang-xizhi-orchid-pavilion",
+      "reason": "unchanged"
+    },
+    {
+      "id": "longmen-grottoes",
+      "reason": "unchanged"
+    },
+    {
+      "id": "li-bai-du-fu",
+      "reason": "unchanged"
+    },
+    {
+      "id": "diamond-sutra",
+      "reason": "unchanged"
+    },
+    {
+      "id": "battle-of-talas",
+      "reason": "unchanged"
+    },
+    {
+      "id": "tang-founded",
+      "reason": "unchanged"
+    },
+    {
+      "id": "sixteen-prefectures-ceded",
+      "reason": "unchanged"
+    },
+    {
+      "id": "fire-lance-weapon",
+      "reason": "unchanged"
+    },
+    {
+      "id": "quanzhou-maritime-trade",
+      "reason": "unchanged"
+    },
+    {
+      "id": "yue-fei-execution",
+      "reason": "unchanged"
+    },
+    {
+      "id": "taizu-cup-of-wine",
+      "reason": "unchanged"
+    },
+    {
+      "id": "kamikaze",
+      "reason": "unchanged"
+    },
+    {
+      "id": "yam-relay",
+      "reason": "unchanged"
+    },
+    {
+      "id": "kublai-khan",
+      "reason": "unchanged"
+    },
+    {
+      "id": "ming-founding",
+      "reason": "unchanged"
+    },
+    {
+      "id": "wang-yangming",
+      "reason": "unchanged"
+    },
+    {
+      "id": "wu-chengen",
+      "reason": "unchanged"
+    },
+    {
+      "id": "second-opium-war",
+      "reason": "unchanged"
+    },
+    {
+      "id": "sino-japanese-first",
+      "reason": "unchanged"
+    },
+    {
+      "id": "boxer-rebellion",
+      "reason": "unchanged"
+    },
+    {
+      "id": "self-strengthening",
+      "reason": "unchanged"
+    },
+    {
+      "id": "qing-founding",
+      "reason": "unchanged"
+    },
+    {
+      "id": "high-qing",
+      "reason": "unchanged"
+    },
+    {
+      "id": "li-hongzhang",
+      "reason": "unchanged"
+    },
+    {
+      "id": "qing-railways",
+      "reason": "unchanged"
+    },
+    {
+      "id": "second-sino-japanese-war",
+      "reason": "unchanged"
+    },
+    {
+      "id": "chinese-civil-war",
+      "reason": "unchanged"
+    },
+    {
+      "id": "sun-yat-sen",
+      "reason": "unchanged"
+    },
+    {
+      "id": "chiang-kai-shek",
+      "reason": "unchanged"
+    },
+    {
+      "id": "may-fourth",
+      "reason": "unchanged"
+    },
+    {
+      "id": "korean-war-china",
+      "reason": "unchanged"
+    },
+    {
+      "id": "hong-kong-handover",
+      "reason": "unchanged"
+    },
+    {
+      "id": "macau-handover",
+      "reason": "unchanged"
+    },
+    {
+      "id": "taiwan-status",
+      "reason": "unchanged"
+    },
+    {
+      "id": "china-space-program",
+      "reason": "unchanged"
+    },
+    {
+      "id": "high-speed-rail",
+      "reason": "unchanged"
     }
   ],
-  "failed": [],
-  "ranAt": "2026-09-18T13:35:29.910Z"
+  "rejected": [],
+  "failed": [
+    {
+      "id": "threegorges",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "laozi",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "huoqubing",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "xuanzang-pilgrimage",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "jiaozi-paper-money",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "zhu-xi-neo-confucianism",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "yongle-usurpation",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "tumu-crisis",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "wokou-pirates",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "great-wall-ming",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "unequal-treaties",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "hundred-days-reform",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "cixi",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "sino-vietnamese-war",
+      "reason": "could not fit image under 150KB at any quality step"
+    },
+    {
+      "id": "tu-youyou",
+      "reason": "could not fit image under 150KB at any quality step"
+    }
+  ],
+  "ranAt": "2026-09-18T17:48:36.700Z"
 }

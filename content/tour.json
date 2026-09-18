@@ -10,6 +10,11 @@
     "text": "The writing you see on Chinese signs today started as questions burned into turtle shells 3,300 years ago."
   },
   {
+    "event": "battle-of-muye",
+    "title": "One dynasty falls, an idea is born",
+    "text": "A rebel king beats a much bigger Shang army in a single morning. The winners need to explain why they deserved to win, so they invent the Mandate of Heaven: rule well, or lose it."
+  },
+  {
     "event": "confucius",
     "title": "The teacher nobody hired",
     "text": "A failed politician whose ideas ran China for 2,000 years. Family, duty, education. Still everywhere in East Asia."
@@ -25,14 +30,49 @@
     "text": "400 years of stability. Paper, the Silk Road, and the name Han people still call themselves. Rome is the only comparison."
   },
   {
+    "event": "redcliffs",
+    "title": "One empire, three pieces",
+    "text": "A fire on the Yangtze stops China's reunification cold. Three rival kingdoms fight it out for 60 years, and China falls in love with the story for the next 1,800."
+  },
+  {
+    "event": "sima-yan-reunification",
+    "title": "Briefly, one China again",
+    "text": "The Three Kingdoms end and Jin reunifies the country. It does not last: succession wars and northern invasions break it apart again within a generation."
+  },
+  {
+    "event": "xiaowen-reforms",
+    "title": "The conqueror who went native",
+    "text": "North and south are split for a century and a half. Then a non-Chinese emperor in the north orders his own people to dress, speak and live like the Chinese they rule."
+  },
+  {
+    "event": "wendi-reunification",
+    "title": "Reunited, after 400 years",
+    "text": "Nearly four centuries of division end almost overnight. The dynasty that does it burns out fast, but it hands the next one a reunified, workable China."
+  },
+  {
     "event": "wuzetian",
     "title": "Tang: the world comes to China",
     "text": "The most cosmopolitan city on Earth is Chang'an. Poets, Persians, Buddhists. And for 15 years, a woman on the throne."
   },
   {
+    "event": "an-lushan-rebellion",
+    "title": "The golden age breaks",
+    "text": "A trusted general turns on the emperor. The rebellion and famine that follow may kill more people, proportionally, than any war in history. Tang never fully recovers."
+  },
+  {
     "event": "printing",
     "title": "Song: the tech boom",
     "text": "Printing, compass, paper money, gunpowder. Song China is centuries ahead of Europe. Then the Mongols arrive."
+  },
+  {
+    "event": "jingkang-incident",
+    "title": "Song loses the north",
+    "text": "Jurchen armies capture the Song capital and both emperors. The court flees south of the Yangtze and rebuilds — smaller, richer, still inventing."
+  },
+  {
+    "event": "mongols",
+    "title": "Conquered by the biggest empire ever",
+    "text": "After 70 years of war, Kublai Khan finishes what his grandfather Genghis started. All of China is ruled by outsiders for the first time."
   },
   {
     "event": "zhenghe",
@@ -41,8 +81,18 @@
   },
   {
     "event": "opium",
-    "title": "The century of humiliation",
+    "title": "The century of humiliation begins",
     "text": "Gunboats, unequal treaties, a 20-million-death civil war. The Qing empire falls apart in slow motion. China never forgot."
+  },
+  {
+    "event": "revolution",
+    "title": "2,000 years of emperors, gone",
+    "text": "A bomb accident, a mutiny, and provinces declaring independence one by one. The child emperor abdicates. Nobody quite agrees on what replaces him."
+  },
+  {
+    "event": "prc",
+    "title": "The state that exists today",
+    "text": "After decades of war and revolution, the Communists win and Mao proclaims a new republic from Tiananmen Gate. The Nationalists retreat to Taiwan — a divide that is still unresolved."
   },
   {
     "event": "reform",

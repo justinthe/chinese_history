@@ -43,21 +43,27 @@ test('diacritic-insensitive pinyin: "Qin Shihuang" finds 秦始皇', async ({ pa
 
 test('Down/Up navigate results, Enter picks the active row, Esc clears', async ({ page }) => {
   const input = page.locator('#q');
-  await input.fill('great'); // 3 hits: Yu the Great, Great Wall, Great Leap Forward
+  // 'great' matched exactly 3 titles pre-phase-10; phase 10's content fill
+  // added many more ('Great Wall gets rebuilt in stone', etc.) — 'wang' also
+  // turned out unstable, since search() folds diacritics and "wáng" (king)
+  // appears in several unrelated events' pinyin. 'invasion' is verified
+  // against the real search() output: exactly 3, plain English, unlikely to
+  // pick up incidental future matches.
+  await input.fill('invasion');
   const results = page.locator('.search-results');
   await expect(results.locator('[role=option]')).toHaveCount(3);
 
   await input.press('ArrowDown');
   await input.press('ArrowDown');
   await input.press('ArrowDown');
-  await expect(results.locator('[role=option].active')).toContainText('Great Leap Forward famine');
+  await expect(results.locator('[role=option].active')).toContainText("Kublai Khan's invasion of Java falls apart");
 
   await input.press('Enter');
   await expect(page.locator('#panel')).toHaveClass(/open/);
-  await expect(page.locator('#panel h2')).toHaveText('Great Leap Forward famine');
+  await expect(page.locator('#panel h2')).toHaveText("Kublai Khan's invasion of Java falls apart");
 
   await page.keyboard.press('Escape');
-  await input.fill('great');
+  await input.fill('invasion');
   await expect(results).toBeVisible();
   await input.press('Escape');
   await expect(results).toBeHidden();

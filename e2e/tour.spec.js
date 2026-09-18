@@ -27,7 +27,7 @@ test('Next changes year badge, map shape, timeline position, and glows the stop 
   const pointsBefore = await page.locator('#territory').getAttribute('points');
 
   await tour.locator('button', { hasText: 'Next →' }).click();
-  await expect(tour.locator('h3')).toContainText('Stop 2 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 2 of 20');
 
   await expect(yearBadge).not.toHaveText(yearBefore ?? '');
   // Territory morph is animated (lib/tween.js) — poll until it settles on a
@@ -63,7 +63,7 @@ test('reload mid-tour: Grand Tour button resumes at that stop', async ({ page })
   const tour = page.locator('.tour');
   await tour.locator('button', { hasText: 'Next →' }).click();
   await tour.locator('button', { hasText: 'Next →' }).click();
-  await expect(tour.locator('h3')).toContainText('Stop 3 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 3 of 20');
 
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-app', 'ready');
@@ -71,14 +71,14 @@ test('reload mid-tour: Grand Tour button resumes at that stop', async ({ page })
 
   await page.locator('.topbar .btn.gold', { hasText: 'Grand Tour' }).click();
   await expect(tour).toHaveClass(/open/);
-  await expect(tour.locator('h3')).toContainText('Stop 3 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 3 of 20');
 });
 
 test('Finish → toast, panel closes, free explore at last stop\'s year', async ({ page }) => {
   await page.locator('.hero .actions .btn.gold', { hasText: 'Take the Grand Tour' }).click();
   const tour = page.locator('.tour');
-  for (let i = 0; i < 9; i++) await tour.locator('button', { hasText: 'Next →' }).click();
-  await expect(tour.locator('h3')).toContainText('Stop 10 of 10');
+  for (let i = 0; i < 19; i++) await tour.locator('button', { hasText: 'Next →' }).click();
+  await expect(tour.locator('h3')).toContainText('Stop 20 of 20');
   const lastYear = await page.locator('#yearBadge, .year-badge').textContent();
 
   await tour.locator('button', { hasText: 'Finish 🎉' }).click();
@@ -97,7 +97,7 @@ test('Exit tour: panel closes, next Grand Tour starts fresh at stop 1', async ({
 
   await page.locator('.topbar .btn.gold', { hasText: 'Grand Tour' }).click();
   await expect(tour).toHaveClass(/open/);
-  await expect(tour.locator('h3')).toContainText('Stop 1 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 1 of 20');
 });
 
 test('ArrowRight/ArrowLeft step the tour while focused, without also shifting the year ±25', async ({ page }) => {
@@ -106,11 +106,11 @@ test('ArrowRight/ArrowLeft step the tour while focused, without also shifting th
   await expect(tour).toBeFocused();
 
   await page.keyboard.press('ArrowRight');
-  await expect(tour.locator('h3')).toContainText('Stop 2 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 2 of 20');
   const yearAfterRight = await page.locator('#yearBadge, .year-badge').textContent();
 
   await page.keyboard.press('ArrowLeft');
-  await expect(tour.locator('h3')).toContainText('Stop 1 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 1 of 20');
   const yearAfterLeft = await page.locator('#yearBadge, .year-badge').textContent();
 
   // If timeline.js's document-level ±25y handler had also fired, these would

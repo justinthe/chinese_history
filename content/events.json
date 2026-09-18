@@ -56,7 +56,7 @@
     "hanzi": "孔子",
     "pinyin": "Kǒngzǐ",
     "year": -551,
-    "era": "zhou",
+    "era": "ezhou",
     "category": "people",
     "icon": "🧙",
     "body": [
@@ -71,7 +71,11 @@
     "related": [
       "suntzu",
       "qin"
-    ]
+    ],
+    "image": {
+      "commons": "File:Confucius Portrait, Kongzi (Confucius) Family Mansion, Qufu (13044335945).jpg",
+      "alt": "Traditional portrait of Confucius at the Kong Family Mansion, Qufu"
+    }
   },
   {
     "id": "suntzu",
@@ -79,7 +83,7 @@
     "hanzi": "孙子兵法",
     "pinyin": "Sūnzǐ Bīngfǎ",
     "year": -500,
-    "era": "zhou",
+    "era": "ezhou",
     "category": "war",
     "icon": "📕",
     "body": [
@@ -118,7 +122,11 @@
       "wall",
       "terracotta",
       "confucius"
-    ]
+    ],
+    "image": {
+      "commons": "File:Qin Shi Huang.jpg",
+      "alt": "Qin Shi Huang unifies China"
+    }
   },
   {
     "id": "wall",
@@ -143,9 +151,9 @@
       "mongols"
     ],
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Badaling_China_Great-Wall-of-China-01.jpg",
-      "license": "CC BY-NC 4.0",
-      "credit": "Photo, Wikimedia Commons (seed: rejected license, phase 10 replaces)"
+      "commons": "File:Lascar The Great Wall of China (4475570857).jpg",
+      "alt": "The Great Wall of China",
+      "focus": "center"
     }
   },
   {
@@ -158,7 +166,7 @@
     "category": "other",
     "icon": "🗿",
     "body": [
-      "8,000 life-size clay soldiers, each with a different face, buried to guard the First Emperor in death. Found by farmers digging a well in 1974.",
+      "8,000 life-size clay soldiers, built from a limited set of face molds but individually finished with different ears, mustaches and hairstyles so no two look quite alike, buried to guard the First Emperor in death. Found by farmers digging a well in 1974.",
       "The tomb itself remains unopened. Ancient texts describe rivers of mercury inside. Soil tests show high mercury."
     ],
     "whyItMatters": "Best snapshot we have of a Qin army, down to the shoe treads.",
@@ -196,7 +204,11 @@
     "related": [
       "paper",
       "zhenghe"
-    ]
+    ],
+    "image": {
+      "commons": "File:Silk Road Beiting Ancient City Site Museum 02.jpg",
+      "alt": "Silk Road opens"
+    }
   },
   {
     "id": "paper",
@@ -208,7 +220,7 @@
     "category": "tech",
     "icon": "📄",
     "body": [
-      "A court eunuch mashes tree bark, hemp, rags and fishing nets into a pulp, spreads it thin, dries it. Cheap, light, writeable.",
+      "Cai Lun, a court eunuch, refines an existing craft into a cheap, reliable process: mashing tree bark, hemp, rags and fishing nets into a pulp, spreading it thin, and drying it. Cruder hemp paper existed before him by at least a century, but his version was the one good and cheap enough to spread.",
       "Paper takes 1,000 years to reach Europe via the Arab world."
     ],
     "whyItMatters": "Every book, banknote and exam paper for the next two millennia.",
@@ -219,7 +231,11 @@
     "related": [
       "oracle",
       "printing"
-    ]
+    ],
+    "image": {
+      "commons": "File:Cai-lun.jpg",
+      "alt": "Cai Lun invents paper"
+    }
   },
   {
     "id": "redcliffs",
@@ -241,7 +257,11 @@
     ],
     "related": [
       "suntzu"
-    ]
+    ],
+    "image": {
+      "commons": "File:Battle of Red Cliffs 208 extended map-en.svg",
+      "alt": "Battle of Red Cliffs"
+    }
   },
   {
     "id": "canal",
@@ -264,7 +284,11 @@
     "related": [
       "yu",
       "threegorges"
-    ]
+    ],
+    "image": {
+      "commons": "File:China-Grand canal, Sui and Tang.svg",
+      "alt": "Grand Canal completed"
+    }
   },
   {
     "id": "wuzetian",
@@ -287,7 +311,11 @@
     "related": [
       "confucius",
       "gunpowder"
-    ]
+    ],
+    "image": {
+      "commons": "File:Gilded Statue of Wu Zetian in Huangze Temple.jpg",
+      "alt": "Gilded statue of Wu Zetian at Huangze Temple"
+    }
   },
   {
     "id": "gunpowder",
@@ -334,7 +362,11 @@
     "related": [
       "paper",
       "gunpowder"
-    ]
+    ],
+    "image": {
+      "commons": "File:Chinese movable type 1313-ce.png",
+      "alt": "Illustration of Wang Zhen's wooden movable-type printing system, 1313"
+    }
   },
   {
     "id": "mongols",
@@ -358,7 +390,11 @@
       "wall",
       "gunpowder",
       "zhenghe"
-    ]
+    ],
+    "image": {
+      "commons": "File:Emperoryuandinastycollage.jpg",
+      "alt": "Yuan-dynasty imperial portraits from the Mongol-founded dynasty"
+    }
   },
   {
     "id": "zhenghe",
@@ -382,7 +418,11 @@
       "silkroad",
       "mongols",
       "forbidden"
-    ]
+    ],
+    "image": {
+      "commons": "File:Cheng Ho Ships.JPG",
+      "alt": "Depiction of Zheng He's treasure ships"
+    }
   },
   {
     "id": "forbidden",
@@ -405,7 +445,11 @@
     "related": [
       "zhenghe",
       "shaanxi"
-    ]
+    ],
+    "image": {
+      "commons": "File:Forbidden City Beijing Shenwumen Gate.JPG",
+      "alt": "Forbidden City completed"
+    }
   },
   {
     "id": "shaanxi",
@@ -428,7 +472,11 @@
     "related": [
       "forbidden",
       "floods1931"
-    ]
+    ],
+    "image": {
+      "commons": "File:Image-Shaanxi 1556 earthquake map of provinces ar.png",
+      "alt": "Shaanxi earthquake"
+    }
   },
   {
     "id": "opium",
@@ -451,7 +499,11 @@
     "related": [
       "taiping",
       "revolution"
-    ]
+    ],
+    "image": {
+      "commons": "File:Destroy opium 2.jpg",
+      "alt": "First Opium War"
+    }
   },
   {
     "id": "taiping",
@@ -474,7 +526,11 @@
     "related": [
       "opium",
       "revolution"
-    ]
+    ],
+    "image": {
+      "commons": "File:Anti-Qing Uprisings All Over China at Time of Taiping Uprising (10151911813).jpg",
+      "alt": "Taiping Rebellion"
+    }
   },
   {
     "id": "revolution",
@@ -545,7 +601,11 @@
       "revolution",
       "famine",
       "reform"
-    ]
+    ],
+    "image": {
+      "commons": "File:Celebrating the 70th Anniversary of the Founding of the People's Republic of China, Panzhou, Guizhou, China, 2 October 2019.jpg",
+      "alt": "People's Republic founded"
+    }
   },
   {
     "id": "famine",
@@ -568,7 +628,11 @@
     "related": [
       "prc",
       "cultural"
-    ]
+    ],
+    "image": {
+      "commons": "File:Birth and Death Rates in China and how they were affected by the Great Leap Forward Famine (1959-1961), OWID.svg",
+      "alt": "Great Leap Forward famine"
+    }
   },
   {
     "id": "cultural",
@@ -615,7 +679,11 @@
       "cultural",
       "tiananmen",
       "threegorges"
-    ]
+    ],
+    "image": {
+      "commons": "File:CBC-SRC 1974 Canadian Media Delegation to China, with Deng Xiaoping Ping and Laurent Picard.jpg",
+      "alt": "Deng Xiaoping meeting a Canadian media delegation, 1974"
+    }
   },
   {
     "id": "tiananmen",
@@ -637,7 +705,11 @@
     ],
     "related": [
       "reform"
-    ]
+    ],
+    "image": {
+      "commons": "File:Entrance view 2 in 31st Anniversary of 1989 Tiananmen Square protests in Hong Kong.jpg",
+      "alt": "Tiananmen Square protests"
+    }
   },
   {
     "id": "threegorges",
@@ -661,6 +733,3183 @@
       "yu",
       "canal",
       "floods1931"
+    ],
+    "image": {
+      "commons": "File:Locks of the Three Gorges Dam.jpg",
+      "alt": "Three Gorges Dam completed"
+    }
+  },
+  {
+    "id": "gun-fails-floods",
+    "title": "Gun's dam-building fails to tame the flood",
+    "hanzi": "鲧治水",
+    "pinyin": "Gǔn zhì shuǐ",
+    "year": -2069,
+    "era": "xia",
+    "category": "nature",
+    "icon": "🌊",
+    "body": [
+      "According to legend, before there was a Xia dynasty at all, a catastrophic flood covered much of the land. Emperor Yao put a nobleman named Gun in charge of stopping the water, and Gun's plan was simple: build ever-taller dikes to wall the floodwaters out.",
+      "It didn't work. After nine years the dikes kept bursting and the flooding only got worse, so Shun had Gun removed from the job (later versions of the story say he was executed). The task then fell to Gun's son, Yu, who tried something completely different — digging channels to guide the water out to sea instead of fighting it."
+    ],
+    "whyItMatters": "Gun's failure set up one of Chinese culture's oldest lessons — that working with a problem beats simply trying to block it — and cleared the way for his son Yu's more famous success.",
+    "related": [
+      "yu"
+    ],
+    "legendary": true,
+    "xy": [
+      354,
+      205
+    ]
+  },
+  {
+    "id": "qi-hereditary-rule",
+    "title": "Qi breaks tradition, founds hereditary kingship",
+    "hanzi": "启建夏朝",
+    "pinyin": "Qǐ jiàn Xià cháo",
+    "year": -2062,
+    "era": "xia",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "Legend holds that Yu the Great, like the sage-kings before him, meant to pass power to a chosen successor rather than a son — he had picked a trusted minister named Yi to take over after he died. That was how leadership was supposed to work: earned, not inherited.",
+      "When Yu died, though, his son Qi had the support of the regional nobles and simply took the throne instead, pushing Yi aside. Qi's kingship stuck, and rule by bloodline — passing power from father to son — became the new normal for every dynasty that followed."
+    ],
+    "whyItMatters": "This legendary succession fight marks the traditional birth of hereditary monarchy in China, replacing 'rule by the most capable person' with 'rule by the king's family' for the next four thousand years.",
+    "related": [
+      "yu"
+    ],
+    "legendary": true,
+    "xy": [
+      317,
+      226
+    ]
+  },
+  {
+    "id": "shaokang-restoration",
+    "title": "Shao Kang restores the exiled Xia throne",
+    "hanzi": "少康中兴",
+    "pinyin": "Shǎokāng zhōngxīng",
+    "year": -2000,
+    "era": "xia",
+    "category": "people",
+    "icon": "🛡️",
+    "body": [
+      "According to Xia-era legend, the young dynasty nearly didn't survive its early years. A rebel chieftain named Han Zhuo seized the throne and hunted down the royal family, and the king's pregnant queen barely escaped, giving birth in hiding to a son named Shao Kang.",
+      "Raised in secret and sheltered by loyal officials, Shao Kang grew up, gathered allies, and eventually led a campaign that defeated Han Zhuo's line and put the Xia royal family back in power. Chinese writers ever since have used 'the restoration of Shao Kang' as shorthand for rebuilding something from near-total ruin."
+    ],
+    "whyItMatters": "Whether or not it happened exactly this way, the story of Shao Kang became a lasting cultural symbol of comeback and resilience after near destruction.",
+    "related": [
+      "qi-hereditary-rule"
+    ],
+    "legendary": true,
+    "xy": [
+      343,
+      167
+    ]
+  },
+  {
+    "id": "jie-misrule",
+    "title": "King Jie's misrule dooms the Xia",
+    "hanzi": "夏桀无道",
+    "pinyin": "Xià Jié wúdào",
+    "year": -1610,
+    "era": "xia",
+    "category": "other",
+    "icon": "🍷",
+    "body": [
+      "Later historians — writing under the dynasties that came after — remembered Jie, the last Xia king, as a cruel and self-indulgent ruler. Traditional accounts describe him building a pleasure palace with a pool filled with wine, ignoring state business, and punishing anyone who criticized him.",
+      "These stories should be read carefully: they were written centuries later by the very dynasty that replaced the Xia, partly to justify the takeover. True or exaggerated, the tale of Jie became the template for 'the bad last king' — the ruler whose personal failings are blamed for losing heaven's favor and bringing a dynasty down."
+    ],
+    "whyItMatters": "Jie's legend set the pattern later Chinese historians used again and again to explain — and justify — the fall of every dynasty that followed.",
+    "related": [
+      "qi-hereditary-rule"
+    ],
+    "legendary": true,
+    "xy": [
+      366,
+      239
+    ]
+  },
+  {
+    "id": "shang-bronze-casting",
+    "title": "Shang bronze casters perfect ritual vessels",
+    "hanzi": "青铜器",
+    "pinyin": "Qīngtóngqì",
+    "year": -1300,
+    "era": "shang",
+    "category": "tech",
+    "icon": "🏺",
+    "body": [
+      "Shang craftsmen took bronze casting to a level unmatched anywhere else in the ancient world. Using a piece-mold technique — carving a design into clay sections, then fitting them together around a core before pouring in molten bronze — they produced elaborate ding tripods, wine vessels, and bells covered in dense, swirling patterns.",
+      "These weren't kitchenware. Bronze vessels were used in rituals to feed and honor royal ancestors, and making them required mining and transporting copper and tin, organizing skilled workshops, and coordinating labor on a large scale — some finished vessels weighed hundreds of pounds."
+    ],
+    "whyItMatters": "Bronze vessels doubled as proof of political power — only a state that could organize mining, metalworking, and skilled labor at scale could produce them, so owning one signaled real authority.",
+    "related": [
+      "oracle"
+    ],
+    "xy": [
+      332,
+      216
+    ],
+    "image": {
+      "commons": "File:Early Shang Bronze Tripod Ding.jpg",
+      "alt": "A Shang-dynasty bronze ritual tripod vessel (ding)"
+    }
+  },
+  {
+    "id": "tang-conquers-xia",
+    "title": "King Tang overthrows the Xia, founds Shang",
+    "hanzi": "商汤灭夏",
+    "pinyin": "Shāng Tāng miè Xià",
+    "year": -1600,
+    "era": "shang",
+    "category": "dynasty",
+    "icon": "⚔️",
+    "body": [
+      "Tang, the ruler of the Shang clan, watched the Xia dynasty weaken under its last king, Jie, and built a coalition of allied chiefs to move against him. The two sides met at the Battle of Mingtiao, where Tang's forces defeated the Xia army and ended the dynasty for good.",
+      "Traditional histories frame Tang as a virtuous ruler stepping in to remove a tyrant — a story pattern that would repeat, almost word for word, when the Shang dynasty itself was overthrown centuries later."
+    ],
+    "whyItMatters": "Tang's victory founded the Shang dynasty, the first Chinese dynasty confirmed by archaeology rather than legend alone, marking the real start of China's written historical record.",
+    "related": [
+      "jie-misrule",
+      "oracle"
+    ],
+    "xy": [
+      358,
+      157
+    ]
+  },
+  {
+    "id": "anyang-capital",
+    "title": "Shang kings settle their capital at Anyang",
+    "hanzi": "盘庚迁殷",
+    "pinyin": "Pángēng qiān Yīn",
+    "year": -1300,
+    "era": "shang",
+    "category": "dynasty",
+    "icon": "🏯",
+    "body": [
+      "Early Shang kings moved their capital several times, but that changed under King Pan Geng, who relocated the court one last time to a site called Yin, near modern-day Anyang. The move was unpopular at first — officials and commoners alike resisted uprooting again — but Pan Geng pushed it through.",
+      "Yin stayed the Shang capital for roughly the next two centuries, growing into a sprawling complex of palaces, workshops, and royal tombs. It's also where archaeologists later found the oracle bones that finally proved the Shang dynasty was real history, not just legend."
+    ],
+    "whyItMatters": "The excavation of Yin at Anyang is what turned the Shang dynasty from a possibly-mythical story into a confirmed archaeological fact.",
+    "related": [
+      "oracle",
+      "fu-hao"
+    ],
+    "xy": [
+      381,
+      229
+    ]
+  },
+  {
+    "id": "shang-dongyi-campaign",
+    "title": "Shang armies campaign against the Dongyi",
+    "hanzi": "商伐东夷",
+    "pinyin": "Shāng fá Dōngyí",
+    "year": -1075,
+    "era": "shang",
+    "category": "war",
+    "icon": "🏹",
+    "body": [
+      "Oracle bone inscriptions from the late Shang court record repeated, large-scale military campaigns against the Dongyi, a cluster of peoples living along the eastern coast. Kings consulted the bones before each campaign, asking whether the ancestors favored victory, and recorded troop musters and sacrifices meant to secure divine backing.",
+      "The campaigns were militarily successful, extending Shang influence eastward, but they were also expensive — draining soldiers, supplies, and royal attention for years at a stretch, right as a new rival power was rising to the west."
+    ],
+    "whyItMatters": "These wars, recorded in real time on oracle bones, show a wealthy Shang state overextending itself against the coast just as the Zhou were gathering strength to attack from the other direction.",
+    "related": [
+      "oracle",
+      "battle-of-muye"
+    ],
+    "xy": [
+      308,
+      187
+    ]
+  },
+  {
+    "id": "fu-hao",
+    "title": "Fu Hao, the Shang's warrior queen",
+    "hanzi": "妇好",
+    "pinyin": "Fù Hǎo",
+    "year": -1200,
+    "era": "shang",
+    "category": "people",
+    "icon": "🗡️",
+    "body": [
+      "Fu Hao was one of the many wives of King Wu Ding, but she was no ordinary consort. Oracle bone records describe her commanding armies of thousands of soldiers in battle and performing important religious sacrifices — roles usually reserved for men.",
+      "Her tomb, discovered intact near Anyang in 1976, had never been looted and was packed with hundreds of bronze weapons, mirrors, and ritual vessels befitting a general and high priestess. It remains one of the richest royal Shang burials ever found."
+    ],
+    "whyItMatters": "Fu Hao's undisturbed tomb is hard physical proof that a woman could hold real military and religious power in Shang society — not a myth, but an archaeological fact.",
+    "related": [
+      "oracle",
+      "anyang-capital"
+    ],
+    "xy": [
+      399,
+      167
+    ],
+    "image": {
+      "commons": "File:Fu Hao Tomb, c. 1200 BC, Reign of King Wu Ding, Shang Dynasty 1.jpg",
+      "alt": "Excavated objects from Fu Hao's tomb, Shang dynasty"
+    }
+  },
+  {
+    "id": "battle-of-muye",
+    "title": "Battle of Muye ends the Shang dynasty",
+    "hanzi": "牧野之战",
+    "pinyin": "Mùyě zhī zhàn",
+    "year": -1046,
+    "era": "wzhou",
+    "category": "dynasty",
+    "icon": "⚔️",
+    "body": [
+      "King Wu of the Zhou state marched his army east, joined by allied chieftains, to confront the last Shang king, Di Xin, at a field called Muye. The Shang forces — reportedly filled out at the last minute with poorly motivated slaves and prisoners — are said to have defected or scattered rather than fight.",
+      "The Shang army collapsed almost immediately. Di Xin reportedly retreated to his palace and died as it burned, and King Wu declared the founding of a new dynasty: the Zhou, which would go on to become the longest-ruling dynasty in Chinese history."
+    ],
+    "whyItMatters": "Muye ended nearly six centuries of Shang rule in a single battle and is one of the earliest events in Chinese history with a widely agreed-upon exact date, 1046 BCE.",
+    "related": [
+      "shang-dongyi-campaign",
+      "tang-conquers-xia"
+    ],
+    "xy": [
+      314,
+      215
+    ]
+  },
+  {
+    "id": "mandate-of-heaven",
+    "title": "The Mandate of Heaven justifies Zhou rule",
+    "hanzi": "天命",
+    "pinyin": "Tiānmìng",
+    "year": -1045,
+    "era": "wzhou",
+    "category": "dynasty",
+    "icon": "📜",
+    "body": [
+      "Having just overthrown a king their ancestors had sworn loyalty to, the new Zhou rulers needed a good explanation for why that was acceptable. Their answer was the Mandate of Heaven: the idea that heaven grants a virtuous ruler the right to govern, and withdraws that right from a corrupt one — which conveniently explained both the Shang's fall and, looking back, the Xia's too.",
+      "Alongside this idea, the Zhou set up the fengjian system, handing out territory to royal relatives and loyal allies who ruled as regional lords in exchange for loyalty and tribute to the king — a patchwork of semi-independent states held together by family ties and obligation."
+    ],
+    "whyItMatters": "The Mandate of Heaven became the standard justification Chinese rulers reached for whenever a dynasty rose or fell, right up through the last emperor in 1912.",
+    "related": [
+      "battle-of-muye",
+      "jie-misrule"
+    ],
+    "xy": [
+      277,
+      236
+    ]
+  },
+  {
+    "id": "duke-of-zhou",
+    "title": "The Duke of Zhou steadies a young kingdom",
+    "hanzi": "周公",
+    "pinyin": "Zhōugōng",
+    "year": -1042,
+    "era": "wzhou",
+    "category": "people",
+    "icon": "📚",
+    "body": [
+      "When King Wu died just a few years after founding the Zhou dynasty, his heir, King Cheng, was too young to rule. Wu's brother, known to history as the Duke of Zhou, stepped in as regent, putting down a rebellion led by rival princes who doubted his loyalty and then, once the kingdom was secure, actually handing power back to the young king rather than keeping it.",
+      "During his regency the Duke also worked out much of the ritual and court hierarchy — the li — that structured Zhou government and etiquette for centuries afterward."
+    ],
+    "whyItMatters": "Centuries later, Confucius held up the Duke of Zhou as the ideal loyal statesman, making him one of the most admired figures in all of Chinese political thought.",
+    "related": [
+      "battle-of-muye",
+      "confucius"
+    ],
+    "xy": [
+      283,
+      92
+    ]
+  },
+  {
+    "id": "king-you-beacon-fires",
+    "title": "King You's false alarm topples Western Zhou",
+    "hanzi": "烽火戏诸侯",
+    "pinyin": "Fēnghuǒ xì zhūhóu",
+    "year": -772,
+    "era": "wzhou",
+    "category": "war",
+    "icon": "🔥",
+    "body": [
+      "According to a famous (and likely exaggerated) later story, King You became infatuated with a concubine named Bao Si, who rarely smiled. To amuse her, he supposedly lit the border beacon fires that were meant to summon allied lords to defend the capital against invasion — just to watch the lords rush in for nothing and Bao Si finally laugh.",
+      "He is said to have done this more than once. So when the Quanrong, a nomadic people from the west, actually attacked the capital in 771 BCE, the allied lords ignored the beacons, assuming it was another prank. The capital fell and King You was killed, forcing the Zhou court to abandon its western homeland and move the capital east."
+    ],
+    "whyItMatters": "This crisis ended the Western Zhou period outright and forced the royal court's move east — the very event that opens the following Eastern Zhou era.",
+    "related": [
+      "mandate-of-heaven"
+    ],
+    "xy": [
+      303,
+      177
+    ]
+  },
+  {
+    "id": "well-field-system",
+    "title": "The well-field system organizes Zhou farmland",
+    "hanzi": "井田制",
+    "pinyin": "Jǐngtián zhì",
+    "year": -1000,
+    "era": "wzhou",
+    "category": "other",
+    "icon": "🌾",
+    "body": [
+      "Later texts describe Zhou farmland as organized into a nine-square grid resembling the Chinese character for 'well' — eight outer plots worked by individual peasant families to feed themselves, with a ninth plot in the center farmed collectively to support the local noble.",
+      "Historians still debate how uniformly this system was actually applied across Zhou territory versus how much later writers idealized it, but it captures the basic logic of fengjian-era rule: nobles controlled land and labor rather than collecting cash taxes, and peasants owed work, not money."
+    ],
+    "whyItMatters": "The well-field system shows how Zhou nobles funded their rule directly through farmers' labor, and its fairness (real or imagined) was debated by Chinese reformers for the next two thousand years.",
+    "related": [
+      "mandate-of-heaven"
+    ],
+    "xy": [
+      326,
+      249
+    ]
+  },
+  {
+    "id": "laozi",
+    "title": "Laozi writes the Dao De Jing",
+    "hanzi": "老子",
+    "pinyin": "Lǎozǐ",
+    "year": -520,
+    "era": "ezhou",
+    "category": "people",
+    "icon": "🧘",
+    "body": [
+      "Laozi is the semi-legendary figure credited as the founder of Daoism, a philosophy built around the Dao (\"the Way\") - the natural order underlying everything - and wu wei, the idea of acting in harmony with that order instead of forcing outcomes. His short, riddling text the Dao De Jing distilled these ideas into verses about humility, simplicity, and the strength of yielding rather than fighting.",
+      "According to legend, a weary Laozi decided to leave civilization behind and ride an ox west out of China; a border guard refused to let him pass until he wrote down his teachings, producing the text we still read today. Whether or not any of that happened, the Dao De Jing became one of the two philosophical poles - alongside Confucius - that Chinese thought has orbited ever since."
+    ],
+    "whyItMatters": "Daoism became one of China's three great philosophical and religious traditions, alongside Confucianism and Buddhism, shaping everything from poetry and painting to medicine and politics for over two thousand years.",
+    "related": [
+      "confucius",
+      "mengzi",
+      "hanfeizi"
+    ],
+    "xy": [
+      333,
+      162
+    ],
+    "image": {
+      "commons": "File:Chen Hongshou - Paintings after Ancient Masters, Laozi Riding an Ox - 1979.27.1.2 - Cleveland Museum of Art.tiff",
+      "alt": "Ming-dynasty painting of Laozi riding an ox, by Chen Hongshou"
+    }
+  },
+  {
+    "id": "mengzi",
+    "title": "Mencius argues people are born good",
+    "hanzi": "孟子",
+    "pinyin": "Mèngzǐ",
+    "year": -320,
+    "era": "ezhou",
+    "category": "people",
+    "icon": "📜",
+    "body": [
+      "Mencius, born Meng Ke, was Confucianism's second great sage. He spent years traveling from court to court trying to convince Warring States rulers to govern with benevolence rather than brute force, arguing that human nature is fundamentally good and only needs the right conditions to flourish rather than harsh laws to keep it in line.",
+      "His conversations and arguments were compiled into the book known simply as the Mencius, which later became one of the Four Books every Chinese student memorized for the imperial examinations. Where Confucius laid the foundation, Mencius built the optimistic, humanist wing of the tradition - a direct counterpoint to the harsher view of human nature that Legalist thinkers were developing at the same time."
+    ],
+    "whyItMatters": "Mencius's claim that a ruler governs only by the people's tacit consent, and can rightly be overthrown if he fails them, built a check on tyranny directly into Confucian political thought.",
+    "related": [
+      "confucius",
+      "laozi",
+      "hanfeizi"
+    ],
+    "xy": [
+      356,
+      234
+    ]
+  },
+  {
+    "id": "hanfeizi",
+    "title": "Han Feizi systematizes Legalism",
+    "hanzi": "韩非子",
+    "pinyin": "Hán Fēizǐ",
+    "year": -240,
+    "era": "ezhou",
+    "category": "people",
+    "icon": "⚖️",
+    "body": [
+      "Han Feizi was a prince of the small state of Han who studied under the Confucian master Xunzi but concluded that moral persuasion was a losing strategy in an age of constant war. Instead he argued for Legalism (fajia): clear written laws, harsh and impartial punishments, and a ruler who controlled his ministers through strict rules rather than trust.",
+      "His writings eventually reached the young king of Qin, Ying Zheng, who admired them enough to summon Han Feizi to his court - only for a jealous rival to have him poisoned before he could take up a real role there. Qin used his ideas anyway, and they became the operating manual for the state that would soon conquer everyone else."
+    ],
+    "whyItMatters": "Legalism's blueprint for a centralized, law-bound bureaucratic state gave Qin the tools to unify China, and Chinese governance has run on some mix of Confucian ideals and Legalist machinery ever since.",
+    "related": [
+      "qin",
+      "shangyang-reforms",
+      "junxian-system"
+    ],
+    "xy": [
+      283,
+      192
+    ]
+  },
+  {
+    "id": "changping",
+    "title": "Battle of Changping ends in mass slaughter",
+    "hanzi": "长平之战",
+    "pinyin": "Chángpíng zhī Zhàn",
+    "year": -260,
+    "era": "ezhou",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "Qin and Zhao fought the largest and bloodiest battle of the Warring States period at Changping. When Zhao swapped its cautious veteran general for the inexperienced Zhao Kuo, Qin's general Bai Qi lured the new commander into an encirclement and cut off his army's supply lines for weeks.",
+      "After Zhao's exhausted, starving army surrendered, Bai Qi ordered the mass execution of an estimated 400,000 captured soldiers, sparing only the youngest boys to carry the news home. Zhao never rebuilt a military capable of matching Qin again, clearing one of the last real obstacles to eventual unification."
+    ],
+    "whyItMatters": "Changping broke the one state that could still rival Qin militarily, and its staggering death toll made it a permanent byword for the human cost of the Warring States' endgame.",
+    "related": [
+      "qin",
+      "siege-handan",
+      "goujian"
+    ],
+    "xy": [
+      374,
+      172
+    ]
+  },
+  {
+    "id": "goujian",
+    "title": "King Goujian tastes gall to fuel his revenge",
+    "hanzi": "勾践",
+    "pinyin": "Gōu Jiàn",
+    "year": -473,
+    "era": "ezhou",
+    "category": "war",
+    "icon": "🗡️",
+    "body": [
+      "King Goujian of Yue was crushed by the rival state of Wu and forced to live as a humiliated servant at the Wu court before finally being allowed to return home. Rather than accept the defeat, he turned the memory of it into fuel.",
+      "For years he reportedly slept on rough brushwood and tasted a bitter gall bladder every day so he would never forget his humiliation - the origin of the Chinese idiom \"sleeping on brushwood, tasting gall.\" He quietly rebuilt Yue's army and economy, then destroyed Wu outright in 473 BCE, becoming one of the last widely recognized hegemons of the Spring and Autumn period."
+    ],
+    "whyItMatters": "Goujian's patient, disciplined revenge turned into a permanent cultural touchstone, still invoked in China today whenever someone endures years of hardship to engineer a comeback.",
+    "related": [
+      "suntzu",
+      "changping"
+    ],
+    "xy": [
+      316,
+      254
+    ],
+    "image": {
+      "commons": "File:20230208 Bronze sword used by King Goujian of Yue 01.jpg",
+      "alt": "The bronze sword of King Goujian of Yue"
+    }
+  },
+  {
+    "id": "siege-handan",
+    "title": "Allies break the Qin siege of Handan",
+    "hanzi": "邯郸之战",
+    "pinyin": "Hándān zhī Zhàn",
+    "year": -257,
+    "era": "ezhou",
+    "category": "war",
+    "icon": "🏯",
+    "body": [
+      "Fresh off its crushing win at Changping, Qin pressed the advantage and besieged Zhao's capital, Handan, hoping to knock the weakened state out of the war for good. Zhao's defenders held on through more than a year of desperate conditions.",
+      "Lord Xinling of the neighboring state of Wei famously stole his own king's military command tally to seize control of a relief army without royal permission, then joined forces with Chu troops to break the siege and push Qin back - one of the few outright defeats Qin suffered on its road to unification."
+    ],
+    "whyItMatters": "The relief of Handan is a reminder that unification under Qin was never a foregone conclusion - only its later reforms and its rivals' exhaustion made the outcome we now take for granted.",
+    "related": [
+      "changping",
+      "qin"
+    ],
+    "xy": [
+      303,
+      148
+    ]
+  },
+  {
+    "id": "capital-move-east",
+    "title": "King Ping moves the Zhou capital east",
+    "hanzi": "平王东迁",
+    "pinyin": "Píngwáng Dōngqiān",
+    "year": -770,
+    "era": "ezhou",
+    "category": "dynasty",
+    "icon": "🏛️",
+    "body": [
+      "After the Western Zhou capital was sacked by rebellious nobles allied with Quanrong raiders and King You was killed, his son King Ping relocated the royal court east to Luoyang, out of reach of the frontier chaos that had just destroyed his father's rule.",
+      "The move saved the Zhou royal line, but not its real power. Regional lords kept the king around as a ceremonial figurehead while fighting one another for actual control - the exact pattern that defines the roughly five centuries of the Spring and Autumn and Warring States periods that follow."
+    ],
+    "whyItMatters": "This one relocation marks the hinge between a unified Western Zhou and the fragmented, endlessly warring world that Confucius, Sun Tzu, and eventually Qin Shi Huang were all reacting to.",
+    "related": [
+      "confucius",
+      "shangyang-reforms"
+    ],
+    "xy": [
+      388,
+      221
+    ]
+  },
+  {
+    "id": "shangyang-reforms",
+    "title": "Shang Yang re-engineers the Qin state",
+    "hanzi": "商鞅变法",
+    "pinyin": "Shāng Yāng Biànfǎ",
+    "year": -356,
+    "era": "ezhou",
+    "category": "dynasty",
+    "icon": "📏",
+    "body": [
+      "Shang Yang, a statesman from the state of Wei serving Qin's Duke Xiao, tore up the old system of hereditary noble privilege and replaced it with a strict meritocracy: land and military rank earned only through farm output and battlefield kills, households organized into mutually responsible groups, and one uniform law applied even to the nobility.",
+      "The reforms made Qin's economy and army dramatically more efficient than any of its rivals' - and far more ruthless in daily life. Shang Yang himself didn't escape the system he built: after the duke who backed him died, the new ruler he had once punished as a young prince had him executed."
+    ],
+    "whyItMatters": "These reforms turned Qin from a peripheral frontier state into the disciplined machine that would conquer the rest of China roughly a century later.",
+    "related": [
+      "hanfeizi",
+      "junxian-system",
+      "qin"
+    ],
+    "xy": [
+      270,
+      225
+    ],
+    "image": {
+      "commons": "File:Bronze Shang Yang Measure (9910503875).jpg",
+      "alt": "A standardized bronze measuring vessel commissioned under Shang Yang"
+    }
+  },
+  {
+    "id": "dujiangyan",
+    "title": "Dujiangyan irrigation system tames the Min River",
+    "hanzi": "都江堰",
+    "pinyin": "Dūjiāngyàn",
+    "year": -256,
+    "era": "ezhou",
+    "category": "tech",
+    "icon": "💧",
+    "body": [
+      "Qin governor and engineer Li Bing designed an irrigation system on Sichuan's flood-prone Min River without building a single dam wall. An artificial island split the river's flow, and a channel cut through a mountain diverted part of it onto farmland, controlling floods and watering crops year-round.",
+      "Because the system had no wall to catastrophically fail, it survived floods that would have destroyed a conventional dam. Its channels still irrigate the Chengdu plain today, making it the oldest large dam-free irrigation system still in continuous use anywhere in the world."
+    ],
+    "whyItMatters": "By turning a flood-prone river into reliable farmland, Dujiangyan made Sichuan one of China's most productive breadbaskets and helped bankroll Qin's eventual conquest of the rest of the country.",
+    "related": [
+      "shangyang-reforms",
+      "chunqiu-drought"
+    ],
+    "xy": [
+      359,
+      139
+    ],
+    "image": {
+      "commons": "File:Dujiangyan Irrigation System.jpg",
+      "alt": "The Dujiangyan irrigation system, still in use today"
+    }
+  },
+  {
+    "id": "chunqiu-drought",
+    "title": "Chroniclers log a great drought in Lu",
+    "hanzi": "大旱",
+    "pinyin": "Dàhàn",
+    "year": -639,
+    "era": "ezhou",
+    "category": "nature",
+    "icon": "🌾",
+    "body": [
+      "The Spring and Autumn Annals, a terse year-by-year chronicle kept by court scribes in the state of Lu, records a severe drought during Duke Xi's reign that withered crops and forced the court to hold public rain-prayer rituals.",
+      "Entries like this one - repeated for droughts, locust swarms, and floods across the Annals' 242 years of coverage - make it one of the world's earliest continuous written disaster records. Modern historians and climate scientists still mine these terse notes to reconstruct what ancient China's weather actually looked like."
+    ],
+    "whyItMatters": "These matter-of-fact court notes turned routine record-keeping into an accidental multi-century climate archive, centuries before anyone thought to keep one on purpose.",
+    "related": [
+      "capital-move-east"
+    ],
+    "xy": [
+      351,
+      267
+    ]
+  },
+  {
+    "id": "junxian-system",
+    "title": "Qin abolishes feudal fiefs for royal commanderies",
+    "hanzi": "郡县制",
+    "pinyin": "Jùnxiàn Zhì",
+    "year": -221,
+    "era": "qin",
+    "category": "dynasty",
+    "icon": "🗺️",
+    "body": [
+      "Instead of rewarding his generals and relatives with hereditary fiefdoms the way every dynasty before him had, Qin Shi Huang carved the newly unified empire into roughly 36 commanderies (jun), each split into counties (xian), all run by officials he appointed and could remove at will.",
+      "Chancellor Li Si pushed the model through over loud objections from nobles who wanted the old system back. Because no regional lord could build an independent hereditary power base, the structure became the administrative skeleton that every later Chinese dynasty reused and adapted for the next two thousand years."
+    ],
+    "whyItMatters": "This single decision - centralized, appointed officials instead of hereditary nobles - is why China kept reassembling itself into a unified bureaucratic state instead of permanently fracturing into rival kingdoms.",
+    "related": [
+      "qin",
+      "shangyang-reforms",
+      "hanfeizi"
+    ],
+    "xy": [
+      321,
+      239
+    ]
+  },
+  {
+    "id": "chen-sheng-uprising",
+    "title": "Chen Sheng and Wu Guang spark rebellion",
+    "hanzi": "陈胜吴广起义",
+    "pinyin": "Chén Shèng Wú Guǎng Qǐyì",
+    "year": -209,
+    "era": "qin",
+    "category": "war",
+    "icon": "🔥",
+    "body": [
+      "Conscripted laborers Chen Sheng and Wu Guang were marching a column of fellow conscripts to a border garrison when heavy rains made it certain they would arrive late - a crime punishable by death under Qin's rigid legal code. Facing execution either way, they decided to turn the column into an armed revolt instead.",
+      "Their uprising was crushed within months, but it broke the spell of Qin invincibility and set off a wider wave of rebellions across the empire, including the rival armies of Xiang Yu and the eventual Han dynasty founder Liu Bang, which brought the whole dynasty down within three years."
+    ],
+    "whyItMatters": "The first major revolt against imperial China's first dynasty proved that even the most rigidly controlled state could collapse fast once ordinary people decided obedience was more dangerous than rebellion.",
+    "related": [
+      "junxian-system",
+      "burning-books"
+    ],
+    "xy": [
+      248,
+      197
+    ],
+    "image": {
+      "commons": "File:Qin Uprisings.png",
+      "alt": "Map of uprisings against Qin rule"
+    }
+  },
+  {
+    "id": "burning-books",
+    "title": "Qin Shi Huang orders books burned, scholars buried",
+    "hanzi": "焚书坑儒",
+    "pinyin": "Fénshū Kēngrú",
+    "year": -213,
+    "era": "qin",
+    "category": "other",
+    "icon": "📚",
+    "body": [
+      "On chancellor Li Si's advice, Qin Shi Huang ordered most privately held historical and philosophical texts burned, keeping only practical manuals on farming, medicine, and divination, to stop scholars from using the past as a weapon against his new Legalist state.",
+      "The following year, angered by scholars who had criticized him or failed to deliver the immortality elixirs they had promised, he reportedly had several hundred scholars executed. Later Confucian historians folded both episodes into the single infamous phrase \"burning books, burying scholars,\" which came to symbolize authoritarian control of thought."
+    ],
+    "whyItMatters": "The episode became ancient China's most notorious act of censorship, cited for over two thousand years as the cautionary tale of what happens when a ruler tries to erase inconvenient history.",
+    "related": [
+      "junxian-system",
+      "qin"
+    ],
+    "xy": [
+      339,
+      177
+    ]
+  },
+  {
+    "id": "seismoscope",
+    "title": "Zhang Heng invents the seismoscope",
+    "hanzi": "地动仪",
+    "pinyin": "Dìdòngyí",
+    "year": 132,
+    "era": "han",
+    "category": "tech",
+    "icon": "🌍",
+    "body": [
+      "Court astronomer and polymath Zhang Heng built a bronze vessel ringed by eight dragon heads, each holding a ball above a waiting bronze toad. An internal pendulum linked to the dragons dropped a ball in the direction of a distant earthquake's tremor, signaling the quake's rough direction before any messenger could ride in with the news.",
+      "The device reportedly detected a quake hundreds of kilometers away days before a courier confirmed it, making it the first seismoscope in recorded history - though since no original survives, exactly how its internal mechanism worked is still debated by historians of science."
+    ],
+    "whyItMatters": "Centuries before anything comparable existed in Europe, Han China had already turned earthquake detection into an engineering problem with a working answer.",
+    "related": [
+      "paper"
+    ],
+    "xy": [
+      253,
+      202
+    ],
+    "image": {
+      "commons": "File:EastHanSeismograph.JPG",
+      "alt": "A replica of Zhang Heng's Han-dynasty seismoscope"
+    }
+  },
+  {
+    "id": "records-grand-historian",
+    "title": "Sima Qian completes the Records of the Grand Historian",
+    "hanzi": "史记",
+    "pinyin": "Shǐjì",
+    "year": -91,
+    "era": "han",
+    "category": "other",
+    "icon": "📖",
+    "body": [
+      "Court historian Sima Qian inherited the project from his father, then finished it under grim circumstances: after he publicly defended a disgraced general to Emperor Wu, the emperor sentenced him to castration, and Sima Qian chose to endure the humiliation rather than the alternative of suicide, specifically so he could finish the book.",
+      "The result spans legendary emperors through his own lifetime across 130 chapters of annals, biographies, and treatises. Its combination of dynastic annals with individual biographies set the template that essentially every official Chinese history for the next two thousand years would copy."
+    ],
+    "whyItMatters": "Sima Qian's personal sacrifice produced the founding template of Chinese historical writing, still the reason we know as much as we do about everyone from Confucius to the First Emperor.",
+    "related": [
+      "silkroad",
+      "zhangqian"
+    ],
+    "xy": [
+      344,
+      182
+    ],
+    "image": {
+      "commons": "File:『史記』唐写本.jpg",
+      "alt": "Tang-dynasty manuscript fragment of the Records of the Grand Historian"
+    }
+  },
+  {
+    "id": "han-xiongnu-war",
+    "title": "Emperor Wu launches war on the Xiongnu",
+    "hanzi": "汉匈战争",
+    "pinyin": "Hàn Xiōngnú Zhànzhēng",
+    "year": -119,
+    "era": "han",
+    "category": "war",
+    "icon": "🐎",
+    "body": [
+      "For decades earlier Han emperors had bought an uneasy peace with the nomadic Xiongnu confederation through tribute payments and marriage alliances. Emperor Wu scrapped that policy and sent massive cavalry armies deep into the steppe instead, culminating in the Battle of Mobei in 119 BCE, where generals Wei Qing and Huo Qubing routed the Xiongnu's main force.",
+      "The campaigns pushed Han control far into Central Asia and secured the western trade routes the Silk Road depended on - but they also drained the imperial treasury so badly that Emperor Wu later issued a rare public edict repenting his war spending."
+    ],
+    "whyItMatters": "Breaking the Xiongnu's grip on the steppe frontier is what made the Silk Road's overland trade routes safe enough to actually use.",
+    "related": [
+      "silkroad",
+      "huoqubing",
+      "zhangqian"
+    ],
+    "xy": [
+      306,
+      164
+    ],
+    "image": {
+      "commons": "File:Han Stone Sculpture- Horse Ready to Leap.jpg",
+      "alt": "A Han-dynasty stone sculpture from the tomb complex commemorating the Xiongnu campaigns"
+    }
+  },
+  {
+    "id": "yellow-turban",
+    "title": "The Yellow Turban Rebellion shakes the Han",
+    "hanzi": "黄巾之乱",
+    "pinyin": "Huángjīn zhī Luàn",
+    "year": 184,
+    "era": "han",
+    "category": "war",
+    "icon": "🧣",
+    "body": [
+      "Faith healer Zhang Jue built a mass religious movement promising an age of \"Great Peace\" to peasants crushed by famine, taxes, and a corrupt court, then launched a coordinated uprising across the empire with followers marked by yellow headscarves.",
+      "The imperial army eventually crushed the main rebellion, but only by letting regional warlords raise their own private armies to do it - armies those warlords never disbanded afterward, setting up the power struggles that splintered Han China into the Three Kingdoms within a generation."
+    ],
+    "whyItMatters": "The Yellow Turban Rebellion is the moment the Han dynasty's central authority effectively broke, even though the dynasty limped on in name for another 36 years.",
+    "related": [
+      "wang-mang",
+      "han-epidemic"
+    ],
+    "xy": [
+      286,
+      264
+    ]
+  },
+  {
+    "id": "wudi-confucianism",
+    "title": "Emperor Wu makes Confucianism state doctrine",
+    "hanzi": "罢黜百家，独尊儒术",
+    "pinyin": "Bàchù Bǎijiā, Dúzūn Rúshù",
+    "year": -136,
+    "era": "han",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "Acting on scholar Dong Zhongshu's advice, Emperor Wu declared the Confucian classics the only subjects an official scholar could teach, the seed of an Imperial Academy that opened a dozen years later, in 124 BCE, and the basis for selecting officials, sidelining the Legalist and Daoist ideas earlier Han rulers had leaned on.",
+      "In practice the decision fused Confucian ethics onto a still very Legalist machine of centralized law and bureaucracy underneath - a \"Confucian on the outside, Legalist on the inside\" formula that later dynasties kept running for the rest of imperial history."
+    ],
+    "whyItMatters": "This single policy shift made mastery of Confucian texts the gateway to political power in China for the next two thousand years, all the way through the imperial examination system.",
+    "related": [
+      "confucius",
+      "hanfeizi",
+      "shangyang-reforms"
+    ],
+    "xy": [
+      273,
+      158
+    ],
+    "image": {
+      "commons": "File:Han Wudi1.gif",
+      "alt": "Portrait of Emperor Wu of Han"
+    }
+  },
+  {
+    "id": "wang-mang",
+    "title": "Wang Mang usurps the throne and founds the Xin dynasty",
+    "hanzi": "新朝",
+    "pinyin": "Xīn Cháo",
+    "year": 9,
+    "era": "han",
+    "category": "dynasty",
+    "icon": "🏮",
+    "body": [
+      "Wang Mang, a Han empress's nephew who had built a reputation as a modest, reform-minded Confucian statesman, maneuvered his way to regent for a child emperor and then simply declared the Han dynasty over, crowning himself emperor of a new dynasty he called Xin, meaning \"New.\"",
+      "His sweeping reforms - nationalizing land, banning private slave sales, and repeatedly redesigning the currency - triggered economic chaos and rebellion instead of the utopia he promised. After 14 years, peasant armies and a Han prince overthrew him, restoring the dynasty in what historians now call the Eastern Han."
+    ],
+    "whyItMatters": "Wang Mang's brief interregnum is the only real break in four centuries of Han rule, splitting the dynasty into Western and Eastern Han and showing how fragile even an entrenched imperial house could be.",
+    "related": [
+      "yellow-turban",
+      "wudi-confucianism"
+    ],
+    "xy": [
+      358,
+      231
+    ],
+    "image": {
+      "commons": "File:Chinese Money 10 - Xin (Wang Mang) Spade Coin.jpg",
+      "alt": "A spade-shaped coin from Wang Mang's Xin dynasty"
+    }
+  },
+  {
+    "id": "zhangqian",
+    "title": "Zhang Qian survives a decade as a Xiongnu hostage",
+    "hanzi": "张骞",
+    "pinyin": "Zhāng Qiān",
+    "year": -138,
+    "era": "han",
+    "category": "people",
+    "icon": "🐫",
+    "body": [
+      "Emperor Wu sent envoy Zhang Qian west to seek allies against the Xiongnu. Xiongnu horsemen captured him almost immediately and held him for roughly ten years, during which he married, had children, and never abandoned the mission he had been sent to complete.",
+      "He eventually escaped, pressed on into Central Asia anyway, and returned thirteen years after setting out with detailed firsthand reports on kingdoms, goods, and travel routes the Han court had never known existed - the intelligence that turned into the trade routes later called the Silk Road."
+    ],
+    "whyItMatters": "One diplomat's refusal to give up during a decade of captivity is the reason Han China even knew Central Asia was there to trade with.",
+    "related": [
+      "silkroad",
+      "han-xiongnu-war"
+    ],
+    "xy": [
+      233,
+      122
+    ]
+  },
+  {
+    "id": "banzhao",
+    "title": "Ban Zhao becomes China's first female historian",
+    "hanzi": "班昭",
+    "pinyin": "Bān Zhāo",
+    "year": 111,
+    "era": "han",
+    "category": "people",
+    "icon": "✒️",
+    "body": [
+      "When her brother Ban Gu died before finishing the official history of the Western Han, his sister Ban Zhao - already a respected scholar and tutor to the empress dowager - spent years completing the Book of Han in his place, finishing it by around 111 CE, becoming the first woman known to have written a major work in the Chinese historical canon.",
+      "She also wrote \"Lessons for Women,\" a conduct manual for elite girls that became hugely influential and, to modern readers, deeply conservative, making her both a pioneering scholar and one of the most debated figures in Chinese women's history."
+    ],
+    "whyItMatters": "Ban Zhao broke into a field almost completely closed to women and finished a dynastic history still used as a primary source on the Han today.",
+    "related": [
+      "records-grand-historian"
+    ],
+    "xy": [
+      240,
+      235
+    ]
+  },
+  {
+    "id": "huoqubing",
+    "title": "Teenage general Huo Qubing routs the Xiongnu",
+    "hanzi": "霍去病",
+    "pinyin": "Huò Qùbìng",
+    "year": -121,
+    "era": "han",
+    "category": "people",
+    "icon": "🏇",
+    "body": [
+      "Huo Qubing led his first cavalry raid deep into Xiongnu territory at just seventeen years old and won so decisively that Emperor Wu promoted him past far more senior generals. By twenty he was commanding major campaigns that captured Xiongnu princes and territory across the Gansu corridor.",
+      "He reportedly turned down a mansion Emperor Wu offered him as a reward, saying he couldn't settle down while the Xiongnu remained a threat. He died of illness at only 23 - one of the shortest careers in Chinese history to leave that large a mark on the empire's borders."
+    ],
+    "whyItMatters": "Huo Qubing's campaigns opened up the Gansu corridor, the physical land bridge the Silk Road's caravans actually walked through.",
+    "related": [
+      "han-xiongnu-war",
+      "zhangqian"
+    ],
+    "xy": [
+      324,
+      102
+    ],
+    "image": {
+      "commons": "File:Horse stomping a Xiongnu warrior. Tomb of Huo Qubing, 茂陵 (with face detail, two angles) crop.jpg",
+      "alt": "The stone sculpture at Huo Qubing's tomb, Maoling"
+    }
+  },
+  {
+    "id": "yellow-river-flood",
+    "title": "The Yellow River jumps its course and floods the north",
+    "hanzi": "黄河改道",
+    "pinyin": "Huánghé Gǎidào",
+    "year": 11,
+    "era": "han",
+    "category": "nature",
+    "icon": "🌊",
+    "body": [
+      "The Yellow River, whose heavy silt load constantly raises its own riverbed, burst its dikes and carved an entirely new course to the sea, drowning farmland across the North China Plain and displacing huge numbers of people right as Wang Mang's new Xin dynasty was struggling to hold onto power.",
+      "The flood's economic damage, and the famine and banditry it triggered, are counted among the disasters that fed the rebellions which toppled Wang Mang within two decades - reinforcing the river's old nickname, \"China's Sorrow.\""
+    ],
+    "whyItMatters": "A river changing course on its own helped bring down an emperor, a recurring pattern in Chinese history where floods and famine translate directly into political collapse.",
+    "related": [
+      "wang-mang"
+    ],
+    "xy": [
+      423,
+      147
+    ],
+    "image": {
+      "commons": "File:China, Qing Dynasty (1644-1911), Qianlong reign - Mingling of Clear and Muddy Water at the Junction of the Jing and Wei River - 1915.618 - Cleveland Museum of Art.tif",
+      "alt": "A later Chinese painting of river waters meeting, illustrative of the Yellow River"
+    }
+  },
+  {
+    "id": "han-epidemic",
+    "title": "A mystery epidemic tears through the Han empire",
+    "hanzi": "大疫",
+    "pinyin": "Dàyì",
+    "year": 151,
+    "era": "han",
+    "category": "nature",
+    "icon": "🦠",
+    "body": [
+      "Court records from the mid-2nd century describe repeated waves of a fast-spreading epidemic sweeping through Han territory, killing enough people in some regions that the physician Zhang Zhongjing later wrote he had lost two-thirds of his own extended family to disease within a single decade.",
+      "The outbreaks piled onto floods, famine, and heavy taxation to hollow out the population and tax base right as the Yellow Turban Rebellion was brewing. Zhang Zhongjing's resulting medical text, the Treatise on Cold Damage, remains a foundational reference in Chinese medicine today."
+    ],
+    "whyItMatters": "Disease weakened the Han empire from the inside at exactly the moment it could least afford it, and produced a medical text still consulted nearly two thousand years later.",
+    "related": [
+      "yellow-turban"
+    ],
+    "xy": [
+      329,
+      149
+    ]
+  },
+  {
+    "id": "cao-pi-founds-wei",
+    "title": "Cao Pi Ends Han, Founds Wei",
+    "hanzi": "曹丕篡汉",
+    "pinyin": "Cáo Pī Cuàn Hàn",
+    "year": 220,
+    "era": "three",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "The Han dynasty had been a hollow shell for decades, its emperors reduced to puppets while warlords fought over the real power. In late 220 CE, Cao Cao's son and heir Cao Pi finally dropped the pretense: he forced the last Han emperor, Xian, to \"abdicate\" in his favor and declared a new dynasty, Wei, with himself as its first emperor.",
+      "It was less a coup than a formality — everyone already knew who was in charge. But the symbolism mattered enormously: for the first time in four centuries, China had no Han emperor at all. Rival warlords Liu Bei and Sun Quan refused to recognize Cao Pi's claim and crowned themselves emperors too, splitting the realm into the three rival states that give this era its name."
+    ],
+    "whyItMatters": "This is the moment the Three Kingdoms period officially began — one dynasty's quiet death certificate and the starting gun for sixty years of three-way war.",
+    "related": [
+      "redcliffs",
+      "cao-cao-statesman"
+    ],
+    "xy": [
+      307,
+      241
+    ],
+    "image": {
+      "commons": "File:Cao Pi Tang.jpg",
+      "alt": "Traditional portrait of Cao Pi, founder of Wei"
+    }
+  },
+  {
+    "id": "yiling-battle",
+    "title": "Battle of Yiling",
+    "hanzi": "夷陵之战",
+    "pinyin": "Yílíng Zhī Zhàn",
+    "year": 222,
+    "era": "three",
+    "category": "war",
+    "icon": "🔥",
+    "body": [
+      "Furious that his sworn brother Guan Yu had been killed by the state of Wu, Liu Bei marched his army east in 221 CE, determined on revenge rather than strategy. Wu's young general Lu Xun refused to give him the pitched battle he wanted, instead retreating for months and letting Liu Bei's forces sprawl out along the Yangtze River in a long chain of flammable wooden camps.",
+      "When summer heat set in, Lu Xun struck with fire, torching camp after camp in a rout that echoed Red Cliffs fourteen years earlier. Liu Bei barely escaped with his life and died of illness not long after, leaving his fledgling state of Shu Han in the hands of his chancellor, Zhuge Liang."
+    ],
+    "whyItMatters": "A war fought for personal vengeance instead of strategy ended in disaster, crippling Shu Han and locking in the three-way stalemate that would define the era.",
+    "related": [
+      "redcliffs",
+      "cao-pi-founds-wei"
+    ],
+    "xy": [
+      317,
+      276
+    ],
+    "image": {
+      "commons": "File:Battle of Yiling.png",
+      "alt": "Battle of Yiling"
+    }
+  },
+  {
+    "id": "northern-expeditions",
+    "title": "Zhuge Liang's Northern Expeditions",
+    "hanzi": "诸葛亮北伐",
+    "pinyin": "Zhūgě Liàng Běifá",
+    "year": 228,
+    "era": "three",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "Shu Han was the smallest and poorest of the three kingdoms, yet its chancellor Zhuge Liang gambled everything on offense. Between 228 and 234 CE he led five separate campaigns north through the mountains against the much larger state of Wei, hoping a bold strike might topple it before its size advantage told.",
+      "Each expedition ground to a halt against Wei's fortified defenses and Shu's own brutal supply lines through narrow mountain roads — one campaign reportedly failed simply because the grain carts couldn't keep up. Zhuge Liang died of illness in camp during the last campaign in 234 CE, having never breached Wei's heartland, but his relentless discipline and famously invented \"wooden ox\" supply carts made him a legend of loyalty and ingenuity for centuries after."
+    ],
+    "whyItMatters": "Five doomed campaigns turned Zhuge Liang from a wartime chancellor into China's enduring symbol of loyal, brilliant effort against impossible odds.",
+    "related": [
+      "yiling-battle",
+      "cao-cao-statesman"
+    ],
+    "xy": [
+      269,
+      245
+    ],
+    "image": {
+      "commons": "File:Zhuge Liang 1st and 2nd Northern Expeditions.png",
+      "alt": "Zhuge Liang's Northern Expeditions"
+    }
+  },
+  {
+    "id": "cao-cao-statesman",
+    "title": "Cao Cao, Warlord and Poet",
+    "hanzi": "曹操",
+    "pinyin": "Cáo Cāo",
+    "year": 220,
+    "era": "three",
+    "category": "people",
+    "icon": "🖋️",
+    "body": [
+      "Cao Cao spent his life as the most powerful warlord in China without ever taking the throne himself, ruling in the Han emperor's name while building the state his son would later declare as Wei. He was a ruthless, brilliant administrator who broke with tradition by promoting officials for talent rather than noble birth, and who rebuilt the shattered farmland of the north with state-organized military farming colonies that fed his armies for decades.",
+      "He was also, unusually for a warlord, a genuine poet — his surviving verses, written in the old four-character style, are still read as some of the finest early Chinese poetry, full of blunt reflections on mortality and ambition. He died in early 220 CE, just months before his son Cao Pi formally founded Wei and posthumously honored him as its first emperor."
+    ],
+    "whyItMatters": "Cao Cao proved that the age's greatest power broker could also be one of its finest writers, and his meritocratic reforms outlasted every battle he fought.",
+    "related": [
+      "redcliffs",
+      "cao-pi-founds-wei"
+    ],
+    "xy": [
+      333,
+      182
+    ],
+    "image": {
+      "commons": "File:20250913 Gao Mausoleum of Cao Cao 01.jpg",
+      "alt": "Cao Cao, Warlord and Poet"
+    }
+  },
+  {
+    "id": "sima-yan-reunification",
+    "title": "Sima Yan Reunifies China",
+    "hanzi": "西晋统一",
+    "pinyin": "Xī Jìn Tǒngyī",
+    "year": 280,
+    "era": "jin",
+    "category": "dynasty",
+    "icon": "🏯",
+    "body": [
+      "The Sima family had spent decades quietly seizing power inside the state of Wei, much as the Cao family had once hollowed out the Han. In 265 CE, Sima Yan formally deposed Wei's last ruler and declared the Jin dynasty; in 280 CE his armies finally conquered the last holdout, the southern state of Wu, ending sixty years of three-way war.",
+      "For the first time since before Red Cliffs, one ruler controlled all of China. Sima Yan's reunification promised a return to stability after decades of division — a promise that would prove tragically short-lived once his own heirs began fighting over the throne."
+    ],
+    "whyItMatters": "This was the moment the Three Kingdoms finally became one kingdom again, closing six decades of civil war under a single Jin emperor.",
+    "related": [
+      "cao-pi-founds-wei",
+      "northern-expeditions"
+    ],
+    "xy": [
+      267,
+      163
+    ]
+  },
+  {
+    "id": "eight-princes-war",
+    "title": "War of the Eight Princes",
+    "hanzi": "八王之乱",
+    "pinyin": "Bā Wáng Zhī Luàn",
+    "year": 300,
+    "era": "jin",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "Sima Yan had tried to secure his new dynasty by handing large armies and territories to his own relatives as regional princes, reasoning that family would be more loyal than outside generals. It backfired spectacularly: after his death, his mentally incapable heir became a figurehead fought over by eight of these royal princes, who spent sixteen years assassinating regents, hiring nomadic cavalry as mercenaries, and burning each other's territories.",
+      "By the time the fighting sputtered out around 306 CE, the imperial treasury was empty, the professional army was gutted, and the northern frontier — stripped of its garrisons — lay wide open. The princes had fought so hard for the throne that there was barely a state left worth ruling."
+    ],
+    "whyItMatters": "A family feud over succession burned through the very army and treasury that were supposed to protect Jin, leaving the dynasty defenseless just as outside invaders began to move in.",
+    "related": [
+      "sima-yan-reunification",
+      "fall-of-luoyang"
+    ],
+    "xy": [
+      404,
+      184
+    ]
+  },
+  {
+    "id": "fall-of-luoyang",
+    "title": "Fall of Luoyang",
+    "hanzi": "永嘉之乱",
+    "pinyin": "Yǒngjiā Zhī Luàn",
+    "year": 311,
+    "era": "jin",
+    "category": "war",
+    "icon": "🔥",
+    "body": [
+      "With Jin's armies exhausted from the War of the Eight Princes, non-Han peoples along the northern frontier — collectively remembered as the \"Five Barbarians,\" though they were in fact several distinct groups including Xiongnu and Xianbei — began carving out their own kingdoms in the power vacuum. In 311 CE, Xiongnu-led forces stormed the Jin capital of Luoyang, massacring tens of thousands and capturing the emperor himself.",
+      "The Jin court never recovered the north. Surviving nobles and officials fled south across the Yangtze River, where they re-established the dynasty at Jiankang, near modern Nanjing, as Eastern Jin — abandoning the ancestral Yellow River heartland to a patchwork of non-Han kingdoms for nearly three centuries."
+    ],
+    "whyItMatters": "The sack of Luoyang split China in two along the Yangtze for the next 270 years, a north-south divide that would outlast the Jin dynasty itself.",
+    "related": [
+      "eight-princes-war",
+      "jin-famine"
+    ],
+    "xy": [
+      285,
+      263
+    ]
+  },
+  {
+    "id": "wang-xizhi-orchid-pavilion",
+    "title": "Wang Xizhi's Orchid Pavilion Preface",
+    "hanzi": "兰亭集序",
+    "pinyin": "Lántíng Jí Xù",
+    "year": 353,
+    "era": "jin",
+    "category": "people",
+    "icon": "🖌️",
+    "body": [
+      "In 353 CE, the official and calligrapher Wang Xizhi gathered dozens of friends at the Orchid Pavilion near modern Shaoxing for a wine-drinking game along a winding stream. Asked afterward to write a preface to the poems the gathering had produced, he dashed off 324 characters in flowing, semi-cursive script — reportedly a little tipsy, and reportedly never able to reproduce it quite as well again when sober.",
+      "That improvised draft became the single most revered piece of writing in Chinese calligraphy, endlessly copied and studied for its effortless-looking mastery of brush and ink. The original is lost — legend says it was buried with a Tang emperor who loved it too much to part with it — but its traced copies still define what great calligraphy looks like."
+    ],
+    "whyItMatters": "A tipsy afternoon of poetry produced the single most influential piece of writing in the history of Chinese calligraphy.",
+    "related": [
+      "sima-yan-reunification"
+    ],
+    "xy": [
+      320,
+      121
+    ],
+    "image": {
+      "commons": "File:Fan Yi - Purification at the Orchid Pavilion - 1977.47 - Cleveland Museum of Art.tif",
+      "alt": "Wang Xizhi's Orchid Pavilion Preface"
+    }
+  },
+  {
+    "id": "jin-famine",
+    "title": "Famine and Locust Plague of the Yongjia Era",
+    "hanzi": "永嘉大饥荒",
+    "pinyin": "Yǒngjiā Dà Jīhuāng",
+    "year": 309,
+    "era": "jin",
+    "category": "nature",
+    "icon": "🦗",
+    "body": [
+      "Even before Luoyang fell, the Jin heartland was already collapsing under natural disaster piled on top of civil war. Years of drought in the early 300s CE were followed by massive locust swarms that stripped what little grain remained in the fields, while the fighting between rival princes made it impossible to move surviving food supplies to where they were needed.",
+      "Contemporary accounts describe starving refugees flooding into Luoyang itself, city markets where grain briefly became worth more than gold, and desperate migrations of entire communities searching for anywhere still able to feed them. The famine hollowed out the very region the Xiongnu armies would overrun just two years later, leaving a population too weakened and displaced to mount an effective defense."
+    ],
+    "whyItMatters": "Drought and locusts finished what civil war started, so starving refugees rather than soldiers were often the first to face Luoyang's fall in 311.",
+    "related": [
+      "fall-of-luoyang",
+      "eight-princes-war"
+    ],
+    "xy": [
+      393,
+      253
+    ]
+  },
+  {
+    "id": "taiwu-southern-campaign",
+    "title": "Northern Wei's Campaign to the Yangtze",
+    "hanzi": "太武帝南征",
+    "pinyin": "Tàiwǔdì Nánzhēng",
+    "year": 450,
+    "era": "nanbei",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "By the mid-400s CE, the non-Han Northern Wei dynasty had unified all of northern China, while the Han Chinese Liu Song dynasty held the south. In 450 CE, Northern Wei's Emperor Taiwu launched a massive invasion, smashing through Song's Yellow River defenses and driving his cavalry all the way to the Yangtze River, within sight of the southern capital itself.",
+      "The campaign was ferociously destructive — entire cities along the invasion route were depopulated — but Northern Wei ultimately couldn't hold the conquered territory or cross the wide Yangtze in force, and withdrew north after devastating the borderlands. The war set the pattern for the next century and a half: a hard, mostly stable frontier roughly along the Yangtze, with north and south locked in permanent rivalry rather than reunification."
+    ],
+    "whyItMatters": "Northern Wei's cavalry reached the Yangtze but never crossed it, cementing a north-south stalemate that would define Chinese politics for another 140 years.",
+    "related": [
+      "xiaowen-reforms",
+      "fall-of-luoyang"
+    ],
+    "xy": [
+      446,
+      219
+    ]
+  },
+  {
+    "id": "xiaowen-reforms",
+    "title": "Emperor Xiaowen's Sinicization Reforms",
+    "hanzi": "孝文帝改革",
+    "pinyin": "Xiàowéndì Gǎigé",
+    "year": 494,
+    "era": "nanbei",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "Northern Wei's ruling family, the Xianbei, were steppe nomads who governed a population that was overwhelmingly Han Chinese. In 494 CE, the reform-minded Emperor Xiaowen moved his capital south from the frontier city of Pingcheng to the ancient Chinese heartland city of Luoyang, and then went much further — banning Xianbei language and dress at court, requiring Chinese surnames, and encouraging intermarriage between Xianbei nobility and Han Chinese elite families.",
+      "The reforms provoked real resistance from conservative Xianbei nobles who saw their own culture being legislated out of existence, and tensions from the backlash would eventually help split Northern Wei apart decades later. But in the near term, they bound the ruling class to the society it governed more tightly than any northern dynasty had managed before."
+    ],
+    "whyItMatters": "A nomadic ruling class voluntarily adopted the language, dress, and customs of the people it conquered, an extraordinary bet on assimilation over conquest.",
+    "related": [
+      "taiwu-southern-campaign",
+      "longmen-grottoes"
+    ],
+    "xy": [
+      246,
+      203
+    ]
+  },
+  {
+    "id": "longmen-grottoes",
+    "title": "Longmen Grottoes Carved into the Cliffs",
+    "hanzi": "龙门石窟",
+    "pinyin": "Lóngmén Shíkū",
+    "year": 493,
+    "era": "nanbei",
+    "category": "tech",
+    "icon": "🗿",
+    "body": [
+      "When Northern Wei's imperial court moved to Luoyang, its patronage of Buddhism moved with it. Starting around 493 CE, craftsmen began carving thousands of Buddhist statues and shrines directly into the limestone cliffs along the Yi River south of the city — a project that would continue for centuries and eventually include over 100,000 carved images, from towering colossal Buddhas to figures barely an inch tall.",
+      "The technical achievement was as impressive as the religious one: sculptors worked directly into living rock face, suspended on scaffolding above the river, refining stone-carving techniques that would influence Buddhist art across East Asia. The Longmen Grottoes joined the earlier Yungang Grottoes as one of the great showcases of how deeply Buddhism had reshaped Chinese art and engineering alike."
+    ],
+    "whyItMatters": "Carving 100,000 Buddhist images straight into a riverside cliff turned imperial piety into one of the great engineering and artistic feats of the period.",
+    "related": [
+      "xiaowen-reforms"
+    ],
+    "xy": [
+      391,
+      139
+    ],
+    "image": {
+      "commons": "File:Ancient Buddhist Grottoes at Longmen- Grotto of Buddhas, Carved Buddhist Images.jpg",
+      "alt": "Longmen Grottoes Carved into the Cliffs"
+    }
+  },
+  {
+    "id": "zu-chongzhi-pi",
+    "title": "Zu Chongzhi Calculates Pi",
+    "hanzi": "祖冲之",
+    "pinyin": "Zǔ Chōngzhī",
+    "year": 480,
+    "era": "nanbei",
+    "category": "people",
+    "icon": "🔢",
+    "body": [
+      "Working in the southern Liu Song and Southern Qi courts, the mathematician and astronomer Zu Chongzhi pinned down the value of pi to between 3.1415926 and 3.1415927 — accurate to seven decimal places, a record that would stand unmatched anywhere in the world for roughly the next 800 years. He also proposed the elegant fraction 355/113 as a remarkably close approximation, still taught today.",
+      "Zu Chongzhi didn't stop at mathematics: he designed a more accurate calendar that corrected for the slow drift of the seasons, built mechanical devices including a south-pointing chariot that always indicated true south regardless of how it turned, and worked on early designs for ships driven by paddle wheels. His pi calculation alone would have secured his place in history, but it was really just one entry in a remarkably wide-ranging career."
+    ],
+    "whyItMatters": "Zu Chongzhi calculated pi more precisely than anyone else on Earth for the next eight centuries, using nothing but bamboo counting rods.",
+    "related": [
+      "longmen-grottoes"
+    ],
+    "xy": [
+      364,
+      230
+    ]
+  },
+  {
+    "id": "jiankang-famine",
+    "title": "Siege Famine of Jiankang",
+    "hanzi": "台城之围",
+    "pinyin": "Táichéng Zhī Wéi",
+    "year": 549,
+    "era": "nanbei",
+    "category": "nature",
+    "icon": "💀",
+    "body": [
+      "In 548 CE, a defected general named Hou Jing turned on his new patron, the Liang dynasty, and laid siege to the palace citadel of the southern capital Jiankang, near modern Nanjing. The siege dragged on for months into 549 CE, and as supplies inside the walls ran out, the trapped court and civilians descended into one of the worst famines the region had recorded, with contemporary chronicles describing horrific scenes of starvation and even cannibalism inside the palace grounds.",
+      "The aging Emperor Wu of Liang, who had ruled for decades and was renowned as a devout patron of Buddhism, died a broken, starving captive of his own former general shortly after the citadel fell. The disaster gutted Liang's population and treasury so badly that the dynasty never really recovered, leaving the south dangerously weakened right as northern rivals were regrouping."
+    ],
+    "whyItMatters": "A months-long siege starved a once-flourishing capital so completely that it broke the Liang dynasty for good, showing how fast a prosperous south could unravel.",
+    "related": [
+      "taiwu-southern-campaign"
+    ],
+    "xy": [
+      404,
+      240
+    ]
+  },
+  {
+    "id": "sui-imperial-exams",
+    "title": "Sui Founds the Imperial Examination System",
+    "hanzi": "科举制",
+    "pinyin": "Kējǔ Zhì",
+    "year": 607,
+    "era": "sui",
+    "category": "tech",
+    "icon": "📜",
+    "body": [
+      "For centuries, government jobs in China had gone mostly to whoever had the right family name or the right patron. Sui's founding emperor Wen began chipping away at that system, and by 607 CE his son Emperor Yang had formalized it into a real examination system: candidates from a much wider pool of society could sit written tests on the Confucian classics and, if they passed, earn an official post based on demonstrated knowledge rather than birth.",
+      "The system was still small and imperfect in its Sui-dynasty form, and the aristocracy kept plenty of informal advantages. But the underlying idea — that talent could be tested for rather than simply inherited — proved so powerful that later dynasties expanded it into the massive, multi-tiered examination bureaucracy that would select China's officials for the next 1,300 years."
+    ],
+    "whyItMatters": "A written test that let talent compete with birthright became the seed of a civil-service system that would run China for the next thirteen centuries.",
+    "related": [
+      "canal",
+      "wendi-reunification"
+    ],
+    "xy": [
+      321,
+      277
+    ]
+  },
+  {
+    "id": "goguryeo-invasions",
+    "title": "Sui's Disastrous Invasions of Goguryeo",
+    "hanzi": "三征高丽",
+    "pinyin": "Sān Zhēng Gāolí",
+    "year": 612,
+    "era": "sui",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "Emperor Yang wanted to bring the powerful Korean kingdom of Goguryeo to heel, and in 612 CE he assembled what ancient sources describe as over a million conscripted soldiers and laborers for the invasion — an almost unimaginable mobilization even by the standards of a dynasty that had just built the Grand Canal. The campaign was a catastrophe: Goguryeo's forces used the rugged terrain and fortified cities to grind the invaders down, and a huge Sui army was annihilated retreating across the Salsu River.",
+      "Undeterred, Emperor Yang launched two more invasions in 613 and 614 CE, each pulling still more peasants away from their farms and each ending in failure or hollow, unsustained victory. The human and financial cost was staggering, and the conscription itself sparked open rebellions back home even before the third campaign had finished."
+    ],
+    "whyItMatters": "Three failed wars against a single Korean kingdom burned through Sui's manpower and treasury so badly that they helped trigger the rebellions that destroyed the dynasty.",
+    "related": [
+      "sui-collapse",
+      "sui-imperial-exams"
+    ],
+    "xy": [
+      514,
+      160
+    ]
+  },
+  {
+    "id": "wendi-reunification",
+    "title": "Emperor Wen Reunifies China",
+    "hanzi": "隋文帝统一",
+    "pinyin": "Suí Wéndì Tǒngyī",
+    "year": 589,
+    "era": "sui",
+    "category": "dynasty",
+    "icon": "🏯",
+    "body": [
+      "China had been split along the Yangtze River for nearly three centuries, ever since Jin's collapse in the north, cycling through a succession of northern and southern dynasties that never managed to conquer each other for good. That finally changed in 589 CE, when Sui's founding emperor, Wen, sent his armies south and conquered the last holdout, the Chen dynasty, reuniting the entire country under one ruler for the first time since Jin's brief unification in 280 CE.",
+      "Emperor Wen followed the conquest with genuine reforms rather than just occupation: he standardized currency and weights across the newly joined halves of the country, reorganized the tax and legal codes, and laid the administrative groundwork that the following Tang dynasty would build on for centuries. It was a remarkably effective reunification for a dynasty that would itself collapse within thirty years."
+    ],
+    "whyItMatters": "Emperor Wen ended nearly 300 years of north-south division in one campaign, resetting the stage for centuries of unified Chinese rule that followed.",
+    "related": [
+      "sima-yan-reunification",
+      "canal"
+    ],
+    "xy": [
+      343,
+      217
+    ]
+  },
+  {
+    "id": "sui-collapse",
+    "title": "Forced Labor and the Collapse of Sui",
+    "hanzi": "隋朝覆灭",
+    "pinyin": "Suí Cháo Fùmiè",
+    "year": 617,
+    "era": "sui",
+    "category": "other",
+    "icon": "💥",
+    "body": [
+      "Sui's achievements were real — a reunified country, the Grand Canal, a reformed examination system — but they were built on the backs of a population pushed far past its limits. Millions of conscripted peasants dug canals, built palaces, and marched on the doomed Goguryeo campaigns, often dying in numbers that emptied entire villages of able-bodied men and left fields unplanted.",
+      "By 617 CE, the accumulated grievances exploded into open rebellion across the country, with regional strongmen and desperate peasant armies alike turning on the dynasty. Emperor Yang fled south to Jiangdu, where his own guards assassinated him in 618 CE, ending Sui after barely 37 years — one of the shortest-lived major dynasties in Chinese history, undone by the very ambition that had built it."
+    ],
+    "whyItMatters": "Sui built the infrastructure of a great empire and then worked its own people to death doing it, collapsing within a single generation of reunifying China.",
+    "related": [
+      "goguryeo-invasions",
+      "canal"
+    ],
+    "xy": [
+      477,
+      181
+    ]
+  },
+  {
+    "id": "li-bai-du-fu",
+    "title": "Li Bai and Du Fu, China's greatest poets",
+    "hanzi": "李白与杜甫",
+    "pinyin": "Lǐ Bái yǔ Dù Fǔ",
+    "year": 750,
+    "era": "tang",
+    "category": "people",
+    "icon": "📜",
+    "body": [
+      "Li Bai wandered the empire with a wine cup in hand, writing verses about mountains, moonlight, and the joy of drinking that made him the emperor's favorite entertainer at court, at least until his blunt tongue got him exiled from it.",
+      "Du Fu, his younger friend, wrote in a very different key: quiet, careful poems about hardship, war, and ordinary suffering that later readers came to see as history written in verse. Together the two are still called China's two greatest poets, one the free spirit, the other the conscience."
+    ],
+    "whyItMatters": "Their roughly 1,500 surviving poems became the gold standard for Chinese poetry ever after, still memorized by schoolchildren today.",
+    "related": [
+      "wuzetian",
+      "an-lushan-rebellion"
+    ],
+    "xy": [
+      237,
+      173
+    ],
+    "image": {
+      "commons": "File:LiBai.jpg",
+      "alt": "Traditional portrait of the poet Li Bai"
+    }
+  },
+  {
+    "id": "xuanzang-pilgrimage",
+    "title": "Xuanzang sets off for India",
+    "hanzi": "玄奘西行",
+    "pinyin": "Xuánzàng xīxíng",
+    "year": 629,
+    "era": "tang",
+    "category": "people",
+    "icon": "🧳",
+    "body": [
+      "Frustrated that Chinese translations of Buddhist scripture were incomplete and contradictory, the monk Xuanzang defied an imperial ban on foreign travel and slipped out of Chang'an at night, heading west across deserts, mountain passes, and bandit-infested roads toward India.",
+      "He spent over a decade abroad, studying at the great monastic university of Nalanda before returning home in 645 with hundreds of scriptures and relics. Emperor Taizong, impressed rather than angry, put him to work translating texts for the rest of his life."
+    ],
+    "whyItMatters": "His firsthand account of Central Asia and India is still used by historians today, and his journey later inspired the classic novel Journey to the West.",
+    "related": [],
+    "xy": [
+      281,
+      259
+    ],
+    "image": {
+      "commons": "File:TsangMonk.jpg",
+      "alt": "Traditional depiction of the pilgrim monk Xuanzang"
+    }
+  },
+  {
+    "id": "diamond-sutra",
+    "title": "The Diamond Sutra is printed",
+    "hanzi": "金刚经",
+    "pinyin": "Jīngāng Jīng",
+    "year": 868,
+    "era": "tang",
+    "category": "tech",
+    "icon": "📖",
+    "body": [
+      "A scroll of the Diamond Sutra, a core Buddhist text, was carved onto wooden blocks, inked, and pressed onto paper, then rolled up and sealed inside a cave near Dunhuang for safekeeping. Its final line even records the exact date it was made and who paid for it.",
+      "Rediscovered in the cave over a thousand years later, it remains the oldest complete, dated printed book known anywhere in the world, its illustrations and text just as crisp as the day they were pressed."
+    ],
+    "whyItMatters": "It proves printing was already a precise, mature craft in China centuries before Gutenberg, and shows how deliberately this book was made to last.",
+    "related": [
+      "printing"
+    ],
+    "xy": [
+      374,
+      194
+    ],
+    "image": {
+      "commons": "File:Center figure detail, from- Diamond Sutra of 868 AD - The Diamond Sutra (868), frontispiece and text - BL Or. 8210-P.2 (cropped).jpg",
+      "alt": "The Diamond Sutra is printed"
+    }
+  },
+  {
+    "id": "classic-of-tea",
+    "title": "Lu Yu writes the Classic of Tea",
+    "hanzi": "茶经",
+    "pinyin": "Chá Jīng",
+    "year": 760,
+    "era": "tang",
+    "category": "tech",
+    "icon": "🍵",
+    "body": [
+      "Lu Yu, an orphan raised by monks, spent years studying how tea was grown, picked, dried, and brewed across the empire. He compiled everything into the Classic of Tea, the world's first manual dedicated entirely to the plant, covering everything from soil types to the perfect boiling water.",
+      "The book turned a simple farm crop into a refined art with its own tools, etiquette, and vocabulary. Tea houses and tea culture spread rapidly afterward, and Lu Yu himself became revered as tea's patron saint."
+    ],
+    "whyItMatters": "It transformed a simple drink into a whole culture of ceremony and taste that still shapes how billions of people drink tea today.",
+    "related": [],
+    "xy": [
+      255,
+      273
+    ]
+  },
+  {
+    "id": "an-lushan-rebellion",
+    "title": "The An Lushan Rebellion erupts",
+    "hanzi": "安史之乱",
+    "pinyin": "Ānshǐ zhī Luàn",
+    "year": 755,
+    "era": "tang",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "An Lushan, a frontier general of mixed Sogdian and Turkic descent who had won the emperor's trust despite his enormous girth and outsider background, turned his private army against the throne. His forces stormed both capitals, sending Emperor Xuanzong fleeing into exile.",
+      "The war that followed dragged on for eight brutal years, and Tang census records show population numbers collapsing by tens of millions, whether from death, displacement, or simply the breakdown of record-keeping. Whatever the true toll, the empire never fully recovered its old strength."
+    ],
+    "whyItMatters": "The rebellion shattered Tang's golden age almost overnight and tipped lasting power toward regional warlords for the rest of the dynasty.",
+    "related": [
+      "li-bai-du-fu",
+      "wuzetian"
+    ],
+    "xy": [
+      290,
+      131
+    ]
+  },
+  {
+    "id": "battle-of-talas",
+    "title": "Battle of Talas",
+    "hanzi": "怛罗斯之战",
+    "pinyin": "Dáluósī zhī Zhàn",
+    "year": 751,
+    "era": "tang",
+    "category": "war",
+    "icon": "🐪",
+    "body": [
+      "Deep in Central Asia, near the Talas River, a Tang army under general Gao Xianzhi clashed with forces of the Abbasid Caliphate for control of the region's lucrative trade routes. Midway through the fight, Tang's Karluk allies switched sides, and the Tang army was routed.",
+      "Among the prisoners taken were, according to later accounts, skilled Chinese papermakers. Papermaking technology is said to have spread west from their captivity, eventually reaching the Islamic world and then Europe, quietly reshaping how knowledge would travel for centuries."
+    ],
+    "whyItMatters": "The battle checked Tang expansion into Central Asia, and the technology transfer it's credited with, papermaking, arguably changed world history more than the battle itself.",
+    "related": [],
+    "xy": [
+      363,
+      263
+    ],
+    "image": {
+      "commons": "File:Battle of Talas.png",
+      "alt": "Battle of Talas"
+    }
+  },
+  {
+    "id": "tang-conquest-eastern-turks",
+    "title": "Tang conquers the Eastern Göktürks",
+    "hanzi": "唐灭东突厥",
+    "pinyin": "Táng miè Dōng Tūjué",
+    "year": 630,
+    "era": "tang",
+    "category": "war",
+    "icon": "🏹",
+    "body": [
+      "Newly enthroned Emperor Taizong sent his best general, Li Jing, on a daring winter campaign against the Eastern Turkic Khaganate, a nomadic power that had long menaced Tang's northern border. Li Jing's forces struck fast through snow and caught the khagan's camp by surprise.",
+      "With the Eastern Turks defeated and their khagan captured, steppe leaders across the frontier acclaimed Taizong as their overlord, giving him the title Tian Kehan, or 'Heavenly Khan,' a rare honor for a Chinese emperor."
+    ],
+    "whyItMatters": "The victory secured the Silk Road trade routes and won Taizong recognition as ruler of both Chinese and steppe peoples at once, unprecedented at the time.",
+    "related": [
+      "reign-of-zhenguan"
+    ],
+    "xy": [
+      216,
+      213
+    ]
+  },
+  {
+    "id": "tang-founded",
+    "title": "Li Yuan founds the Tang dynasty",
+    "hanzi": "唐朝建立",
+    "pinyin": "Táng Cháo Jiànlì",
+    "year": 618,
+    "era": "tang",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "As the harsh, overextended Sui dynasty collapsed under rebellion and failed wars, Sui general Li Yuan seized the capital Chang'an and declared himself emperor of a new dynasty: Tang.",
+      "He ruled only briefly before his ambitious second son, Li Shimin, maneuvered his way to the throne in a bloody succession struggle and took the name Emperor Taizong, setting the dynasty on course for its golden age."
+    ],
+    "whyItMatters": "This founding launched a dynasty that would rule for nearly 300 years and become remembered as one of the most powerful and culturally rich periods in Chinese history.",
+    "related": [
+      "reign-of-zhenguan"
+    ],
+    "xy": [
+      268,
+      153
+    ],
+    "image": {
+      "commons": "File:Gaozu of Tang Dynasty.jpeg",
+      "alt": "Portrait of Emperor Gaozu, founder of the Tang dynasty"
+    }
+  },
+  {
+    "id": "reign-of-zhenguan",
+    "title": "Taizong's Reign of Zhenguan begins",
+    "hanzi": "贞观之治",
+    "pinyin": "Zhēnguān zhī Zhì",
+    "year": 626,
+    "era": "tang",
+    "category": "dynasty",
+    "icon": "🏛️",
+    "body": [
+      "After taking the throne, Emperor Taizong overhauled law codes, streamlined taxes, and reorganized the bureaucracy, all while famously inviting blunt criticism from advisors like Wei Zheng instead of punishing it.",
+      "The resulting era of stability and prosperity, known as the Reign of Zhenguan, became legendary almost immediately, held up as proof that a ruler who listened to his critics could govern better than one who silenced them."
+    ],
+    "whyItMatters": "Zhenguan-era governance became the textbook model of good rule that later Chinese emperors were measured against for the rest of imperial history.",
+    "related": [
+      "tang-founded",
+      "tang-conquest-eastern-turks"
+    ],
+    "xy": [
+      361,
+      149
+    ]
+  },
+  {
+    "id": "changan-cosmopolitan-capital",
+    "title": "Chang'an becomes the world's largest city",
+    "hanzi": "长安",
+    "pinyin": "Cháng'ān",
+    "year": 700,
+    "era": "tang",
+    "category": "other",
+    "icon": "🏙️",
+    "body": [
+      "By 700, Chang'an held over a million people, making it by far the largest city on Earth. Its grid of wide avenues housed merchant quarters full of Persian traders, Sogdian caravan masters, and travelers from across Asia.",
+      "Zoroastrian fire temples, Nestorian Christian churches, mosques, and Buddhist monasteries all stood within the same city walls, alongside Daoist temples and Confucian academies, making Chang'an one of the most religiously diverse cities of the ancient world."
+    ],
+    "whyItMatters": "Chang'an showed that a genuinely multicultural, globally connected metropolis was possible thirteen centuries before anyone used the word 'globalization.'",
+    "related": [],
+    "xy": [
+      353,
+      226
+    ]
+  },
+  {
+    "id": "tang-examination-system",
+    "title": "The imperial examinations expand",
+    "hanzi": "科举制度",
+    "pinyin": "Kējǔ Zhìdù",
+    "year": 650,
+    "era": "tang",
+    "category": "other",
+    "icon": "✍️",
+    "body": [
+      "Building on a system started under the earlier Sui dynasty, Tang emperors expanded written examinations that tested candidates on classic texts, poetry, and policy essays, then used the results to fill government posts.",
+      "In theory, any man with enough education could sit the exams and rise into the bureaucracy, though wealthy families still had the advantage of better tutors and connections. Even so, it cracked open a door that had once been sealed shut to anyone outside the aristocracy."
+    ],
+    "whyItMatters": "The exam system created a merit-based path into government that lasted, in various forms, for over a thousand years and became a model studied worldwide.",
+    "related": [
+      "reign-of-zhenguan"
+    ],
+    "xy": [
+      296,
+      298
+    ]
+  },
+  {
+    "id": "five-dynasties-succession-wars",
+    "title": "Five dynasties rise and fall in the north",
+    "hanzi": "五代",
+    "pinyin": "Wǔdài",
+    "year": 923,
+    "era": "wudai",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "With Tang gone, no single power could hold the Yellow River heartland for long. Five dynasties in a row, Later Liang, Later Tang, Later Jin, Later Han, and Later Zhou, seized the throne one after another in barely fifty years.",
+      "Almost every one of them fell the same way: a frontier general grew too powerful, marched on the capital, and became the next emperor, only to be toppled by one of his own commanders a few years later."
+    ],
+    "whyItMatters": "The relentless churn of coups and usurpations showed just how fragile the 'Mandate of Heaven' could be once a dynasty's central army lost its grip.",
+    "related": [
+      "tang-collapse-fragmentation"
+    ],
+    "xy": [
+      373,
+      177
+    ]
+  },
+  {
+    "id": "later-zhou-southern-campaigns",
+    "title": "Later Zhou campaigns against the southern kingdoms",
+    "hanzi": "后周南征",
+    "pinyin": "Hòu Zhōu Nánzhēng",
+    "year": 956,
+    "era": "wudai",
+    "category": "war",
+    "icon": "🛡️",
+    "body": [
+      "Unlike most of the era's short-lived rulers, Later Zhou's Emperor Shizong governed with real ambition, reforming taxes and the military before turning his newly strengthened army south against the wealthy kingdom of Southern Tang.",
+      "His campaigns seized territory north of the Yangzi River and pushed the fractured south toward reunification. Shizong died before finishing the job, but the momentum, and the loyal general who inherited his army, carried straight into the next dynasty."
+    ],
+    "whyItMatters": "Zhou's campaigns began stitching the fractured south back together, and the very general who inherited this momentum would soon found the Song dynasty.",
+    "related": [
+      "taizu-cup-of-wine"
+    ],
+    "xy": [
+      327,
+      236
+    ]
+  },
+  {
+    "id": "tang-collapse-fragmentation",
+    "title": "Tang's collapse fragments China",
+    "hanzi": "唐朝灭亡",
+    "pinyin": "Táng Cháo Mièwáng",
+    "year": 907,
+    "era": "wudai",
+    "category": "dynasty",
+    "icon": "💔",
+    "body": [
+      "Weakened by decades of rebellion and warlordism since the An Lushan Rebellion, the Tang dynasty finally gave out when the warlord Zhu Wen forced the last Tang emperor, a teenager, to abdicate in his favor.",
+      "But no single ruler could hold the whole empire together. Instead, China splintered into five competing dynasties in the north and roughly ten independent kingdoms in the south, a period historians simply call the Five Dynasties and Ten Kingdoms."
+    ],
+    "whyItMatters": "The breakup proved that even China's most celebrated dynasty could dissolve into rival warlord states, and reunifying it would take the next fifty years.",
+    "related": [
+      "tang-founded",
+      "five-dynasties-succession-wars"
+    ],
+    "xy": [
+      353,
+      177
+    ]
+  },
+  {
+    "id": "sixteen-prefectures-ceded",
+    "title": "The Sixteen Prefectures are ceded to the Khitan",
+    "hanzi": "燕云十六州",
+    "pinyin": "Yānyún Shíliù Zhōu",
+    "year": 938,
+    "era": "wudai",
+    "category": "other",
+    "icon": "🗺️",
+    "body": [
+      "Desperate for military backing to seize the throne of Later Jin, warlord Shi Jingtang struck a deal with the Khitan Liao dynasty to the north: help me become emperor, and I'll hand over sixteen strategic prefectures around modern Beijing.",
+      "The Khitan agreed, Shi Jingtang got his throne, and the mountainous frontier region, along with the natural defenses it provided, passed out of Chinese hands for generations."
+    ],
+    "whyItMatters": "Giving up this frontier region handed away the natural defensive wall against northern invasion, a loss that would haunt Song China's military strategy for the next 300 years.",
+    "related": [],
+    "xy": [
+      340,
+      195
+    ],
+    "image": {
+      "commons": "File:Shouchang coin with Khitan small script (obverse).png",
+      "alt": "A Liao-dynasty coin inscribed in Khitan small script"
+    }
+  },
+  {
+    "id": "wudai-yellow-river-famine",
+    "title": "Yellow River floods bring famine",
+    "hanzi": "黄河水灾",
+    "pinyin": "Huáng Hé Shuǐzāi",
+    "year": 944,
+    "era": "wudai",
+    "category": "nature",
+    "icon": "🌊",
+    "body": [
+      "Amid the constant warfare of the Later Jin dynasty, dikes along the Yellow River went unmaintained for too long, and the river burst its banks, drowning farmland across the north China plain.",
+      "With regional governments consumed by fighting each other, no one organized dike repairs or grain relief in time. Famine followed the floodwaters, and refugees streamed out of the ruined farmland in search of food."
+    ],
+    "whyItMatters": "The disaster shows how political chaos multiplies the damage from natural disasters, since no one was left in charge to repair dikes or move grain to the hungry.",
+    "related": [
+      "five-dynasties-succession-wars"
+    ],
+    "xy": [
+      464,
+      157
+    ]
+  },
+  {
+    "id": "magnetic-compass-navigation",
+    "title": "The compass guides Song sailors",
+    "hanzi": "指南针",
+    "pinyin": "Zhǐnánzhēn",
+    "year": 1044,
+    "era": "song",
+    "category": "tech",
+    "icon": "🧭",
+    "body": [
+      "A Song military encyclopedia, the Wujing Zongyao, describes a small magnetized fish-shaped needle floating in a bowl of water, used to find true south even when the stars were hidden by clouds.",
+      "Within a few decades, sailors along the coast adapted the device for use at sea, mounting it in a compass housing that let ships hold a steady course far from any landmark."
+    ],
+    "whyItMatters": "It let ships sail confidently out of sight of land in any weather, turning Song China into the world's most advanced maritime trading power of its day.",
+    "related": [
+      "quanzhou-maritime-trade"
+    ],
+    "xy": [
+      376,
+      249
+    ]
+  },
+  {
+    "id": "jiaozi-paper-money",
+    "title": "Jiaozi becomes the world's first paper money",
+    "hanzi": "交子",
+    "pinyin": "Jiāozǐ",
+    "year": 1023,
+    "era": "song",
+    "category": "tech",
+    "icon": "💴",
+    "body": [
+      "Merchants in Sichuan, tired of hauling heavy strings of iron coins across the province, had started issuing private paper notes called jiaozi that could be redeemed for coin on demand. The system worked well until some issuers ran out of reserves and notes became worthless.",
+      "To fix the chaos, the Song government stepped in and took over jiaozi production itself, printing standardized, state-backed paper currency with fixed terms and expiration dates."
+    ],
+    "whyItMatters": "It was the world's first government-issued paper money, centuries before Europe, and proved that trust in printed paper could stand in for heavy coin.",
+    "related": [
+      "printing"
+    ],
+    "xy": [
+      303,
+      207
+    ],
+    "image": {
+      "commons": "File:Jiao zi.jpg",
+      "alt": "A surviving jiaozi note, the first paper money"
+    }
+  },
+  {
+    "id": "fire-lance-weapon",
+    "title": "The fire lance, first gunpowder weapon",
+    "hanzi": "火枪",
+    "pinyin": "Huǒqiāng",
+    "year": 1132,
+    "era": "song",
+    "category": "tech",
+    "icon": "🔥",
+    "body": [
+      "Defending a besieged city, Song soldiers lashed a bamboo tube packed with gunpowder onto the end of a spear. When lit, it shot a jet of flame, sparks, and shrapnel at attacking soldiers, buying just enough time and terror to hold the line.",
+      "It was a crude, short-range weapon, more flamethrower than firearm, but it is the earliest firearm-like device recorded in actual battle anywhere in the world."
+    ],
+    "whyItMatters": "It's the direct ancestor of the gun, the moment gunpowder stopped being just fireworks and started becoming a weapon that would change warfare worldwide.",
+    "related": [
+      "gunpowder"
+    ],
+    "xy": [
+      394,
+      187
+    ],
+    "image": {
+      "commons": "File:Chinese Hand Cannon with Pellets.jpg",
+      "alt": "An early Chinese gunpowder hand cannon"
+    }
+  },
+  {
+    "id": "quanzhou-maritime-trade",
+    "title": "Quanzhou becomes a world port",
+    "hanzi": "泉州",
+    "pinyin": "Quánzhōu",
+    "year": 1087,
+    "era": "song",
+    "category": "other",
+    "icon": "⛵",
+    "body": [
+      "The Song government opened an official maritime trade office in the coastal city of Quanzhou, tasked with taxing and regulating the flood of ships arriving from Southeast Asia, India, Persia, and the Arab world.",
+      "Warehouses filled with spices, ivory, and incense from abroad, while Chinese silk, porcelain, and tea flowed the other way. Foreign merchant communities settled permanently in the city, building mosques and temples of their own."
+    ],
+    "whyItMatters": "Quanzhou's rise shows Song China turning outward to the sea for wealth, foreshadowing the ocean-going trade networks that would later connect the whole world.",
+    "related": [
+      "magnetic-compass-navigation"
+    ],
+    "xy": [
+      336,
+      269
+    ],
+    "image": {
+      "commons": "File:Ancient Boat in Quanzhou.jpg",
+      "alt": "An excavated ancient trading ship in Quanzhou"
+    }
+  },
+  {
+    "id": "zhu-xi-neo-confucianism",
+    "title": "Zhu Xi systematizes Neo-Confucianism",
+    "hanzi": "朱熹",
+    "pinyin": "Zhū Xī",
+    "year": 1175,
+    "era": "song",
+    "category": "other",
+    "icon": "📚",
+    "body": [
+      "Scholar Zhu Xi spent decades writing commentaries that wove Confucian ideas about ethics and social duty together with Buddhist and Daoist concepts of self-cultivation and the underlying order of the universe.",
+      "The resulting philosophy, now called Neo-Confucianism, gave old Confucian teachings a much deeper metaphysical backbone, and Zhu Xi's specific readings of the classic texts became the required curriculum for anyone hoping to pass the imperial exams."
+    ],
+    "whyItMatters": "His interpretation became the official standard for imperial exams for the next 600 years, shaping how huge parts of East Asia thought about morality and society.",
+    "related": [
+      "tang-examination-system"
+    ],
+    "xy": [
+      323,
+      163
+    ],
+    "image": {
+      "commons": "File:Portraits of Famous Men - Zhu Xi.jpg",
+      "alt": "Traditional portrait of philosopher Zhu Xi"
+    }
+  },
+  {
+    "id": "treaty-of-chanyuan",
+    "title": "The Treaty of Chanyuan ends war with the Liao",
+    "hanzi": "澶渊之盟",
+    "pinyin": "Chányuān zhī Méng",
+    "year": 1005,
+    "era": "song",
+    "category": "war",
+    "icon": "🕊️",
+    "body": [
+      "After years of inconclusive border warfare against the Khitan Liao dynasty, Song and Liao armies faced off near the town of Chanyuan. Rather than risk another costly battle, both sides agreed to a treaty.",
+      "Song would pay Liao an annual tribute of silver and silk, and in exchange the two empires would recognize each other as equals and keep the border peaceful, an arrangement that held for over a century."
+    ],
+    "whyItMatters": "Buying peace instead of fighting kept the border quiet for over a hundred years and let Song's economy boom, though the tribute set an uneasy precedent for dealing with northern rivals.",
+    "related": [
+      "sixteen-prefectures-ceded"
+    ],
+    "xy": [
+      408,
+      236
+    ]
+  },
+  {
+    "id": "jingkang-incident",
+    "title": "The Jingkang Incident splits Song in two",
+    "hanzi": "靖康之变",
+    "pinyin": "Jìngkāng zhī Biàn",
+    "year": 1127,
+    "era": "song",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "The Jurchen Jin dynasty, former allies turned conquerors, stormed the Song capital of Kaifeng and captured the emperor, his father the retired emperor, and thousands of members of the imperial court, hauling them north into captivity.",
+      "A surviving Song prince escaped south of the Yangzi River and re-established the dynasty there as the Southern Song, ruling from a new capital while the entire north remained lost to Jin control."
+    ],
+    "whyItMatters": "The disaster permanently cost Song the entire north, and losing an emperor to captivity remained one of the most humiliating memories in Chinese imperial history.",
+    "related": [
+      "treaty-of-chanyuan",
+      "yue-fei-execution"
+    ],
+    "xy": [
+      290,
+      240
+    ]
+  },
+  {
+    "id": "song-mongol-alliance-against-jin",
+    "title": "Song allies with the Mongols against the Jin",
+    "hanzi": "宋蒙联合灭金",
+    "pinyin": "Sòng Méng Liánhé Miè Jīn",
+    "year": 1234,
+    "era": "song",
+    "category": "war",
+    "icon": "🐎",
+    "body": [
+      "Still bitter over the Jingkang Incident a century earlier, Southern Song leaders saw a chance for payback when the rising Mongol empire began attacking their old enemy, the Jurchen Jin dynasty, from the north.",
+      "Song joined forces with the Mongols, and together they finally crushed the Jin dynasty. It felt like long-overdue justice, but it also erased the buffer state that had stood between Song and the Mongols."
+    ],
+    "whyItMatters": "The alliance eliminated an old enemy but removed the buffer between Song and the Mongols, a decision Song would come to regret as Mongol armies turned south next.",
+    "related": [
+      "jingkang-incident"
+    ],
+    "xy": [
+      266,
+      184
+    ]
+  },
+  {
+    "id": "yue-fei-execution",
+    "title": "General Yue Fei is executed on false charges",
+    "hanzi": "岳飞",
+    "pinyin": "Yuè Fēi",
+    "year": 1142,
+    "era": "song",
+    "category": "people",
+    "icon": "🗡️",
+    "body": [
+      "General Yue Fei won victory after victory pushing Jin forces back from Song territory, becoming a folk hero to a nation desperate for good news after the humiliation of losing the north.",
+      "But peace-minded chancellor Qin Hui, negotiating a truce with Jin, saw the popular general as an obstacle. Yue Fei was recalled, arrested on fabricated treason charges, and executed in prison, cutting short a campaign many believed could have retaken the lost territory."
+    ],
+    "whyItMatters": "Yue Fei became China's enduring symbol of loyalty betrayed, and Qin Hui's name is still used centuries later as shorthand for a traitor.",
+    "related": [
+      "jingkang-incident"
+    ],
+    "xy": [
+      379,
+      154
+    ],
+    "image": {
+      "commons": "File:Portrait of Yue Fei LACMA M.80.215.jpg",
+      "alt": "Traditional portrait of general Yue Fei"
+    }
+  },
+  {
+    "id": "shen-kuo-dream-pool-essays",
+    "title": "Shen Kuo writes the Dream Pool Essays",
+    "hanzi": "梦溪笔谈",
+    "pinyin": "Mèngxī Bǐtán",
+    "year": 1088,
+    "era": "song",
+    "category": "people",
+    "icon": "🔬",
+    "body": [
+      "Retired official Shen Kuo spent his final years at his country estate compiling a sprawling notebook of everything he had observed and studied: the magnetic compass, movable type printing, land surveying, astronomy, and medicine all got entries.",
+      "Among his most striking observations, he correctly identified strange stone shapes found in cliffs far from any coastline as fossils of ancient sea creatures, evidence that landscapes had changed dramatically over immense stretches of time."
+    ],
+    "whyItMatters": "His notebook is one of the earliest works anywhere to describe fossils correctly as the remains of ancient living things, centuries before European science caught up.",
+    "related": [
+      "printing",
+      "magnetic-compass-navigation"
+    ],
+    "xy": [
+      371,
+      282
+    ]
+  },
+  {
+    "id": "taizu-cup-of-wine",
+    "title": "Taizu founds Song and retires his generals over wine",
+    "hanzi": "杯酒释兵权",
+    "pinyin": "Bēi Jiǔ Shì Bīngquán",
+    "year": 961,
+    "era": "song",
+    "category": "dynasty",
+    "icon": "🍷",
+    "body": [
+      "General Zhao Kuangyin had seized the throne in 960 much like so many warlords before him, and as Emperor Taizu he knew exactly how dangerous his own powerful generals could become. Rather than wait for one of them to do to him what he had just done to the last dynasty, he invited them all to a banquet.",
+      "Over cups of wine, Taizu gently but firmly persuaded his commanders to give up their armies in exchange for comfortable retirements, land, and titles. Every one of them accepted, and Song avoided the cycle of military coups that had toppled the Five Dynasties one after another."
+    ],
+    "whyItMatters": "Instead of purging his generals violently, Taizu solved the warlord problem that had wrecked five previous dynasties with a dinner party, setting Song on course to be ruled by civilian officials rather than military strongmen.",
+    "related": [
+      "later-zhou-southern-campaigns",
+      "tang-collapse-fragmentation"
+    ],
+    "xy": [
+      341,
+      249
+    ],
+    "image": {
+      "commons": "File:Portrait de Song Taizu.jpg",
+      "alt": "Portrait of Emperor Taizu, founder of Song"
+    }
+  },
+  {
+    "id": "fan-zhongyan-famine-relief",
+    "title": "Fan Zhongyan fights famine by encouraging spending",
+    "hanzi": "范仲淹赈灾",
+    "pinyin": "Fàn Zhòngyān Zhènzāi",
+    "year": 1050,
+    "era": "song",
+    "category": "nature",
+    "icon": "🌾",
+    "body": [
+      "When drought withered the harvest around Hangzhou, official Fan Zhongyan took an unusual approach to relief. Instead of only opening grain stores, he encouraged the wealthy to spend, sponsoring boat races, temple repairs, and lavish feasts throughout the famine.",
+      "The logic was simple: rich households' spending on entertainment and construction put coins in the pockets of laborers who badly needed work, letting them buy food even when their own fields had failed."
+    ],
+    "whyItMatters": "His stimulus-style relief is one of the earliest documented uses of deliberately boosting spending to fight an economic crisis, a strategy governments still debate using today.",
+    "related": [],
+    "xy": [
+      414,
+      250
+    ]
+  },
+  {
+    "id": "kamikaze",
+    "title": "Mongol invasion fleet destroyed by typhoon",
+    "hanzi": "元寇",
+    "pinyin": "Yuánkòu",
+    "year": 1281,
+    "era": "yuan",
+    "category": "war",
+    "icon": "🌀",
+    "body": [
+      "Kublai Khan wanted Japan to submit like everyone else, and when Japan refused, he sent two massive invasion fleets across the sea, first in 1274 and again in 1281. Samurai defenders fought fiercely on the beaches, and Mongol commanders struggled to coordinate a fleet built partly from hastily conscripted Korean and Chinese shipyards.",
+      "Both times, a violent storm swept in just as the invasion stalled, wrecking ships and drowning tens of thousands of troops before they could establish a foothold. Japanese chroniclers called the wind kamikaze, 'divine wind' — a name the world would hear again, very differently, seven centuries later."
+    ],
+    "whyItMatters": "Two storms did what samurai swords alone could not: they stopped the largest amphibious invasion force the medieval world had ever seen.",
+    "related": [
+      "mongols",
+      "kublai-khan"
+    ],
+    "xy": [
+      253,
+      78
+    ],
+    "image": {
+      "commons": "File:Mōko Shūrai Ekotoba, Scroll 2, Detail Boarding.jpg",
+      "alt": "Scene from the Mōko Shūrai Ekotoba scroll depicting the Mongol invasion fleet"
+    }
+  },
+  {
+    "id": "java-invasion",
+    "title": "Kublai Khan's invasion of Java falls apart",
+    "hanzi": "爪哇远征",
+    "pinyin": "Zhǎowā Yuǎnzhēng",
+    "year": 1293,
+    "era": "yuan",
+    "category": "war",
+    "icon": "⛵",
+    "body": [
+      "After a Javanese king mutilated a Mongol envoy sent to demand tribute, Kublai Khan answered with roughly a thousand ships and twenty thousand troops, the same overwhelming-force playbook that had worked against the Song. But by the time the fleet reached Java, the offending king was already dead, killed in a local power struggle.",
+      "The Mongol army was pulled into someone else's civil war, helped a rival prince seize the throne, and was then abruptly turned on and driven back to their ships. They limped home having lost thousands of men for a war that had already ended before they landed."
+    ],
+    "whyItMatters": "Even the Mongol war machine had a range limit, and dense jungle, tropical disease, and local politics found it before Java did.",
+    "related": [
+      "mongols",
+      "kamikaze",
+      "kublai-khan"
+    ],
+    "xy": [
+      338,
+      151
+    ]
+  },
+  {
+    "id": "yuan-hierarchy",
+    "title": "Yuan China sorts its people by ethnicity",
+    "hanzi": "四等人制",
+    "pinyin": "Sìděngrén Zhì",
+    "year": 1280,
+    "era": "yuan",
+    "category": "dynasty",
+    "icon": "📜",
+    "body": [
+      "Ruling a population overwhelmingly larger than their own, the Mongols formalized a four-tier system to keep control. Mongols sat on top, followed by 'Semu' — Central Asian, Middle Eastern, and other non-Chinese allies recruited as officials and tax collectors. Northern Chinese, who had submitted decades earlier, ranked third.",
+      "Southern Chinese, former subjects of the recently conquered Song dynasty, sat at the bottom, facing the heaviest taxes, the fewest official posts, and even different legal penalties for the same crimes. The arrangement kept Mongols and their allies in charge of a much larger Chinese population, but it also left that population with every reason to resent Yuan rule."
+    ],
+    "whyItMatters": "A century of built-in second-class status gave millions of Chinese subjects a reason to cheer when the Ming dynasty finally rose up and threw the Mongols out.",
+    "related": [
+      "mongols",
+      "ming-founding"
+    ],
+    "xy": [
+      220,
+      155
+    ]
+  },
+  {
+    "id": "yam-relay",
+    "title": "A horse-relay network links China to the world",
+    "hanzi": "站赤",
+    "pinyin": "Zhànchì",
+    "year": 1280,
+    "era": "yuan",
+    "category": "dynasty",
+    "icon": "🐎",
+    "body": [
+      "The Yuan dynasty inherited and expanded the yam, a chain of relay stations spaced roughly a day's ride apart across the entire Mongol Empire. Riders carrying urgent messages could swap to a fresh horse at each station, covering in weeks distances that used to take months, while merchants, envoys, and travelers used the same secured routes.",
+      "Stretching from China's coast to the edges of Europe, the network was the backbone of what historians call the Pax Mongolica — a period when, for all the violence of conquest, a single power's control over Eurasia's roads made long-distance travel and trade safer than it had been in centuries."
+    ],
+    "whyItMatters": "This was the internet of its day, and it's the reason a Venetian trader named Marco Polo could reach Kublai Khan's court at all.",
+    "related": [
+      "mongols",
+      "black-death-origin"
+    ],
+    "xy": [
+      309,
+      69
+    ],
+    "image": {
+      "commons": "File:Phagspa vinokurov tablet.jpg",
+      "alt": "A Yuan-dynasty paiza authority tablet used on the yam relay network"
+    }
+  },
+  {
+    "id": "black-death-origin",
+    "title": "Plague strikes along the Mongol trade roads",
+    "hanzi": "黑死病",
+    "pinyin": "Hēisǐbìng",
+    "year": 1331,
+    "era": "yuan",
+    "category": "other",
+    "icon": "🐀",
+    "body": [
+      "In the early 1330s, an outbreak of plague tore through Hebei province in northern China, reportedly killing a large share of the local population in a matter of months. Yuan China's well-traveled roads and relay stations, built to move messages and merchants quickly, moved the disease just as efficiently.",
+      "Carried by fleas riding on rats that hitched along caravan routes, the plague crept west over the following decade, reaching the Crimean coast by the late 1340s. From there it sailed into Mediterranean ports and became the Black Death, the epidemic that would go on to kill a large share of Europe's population."
+    ],
+    "whyItMatters": "A regional outbreak in Mongol-ruled China, riding the same trade routes that made the empire rich, became one of the deadliest pandemics in human history.",
+    "related": [
+      "yam-relay",
+      "mongols"
+    ],
+    "xy": [
+      301,
+      197
+    ]
+  },
+  {
+    "id": "kublai-khan",
+    "title": "Kublai Khan rules China as a Mongol emperor",
+    "hanzi": "忽必烈",
+    "pinyin": "Hūbìliè",
+    "year": 1294,
+    "era": "yuan",
+    "category": "people",
+    "icon": "👑",
+    "body": [
+      "Grandson of Genghis Khan, Kublai did something none of his ancestors had: he settled down and ruled China as China, adopting the dynastic name Yuan, building a new capital called Dadu on the site of modern Beijing, and employing Chinese officials, artists, and engineers alongside Mongol generals.",
+      "He never stopped being a Mongol khan — the ethnic hierarchy that favored his own people stayed firmly in place — but he understood that holding China meant governing it in a recognizably Chinese way, with a bureaucracy, a capital, and courtly ritual the population found familiar."
+    ],
+    "whyItMatters": "Kublai's choice of Dadu as capital is the reason Beijing, not some Mongol steppe town, has been China's seat of power ever since.",
+    "related": [
+      "mongols",
+      "yuan-hierarchy",
+      "forbidden"
+    ],
+    "xy": [
+      429,
+      109
+    ],
+    "image": {
+      "commons": "File:Emperoryuandinastycollage.jpg",
+      "alt": "Collage of Yuan-dynasty emperor portraits including Kublai Khan"
+    }
+  },
+  {
+    "id": "haijin-ban",
+    "title": "Ming China closes its door to the sea",
+    "hanzi": "海禁",
+    "pinyin": "Hǎijìn",
+    "year": 1433,
+    "era": "ming",
+    "category": "other",
+    "icon": "🚫",
+    "body": [
+      "After Zheng He's seventh and final voyage, Confucian officials at court argued the treasure fleets were a vanity project — hugely expensive, militarily pointless, and a distraction from the real threat on China's northern border. They won the argument. Private citizens were banned from building oceangoing ships or trading abroad, and the fleet itself was left to rot in harbor.",
+      "Shipyards that had built the largest wooden ships on Earth were dismantled, and records of the voyages were later destroyed or lost. Trade did not vanish, but it went underground into smuggling networks, cut off from official support or protection."
+    ],
+    "whyItMatters": "The world's most advanced navy walked away from the ocean just as European powers were about to sail onto the world stage.",
+    "related": [
+      "zhenghe"
+    ],
+    "xy": [
+      421,
+      237
+    ]
+  },
+  {
+    "id": "ming-founding",
+    "title": "A peasant monk founds the Ming dynasty",
+    "hanzi": "朱元璋建立明朝",
+    "pinyin": "Zhū Yuánzhāng Jiànlì Míngcháo",
+    "year": 1368,
+    "era": "ming",
+    "category": "dynasty",
+    "icon": "🏯",
+    "body": [
+      "Zhu Yuanzhang started life about as far from the throne as possible: orphaned by famine, he became a wandering Buddhist monk before joining a rebel army fighting Mongol Yuan rule. Ruthless and capable, he outmaneuvered rival rebel leaders one by one and turned a peasant uprising into a disciplined force.",
+      "In 1368 his armies took the Yuan capital, and he declared himself the Hongwu Emperor, founding the Ming dynasty. He spent his reign tightening imperial control, purging rivals real and imagined, and rebuilding a state shattered by decades of war and foreign rule."
+    ],
+    "whyItMatters": "He's one of only two commoners in Chinese history to found a dynasty from scratch, proof the Mandate of Heaven could land on anyone.",
+    "related": [
+      "mongols",
+      "yuan-hierarchy",
+      "forbidden"
+    ],
+    "xy": [
+      217,
+      93
+    ],
+    "image": {
+      "commons": "File:Hongwu2.jpg",
+      "alt": "Portrait of the Hongwu Emperor, founder of Ming"
+    }
+  },
+  {
+    "id": "yongle-usurpation",
+    "title": "The Yongle Emperor seizes the throne",
+    "hanzi": "靖难之役",
+    "pinyin": "Jìngnán zhī Yì",
+    "year": 1402,
+    "era": "ming",
+    "category": "dynasty",
+    "icon": "⚔️",
+    "body": [
+      "When the Hongwu Emperor died, the throne passed to his young grandson, the Jianwen Emperor, who promptly moved to strip power from his uncles, the imperial princes. One uncle, Zhu Di, prince of Yan and a battle-hardened general, refused to go quietly and marched south under the banner of a campaign to 'clear away trouble' at court.",
+      "Three years of civil war later, Zhu Di's forces took the capital at Nanjing; the palace burned, Jianwen was never found, and Zhu Di crowned himself the Yongle Emperor. He went on to move the capital north to Beijing, commission the Forbidden City, and dispatch Zheng He's treasure fleets."
+    ],
+    "whyItMatters": "A nephew-uncle power struggle produced the emperor behind two of Ming China's most famous achievements, the Forbidden City and Zheng He's voyages.",
+    "related": [
+      "forbidden",
+      "zhenghe",
+      "ming-founding"
+    ],
+    "xy": [
+      337,
+      133
+    ],
+    "image": {
+      "commons": "File:Portrait assis de l'empereur Ming Chengzu.jpg",
+      "alt": "Seated portrait of the Yongle Emperor"
+    }
+  },
+  {
+    "id": "ming-yellow-river-flood",
+    "title": "The Yellow River drowns Kaifeng",
+    "hanzi": "黄河决堤",
+    "pinyin": "Huánghé Juédī",
+    "year": 1642,
+    "era": "ming",
+    "category": "nature",
+    "icon": "🌊",
+    "body": [
+      "As rebel leader Li Zicheng's army besieged the city of Kaifeng, defenders and attackers each tried breaching the Yellow River's dikes to flood the other side, gambling with one of the most flood-prone rivers on Earth. The gamble went catastrophically wrong: the river burst its banks and drowned the city itself, killing hundreds of thousands.",
+      "The disaster landed on top of decades of drought, crop failure, and famine linked to a broader global cooling event historians call the Little Ice Age, which had already been driving desperate peasants into rebel armies across northern China."
+    ],
+    "whyItMatters": "A flood meant to be a weapon of war instead became a preview of how badly climate and chaos were about to combine to bring the Ming dynasty down.",
+    "related": [
+      "shaanxi",
+      "li-zicheng-beijing"
+    ],
+    "xy": [
+      287,
+      178
+    ]
+  },
+  {
+    "id": "tumu-crisis",
+    "title": "A Ming emperor is captured on the battlefield",
+    "hanzi": "土木堡之变",
+    "pinyin": "Tǔmùbǎo zhī Biàn",
+    "year": 1449,
+    "era": "ming",
+    "category": "war",
+    "icon": "🏹",
+    "body": [
+      "Encouraged by a powerful court eunuch, the young Zhengtong Emperor personally led a hastily assembled army north to confront the Oirat Mongol leader Esen Taishi. It went badly from the start: poor supply lines and confused leadership left the army stranded near a waystation called Tumu, where Esen's cavalry surrounded and crushed it.",
+      "The emperor himself was captured alive, an almost unthinkable humiliation. Beijing's officials, refusing to be held hostage to his release, quickly installed his brother as the new emperor and successfully defended the capital, leaving Esen holding a prisoner with no leverage left."
+    ],
+    "whyItMatters": "Less than a century after the Ming threw the Mongols out of China, one of its own emperors was marched off in chains by them.",
+    "related": [
+      "ming-founding"
+    ],
+    "xy": [
+      354,
+      114
+    ],
+    "image": {
+      "commons": "File:MingYingzong1.jpg",
+      "alt": "Portrait of the Zhengtong Emperor (Yingzong)"
+    }
+  },
+  {
+    "id": "wokou-pirates",
+    "title": "Qi Jiguang breaks the coastal pirates",
+    "hanzi": "戚继光抗倭",
+    "pinyin": "Qī Jìguāng Kàngwō",
+    "year": 1561,
+    "era": "ming",
+    "category": "war",
+    "icon": "🗡️",
+    "body": [
+      "For decades, raiders known as wokou — bands mixing Japanese pirates, displaced Chinese smugglers, and opportunists shut out of legal trade by the haijin ban — burned and looted their way along China's southeastern coast, and local garrisons proved unable to stop them.",
+      "General Qi Jiguang changed that by throwing out the old playbook: he recruited and drilled tough militia from local miners and farmers into small, flexible units nicknamed 'Mandarin Duck' formations, built for the messy close-quarters fighting pirate raids actually involved. His campaigns broke the wokou threat within a few years."
+    ],
+    "whyItMatters": "A general who trained ordinary villagers into a disciplined fighting force gave the Ming one of its few unambiguous military triumphs.",
+    "related": [
+      "haijin-ban"
+    ],
+    "xy": [
+      554,
+      220
+    ],
+    "image": {
+      "commons": "File:Qi Jiguang Portrait.jpg",
+      "alt": "Portrait of general Qi Jiguang"
+    }
+  },
+  {
+    "id": "li-zicheng-beijing",
+    "title": "Rebel forces topple the Ming dynasty",
+    "hanzi": "李自成攻陷北京",
+    "pinyin": "Lǐ Zìchéng Gōngxiàn Běijīng",
+    "year": 1644,
+    "era": "ming",
+    "category": "war",
+    "icon": "🔥",
+    "body": [
+      "Years of famine, crushing taxes, and a government too broke to pay its own soldiers had turned much of northern China into a tinderbox. Rebel leader Li Zicheng, a former minor official turned insurgent commander, marched his growing army straight into Beijing with barely a fight, the exhausted Ming state simply having nothing left to stop him.",
+      "The last Ming emperor, Chongzhen, climbed a hill behind the palace and hanged himself rather than be captured. Li's triumph was brief: within weeks, a Ming general opened the northern frontier to Manchu Qing forces to crush him, and the Qing dynasty took the throne instead."
+    ],
+    "whyItMatters": "This is the day the Ming dynasty actually ended — not conquered by foreigners at first, but worn down and finished off by its own starving subjects.",
+    "related": [
+      "ming-yellow-river-flood",
+      "tumu-crisis"
+    ],
+    "xy": [
+      474,
+      154
+    ]
+  },
+  {
+    "id": "great-wall-ming",
+    "title": "The Great Wall gets rebuilt in stone",
+    "hanzi": "明长城",
+    "pinyin": "Míng Chángchéng",
+    "year": 1570,
+    "era": "ming",
+    "category": "tech",
+    "icon": "🧱",
+    "body": [
+      "The walls built under earlier dynasties like the Qin were mostly rammed earth, effective but eroding steadily. Facing repeated Mongol raids — including the humiliation of the Tumu Crisis — the Ming poured enormous resources into rebuilding and extending the wall along the northern frontier with fired brick and stone facing.",
+      "Generals like Qi Jiguang, fresh from beating back pirates on the coast, oversaw the addition of solid watchtowers, garrison forts, and beacon towers for signaling troop movements, turning the wall into a genuine defensive system rather than a single barrier."
+    ],
+    "whyItMatters": "The photogenic stone wall tourists climb near Beijing today is almost entirely Ming engineering, not the much older Qin original.",
+    "related": [
+      "wokou-pirates",
+      "tumu-crisis"
+    ],
+    "xy": [
+      235,
+      193
+    ],
+    "image": {
+      "commons": "File:Lascar The Great Wall of China (4476342744).jpg",
+      "alt": "The Ming-rebuilt stone Great Wall"
+    }
+  },
+  {
+    "id": "wang-yangming",
+    "title": "Wang Yangming discovers 'innate knowing'",
+    "hanzi": "王阳明",
+    "pinyin": "Wáng Yángmíng",
+    "year": 1508,
+    "era": "ming",
+    "category": "people",
+    "icon": "💡",
+    "body": [
+      "After criticizing a powerful court eunuch, official and scholar Wang Yangming was flogged, imprisoned, and banished to Longchang, a remote frontier outpost in the southwest with no proper housing or supplies. Alone and stripped of status, he spent his nights meditating on the classic Confucian question of how a person comes to know what is right.",
+      "One night, in what he described as a sudden burst of understanding, he concluded that moral knowledge isn't learned bit by bit from books, as orthodox Confucianism taught, but is already innate in every person's mind, waiting to be acted on. This became the core of his School of Mind, a philosophy urging people to unify knowledge with action rather than endlessly study before doing."
+    ],
+    "whyItMatters": "Exile in the middle of nowhere produced one of the most influential ideas in East Asian philosophy: that knowing right from wrong is useless until you act on it.",
+    "related": [],
+    "xy": [
+      355,
+      233
+    ],
+    "image": {
+      "commons": "File:王守仁.jpg",
+      "alt": "Traditional portrait of philosopher Wang Yangming"
+    }
+  },
+  {
+    "id": "wu-chengen",
+    "title": "Wu Cheng'en publishes Journey to the West",
+    "hanzi": "吴承恩",
+    "pinyin": "Wú Chéng'ēn",
+    "year": 1592,
+    "era": "ming",
+    "category": "people",
+    "icon": "📖",
+    "body": [
+      "Wu Cheng'en spent much of his life as a minor, underpaid local official, better known among friends for his wit and his fondness for the strange folk tales and ghost stories most scholars considered beneath serious literature. Late in life he channeled that love of the fantastic into a sprawling novel.",
+      "Journey to the West follows the monk Xuanzang on a real historical pilgrimage to India to fetch Buddhist scriptures, reimagined as a comic fantasy adventure alongside a shape-shifting, trouble-making Monkey King, a lazy pig-spirit, and a river demon, battling their way through a world of gods and monsters."
+    ],
+    "whyItMatters": "A frustrated bureaucrat's side project became one of China's Four Great Classical Novels and the most beloved fantasy story in East Asia.",
+    "related": [],
+    "xy": [
+      390,
+      91
+    ],
+    "image": {
+      "commons": "File:Journey to the West 18th Century.jpg",
+      "alt": "Wu Cheng'en publishes Journey to the West"
+    }
+  },
+  {
+    "id": "second-opium-war",
+    "title": "Second Opium War",
+    "hanzi": "第二次鸦片战争",
+    "pinyin": "Dì'èrcì Yāpiàn Zhànzhēng",
+    "year": 1856,
+    "era": "qing",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "Britain and France went to war with the Qing again in 1856, this time joined by their own navies steaming right up to the gates of Beijing. The trigger was almost comically small — a dispute over a Chinese-owned but British-registered ship called the Arrow — but the ambitions behind it were large: full legal trading rights across China, not just in a handful of southern ports.",
+      "The low point came in October 1860, when British and French troops looted and then burned the Yuanmingyuan, the emperor's sprawling Old Summer Palace outside Beijing, destroying centuries of art and architecture over three days. Chinese military losses across the war's battles are estimated by historians at several thousand to over ten thousand killed, figures that are approximate given the era's incomplete records. The war ended with the Treaties of Tianjin and Beijing, opening more ports, legalizing the opium trade, and ceding Kowloon to Britain."
+    ],
+    "whyItMatters": "The burning of the Old Summer Palace became a lasting symbol of foreign humiliation still invoked in Chinese politics and education today.",
+    "related": [
+      "opium",
+      "unequal-treaties"
+    ],
+    "xy": [
+      463,
+      223
+    ],
+    "image": {
+      "commons": "File:Second Opium War-guangzhou.jpg",
+      "alt": "Second Opium War"
+    }
+  },
+  {
+    "id": "sino-japanese-first",
+    "title": "First Sino-Japanese War",
+    "hanzi": "甲午战争",
+    "pinyin": "Jiǎwǔ Zhànzhēng",
+    "year": 1894,
+    "era": "qing",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "Qing China and a rapidly modernizing Japan both wanted influence over Korea, and in 1894 that rivalry turned into open war. It did not go the way most observers expected: Japan's newer, better-trained navy and army beat Qing forces on land and at sea, including a decisive naval defeat at the Battle of the Yalu River.",
+      "Historians' estimates of Chinese military deaths across the war range around 30,000 to 35,000, though precise figures are disputed. The 1895 Treaty of Shimonoseki forced China to recognize Korean independence, pay a huge indemnity, and cede Taiwan and the Penghu Islands to Japan, beginning fifty years of Japanese colonial rule there."
+    ],
+    "whyItMatters": "Losing to a much smaller neighbor shattered confidence in the Self-Strengthening Movement's reforms and exposed how far Qing modernization had fallen behind Japan's.",
+    "related": [
+      "self-strengthening",
+      "li-hongzhang"
+    ],
+    "xy": [
+      503,
+      122
+    ],
+    "image": {
+      "commons": "File:Engagement first sino-japanese war (oil painting).jpg",
+      "alt": "First Sino-Japanese War"
+    }
+  },
+  {
+    "id": "boxer-rebellion",
+    "title": "Boxer Rebellion",
+    "hanzi": "义和团运动",
+    "pinyin": "Yìhétuán Yùndòng",
+    "year": 1899,
+    "era": "qing",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "The Boxers were a militia movement, formally called the Society of Righteous and Harmonious Fists, that blamed foreign missionaries, merchants, and railways for China's troubles and practiced martial arts rituals they believed made them immune to bullets. By 1900 the movement had spread across north China with tacit backing from the Qing court, and Boxers besieged the foreign legation quarter in Beijing.",
+      "An Eight-Nation Alliance of foreign troops broke the siege and occupied Beijing, and the fighting and reprisals that followed killed a disputed number of people. Estimates for total deaths — including Boxers, Chinese Christians, foreign missionaries, and civilians caught up in the suppression that followed — range from the tens of thousands into the low hundreds of thousands depending on the source and what is counted. The 1901 Boxer Protocol imposed a further indemnity, paid over decades."
+    ],
+    "whyItMatters": "The indemnity deepened foreign financial control over China and the humiliation fed the nationalist and reformist currents that helped topple the dynasty a decade later.",
+    "related": [
+      "unequal-treaties",
+      "cixi"
+    ],
+    "xy": [
+      316,
+      173
+    ],
+    "image": {
+      "commons": "File:Beijing Castle Boxer Rebellion 1900 FINAL.jpg",
+      "alt": "Boxer Rebellion"
+    }
+  },
+  {
+    "id": "unequal-treaties",
+    "title": "The Unequal Treaties and Treaty Ports",
+    "hanzi": "不平等条约",
+    "pinyin": "Bù Píngděng Tiáoyuē",
+    "year": 1842,
+    "era": "qing",
+    "category": "other",
+    "icon": "📜",
+    "body": [
+      "Starting with the 1842 Treaty of Nanjing after the First Opium War, a series of treaties forced China to open designated \"treaty ports\" — Shanghai, Guangzhou, and eventually dozens more — where foreign merchants could live, trade, and own property. Foreigners in these ports typically answered to their own consular courts rather than Chinese law, a right called extraterritoriality, and China had little control over its own import tariffs.",
+      "Several treaty ports grew foreign concessions, self-governing districts run by foreign powers within Chinese cities, most famously the International Settlement and French Concession in Shanghai. Chinese historians and officials came to call this whole arrangement, stretched across roughly a century, part of the \"century of humiliation.\""
+    ],
+    "whyItMatters": "This treaty system shaped where modern Chinese cities grew, how China viewed foreign powers, and it still underpins the government's framing of national sovereignty today.",
+    "related": [
+      "opium",
+      "second-opium-war"
+    ],
+    "xy": [
+      367,
+      261
+    ],
+    "image": {
+      "commons": "File:1899 United States Government Commercial map of China, showing treaty ports, ports of foreign control, railways, telegraphs, waterways.jpg",
+      "alt": "The Unequal Treaties and Treaty Ports"
+    }
+  },
+  {
+    "id": "self-strengthening",
+    "title": "Self-Strengthening Movement",
+    "hanzi": "洋务运动",
+    "pinyin": "Yángwù Yùndòng",
+    "year": 1861,
+    "era": "qing",
+    "category": "other",
+    "icon": "🏭",
+    "body": [
+      "After the humiliations of the Opium Wars, reform-minded Qing officials like Li Hongzhang and Zeng Guofan launched a decades-long push to import Western military technology and industry — arsenals, shipyards, and eventually railways and telegraph lines — while keeping Confucian government and social order intact. Their slogan summed up the balancing act: \"Chinese learning as the base, Western learning for practical use.\"",
+      "The movement built real institutions, including the Jiangnan Arsenal in Shanghai and the Fuzhou Navy Yard, and trained a new generation of engineers and translators. But it never touched the political system itself, and the crushing defeat by Japan in 1894-95 showed the limits of technology bolted onto an unreformed government."
+    ],
+    "whyItMatters": "Its failure to reform institutions alongside technology convinced the next generation of reformers that China needed political change, not just new weapons.",
+    "related": [
+      "sino-japanese-first",
+      "qing-railways",
+      "li-hongzhang"
+    ],
+    "xy": [
+      461,
+      109
+    ],
+    "image": {
+      "commons": "File:Foochow Arsenal.jpg",
+      "alt": "The Foochow Arsenal, built during the Self-Strengthening Movement"
+    }
+  },
+  {
+    "id": "hundred-days-reform",
+    "title": "Hundred Days' Reform",
+    "hanzi": "戊戌变法",
+    "pinyin": "Wùxū Biànfǎ",
+    "year": 1898,
+    "era": "qing",
+    "category": "other",
+    "icon": "📜",
+    "body": [
+      "In the summer of 1898, the young Guangxu Emperor backed a sweeping reform program pushed by scholar-reformer Kang Youwei and his student Liang Qichao. Over about a hundred days they issued decrees to overhaul the civil service exam system, modernize schools and the military, and streamline government bureaucracy.",
+      "The reforms threatened too many entrenched interests too fast. Empress Dowager Cixi, backed by conservative officials, staged a coup in September 1898, placed Guangxu under house arrest, and had six reform leaders executed. Kang Youwei and Liang Qichao escaped into exile."
+    ],
+    "whyItMatters": "Its swift crushing showed that peaceful reform from inside the court had failed, pushing more revolutionaries toward the idea that only overthrowing the dynasty would work.",
+    "related": [
+      "cixi",
+      "self-strengthening"
+    ],
+    "xy": [
+      396,
+      258
+    ],
+    "image": {
+      "commons": "File:Emperor Guangxu.jpg",
+      "alt": "Portrait of the Guangxu Emperor"
+    }
+  },
+  {
+    "id": "qing-founding",
+    "title": "Manchu Conquest and the Founding of the Qing",
+    "hanzi": "清朝建立",
+    "pinyin": "Qīngcháo Jiànlì",
+    "year": 1644,
+    "era": "qing",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "The Ming dynasty collapsed in 1644 when rebel leader Li Zicheng's forces captured Beijing and the last Ming emperor hanged himself. A Ming general guarding the Great Wall's Shanhai Pass, Wu Sangui, then made a fateful choice: rather than fight the Manchu armies to his north, he opened the pass and let them through to help drive out the rebels.",
+      "The Manchus, led by the Qing royal house, took Beijing for themselves instead of handing it back, and spent the next few decades conquering the rest of China. They kept many Ming institutions but required Han Chinese men to shave their foreheads and wear a queue braid as a sign of submission, founding a dynasty that would rule China for the next two and a half centuries."
+    ],
+    "whyItMatters": "The Qing became China's last imperial dynasty and, under Manchu rule, expanded its borders to roughly the shape of modern China.",
+    "related": [
+      "high-qing"
+    ],
+    "xy": [
+      342,
+      101
+    ],
+    "image": {
+      "commons": "File:Nurhaci (closeup).jpg",
+      "alt": "Portrait of Nurhaci, founder of the Qing imperial line"
+    }
+  },
+  {
+    "id": "high-qing",
+    "title": "The High Qing: Kangxi and Qianlong Eras",
+    "hanzi": "康乾盛世",
+    "pinyin": "Kāng-Qián Shèngshì",
+    "year": 1700,
+    "era": "qing",
+    "category": "dynasty",
+    "icon": "👑",
+    "body": [
+      "The long reigns of the Kangxi (1661-1722) and Qianlong (1735-1796) emperors, bridging the shorter Yongzheng reign between them, are remembered as the Qing dynasty's golden age. Borders reached their greatest extent, stretching into Central Asia, Tibet, and Taiwan; the population roughly tripled thanks to peace and new crops like sweet potatoes and maize; and the treasury ran comfortable surpluses.",
+      "It was also an era of enormous cultural projects, including the compilation of the Complete Library of the Four Treasuries, the largest collection of texts assembled in Chinese history to that point. By the end of Qianlong's reign, though, corruption, a swelling population outpacing farmland, and a military that had gone soft were already setting up the crises that would hit the following century."
+    ],
+    "whyItMatters": "This peak of Qing power and prosperity makes the dynasty's 19th-century collapse into foreign domination and rebellion all the more striking a reversal.",
+    "related": [
+      "qing-founding"
+    ],
+    "xy": [
+      407,
+      321
+    ],
+    "image": {
+      "commons": "File:Portrait of Qianlong Emperor.jpg",
+      "alt": "Portrait of the Qianlong Emperor"
+    }
+  },
+  {
+    "id": "cixi",
+    "title": "Empress Dowager Cixi's Rule",
+    "hanzi": "慈禧太后",
+    "pinyin": "Cíxǐ Tàihòu",
+    "year": 1861,
+    "era": "qing",
+    "category": "people",
+    "icon": "👑",
+    "body": [
+      "Cixi entered the imperial palace as a low-ranking concubine but bore the Xianfeng Emperor's only surviving son, and when he died in 1861 she engineered a palace coup to become co-regent for her five-year-old son. From behind a silk screen at court audiences, she effectively ran China's government for nearly half a century, outlasting two child emperors she helped install.",
+      "Her legacy is contested: she crushed the 1898 reform movement and is often blamed for underfunding the navy while renovating a palace garden, yet after the Boxer Rebellion's disaster she also backed genuine reforms in her final years, including ending the centuries-old imperial exam system in 1905."
+    ],
+    "whyItMatters": "As the dynasty's most powerful figure through its most turbulent decades, her choices shaped whether and how the Qing would modernize — or fail to.",
+    "related": [
+      "hundred-days-reform",
+      "boxer-rebellion"
+    ],
+    "xy": [
+      491,
+      182
+    ],
+    "image": {
+      "commons": "File:Empress Dowager Cixi (c. 1890).jpg",
+      "alt": "Portrait photograph of Empress Dowager Cixi, c. 1890"
+    }
+  },
+  {
+    "id": "li-hongzhang",
+    "title": "Li Hongzhang, Statesman of the Reform Era",
+    "hanzi": "李鸿章",
+    "pinyin": "Lǐ Hóngzhāng",
+    "year": 1870,
+    "era": "qing",
+    "category": "people",
+    "icon": "🎩",
+    "body": [
+      "Li Hongzhang rose from suppressing the Taiping Rebellion as a regional general to become one of the most powerful officials in the late Qing government, holding senior posts for over three decades. He was the driving force behind much of the Self-Strengthening Movement, building modern arsenals, founding China's first major steamship company, and creating the Beiyang Fleet, China's most modern navy.",
+      "As the Qing's chief diplomat, he negotiated with foreign powers after crisis after crisis, including the humiliating 1895 Treaty of Shimonoseki that ended the First Sino-Japanese War. He survived an assassination attempt during those negotiations and kept working almost until his death in 1901, having just signed the Boxer Protocol."
+    ],
+    "whyItMatters": "He personified the late Qing dilemma of trying to modernize China's military and industry while a rigid political system kept holding reform back.",
+    "related": [
+      "self-strengthening",
+      "sino-japanese-first"
+    ],
+    "xy": [
+      323,
+      224
+    ],
+    "image": {
+      "commons": "File:Hubert Vos's painting of Li Hongzhang.jpg",
+      "alt": "Painted portrait of Li Hongzhang by Hubert Vos"
+    }
+  },
+  {
+    "id": "qing-railways",
+    "title": "China's First Railways",
+    "hanzi": "中国铁路",
+    "pinyin": "Zhōngguó Tiělù",
+    "year": 1876,
+    "era": "qing",
+    "category": "tech",
+    "icon": "🚂",
+    "body": [
+      "In 1876 a British trading company built the Woosung Railway, a short line connecting Shanghai to the nearby port of Wusong, without asking Qing permission. Local officials, alarmed at foreign encroachment and a fatal accident involving a pedestrian, bought the line the following year and promptly tore up the tracks.",
+      "China's first railway meant to last was the Tangshan-Xugezhuang line, built in 1881 to haul coal for the Self-Strengthening Movement's Kaiping mines, initially pulled by mules because officials feared steam engines would disturb ancestral graves along the route. Railway building expanded slowly after that, hampered by debates over whether tracks threatened feng shui and national sovereignty alike."
+    ],
+    "whyItMatters": "The fitful, foreign-tangled start of China's railways shows how even useful Western technology got caught up in fears about sovereignty and tradition.",
+    "related": [
+      "self-strengthening"
+    ],
+    "xy": [
+      421,
+      77
+    ],
+    "image": {
+      "commons": "File:Beining Railway No. 46 (China Railways AM2).png",
+      "alt": "China's First Railways"
+    }
+  },
+  {
+    "id": "north-china-famine",
+    "title": "North China Famine",
+    "hanzi": "丁戊奇荒",
+    "pinyin": "Dīngwù Qíhuāng",
+    "year": 1876,
+    "era": "qing",
+    "category": "nature",
+    "icon": "🌾",
+    "body": [
+      "A severe multi-year drought struck the provinces of Shanxi, Henan, Shaanxi, Zhili, and Shandong beginning in 1876, destroying harvests across an already crowded farming region. Relief efforts were hampered by the Qing government's weak finances, poor transportation infrastructure for moving grain, and the sheer scale of the disaster.",
+      "Historians' estimates of the death toll, drawn from provincial records and later demographic analysis, range from roughly 9 million to 13 million people, making it one of the deadliest famines recorded in Chinese history. The disaster is sometimes called the \"Incredible Famine\" in English-language accounts of the period."
+    ],
+    "whyItMatters": "The famine exposed how little capacity the late Qing state had left to protect its own population, deepening the sense of crisis that fed reform movements in the following decades.",
+    "related": [],
+    "xy": [
+      448,
+      254
+    ]
+  },
+  {
+    "id": "second-sino-japanese-war",
+    "title": "Second Sino-Japanese War",
+    "hanzi": "抗日战争",
+    "pinyin": "Kàngrì Zhànzhēng",
+    "year": 1937,
+    "era": "roc",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "Full-scale war between China and Japan broke out in July 1937 after a clash near Beijing's Marco Polo Bridge, though fighting had already flared in Manchuria since 1931. Japanese forces advanced quickly into China's coastal and central regions, and when Nanjing, then the Nationalist capital, fell in December 1937, Japanese troops carried out mass killings, sexual violence, and looting against the city's population over roughly six weeks, an event known as the Nanjing Massacre.",
+      "Death toll estimates for the Nanjing Massacre are disputed and vary by source and methodology: the postwar International Military Tribunal for the Far East cited a figure of over 200,000, a Chinese government memorial cites approximately 300,000, and some historians using more conservative counting methods estimate figures in the tens of thousands to low hundreds of thousands. For the war as a whole, which continued until Japan's 1945 surrender, estimates of total Chinese deaths — military and civilian combined — range roughly from 15 million to 20 million, again varying by source."
+    ],
+    "whyItMatters": "The war devastated China's population and infrastructure, and disputes over its history and memory continue to shape China-Japan relations today.",
+    "related": [
+      "chinese-civil-war"
+    ],
+    "xy": [
+      306,
+      140
+    ],
+    "image": {
+      "commons": "File:Memorial Hall of the Chinese People's War of Resistance Against Japanese Aggression 1.jpg",
+      "alt": "Second Sino-Japanese War"
+    }
+  },
+  {
+    "id": "chinese-civil-war",
+    "title": "Chinese Civil War",
+    "hanzi": "国共内战",
+    "pinyin": "Guógòng Nèizhàn",
+    "year": 1945,
+    "era": "roc",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "The Nationalist Party (Kuomintang) and the Communist Party had fought on and off since 1927, but set their conflict aside to jointly resist Japan during World War II. When Japan surrendered in 1945, that uneasy alliance collapsed, and full civil war resumed between Chiang Kai-shek's Nationalist government and Mao Zedong's Communist forces.",
+      "Communist forces steadily gained ground through 1948 and 1949, and total deaths across the war's various phases are difficult to state precisely; historians' estimates for the 1945-1949 phase alone range into the millions when combining combat deaths, famine, and other war-related causes. The Nationalist government retreated to the island of Taiwan in 1949 as the Communists declared the People's Republic of China on the mainland, leaving the two sides divided ever since."
+    ],
+    "whyItMatters": "The war's outcome created the political split between the mainland and Taiwan that remains unresolved and central to East Asian politics today.",
+    "related": [
+      "prc",
+      "northern-expedition",
+      "taiwan-status"
+    ],
+    "xy": [
+      517,
+      241
+    ],
+    "image": {
+      "commons": "File:Chinese Nationalist artillery during the Chinese Civil War.jpg",
+      "alt": "Chinese Nationalist artillery crew during the Chinese Civil War"
+    }
+  },
+  {
+    "id": "northern-expedition",
+    "title": "Northern Expedition Unifies China",
+    "hanzi": "北伐",
+    "pinyin": "Běifá",
+    "year": 1926,
+    "era": "roc",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "After Sun Yat-sen's death in 1925, his successor Chiang Kai-shek launched a military campaign from the Nationalists' southern base in Guangzhou to defeat the regional warlords who had carved up China since the 1911 revolution. The Nationalist army, trained with Soviet help and fighting alongside Communist allies, swept north through 1926 and 1927.",
+      "The alliance fractured violently in April 1927, when Chiang turned on his Communist partners in Shanghai, killing and arresting many in what is known as the Shanghai Massacre — the opening blow of the civil war that would resume in earnest after World War II. Nationalist forces took Beijing in 1928, and foreign powers recognized Chiang's government as China's legitimate ruler, at least on paper."
+    ],
+    "whyItMatters": "The campaign nominally reunified China under one government for the first time since 1911, but the split it opened between Nationalists and Communists shaped the next two decades of Chinese history.",
+    "related": [
+      "chiang-kai-shek",
+      "chinese-civil-war"
+    ],
+    "xy": [
+      374,
+      330
+    ]
+  },
+  {
+    "id": "sun-yat-sen",
+    "title": "Sun Yat-sen, Father of Modern China",
+    "hanzi": "孙中山",
+    "pinyin": "Sūn Zhōngshān",
+    "year": 1912,
+    "era": "roc",
+    "category": "people",
+    "icon": "🎩",
+    "body": [
+      "Sun Yat-sen trained as a doctor in Hong Kong but spent most of his adult life organizing revolution against the Qing dynasty from exile, raising money and support from overseas Chinese communities across Asia, Europe, and the Americas. He was abroad in the United States when the 1911 uprising he had spent decades preparing for finally succeeded, and rushed home to be named provisional president of the new Republic of China.",
+      "He held the presidency only briefly, stepping aside for the sake of national unity, but spent his remaining years building the Nationalist Party (Kuomintang) around his \"Three Principles of the People\": nationalism, democracy, and people's livelihood. He died in 1925 before seeing China reunified, but both the Nationalists on Taiwan and the Communist Party on the mainland still claim him as a founding figure."
+    ],
+    "whyItMatters": "Revered by both sides of the Taiwan Strait divide today, he is one of the few historical figures both Chinese governments honor as the founder of modern China.",
+    "related": [
+      "revolution",
+      "northern-expedition"
+    ],
+    "xy": [
+      414,
+      320
+    ],
+    "image": {
+      "commons": "File:Photograph of Dr. Sun Yat Sen, \"HB Sun Yat Sen, 40, XPl Korea 3-28-10, File no. 140-C.\" - NARA - 296447.jpg",
+      "alt": "Photograph of Sun Yat-sen"
+    }
+  },
+  {
+    "id": "chiang-kai-shek",
+    "title": "Chiang Kai-shek Leads the Nationalists",
+    "hanzi": "蒋介石",
+    "pinyin": "Jiǎng Jièshí",
+    "year": 1928,
+    "era": "roc",
+    "category": "people",
+    "icon": "🎖️",
+    "body": [
+      "A military officer trained partly in Japan, Chiang Kai-shek rose through the Nationalist Party's ranks to lead the Northern Expedition and became China's head of state after Nationalist forces took Beijing in 1928. He led China's resistance against Japan through the 1930s and 1940s while also fighting an on-and-off civil war against the Communist Party.",
+      "After losing the civil war in 1949, Chiang relocated the Republic of China government, its gold reserves, and roughly two million soldiers and civilians to the island of Taiwan, where he ruled under martial law until his death in 1975, still insisting he would one day retake the mainland."
+    ],
+    "whyItMatters": "His decision to retreat to Taiwan rather than surrender established the political and territorial split between Taiwan and the mainland that persists today.",
+    "related": [
+      "northern-expedition",
+      "chinese-civil-war",
+      "taiwan-status"
+    ],
+    "xy": [
+      491,
+      128
+    ],
+    "image": {
+      "commons": "File:80-G-186434 Generalissimo Chiang Kai-shek, head of the Chinese Government.tif",
+      "alt": "Portrait photograph of Chiang Kai-shek"
+    }
+  },
+  {
+    "id": "may-fourth",
+    "title": "May Fourth Movement",
+    "hanzi": "五四运动",
+    "pinyin": "Wǔsì Yùndòng",
+    "year": 1919,
+    "era": "roc",
+    "category": "other",
+    "icon": "📢",
+    "body": [
+      "On May 4, 1919, thousands of students marched through Beijing to protest the Treaty of Versailles, which ended World War I but handed Germany's former territorial rights in Shandong province to Japan instead of returning them to China — even though China had backed the winning side. The protests quickly spread to other cities and drew in merchants and workers through strikes and boycotts of Japanese goods.",
+      "The movement fed into a broader \"New Culture Movement\" that questioned Confucian tradition and pushed for science, democracy, and a modern written Chinese closer to spoken language. Many of the young activists involved, including future Communist Party founders, later credited May Fourth with shaping their political awakening."
+    ],
+    "whyItMatters": "It marked a turning point where Chinese nationalism shifted from reforming the old order to actively remaking Chinese culture and politics, feeding directly into the founding of the Communist Party two years later.",
+    "related": [
+      "sun-yat-sen"
+    ],
+    "xy": [
+      360,
+      264
+    ],
+    "image": {
+      "commons": "File:051 May Fourth Movement Printing Press, Tianjin.jpg",
+      "alt": "May Fourth Movement"
+    }
+  },
+  {
+    "id": "korean-war-china",
+    "title": "China Enters the Korean War",
+    "hanzi": "抗美援朝",
+    "pinyin": "Kàngměi Yuáncháo",
+    "year": 1950,
+    "era": "prc",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "After North Korea invaded South Korea in June 1950 and United Nations forces pushed north toward the Chinese border along the Yalu River, the newly founded People's Republic of China entered the conflict in October 1950, sending what it officially termed the \"People's Volunteer Army\" to support North Korea.",
+      "Fighting continued until an armistice in July 1953 left the peninsula divided near its original border. Estimates of Chinese military deaths vary by source: official Chinese government figures cite approximately 183,000, while some Western estimates place the figure higher, in the range of 400,000, with the discrepancy tied to differing methods of counting combat deaths, disease, and missing personnel."
+    ],
+    "whyItMatters": "The war established China as a major military power willing to confront the United States directly, and cemented the North Korea-China alliance that continues today.",
+    "related": [
+      "prc"
+    ],
+    "xy": [
+      526,
+      194
+    ],
+    "image": {
+      "commons": "File:1950-08-Korean War-captive US soldiers.png",
+      "alt": "China Enters the Korean War"
+    }
+  },
+  {
+    "id": "sino-vietnamese-war",
+    "title": "Sino-Vietnamese War",
+    "hanzi": "中越战争",
+    "pinyin": "Zhōngyuè Zhànzhēng",
+    "year": 1979,
+    "era": "prc",
+    "category": "war",
+    "icon": "⚔️",
+    "body": [
+      "In February 1979, China launched a brief invasion of northern Vietnam, stating its goal was to punish Vietnam for invading Cambodia the previous December and removing the Khmer Rouge government there, as well as for Vietnam's treatment of its ethnic Chinese minority. Chinese forces pushed into several northern Vietnamese provincial capitals before withdrawing about a month later in March 1979.",
+      "Both governments described the outcome differently, and casualty estimates from the roughly month-long war vary widely by source, with figures for combined military deaths on both sides commonly estimated in the tens of thousands. Border skirmishes between the two countries continued intermittently through the 1980s."
+    ],
+    "whyItMatters": "The war strained China's relationship with the Soviet Union, which backed Vietnam, and remains a rarely discussed but significant episode in modern Chinese military history.",
+    "related": [],
+    "xy": [
+      344,
+      360
+    ],
+    "image": {
+      "commons": "File:Facade with Damage from 1979 Sino-Vietnamese War - Lang Son - Vietnam (48142922346).jpg",
+      "alt": "Sino-Vietnamese War"
+    }
+  },
+  {
+    "id": "hong-kong-handover",
+    "title": "Hong Kong Handover",
+    "hanzi": "香港回归",
+    "pinyin": "Xiānggǎng Huíguī",
+    "year": 1997,
+    "era": "prc",
+    "category": "other",
+    "icon": "🏙️",
+    "body": [
+      "On July 1, 1997, the United Kingdom transferred sovereignty over Hong Kong to the People's Republic of China, ending more than 150 years of British colonial rule that began after the First Opium War. The transfer followed the terms of the 1984 Sino-British Joint Declaration, under a framework called \"one country, two systems\" that promised Hong Kong would keep its own legal system, currency, and civil liberties for 50 years, until 2047.",
+      "Hong Kong operates under its own mini-constitution, the Basic Law, with its own courts and a partially elected legislature distinct from the mainland's system. Observers and governments differ on how closely the arrangement has been followed in the years since the handover, particularly following protests in 2019 and a national security law imposed in 2020."
+    ],
+    "whyItMatters": "The handover ended an era of British colonial rule in Asia and created a distinct governing arrangement that continues to be tested and debated today.",
+    "related": [
+      "macau-handover"
+    ],
+    "xy": [
+      377,
+      341
+    ],
+    "image": {
+      "commons": "File:HK 銅鑼灣 CWB 維多利亞公園 Victoria Park for 01-July event June 2018 IX2 慶祝香港回歸 Transfer of sovereignty over of Hong Kong 03.jpg",
+      "alt": "Hong Kong Handover"
+    }
+  },
+  {
+    "id": "macau-handover",
+    "title": "Macau Handover",
+    "hanzi": "澳门回归",
+    "pinyin": "Àomén Huíguī",
+    "year": 1999,
+    "era": "prc",
+    "category": "other",
+    "icon": "🏙️",
+    "body": [
+      "On December 20, 1999, Portugal transferred sovereignty over Macau to the People's Republic of China, ending nearly 450 years of Portuguese administration that dated back to the 1550s, making Macau the last European colonial territory in Asia to be returned. Like Hong Kong two years earlier, the handover followed a joint declaration between the two governments, signed in 1987.",
+      "Macau also operates under a \"one country, two systems\" arrangement and its own Basic Law, with its own currency and legal system separate from the mainland. Its economy is heavily built around legalized casino gambling, making it one of the world's highest-revenue gaming markets."
+    ],
+    "whyItMatters": "The handover completed the return of the last two European-held territories on Chinese soil, closing a chapter of the colonial-era treaty system that began with the 19th-century Opium Wars.",
+    "related": [
+      "hong-kong-handover"
+    ],
+    "xy": [
+      403,
+      282
+    ],
+    "image": {
+      "commons": "File:MC Handover Gifts Museum of Macao 澳門回歸賀禮陳列館 Museu Das Ofertas Sobre a Transferéncia de Soberania de Macau March 2019 IX2 05.jpg",
+      "alt": "Macau Handover"
+    }
+  },
+  {
+    "id": "taiwan-status",
+    "title": "Taiwan's Status",
+    "hanzi": "台湾问题",
+    "pinyin": "Táiwān Wèntí",
+    "year": 1949,
+    "era": "prc",
+    "category": "other",
+    "icon": "🗺️",
+    "body": [
+      "Since the Nationalist government's retreat to Taiwan in 1949, the island has been governed separately from the mainland, which the Communist Party has ruled as the People's Republic of China since the same year. The People's Republic's government considers Taiwan a province that must eventually be reunited with the mainland, has stated it does not rule out using force to achieve that, and has never governed the island.",
+      "Taiwan's government, formally still called the Republic of China, maintains that it is self-governing with its own constitution, military, and democratically elected leadership, and holds regular competitive elections; surveys there show a range of views among its population on the island's ultimate status. Most other countries, including the United States, maintain unofficial relations with Taiwan under a \"One China\" policy that acknowledges but does not formally endorse the People's Republic's position, while avoiding a formal statement on Taiwan's ultimate sovereignty."
+    ],
+    "whyItMatters": "The unresolved question of Taiwan's status remains one of the most closely watched flashpoints in international relations, with the positions of the People's Republic, Taiwan's government, and other states all differing.",
+    "related": [
+      "chinese-civil-war",
+      "chiang-kai-shek"
+    ],
+    "xy": [
+      433,
+      262
+    ],
+    "image": {
+      "commons": "File:International status of Taiwan.svg",
+      "alt": "Taiwan's Status"
+    }
+  },
+  {
+    "id": "wto-accession",
+    "title": "China Joins the World Trade Organization",
+    "hanzi": "中国加入世贸组织",
+    "pinyin": "Zhōngguó Jiārù Shìmào Zǔzhī",
+    "year": 2001,
+    "era": "prc",
+    "category": "other",
+    "icon": "📈",
+    "body": [
+      "After fifteen years of negotiations, China formally joined the World Trade Organization in December 2001, committing to lower tariffs, open its markets to foreign competition, and align its trade laws with international rules. Membership required significant changes to Chinese law covering intellectual property, state subsidies, and market access across many sectors.",
+      "The years following accession saw a dramatic acceleration in Chinese exports and foreign direct investment, as global manufacturers relocated production to take advantage of low costs and new market access. China's economy grew to become the world's second largest within roughly a decade of joining."
+    ],
+    "whyItMatters": "WTO membership integrated China into the global trading system and became a central driver of the economic growth that reshaped both China and global manufacturing supply chains.",
+    "related": [
+      "reform"
+    ],
+    "xy": [
+      365,
+      72
+    ]
+  },
+  {
+    "id": "china-space-program",
+    "title": "China Launches Its First Satellite",
+    "hanzi": "东方红一号",
+    "pinyin": "Dōngfānghóng Yīhào",
+    "year": 1970,
+    "era": "prc",
+    "category": "tech",
+    "icon": "🛰️",
+    "body": [
+      "On April 24, 1970, China launched Dongfanghong-1 (\"The East Is Red\"), its first satellite, making it only the fifth nation to independently put a satellite into orbit, after the Soviet Union, the United States, France, and Japan. The satellite broadcast a patriotic song back to Earth and orbited for about 28 days before its transmitter batteries died, though it remains in orbit today.",
+      "China's space program built steadily on that start, launching its first crewed mission, Shenzhou 5, in 2003 and becoming only the third country to independently put a person in orbit. It went on to land robotic rovers on the Moon and Mars, and to build its own space station, Tiangong, completed in orbit in 2022."
+    ],
+    "whyItMatters": "The 1970 launch marked China's entry into the small club of spacefaring nations and set the foundation for a program that now rivals the longest-established space agencies.",
+    "related": [
+      "threegorges"
+    ],
+    "xy": [
+      543,
+      182
+    ],
+    "image": {
+      "commons": "File:China Long March CZ-2F.jpg",
+      "alt": "A Chinese Long March rocket"
+    }
+  },
+  {
+    "id": "high-speed-rail",
+    "title": "China Builds World's Largest High-Speed Rail Network",
+    "hanzi": "中国高速铁路",
+    "pinyin": "Zhōngguó Gāosù Tiělù",
+    "year": 2008,
+    "era": "prc",
+    "category": "tech",
+    "icon": "🚄",
+    "body": [
+      "China opened its first dedicated high-speed passenger line, connecting Beijing and Tianjin, in time for the 2008 Beijing Olympics, with trains running at up to 350 kilometers per hour. Building on technology licensed and adapted from Japanese, German, and French manufacturers, China then built out a national network at a pace no other country had attempted.",
+      "By the mid-2020s the network had grown to more than 40,000 kilometers of track, longer than the rest of the world's high-speed rail lines combined, connecting most major Chinese cities and cutting travel times that once took overnight trains down to a few hours."
+    ],
+    "whyItMatters": "The network transformed domestic travel and regional economic integration across China and became one of the country's signature infrastructure achievements.",
+    "related": [
+      "threegorges",
+      "wto-accession"
+    ],
+    "xy": [
+      493,
+      219
+    ],
+    "image": {
+      "commons": "File:CRH trains on the Guangdong-Hainan Railway - 01.jpg",
+      "alt": "Chinese high-speed rail (CRH) trains"
+    }
+  },
+  {
+    "id": "tu-youyou",
+    "title": "Tu Youyou Wins Nobel Prize for Antimalarial Discovery",
+    "hanzi": "屠呦呦",
+    "pinyin": "Tú Yōuyōu",
+    "year": 2015,
+    "era": "prc",
+    "category": "people",
+    "icon": "🔬",
+    "body": [
+      "In the late 1960s, Chinese pharmaceutical chemist Tu Youyou led a secret military research project, known as Project 523, tasked with finding a new treatment for malaria, which was killing soldiers on both sides of the Vietnam War. Searching through classical Chinese medical texts for leads, she found a centuries-old reference to sweet wormwood being used to treat fevers, and eventually isolated its active compound, which she named artemisinin.",
+      "Artemisinin-based therapies became the standard global treatment for malaria and are credited with saving millions of lives, particularly in Africa and Southeast Asia. Tu had no doctorate, no overseas training, and no membership in the Chinese Academy of Sciences at the time, yet in 2015 she became the first mainland Chinese scientist to win a Nobel Prize in a scientific category, sharing the Prize in Physiology or Medicine."
+    ],
+    "whyItMatters": "Her discovery, drawn from traditional medicine but validated through rigorous modern chemistry, remains one of the most significant global public health contributions of the 20th century.",
+    "related": [],
+    "xy": [
+      307,
+      381
+    ],
+    "image": {
+      "commons": "File:D810 4987 Tu Youyou, medicine (22945001843) (cropped).jpg",
+      "alt": "Tu Youyou at her Nobel Prize ceremony"
+    }
+  },
+  {
+    "id": "tang-locust-plague",
+    "title": "Locust plague threatens Tang with famine",
+    "hanzi": "蝗灾",
+    "pinyin": "huángzāi",
+    "year": 715,
+    "era": "tang",
+    "category": "nature",
+    "icon": "🦗",
+    "body": [
+      "Swarms of locusts strip crops bare across the Tang heartland. Many officials refuse to kill them, believing the swarms are heaven's punishment and killing them would be worse.",
+      "Chancellor Yao Chong overrules the superstition and orders mass burning and burying of the insects at night, when they gather near torches. The famine that could have followed largely does not."
+    ],
+    "whyItMatters": "One of the first recorded cases of a government choosing evidence over omen — and it worked.",
+    "related": [
+      "wuzetian",
+      "an-lushan-rebellion"
+    ],
+    "xy": [
+      326,
+      244
+    ]
+  },
+  {
+    "id": "banqiao-dam-failure",
+    "title": "Banqiao Dam fails, the deadliest dam disaster ever",
+    "hanzi": "板桥水库溃坝",
+    "pinyin": "Bǎnqiáo shuǐkù kuìbà",
+    "year": 1975,
+    "era": "prc",
+    "category": "nature",
+    "icon": "🌊",
+    "body": [
+      "Typhoon Nina drops a year's worth of rain in 24 hours on Henan province. Banqiao Dam and dozens of smaller dams downstream fail in a chain reaction, sending a wall of water across the plain.",
+      "Estimates of the dead range from about 26,000 from flooding itself to over 170,000 including the famine and disease that followed — a range that stays wide because records were sealed for years."
+    ],
+    "whyItMatters": "The deadliest dam failure in history, and for decades one of the least discussed disasters in modern China.",
+    "related": [
+      "threegorges",
+      "floods1931"
+    ],
+    "xy": [
+      426,
+      204
     ]
   }
 ]

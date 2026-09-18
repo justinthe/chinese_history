@@ -5,6 +5,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { CATS } from '../src/data.js';
+import { coverage, printReport } from './coverage.mjs';
 
 const CONTENT_DIR = fileURLToPath(new URL('../content/', import.meta.url));
 const CATEGORIES = Object.keys(CATS);
@@ -25,6 +26,7 @@ const EVENT_REQUIRED = [
 const KNOWN_HISTORICAL_EXCEPTIONS = {
   redcliffs: 'Battle of Red Cliffs (208 CE) caused the Han collapse, 12y before the conventional 220 CE Three Kingdoms start (Cao Pi’s usurpation).',
   revolution: 'Xinhai Revolution began Oct 1911; the Republic of China was declared Jan 1912.',
+  'li-zicheng-beijing': 'Li Zicheng took Beijing and Ming fell in 1644, the exact year Qing (era start 1644) begins — a real same-year regime change, not a data error.',
 };
 
 /** Recursively checks every string value (any depth, objects/arrays) for a literal `<`. */
@@ -155,6 +157,7 @@ function main() {
     process.exit(1);
   }
   console.log(`validate: OK — ${db.eras.length} eras, ${db.events.length} events, ${db.tour.length} tour stops`);
+  printReport(coverage(db)); // phase-10: warnings only, never affects exit code
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main();

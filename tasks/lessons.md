@@ -65,3 +65,15 @@ floating/fixed-position control overlaps a scrollable content area, reserve its 
 the content's layout math (here, a `TOP_ZONE` constant subtracted from both the lane-count
 and lane-position calculations) — don't rely on the two layers visually not colliding by
 chance.**
+
+**Phase 10 — a bulk-assign pass over "all records" must exclude records that already carry a
+hand-curated value for that field.** The phase-10 content-merge script computed `xy` pin
+coordinates for the ~127 new events via a golden-angle spread, then ran that same
+`assign_xy()` over the *entire* merged array — including the 28 seed events that already had
+deliberately hand-placed pin positions from earlier phases. It silently overwrote all 28,
+detected only by diffing `git show HEAD:content/events.json` against the working tree before
+committing, not by any test (nothing asserts specific `xy` values). **Rule: before running a
+derived-field computation over a merged/bulk dataset, partition it first — recompute only the
+rows that are actually new/missing the field, and diff hand-curated rows against their
+pre-merge values before writing, don't assume "recompute for all" is safe just because the
+function is pure.**

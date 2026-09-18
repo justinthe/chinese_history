@@ -44,6 +44,15 @@ describe('data.js: eraAt', () => {
   it('clamps a year after the last era to the last era', () => {
     expect(eraAt(ERAS[ERAS.length - 1].end + 500).id).toBe(ERAS[ERAS.length - 1].id);
   });
+
+  it('has gapless era coverage — every year in range resolves to an era that actually contains it', () => {
+    // Phase 10: eras.json must tile with no holes (a gap silently falls through
+    // to the last era, see src/data.js's eraAt implementation).
+    for (let y = ERAS[0].start; y < ERAS[ERAS.length - 1].start; y += 1) {
+      const era = eraAt(y);
+      expect(y >= era.start && y < era.end).toBe(true);
+    }
+  });
 });
 
 describe('data.js: search', () => {

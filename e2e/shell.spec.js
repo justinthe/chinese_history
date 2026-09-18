@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { openCardByTitle } from './helpers.js';
 
 test.beforeEach(async ({ page }) => {
   const errors = [];
@@ -19,7 +20,9 @@ test('journey 1: explore, open event, follow related, Esc closes', async ({ page
   await expect(page.locator('#explore')).toBeVisible();
   await expect(page.locator('#yearBadge, .year-badge')).toHaveText('221 BCE');
 
-  await page.locator('.ev b', { hasText: 'Qin Shi Huang unifies China' }).click();
+  // Phase 10's content fill made the Qin era dense enough to cluster into a
+  // "+N" popover at default zoom — openCardByTitle opens it either way.
+  await openCardByTitle(page, 'Qin Shi Huang unifies China');
   const panel = page.locator('#panel');
   await expect(panel).toHaveClass(/open/);
   await expect(panel.locator('h2')).toHaveText('Qin Shi Huang unifies China');
@@ -37,12 +40,12 @@ test('journey 2: grand tour to completion', async ({ page }) => {
   await page.locator('.hero .actions .btn.gold', { hasText: 'Take the Grand Tour' }).click();
   const tour = page.locator('.tour');
   await expect(tour).toHaveClass(/open/);
-  await expect(tour.locator('h3')).toContainText('Stop 1 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 1 of 20');
 
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 19; i++) {
     await tour.locator('button', { hasText: 'Next →' }).click();
   }
-  await expect(tour.locator('h3')).toContainText('Stop 10 of 10');
+  await expect(tour.locator('h3')).toContainText('Stop 20 of 20');
   await tour.locator('button', { hasText: 'Finish 🎉' }).click();
 
   await expect(page.locator('.toast')).toBeVisible();

@@ -31,19 +31,34 @@
     "oneLiner": "Bronze, oracle bones, and the first Chinese writing."
   },
   {
-    "id": "zhou",
-    "name": "Zhou",
-    "hanzi": "周",
+    "id": "wzhou",
+    "name": "Western Zhou",
+    "hanzi": "西周",
     "start": -1046,
-    "end": -256,
+    "end": -771,
     "color": "#3fa67a",
-    "capital": "Haojing → Luoyi",
+    "capital": "Haojing (Xi'an)",
     "capitalXY": [
       300,
       215
     ],
-    "shape": "zhou",
-    "oneLiner": "Longest dynasty. Confucius, Laozi, and endless warring states."
+    "shape": "wzhou",
+    "oneLiner": "Feudal kingdom. The Mandate of Heaven idea starts here."
+  },
+  {
+    "id": "ezhou",
+    "name": "Eastern Zhou",
+    "hanzi": "东周",
+    "start": -771,
+    "end": -221,
+    "color": "#3fa67a",
+    "capital": "Luoyi (Luoyang)",
+    "capitalXY": [
+      330,
+      200
+    ],
+    "shape": "ezhou",
+    "oneLiner": "Weak king, warring states. Confucius, Laozi, and Sun Tzu all show up."
   },
   {
     "id": "qin",
@@ -80,7 +95,7 @@
     "name": "Three Kingdoms",
     "hanzi": "三国",
     "start": 220,
-    "end": 589,
+    "end": 280,
     "color": "#7f8c8d",
     "capital": "Various",
     "capitalXY": [
@@ -89,6 +104,36 @@
     ],
     "shape": "three",
     "oneLiner": "Civil war era, later the most famous novel in China."
+  },
+  {
+    "id": "jin",
+    "name": "Jin",
+    "hanzi": "晋",
+    "start": 280,
+    "end": 420,
+    "color": "#6c7a89",
+    "capital": "Luoyang → Jiankang",
+    "capitalXY": [
+      330,
+      200
+    ],
+    "shape": "jin",
+    "oneLiner": "Brief reunification, then a retreat south of the Yangtze."
+  },
+  {
+    "id": "nanbei",
+    "name": "Northern & Southern",
+    "hanzi": "南北朝",
+    "start": 420,
+    "end": 589,
+    "color": "#7f9ea8",
+    "capital": "Various (north/south split)",
+    "capitalXY": [
+      350,
+      230
+    ],
+    "shape": "nanbei",
+    "oneLiner": "China splits in two along the Yangtze for over a century."
   },
   {
     "id": "sui",
@@ -119,6 +164,21 @@
     ],
     "shape": "tang",
     "oneLiner": "Cosmopolitan superpower. Poetry, Buddhism, a female emperor."
+  },
+  {
+    "id": "wudai",
+    "name": "Five Dynasties",
+    "hanzi": "五代",
+    "start": 907,
+    "end": 960,
+    "color": "#a67c52",
+    "capital": "Kaifeng (mostly)",
+    "capitalXY": [
+      350,
+      215
+    ],
+    "shape": "wudai",
+    "oneLiner": "Five short northern dynasties, ten southern kingdoms. Chaos between Tang and Song."
   },
   {
     "id": "song",
@@ -192,7 +252,7 @@
       410,
       250
     ],
-    "shape": "modern",
+    "shape": "roc",
     "oneLiner": "Warlords, invasion, civil war."
   },
   {
@@ -207,7 +267,7 @@
       400,
       170
     ],
-    "shape": "modern",
+    "shape": "prc",
     "oneLiner": "Revolution, famine, reform, and the rise to superpower."
   }
 ]

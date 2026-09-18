@@ -8,20 +8,105 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   (serves http://localhost:5173/chinese_history/, bare `/` 302-redirects there).
 - Test commands: `npm test` (vitest: `tests/smoke.test.js`,
   `tests/state.test.js`, `tests/data.test.js`, `tests/validate.test.js`,
-  `tests/lanes.test.js`, `tests/timeline-zoom.test.js`, `tests/tween.test.js`,
-  `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
+  `tests/coverage.test.js`, `tests/lanes.test.js`, `tests/timeline-zoom.test.js`,
+  `tests/tween.test.js`, `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
   `tests/detail-render.test.js`, `tests/search.test.js`,
-  `tests/chips.test.js`, `tests/tour.test.js`, `tests/fetch-images.test.js`),
-  `npm run e2e` (playwright: `e2e/smoke.spec.js`, `e2e/shell.spec.js`,
-  `e2e/timeline.spec.js`, `e2e/map.spec.js`, `e2e/detail.spec.js`,
-  `e2e/search.spec.js`, `e2e/tour.spec.js`; builds + previews first).
+  `tests/chips.test.js`, `tests/tour.test.js`, `tests/fetch-images.test.js`;
+  146/146 green), `npm run e2e` (playwright: `e2e/smoke.spec.js`,
+  `e2e/shell.spec.js`, `e2e/timeline.spec.js`, `e2e/map.spec.js`,
+  `e2e/detail.spec.js`, `e2e/search.spec.js`, `e2e/tour.spec.js`, plus new
+  `e2e/helpers.js` (shared `openCardByTitle()`, not a spec file itself);
+  builds + previews first; 48/48 green).
   Build-time image pipeline: `node scripts/fetch-images.mjs [--only <id>]
   [--force] [--dry-run] [--allow-missing]` (needs `FETCH_USER_AGENT` env for
-  real fetches; `sharp` devDependency). Manual check: `scripts/test-phase-09.sh`
-  (also `scripts/test-phase-08.sh`, runs `node scripts/validate.mjs` too;
-  `scripts/test-phase-04.sh` through `-07.sh` still work for their own
-  screens).
-- Current phase: Phase 9 complete — build-time image pipeline finished per
+  real fetches; `sharp` devDependency). Coverage report:
+  `node scripts/coverage.mjs` (also runs automatically at the end of
+  `node scripts/validate.mjs`/`npm run build` — warnings only, never fails
+  the build). Manual check: `scripts/test-phase-10.sh` (also
+  `scripts/test-phase-09.sh`/`-08.sh`/`-04.sh` through `-07.sh` still work
+  for their own screens).
+- Current phase: Phase 10 complete — content fill to v1 scope, per PRD §4/§7
+  and the phase-10 prompt. `content/events.json` grew 28 → 157 (target
+  ≥150); `content/eras.json` 14 → 18 gapless bands (added `wzhou`/`ezhou`
+  splitting the old `zhou`, `jin`, `nanbei`, `wudai` filling the two year
+  gaps the old 14 left uncovered — −256…−221 and 907…960, where `eraAt()`
+  was silently falling through to render the PRC border); `map-shapes.json`
+  grew 13 → 18 territory polygons (interpolated from neighbors, still 16
+  numbers/8 points each so `tween()` morphs any pair); `world.json` 14 → 18
+  lines; `content/tour.json` 10 → 20 stops. Coverage: every era ≥5 (min 5,
+  max 16), every category ≥15 (dynasty 29 · war 40 · tech 21 · nature 15 ·
+  people 26 · other 26 — `nature` was the tight one, topped up with two
+  authored events, a 1975 Tang locust plague and the 1975 Banqiao Dam
+  failure). Images: **46.5% (73/157), short of the phase checklist's ≥90%
+  target — flagged, not silently passed.** ~135 events were searched against
+  Commons/Met across six rounds (a keyword-only auto-pick got the wrong
+  subject on the very first probe, so every candidate was reviewed by
+  title/subject match, not accepted blindly); 88 got a declared source, 73
+  survived the real fetch (15 failed the 150KB detail-image budget on
+  complex/high-res photos — 2 were rescued with smaller alternates, the rest
+  are documented failures, same runtime outcome as never declaring an image
+  — icon fallback). The remaining ~84 events are mostly abstract
+  administrative/institutional topics (reforms, legal systems, modern
+  economic milestones) with no dedicated open-license art on Commons; per
+  the user's explicit decision this session, accuracy was prioritized over
+  forcing wrong-subject images to hit the number, and no AI illustrations
+  were generated (none approved this session). `content/images.manifest.json`
+  and `images.report.json` are committed; `public/img/` gained ~9MB of webp.
+  Content-authoring method: 6 parallel subagents each drafted 3–4 eras'
+  worth of new events against a shared schema/style brief (the main thread
+  stayed the sole writer — merged, de-duplicated one cross-group id
+  collision, assigned every new event's `xy` via a golden-angle spread
+  anchored to place-name keyword matches or the era's capital, then wrote
+  `content/events.json`). A subagent fact-check pass spot-checked 20 random
+  events against external sources: 14/20 clean, 6 flagged (1 real year
+  discrepancy, 5 overstated/conflated claims) — all 6 fixed same session,
+  logged in `tasks/todo.md`. New `scripts/coverage.mjs` mirrors
+  `validate.mjs`'s shape (pure `coverage()` export + guarded `main()`),
+  wired into `validate.mjs`'s `main()` as a post-OK, non-blocking warnings
+  section — `coverage.mjs` clusters as its own community with `validate.mjs`
+  in graphify's after-state pass (cohesion 0.38), which is the *intended*
+  shape since `validate.mjs` now imports and calls it directly, not spread;
+  the four image-source modules stayed isolated cohesion-1.00 leaves,
+  unchanged. Two real "bugs content exposes" fixed in-scope: `eras.json`'s
+  year-gap coverage (fixed purely in data, no code) and
+  `tests/detail-render.test.js`'s `neighbors()` test, which hardcoded
+  `confucius`→`wuzetian` as adjacent 'people' events — now derives the
+  expected pair from `EVENTS` itself, since phase 10 added many more
+  'people' events between them. A third, smaller, non-trivial issue was
+  *found but left unfixed* per the phase's scope boundary and logged in
+  `tasks/todo.md`: opening an event through a timeline `+N` cluster popover,
+  then closing it, doesn't return keyboard focus (the popover auto-closes
+  and its content becomes unfocusable, but `detail.js`'s opener-restore only
+  checks `isConnected`, not focusability) — real, content-density-exposed,
+  but a `detail.js` fix, out of this phase's content-only scope.
+  `/ponytail-review` on the diff: nothing to cut (`net: 0 lines possible`) —
+  `coverage.mjs` mirrors an existing pattern rather than inventing one, and
+  `e2e/helpers.js`'s `openCardByTitle()` is the minimum needed to make
+  card-click tests robust to phase-10's new clustering. `npm test` 146/146,
+  `npm run build` clean (JS gzip 11.97KB vs PRD §8's 150KB budget), `npm run
+  e2e` 48/48 (all pre-existing specs, no new ones — several rewritten where
+  phase-10 content changed their assumptions: a `confucius`/`wuzetian`
+  hardcoded pair, `wall`'s image going from absent to present, `qin`'s
+  license changing from the old CC BY-SA placeholder to a real Public-domain
+  photo, and a `'wang'` search query that turned out to unexpectedly match 6
+  events once diacritic-folding was accounted for, not 3 — replaced with
+  `'invasion'`, verified against the real `search()` output). Real-browser
+  pass (claude-in-chrome) confirmed: `wall`'s real photo + credit line
+  render in the detail panel; a dense era's (Qin, 6 events) pins spread with
+  no overlap; a sparse new era's (Jin, 5 events) pins likewise; Tiananmen's
+  1989 detail panel reads neutrally ("Death toll unknown. Estimates …");
+  Grand Tour shows "Stop 1 of 20" and advances. UNPROVEN this phase (flagged,
+  not assumed): a full 20-stop Grand Tour click-through by hand — the
+  automated e2e suite's tour tests (including the "Stop 20 of 20" → Finish
+  path) already prove this with real waits between clicks; a manual
+  brute-batch of 19 rapid clicks under-advanced, consistent with the UI
+  needing real time between morph-animated stops, not a functional gap.
+  Out of scope, left for a future phase: closing the images-to-90% gap
+  (would need either many more hours of manual Commons/Met sourcing per
+  event, reviewed AI illustrations for the abstract/administrative
+  remainder, or accepting a lower target), and the popover-focus-restore
+  fix in `detail.js` logged above.
+- Prior phase: Phase 9 complete — build-time image pipeline finished per
   PRD F8/F9. New `scripts/fetch-images.mjs` mirrors `validate.mjs`'s shape
   (pure exports `canonicalLicense`/`sourceHash`/`run()` + a guarded `main()`)
   and resolves an event's `image` field through one of four DI'd source
