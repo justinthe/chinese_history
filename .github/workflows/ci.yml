@@ -19,7 +19,7 @@ jobs:
       - run: npm run validate
       - run: npm test
       - run: npm run build
-      - name: Check gzipped JS budget (PRD §8: <= 150 KB)
+      - name: "Check gzipped JS budget (PRD §8: <= 150 KB)"
         run: |
           size=$(gzip -c dist/assets/*.js | wc -c)
           echo "JS gzip size: $size bytes"
