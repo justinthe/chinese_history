@@ -3911,5 +3911,1860 @@
       426,
       204
     ]
+  },
+  {
+    "id": "yue-maiden-aqing",
+    "title": "A goat-herding girl out-fences the swordsmen of Wu",
+    "hanzi": "越女劍",
+    "pinyin": "Yuènǚ jiàn",
+    "year": -484,
+    "era": "ezhou",
+    "category": "fiction",
+    "icon": "🗡️",
+    "body": [
+      "Jin Yong's shortest story, and his oldest setting. King Goujian of Yue is plotting revenge on Wu, whose swordsmen keep humiliating his own. His adviser Fan Li stumbles on A'Qing, a shepherd girl who learned to fight by play-duelling with a white ape in the hills, and asks her to teach Yue's soldiers.",
+      "Goujian, Fan Li and the Wu–Yue feud are real, and Yue really did destroy Wu in 473 BCE. A'Qing is not: Jin Yong built her from a legend first written down some five centuries later, about a nameless swordswoman the king hired to train his officers."
+    ],
+    "whyItMatters": "It shows Jin Yong's favourite trick in miniature: slip one invented hero into a real war and let history carry the plot.",
+    "xy": [
+      454,
+      282
+    ],
+    "related": [
+      "goujian",
+      "yue-maiden-legend"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Sword_of_the_Yue_Maiden",
+    "source": {
+      "work": "Sword of the Yue Maiden",
+      "workHanzi": "越女劍",
+      "author": "Jin Yong",
+      "published": "1970",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "yue-maiden-legend",
+    "title": "The Maiden of Yue, the legend behind A'Qing",
+    "hanzi": "越女",
+    "pinyin": "Yuènǚ",
+    "year": -490,
+    "era": "ezhou",
+    "category": "fiction",
+    "icon": "🐒",
+    "body": [
+      "An Eastern Han history of the Wu–Yue wars tells of a young woman from the southern forests with uncanny sword skill. On her way to court she meets an old man who tests her with a bamboo stick, then leaps into a tree and turns into a white ape. She impresses the king, who names her the Maiden of Yue.",
+      "The tale was written down around five centuries after Goujian's time, and historians treat it as legend, not record. Nobody knows whether a real swordswoman lies behind it. Her short speech on swordsmanship, balancing stillness and motion, became a classic of Chinese martial lore anyway."
+    ],
+    "whyItMatters": "One of the earliest woman-warrior stories in Chinese writing, and the seed of a whole genre of wandering sword heroes.",
+    "xy": [
+      454,
+      282
+    ],
+    "related": [
+      "goujian",
+      "yue-maiden-aqing"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Yuen%C3%BC",
+    "source": {
+      "work": "Spring and Autumn Annals of Wu and Yue",
+      "workHanzi": "吳越春秋",
+      "author": "Attributed to Zhao Ye",
+      "published": "Eastern Han dynasty",
+      "medium": "folk"
+    }
+  },
+  {
+    "id": "demigods-overview",
+    "title": "Demi-Gods and Semi-Devils: five kingdoms, three heroes",
+    "hanzi": "天龍八部",
+    "pinyin": "Tiānlóng bābù",
+    "year": 1094,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🐉",
+    "body": [
+      "Jin Yong's sprawling epic follows three very different young men whose paths keep crossing: a mighty beggar-chief, a bookish prince who hates fighting, and a clumsy Shaolin monk. The action ranges across five realms of the late 11th century: Song, Liao, Western Xia, Dali and Tibet.",
+      "The title is a Buddhist term for eight kinds of non-human beings, a hint that every character is a mix of noble and monstrous. The backdrop is real: under the young Song emperor Zhezong, an uneasy peace with the Liao had held for almost 90 years."
+    ],
+    "whyItMatters": "Often ranked Jin Yong's most ambitious book, it asks what loyalty means when borders between peoples are drawn by accident of birth.",
+    "xy": [
+      367,
+      217
+    ],
+    "related": [
+      "treaty-of-chanyuan",
+      "demigods-xiao-feng",
+      "demigods-duan-yu"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Demi-Gods_and_Semi-Devils",
+    "source": {
+      "work": "Demi-Gods and Semi-Devils",
+      "workHanzi": "天龍八部",
+      "author": "Jin Yong",
+      "published": "1963–66",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "demigods-xiao-feng",
+    "title": "The beggar-chief learns he is a Khitan",
+    "hanzi": "蕭峰",
+    "pinyin": "Xiāo Fēng",
+    "year": 1093,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🥋",
+    "body": [
+      "Qiao Feng leads the Beggars' Gang, the biggest brotherhood in the Song martial world. At a gathering in an apricot grove near Wuxi, a sealed letter reveals his secret: he was born Khitan, a son of the Liao enemy. Overnight the most admired man in the Song becomes a suspect, and his real name, Xiao Feng, becomes a curse.",
+      "The hatred is fiction's, the setting is not. Song and Liao had been bitter rivals, but in the 1090s they had been formally at peace since 1005. And Xiao was a real Khitan surname, the clan that supplied Liao emperors with their empresses."
+    ],
+    "whyItMatters": "Jin Yong's great tragic hero turns an old border rivalry into a personal question: can a good man belong to two enemy peoples at once?",
+    "xy": [
+      447,
+      263
+    ],
+    "related": [
+      "treaty-of-chanyuan",
+      "demigods-liao-emperor",
+      "demigods-overview"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Qiao_Feng",
+    "source": {
+      "work": "Demi-Gods and Semi-Devils",
+      "workHanzi": "天龍八部",
+      "author": "Jin Yong",
+      "published": "1963–66",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "demigods-duan-yu",
+    "title": "Duan Yu, the prince of Dali who won't fight",
+    "hanzi": "段譽",
+    "pinyin": "Duàn Yù",
+    "year": 1093,
+    "era": "song",
+    "category": "fiction",
+    "icon": "📜",
+    "body": [
+      "Duan Yu is heir to the kingdom of Dali in the far southwest, a Buddhist bookworm who runs away rather than learn martial arts. Naturally he stumbles into two of the most powerful techniques in the novel by accident, and spends most of the book chasing a girl who barely notices him.",
+      "Dali was real: a kingdom in today's Yunnan, ruled by the Duan family from 937 until Kublai Khan's Mongols took it in 1253. Jin Yong's Duan Yu is loosely based on the real Duan Heyu, who ruled from 1108 to 1147 and, like several Duan kings, retired to become a monk."
+    ],
+    "whyItMatters": "Dali's appearance put a half-forgotten southwestern kingdom back on the mental map of millions of Chinese readers.",
+    "xy": [
+      216,
+      316
+    ],
+    "related": [
+      "demigods-overview",
+      "kublai-khan"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Dali_Kingdom",
+    "source": {
+      "work": "Demi-Gods and Semi-Devils",
+      "workHanzi": "天龍八部",
+      "author": "Jin Yong",
+      "published": "1963–66",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "demigods-liao-emperor",
+    "title": "Xiao Feng becomes sworn brother to the Liao emperor",
+    "hanzi": "耶律洪基",
+    "pinyin": "Yēlǜ Hóngjī",
+    "year": 1094,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🤝",
+    "body": [
+      "Driven out of the Song, Xiao Feng wanders north, spares the life of a Khitan hunter, and swears brotherhood with him, only to learn he has befriended Yelü Hongji, the emperor of Liao. Honours follow. So does an awkward question: what will Xiao Feng do if his new brother turns south?",
+      "Yelü Hongji was real, better known as Emperor Daozong, and ruled Liao from 1055 to 1101. The novel's looming Liao invasion is invented: in his reign the two empires stayed at peace, with Song paying yearly silver and silk under the old treaty."
+    ],
+    "whyItMatters": "The novel dramatises a real balance of power, a century-long peace that, for once, both sides actually kept.",
+    "xy": [
+      379,
+      156
+    ],
+    "related": [
+      "demigods-xiao-feng",
+      "treaty-of-chanyuan",
+      "sixteen-prefectures-ceded"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Emperor_Daozong_of_Liao",
+    "source": {
+      "work": "Demi-Gods and Semi-Devils",
+      "workHanzi": "天龍八部",
+      "author": "Jin Yong",
+      "published": "1963–66",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "condor-overview",
+    "title": "The Legend of the Condor Heroes begins in Ox Village",
+    "hanzi": "射鵰英雄傳",
+    "pinyin": "Shè diāo yīngxióng zhuàn",
+    "year": 1199,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🦅",
+    "body": [
+      "One snowy night in Ox Village, outside the Southern Song capital, a Taoist swordsman shares wine with two patriots at home and names their unborn sons: Guo Jing and Yang Kang. Soon both families are scattered by Jin agents. One boy will grow up on the Mongol steppe, the other in a Jin prince's palace.",
+      "The novel runs from about 1199 to 1227, while the Southern Song, having lost the north to the Jurchen Jin, watched the Mongols rise beyond both. The title nods to a Mao Zedong poem dismissing Genghis Khan as a man who only knew how to shoot eagles."
+    ],
+    "whyItMatters": "One of the best-loved Chinese novels of the 20th century, it taught generations of readers the shape of the Song–Jin–Mongol world.",
+    "xy": [
+      448,
+      278
+    ],
+    "related": [
+      "jingkang-incident",
+      "condor-guo-jing-mongols",
+      "return-condor-overview"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Legend_of_the_Condor_Heroes",
+    "source": {
+      "work": "The Legend of the Condor Heroes",
+      "workHanzi": "射鵰英雄傳",
+      "author": "Jin Yong",
+      "published": "1957–59",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "condor-guo-jing-mongols",
+    "title": "Guo Jing grows up in Temujin's camp",
+    "hanzi": "郭靖",
+    "pinyin": "Guō Jìng",
+    "year": 1206,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🏹",
+    "body": [
+      "Born on the steppe to a refugee Song mother, the slow, stubborn Guo Jing wins the notice of a rising chief named Temujin by protecting a hunted archer. He becomes blood-brother to Temujin's son Tolui, learns archery, and watches his patron unite the tribes and become Genghis Khan.",
+      "The archer is Jebe, a real general. By Mongol tradition he shot Temujin's horse (some later tellings say Temujin himself) in battle in 1201, owned up, and was hired instead of killed. Temujin really was proclaimed Genghis Khan in 1206. Guo Jing, the Song boy in his camp, is pure invention."
+    ],
+    "whyItMatters": "Few popular novels have shown the Mongols from inside their tents, as people rather than a faceless horde.",
+    "xy": [
+      270,
+      50
+    ],
+    "related": [
+      "condor-overview",
+      "condor-genghis-end",
+      "mongols"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Guo_Jing",
+    "source": {
+      "work": "The Legend of the Condor Heroes",
+      "workHanzi": "射鵰英雄傳",
+      "author": "Jin Yong",
+      "published": "1957–59",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "condor-huashan-contest",
+    "title": "The Five Greats duel on Mount Hua",
+    "hanzi": "華山論劍",
+    "pinyin": "Huàshān lùn jiàn",
+    "year": 1170,
+    "era": "song",
+    "category": "fiction",
+    "icon": "⛰️",
+    "body": [
+      "A generation before the story opens, the five finest fighters alive meet on Mount Hua to settle who deserves a legendary martial arts manual. After seven days and nights, the Taoist Wang Chongyang is judged the best. The other four, known as East, West, South and North, spend decades plotting a rematch.",
+      "Two of the Greats borrow real names. Wang Chongyang (1113–1170) founded the Quanzhen school of Taoism, and taught meditation, not combat. Duan Zhixing really was a king of Dali, reigning 1172–1200 before becoming a monk. The novel never dates the contest, and its timeline does not quite fit theirs."
+    ],
+    "whyItMatters": "The phrase 'Mount Hua sword debate' became everyday Chinese shorthand for any showdown between the very best.",
+    "xy": [
+      315,
+      217
+    ],
+    "related": [
+      "condor-overview",
+      "return-condor-ancient-tomb",
+      "demigods-duan-yu"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Wang_Chongyang",
+    "source": {
+      "work": "The Legend of the Condor Heroes",
+      "workHanzi": "射鵰英雄傳",
+      "author": "Jin Yong",
+      "published": "1957–59",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "condor-wumu-yishu",
+    "title": "The hunt for Yue Fei's lost book of war",
+    "hanzi": "武穆遺書",
+    "pinyin": "Wǔmù yíshū",
+    "year": 1220,
+    "era": "song",
+    "category": "fiction",
+    "icon": "📖",
+    "body": [
+      "Everyone wants the secret military manual of Yue Fei, the martyred Song general: the Jin court hopes it will help them finish off the Song. Guo Jing and his clever companion Huang Rong follow its trail to a sinister sect's stronghold on Iron Palm Mountain, which the novel places in the hills of western Hunan.",
+      "Yue Fei was real, and so is 'Wumu', the posthumous title the court gave him decades after his execution. The book is invented. No manual by him survives, though later centuries credited him with whole martial arts styles, including xingyiquan, that historians doubt he ever practised."
+    ],
+    "whyItMatters": "It turns Yue Fei, China's symbol of betrayed loyalty, into a hero whose wisdom outlives him, which is exactly how the Song remembered him.",
+    "xy": [
+      332,
+      294
+    ],
+    "related": [
+      "yue-fei-execution",
+      "jingkang-incident",
+      "condor-overview"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Cultural_depictions_of_Yue_Fei",
+    "source": {
+      "work": "The Legend of the Condor Heroes",
+      "workHanzi": "射鵰英雄傳",
+      "author": "Jin Yong",
+      "published": "1957–59",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "condor-genghis-end",
+    "title": "Guo Jing rides with Genghis Khan",
+    "hanzi": "成吉思汗",
+    "pinyin": "Chéngjísī Hán",
+    "year": 1227,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🐎",
+    "body": [
+      "As the Mongol armies sweep west and south, Guo Jing rides with the conqueror who has half-raised him, and the two keep coming back to one question: what makes a man truly great? It is a debate at the heart of the book, and the novel does not hurry to settle it.",
+      "Genghis Khan really died in August 1227, during his campaign against the Western Xia, near the Liupan Mountains. What killed him is still argued over: illness, a fall from his horse or an old wound. His death was kept quiet while his armies finished off the Xia."
+    ],
+    "whyItMatters": "Jin Yong's question, whether conquest alone makes greatness, runs through the whole Condor trilogy.",
+    "xy": [
+      265,
+      200
+    ],
+    "related": [
+      "condor-guo-jing-mongols",
+      "song-mongol-alliance-against-jin",
+      "mongols"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Genghis_Khan",
+    "source": {
+      "work": "The Legend of the Condor Heroes",
+      "workHanzi": "射鵰英雄傳",
+      "author": "Jin Yong",
+      "published": "1957–59",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "return-condor-overview",
+    "title": "The Return of the Condor Heroes: Yang Guo's story",
+    "hanzi": "神鵰俠侶",
+    "pinyin": "Shén diāo xiá lǚ",
+    "year": 1236,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🦅",
+    "body": [
+      "The sequel picks up a generation later with Yang Guo, the orphaned son of Yang Kang from the first book, living rough in Jiaxing. Guo Jing takes him in, but the boy is prickly, proud and trusted by almost no one, and he soon runs off to find his own teachers and his own rules.",
+      "Its world is the late Southern Song. The Jin are gone, destroyed in 1234 by the Song and the Mongols together, and the Mongols are now pushing south. The novel's real subject, though, is a forbidden love that scandalises everyone around it."
+    ],
+    "whyItMatters": "It made a rebellious, romantic outsider the hero of Chinese popular fiction, and it has been adapted for film and TV again and again.",
+    "xy": [
+      454,
+      273
+    ],
+    "related": [
+      "condor-overview",
+      "song-mongol-alliance-against-jin",
+      "return-condor-ancient-tomb"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Return_of_the_Condor_Heroes",
+    "source": {
+      "work": "The Return of the Condor Heroes",
+      "workHanzi": "神鵰俠侶",
+      "author": "Jin Yong",
+      "published": "1959–61",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "return-condor-ancient-tomb",
+    "title": "Yang Guo and Xiaolongnü in the Ancient Tomb",
+    "hanzi": "活死人墓",
+    "pinyin": "Huó sǐrén mù",
+    "year": 1239,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🪦",
+    "body": [
+      "Bullied at the Quanzhen Taoist temple on Zhongnan Mountain, Yang Guo flees into the Tomb of the Living Dead next door. There he becomes the pupil of Xiaolongnü, a cool, otherworldly young woman barely older than him. Teacher and student falling in love breaks every rule of their world, and the whole martial community lines up against them.",
+      "The tomb has a real ancestor. Around 1161 the real Wang Chongyang dug himself a grave near Zhongnan Mountain and lived in it for about three years as a 'living dead man', before going on to found the Quanzhen school. A site by that name can still be visited today."
+    ],
+    "whyItMatters": "The love story is the heart of the novel, and it gave Chinese readers one of their most famous couples in fiction.",
+    "xy": [
+      298,
+      220
+    ],
+    "related": [
+      "return-condor-overview",
+      "condor-huashan-contest"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Ancient_Tomb_Sect",
+    "source": {
+      "work": "The Return of the Condor Heroes",
+      "workHanzi": "神鵰俠侶",
+      "author": "Jin Yong",
+      "published": "1959–61",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "return-condor-xiangyang",
+    "title": "Guo Jing and Huang Rong hold Xiangyang",
+    "hanzi": "襄陽",
+    "pinyin": "Xiāngyáng",
+    "year": 1243,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🏯",
+    "body": [
+      "Now middle-aged, Guo Jing and Huang Rong make the river fortress of Xiangyang their life's cause, leading its defence against Mongol attack after Mongol attack. Their younger daughter is born in the middle of the fighting. Yang Guo, torn between old grudges and his debt to them, keeps drifting back.",
+      "The real Xiangyang was the Song's gateway to the Yangzi. Its great siege came later, from 1268 to 1273, under Kublai Khan. The city fell only after Mongol forces brought in Middle Eastern engineers to build heavy counterweight catapults that could smash its walls."
+    ],
+    "whyItMatters": "In Jin Yong's world, holding Xiangyang is the purest form of heroism: defending ordinary people, not chasing martial fame.",
+    "xy": [
+      346,
+      249
+    ],
+    "related": [
+      "return-condor-mongke",
+      "kublai-khan",
+      "mongols"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Battle_of_Xiangyang",
+    "source": {
+      "work": "The Return of the Condor Heroes",
+      "workHanzi": "神鵰俠侶",
+      "author": "Jin Yong",
+      "published": "1959–61",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "return-condor-mongke",
+    "title": "Möngke Khan and the novel's last battle",
+    "hanzi": "蒙哥",
+    "pinyin": "Ménggē",
+    "year": 1259,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🪨",
+    "body": [
+      "The novel's great final battle is fought before Xiangyang, with the Great Khan Möngke leading the Mongol assault himself. It is one of the places where Jin Yong bends real history hardest, and how it ends is best left to the book.",
+      "Möngke really did die in 1259, but in Sichuan, besieging the Song cliff fortress of Diaoyu, far from Xiangyang. Chinese sources say a stone or arrow from the walls struck him. Persian sources blame dysentery or cholera. Either way, his death sent Mongol armies home to fight over the succession."
+    ],
+    "whyItMatters": "Möngke's real death briefly halted Mongol conquests across Eurasia, and cleared the way for his brother Kublai.",
+    "xy": [
+      346,
+      249
+    ],
+    "related": [
+      "return-condor-xiangyang",
+      "kublai-khan",
+      "mongols"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Siege_of_Diaoyucheng",
+    "source": {
+      "work": "The Return of the Condor Heroes",
+      "workHanzi": "神鵰俠侶",
+      "author": "Jin Yong",
+      "published": "1959–61",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "heaven-sword-bright-peak",
+    "title": "Heaven Sword and Dragon Saber: a quarrel over two blades",
+    "hanzi": "倚天屠龍記",
+    "pinyin": "Yǐtiān Túlóng Jì",
+    "year": 1357,
+    "era": "yuan",
+    "category": "fiction",
+    "icon": "🗡️",
+    "body": [
+      "The last book of Jin Yong's Condor Trilogy opens in the dying decades of Mongol rule. A rhyme says whoever holds the Dragon-Slaying Saber rules the martial world, so every sect wants it. Young Zhang Wuji, raised amid feuds that are not his fault, is dragged into a war between 'orthodox' sects and the outlawed Ming Cult.",
+      "Fan chronologies put the showdown at the cult's mountain base, Bright Peak, around 1357. The swordfights are invented; the backdrop is not. By the 1350s the Yuan state was losing its grip, and real rebel armies were rising across the Huai and Yangtze valleys."
+    ],
+    "whyItMatters": "It is one of Jin Yong's most-adapted novels, remade for film and TV again and again.",
+    "xy": [
+      43,
+      179
+    ],
+    "related": [
+      "heaven-sword-ming-cult",
+      "heaven-sword-guo-xiang",
+      "yuan-hierarchy"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Heaven_Sword_and_Dragon_Saber",
+    "source": {
+      "work": "The Heaven Sword and Dragon Saber",
+      "workHanzi": "倚天屠龍記",
+      "author": "Jin Yong",
+      "published": "1961–63",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "heaven-sword-guo-xiang",
+    "title": "Guo Xiang rides to Shaolin",
+    "hanzi": "郭襄",
+    "pinyin": "Guō Xiāng",
+    "year": 1263,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🐴",
+    "body": [
+      "The novel's prologue belongs to Guo Xiang, the restless daughter of the Condor heroes, who has spent three years wandering in search of an old friend. At Shaolin she stumbles into a scandal over a monk and his pupil. Years later, the novel tells us, she shaves her head and founds the Emei sect of swordswomen.",
+      "The novel ties her family's fate to Xiangyang, the real fortress city that held off the Mongols for almost five years. In reality the siege ran from 1268 until the city surrendered in March 1273, battered by new counterweight catapults built by engineers from Persia and Iraq."
+    ],
+    "whyItMatters": "One girl's prologue links the whole Condor Trilogy to the real fall of the Song.",
+    "xy": [
+      350,
+      219
+    ],
+    "related": [
+      "heaven-sword-zhang-sanfeng",
+      "mongols",
+      "kublai-khan"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Emei_Sect",
+    "source": {
+      "work": "The Heaven Sword and Dragon Saber",
+      "workHanzi": "倚天屠龍記",
+      "author": "Jin Yong",
+      "published": "1961–63",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "heaven-sword-zhang-sanfeng",
+    "title": "A runaway boy heads for Wudang",
+    "hanzi": "張三丰",
+    "pinyin": "Zhāng Sānfēng",
+    "year": 1263,
+    "era": "song",
+    "category": "fiction",
+    "icon": "☯️",
+    "body": [
+      "In the novel, Zhang Junbao is a teenage servant-pupil who flees Shaolin after learning kung fu he was never meant to see. Alone, he climbs Mount Wudang, broods on what he knows, and becomes Zhang Sanfeng, founder of the Wudang school. By the main story he is a Taoist centenarian everyone treats with awe.",
+      "The real Zhang Sanfeng is mostly legend. The official Ming history describes a wandering Taoist of astonishing age, and says both the Hongwu and Yongle emperors sent men to find him without success. Many historians doubt he invented tai chi, and some doubt he existed at all."
+    ],
+    "whyItMatters": "Jin Yong made a hazy Taoist legend into the grandfather figure of all wuxia fiction.",
+    "xy": [
+      332,
+      244
+    ],
+    "related": [
+      "heaven-sword-guo-xiang",
+      "yongle-usurpation",
+      "ming-founding"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Zhang_Sanfeng",
+    "source": {
+      "work": "The Heaven Sword and Dragon Saber",
+      "workHanzi": "倚天屠龍記",
+      "author": "Jin Yong",
+      "published": "1961–63",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "heaven-sword-ming-cult",
+    "title": "The Ming Cult and the real Red Turbans",
+    "hanzi": "明教",
+    "pinyin": "Míngjiào",
+    "year": 1351,
+    "era": "yuan",
+    "category": "fiction",
+    "icon": "🔥",
+    "body": [
+      "In the novel, the Ming Cult is a feared, fractured secret society loosely based on Chinese Manichaeism, the Persian 'religion of light'. Zhang Wuji is pulled into its politics, and Jin Yong writes real rebel leaders such as Han Shantong and a young Zhu Yuanzhang into its ranks as it turns on the Mongols.",
+      "In reality the Red Turban revolts broke out in 1351, fired by White Lotus hopes of a coming Buddha and a 'King of Light'. Zhu Yuanzhang joined in 1352 and proclaimed the Ming dynasty in 1368. There is no evidence he belonged to any Manichaean cult; where the name 'Ming' came from is still debated."
+    ],
+    "whyItMatters": "The novel gave millions of readers their mental picture of how the Ming began.",
+    "xy": [
+      389,
+      242
+    ],
+    "related": [
+      "ming-founding",
+      "heaven-sword-bright-peak",
+      "yuan-hierarchy"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Ming_Cult",
+    "source": {
+      "work": "The Heaven Sword and Dragon Saber",
+      "workHanzi": "倚天屠龍記",
+      "author": "Jin Yong",
+      "published": "1961–63",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "smiling-proud-wanderer",
+    "title": "The Smiling, Proud Wanderer: a story with no date",
+    "hanzi": "笑傲江湖",
+    "pinyin": "Xiào'ào Jiānghú",
+    "year": 1500,
+    "era": "ming",
+    "category": "fiction",
+    "icon": "🍶",
+    "body": [
+      "Linghu Chong, a cheerful, hard-drinking disciple of the Mount Hua sect, gets caught between rival schools of the Five Mountains alliance and a feared 'evil' cult. Everyone talks about righteousness; nearly everyone wants power. The customs suggest the Ming, but Jin Yong gave no emperor and no year, so this card's date is only a placeholder.",
+      "That vagueness was on purpose. Written in 1967–69, during the Cultural Revolution, it is widely read as an allegory of that power struggle. Jin Yong's afterword says he was not aiming at one event, but at patterns in Chinese political life over three thousand years."
+    ],
+    "whyItMatters": "Its schemers became shorthand for power-hungry politicians in Chinese-speaking communities.",
+    "xy": [
+      315,
+      217
+    ],
+    "related": [
+      "sword-stained-beijing-1644"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Smiling,_Proud_Wanderer",
+    "source": {
+      "work": "The Smiling, Proud Wanderer",
+      "workHanzi": "笑傲江湖",
+      "author": "Jin Yong",
+      "published": "1967–69",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "sword-stained-yuan-chonghuan",
+    "title": "Sword Stained with Royal Blood: a general's son",
+    "hanzi": "碧血劍",
+    "pinyin": "Bìxuè Jiàn",
+    "year": 1630,
+    "era": "ming",
+    "category": "fiction",
+    "icon": "⚔️",
+    "body": [
+      "Jin Yong's second novel gives a real general an invented son. Yuan Chengzhi is a small boy when his father is put to death; loyal followers smuggle him off to Mount Hua to learn the sword. He grows up wanting justice for his father, while the Ming state around him comes apart.",
+      "His father is real. Yuan Chonghuan held Ningyuan against Nurhaci in 1626, but in 1630 the Chongzhen Emperor had him executed by slow slicing, convinced he was in league with the Manchus, a charge widely blamed on a Manchu smear. A later Qing emperor, Qianlong, cleared his name in the 1780s."
+    ],
+    "whyItMatters": "It turned a wronged Ming general into a household name for a new generation of readers.",
+    "xy": [
+      379,
+      156
+    ],
+    "related": [
+      "sword-stained-beijing-1644",
+      "li-zicheng-beijing",
+      "great-wall-ming"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Sword_Stained_with_Royal_Blood",
+    "source": {
+      "work": "Sword Stained with Royal Blood",
+      "workHanzi": "碧血劍",
+      "author": "Jin Yong",
+      "published": "1956",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "sword-stained-beijing-1644",
+    "title": "Yuan Chengzhi throws in with the rebels",
+    "hanzi": "袁承志",
+    "pinyin": "Yuán Chéngzhì",
+    "year": 1644,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🏯",
+    "body": [
+      "Grown up and armed with a strange serpent-shaped sword, Yuan Chengzhi decides the Ming is beyond saving and backs the rebel leader Li Zicheng, whose armies are closing in on Beijing. The novel's final stretch plays out against the capital's fall.",
+      "The fall itself is real. In spring 1644 Li Zicheng's army entered Beijing and the Chongzhen Emperor hanged himself behind the palace. Li held the city only weeks before the Ming general Wu Sangui let the Manchus through the Great Wall, and the Qing took the throne."
+    ],
+    "whyItMatters": "The novel lets readers watch the Ming's last days from inside the rebel camp.",
+    "xy": [
+      379,
+      156
+    ],
+    "related": [
+      "li-zicheng-beijing",
+      "qing-founding",
+      "sword-stained-yuan-chonghuan"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Sword_Stained_with_Royal_Blood",
+    "source": {
+      "work": "Sword Stained with Royal Blood",
+      "workHanzi": "碧血劍",
+      "author": "Jin Yong",
+      "published": "1956",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "book-sword-red-flower-society",
+    "title": "The Book and the Sword: Jin Yong's first novel",
+    "hanzi": "書劍恩仇錄",
+    "pinyin": "Shū Jiàn Ēn Chóu Lù",
+    "year": 1753,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🌺",
+    "body": [
+      "The novel opens in 1753, the 18th year of the Qianlong Emperor. Chen Jialuo, a young scholar-swordsman, is made head of the Red Flower Society, an invented secret brotherhood sworn to overthrow the Manchu Qing. Rescues, feuds and a romance carry the story from Shaanxi to Hangzhou and out to the deserts of Xinjiang.",
+      "The Red Flower Society never existed, but real people crowd the pages, including Qianlong himself, his general Zhaohui and Fuk'anggan. The later chapters use the real Qing campaigns in Xinjiang of 1758–59 as their backdrop."
+    ],
+    "whyItMatters": "This 1955 debut launched Jin Yong and helped reinvent wuxia as a modern genre.",
+    "xy": [
+      448,
+      278
+    ],
+    "related": [
+      "book-sword-qianlong-legend",
+      "high-qing"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Book_and_the_Sword",
+    "source": {
+      "work": "The Book and the Sword",
+      "workHanzi": "書劍恩仇錄",
+      "author": "Jin Yong",
+      "published": "1955–56",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "book-sword-qianlong-legend",
+    "title": "The legend that Qianlong was secretly Han",
+    "hanzi": "乾隆身世傳說",
+    "pinyin": "Qiánlóng shēnshì chuánshuō",
+    "year": 1762,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "👶",
+    "body": [
+      "The Book and the Sword is built on a whisper Jin Yong grew up with in his home town of Haining: that the Manchu emperor Qianlong was really born to the local Han Chen family, and swapped as a baby for a royal daughter. In the novel, that secret becomes a weapon the rebels hope to use.",
+      "Historians reject the story. Qianlong's father already had sons, so a swap makes little sense. The legend probably grew from real ties: Qianlong stayed at the Chen family's Haining garden on four southern tours, first in 1762, and the Chens had produced high Qing officials."
+    ],
+    "whyItMatters": "A small-town rumour became one of the best-known 'secret histories' of the Qing.",
+    "xy": [
+      454,
+      276
+    ],
+    "related": [
+      "book-sword-red-flower-society",
+      "high-qing"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Book_and_the_Sword",
+    "source": {
+      "work": "The Book and the Sword",
+      "workHanzi": "書劍恩仇錄",
+      "author": "Jin Yong",
+      "published": "1955–56",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "flying-fox-snowy-mountain",
+    "title": "Fox Volant: one day on a snowy peak",
+    "hanzi": "雪山飛狐",
+    "pinyin": "Xuěshān Fēihú",
+    "year": 1780,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🦊",
+    "body": [
+      "A pack of fighters dig up a treasure chest in the Changbai Mountains, and are then pressed into guarding a mountaintop manor against a feared swordsman, Hu Fei, the 'Flying Fox'. Stuck together, they swap clashing versions of an old feud. The whole novel takes place on a single day in spring 1780.",
+      "Jin Yong later wrote a prequel, The Young Flying Fox (1960), about Hu Fei's youth under Qianlong. The feuds are invented. The date is not vague: the novel names a day in the 45th year of Qianlong's reign, which works out to 19 April 1780."
+    ],
+    "whyItMatters": "Its famously open ending still has readers arguing what happened next.",
+    "xy": [
+      516,
+      141
+    ],
+    "related": [
+      "high-qing",
+      "book-sword-red-flower-society"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Fox_Volant_of_the_Snowy_Mountain",
+    "source": {
+      "work": "Fox Volant of the Snowy Mountain",
+      "workHanzi": "雪山飛狐",
+      "author": "Jin Yong",
+      "published": "1959",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "deer-cauldron-oboi",
+    "title": "Wei Xiaobao helps the boy emperor topple Oboi",
+    "hanzi": "鹿鼎記",
+    "pinyin": "Lù Dǐng Jì",
+    "year": 1669,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🎲",
+    "body": [
+      "Jin Yong's last novel stars his least heroic hero: Wei Xiaobao, a sharp-tongued, illiterate boy from a Yangzhou brothel who can't fight but can talk his way out of anything. Posing as a palace eunuch, he becomes the teenage Kangxi Emperor's wrestling buddy, and then his accomplice in taking down the overbearing regent Oboi.",
+      "The arrest was real. Kangxi, still in his teens, had young attendants trained in Manchu wrestling, and in 1669 they seized Oboi when he came to court. Oboi was stripped of power and died in custody that year, and Kangxi ruled in his own right. Wei Xiaobao is invented."
+    ],
+    "whyItMatters": "An anti-hero at the court of China's longest-reigning emperor turned wuxia on its head.",
+    "xy": [
+      379,
+      156
+    ],
+    "related": [
+      "high-qing",
+      "forbidden",
+      "deer-cauldron-three-feudatories"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Deer_and_the_Cauldron",
+    "source": {
+      "work": "The Deer and the Cauldron",
+      "workHanzi": "鹿鼎記",
+      "author": "Jin Yong",
+      "published": "1969–72",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "deer-cauldron-three-feudatories",
+    "title": "Wei Xiaobao escorts a princess to Yunnan",
+    "hanzi": "三藩之亂",
+    "pinyin": "Sān Fān zhī Luàn",
+    "year": 1673,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "👸",
+    "body": [
+      "In the novel, Kangxi sends Wei Xiaobao to Kunming to deliver a wilful princess as bride to Wu Yingxiong, son of the powerful warlord Wu Sangui, and to keep an eye on the family. The trip is a farce of plots, spies and bad behaviour, with open rebellion looming.",
+      "In reality Wu Yingxiong had married a Qing princess, a daughter of Hong Taiji, back in 1653. When Kangxi moved to abolish the three southern fiefdoms, Wu Sangui rebelled in late 1673; the Revolt of the Three Feudatories lasted until Qing troops took Kunming in 1681."
+    ],
+    "whyItMatters": "It was the war that proved Kangxi could hold the empire together.",
+    "xy": [
+      248,
+      326
+    ],
+    "related": [
+      "deer-cauldron-oboi",
+      "qing-founding",
+      "high-qing"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Revolt_of_the_Three_Feudatories",
+    "source": {
+      "work": "The Deer and the Cauldron",
+      "workHanzi": "鹿鼎記",
+      "author": "Jin Yong",
+      "published": "1969–72",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "deer-cauldron-nerchinsk",
+    "title": "Wei Xiaobao 'negotiates' with Russia",
+    "hanzi": "尼布楚條約",
+    "pinyin": "Níbùchǔ Tiáoyuē",
+    "year": 1689,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "📜",
+    "body": [
+      "Late in the novel, Wei Xiaobao, now a duke, leads Qing troops against Russian forts on the Amur, then bluffs his way through border talks with the tsar's envoys and puts his name to the Treaty of Nerchinsk. The joke is that the most important treaty of the reign is signed by a man who can barely write.",
+      "The treaty was real, signed on 27 August 1689 by the Manchu noble Songgotu and Russia's Fyodor Golovin. Two Jesuits, Gerbillon and Pereira, interpreted, and the official text was in Latin. It fixed the border along the Argun and Amur rivers and the Outer Xing'an mountains. There was no Wei Xiaobao."
+    ],
+    "whyItMatters": "It was China's first formal treaty with a European power, and it was signed as equals.",
+    "xy": [
+      353,
+      20
+    ],
+    "related": [
+      "deer-cauldron-oboi",
+      "high-qing"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk",
+    "source": {
+      "work": "The Deer and the Cauldron",
+      "workHanzi": "鹿鼎記",
+      "author": "Jin Yong",
+      "published": "1969–72",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "deadly-secret-jingzhou",
+    "title": "A Deadly Secret: a framed farm boy",
+    "hanzi": "連城訣",
+    "pinyin": "Liánchéng Jué",
+    "year": 1680,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "⛓️",
+    "body": [
+      "Di Yun, a simple country lad from western Hunan, visits the city of Jingzhou with his master and ends up framed and thrown in prison. Around him, supposedly respectable swordsmen are all hunting the same thing: a sword manual said to hide the way to a buried treasure. The novel gives no exact year; it is set in the early Qing.",
+      "Jingzhou is real and very old. Nearby Jiangling was the capital of Emperor Yuan of Liang, who famously burned his huge library when the city fell in 554, and the region has been rich in treasure legends ever since."
+    ],
+    "whyItMatters": "It is Jin Yong's darkest book, a study of greed with almost no heroes in it.",
+    "xy": [
+      351,
+      270
+    ],
+    "related": [
+      "high-qing",
+      "deer-cauldron-oboi"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/A_Deadly_Secret",
+    "source": {
+      "work": "A Deadly Secret",
+      "workHanzi": "連城訣",
+      "author": "Jin Yong",
+      "published": "1964–65",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "mandarin-duck-blades",
+    "title": "Blade-Dance of the Two Lovers",
+    "hanzi": "鴛鴦刀",
+    "pinyin": "Yuānyāng Dāo",
+    "year": 1735,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🦆",
+    "body": [
+      "A pair of legendary sabres, said to hide a secret that makes their owner unbeatable, is being carried to the emperor in Beijing by a hired escort agency. Bandits, heroes and hopeless amateurs all try to grab them, and two squabbling young couples get tangled up in the chase.",
+      "It is Jin Yong's lightest story, a short comedy that pokes fun at wuxia's treasure hunts. It is set under the Qing, and fan chronologies place it around the 1730s; the novella itself names no year. Its 'secret' is best left for readers to find."
+    ],
+    "whyItMatters": "A master of the epic shows he can also laugh at his own genre.",
+    "xy": [
+      337,
+      178
+    ],
+    "related": [
+      "high-qing"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Mandarin_Duck_Blades",
+    "source": {
+      "work": "Blade-Dance of the Two Lovers",
+      "workHanzi": "鴛鴦刀",
+      "author": "Jin Yong",
+      "published": "1961",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "nezha-stirs-the-sea",
+    "title": "Nezha picks a fight with the Dragon King",
+    "hanzi": "哪吒鬧海",
+    "pinyin": "Nézhā nào hǎi",
+    "year": -1060,
+    "era": "shang",
+    "category": "fiction",
+    "icon": "🐉",
+    "body": [
+      "Nezha is the third son of Li Jing, commander of Chentang Pass, and a divine spirit born into a mortal body. Aged seven, he splashes about in a stream with his magic sash and shakes the undersea palace of the East Sea Dragon King. The king's son comes up to scold him, and it goes very badly for the dragon.",
+      "Nezha is pure fiction, a figure the novel borrowed and reshaped from older Buddhist and folk legend. Chentang Pass is invented too: several towns, from Tianjin to Sichuan, claim to be the real site. Setting the story in the last years of the Shang lets the novel tie its gods to a real dynastic fall."
+    ],
+    "whyItMatters": "The rebellious kid-god is one of China's most retold characters, and a 2025 animated film about him became one of the highest-grossing films ever made.",
+    "xy": [
+      391,
+      167
+    ],
+    "related": [
+      "investiture-gods-war",
+      "battle-of-muye"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Nezha",
+    "source": {
+      "work": "Investiture of the Gods",
+      "workHanzi": "封神演義",
+      "author": "Attributed to Xu Zhonglin or Lu Xixing (disputed)",
+      "published": "16th century (Ming dynasty)",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "daji-fox-spirit",
+    "title": "A fox spirit bewitches the last Shang king",
+    "hanzi": "妲己",
+    "pinyin": "Dájǐ",
+    "year": -1070,
+    "era": "shang",
+    "category": "fiction",
+    "icon": "🦊",
+    "body": [
+      "In the novel, the goddess Nüwa is insulted by King Zhou of Shang and sends a thousand-year-old fox spirit to bring him down. The fox takes over the body of his new consort, Daji, and eggs the king on to ever more elaborate cruelties, turning his court into a horror show.",
+      "Early histories such as Sima Qian's Records of the Grand Historian do blame a consort named Daji for the king's ruin, but they describe her as a human woman, and she does not appear in Shang oracle-bone inscriptions. The fox-spirit version came from much later storytellers."
+    ],
+    "whyItMatters": "Daji became China's archetypal femme fatale, a reminder of how often histories blamed a dynasty's fall on a woman.",
+    "xy": [
+      366,
+      213
+    ],
+    "related": [
+      "investiture-gods-war",
+      "records-grand-historian",
+      "fu-hao"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Daji",
+    "source": {
+      "work": "Investiture of the Gods",
+      "workHanzi": "封神演義",
+      "author": "Attributed to Xu Zhonglin or Lu Xixing (disputed)",
+      "published": "16th century (Ming dynasty)",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "investiture-gods-war",
+    "title": "Gods and immortals take sides as Shang falls",
+    "hanzi": "武王伐紂",
+    "pinyin": "Wǔwáng fá Zhòu",
+    "year": -1047,
+    "era": "shang",
+    "category": "fiction",
+    "icon": "⚡",
+    "body": [
+      "The novel turns the Zhou conquest into a war in heaven. The strategist Jiang Ziya leads King Wu's armies east, while rival schools of immortals pile in on both sides with flying weapons, magic formations and animal mounts. The fallen are promised posts as gods once the war is won, hence the title.",
+      "In reality King Wu of Zhou marched on the Shang and won a decisive battle at Muye, usually dated to about 1046 BCE, and the Shang collapsed almost at once. Jiang Ziya was a real Zhou adviser too, though no one flew into battle on a tiger."
+    ],
+    "whyItMatters": "Much of the popular picture of Chinese gods and spirits comes from this novel, not from ancient scripture.",
+    "xy": [
+      361,
+      212
+    ],
+    "related": [
+      "battle-of-muye",
+      "mandate-of-heaven",
+      "nezha-stirs-the-sea"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Investiture_of_the_Gods",
+    "source": {
+      "work": "Investiture of the Gods",
+      "workHanzi": "封神演義",
+      "author": "Attributed to Xu Zhonglin or Lu Xixing (disputed)",
+      "published": "16th century (Ming dynasty)",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "guan-yu",
+    "title": "Guan Yu, Liu Bei's great general, is captured",
+    "hanzi": "關羽",
+    "pinyin": "Guān Yǔ",
+    "year": 219,
+    "era": "han",
+    "category": "people",
+    "icon": "🗡️",
+    "body": [
+      "Guan Yu joined the warlord Liu Bei in the chaos after the Yellow Turban rising, and the two were close as brothers. He briefly served Liu Bei's rival Cao Cao, killing an enemy general in battle for him, then went back to Liu Bei. Later he held the key province of Jing for Liu Bei's cause.",
+      "In 219 he besieged Fancheng and captured an entire enemy army when floods swamped it. But Sun Quan, supposedly his ally, struck from behind and took Jing Province. Cut off at Maicheng, Guan Yu was captured and executed around the start of 220."
+    ],
+    "whyItMatters": "Few generals have been so thoroughly transformed by legend: he is still widely honoured across the Chinese world as the model of loyalty.",
+    "xy": [
+      345,
+      264
+    ],
+    "related": [
+      "peach-garden-oath",
+      "huarong-trail",
+      "cao-cao-statesman"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Guan_Yu"
+  },
+  {
+    "id": "peach-garden-oath",
+    "title": "Three strangers swear brotherhood in a peach garden",
+    "hanzi": "桃園結義",
+    "pinyin": "Táoyuán jiéyì",
+    "year": 184,
+    "era": "han",
+    "category": "fiction",
+    "icon": "🍑",
+    "body": [
+      "As the Yellow Turban rebels sweep the country, a straw-sandal seller of royal blood, a butcher and a runaway with a long beard meet in Zhuo County. Among the peach blossoms they sacrifice to heaven and swear to live as brothers and to save the Han. Liu Bei, Zhang Fei and Guan Yu ride off to war.",
+      "In reality the official history, the Records of the Three Kingdoms, says only that the three were as close as brothers and even shared a bed. It records no oath and no peach garden: the famous scene grew out of folk tales and was fixed by the novel."
+    ],
+    "whyItMatters": "The oath became China's model of sworn loyalty, copied in brotherhood rituals ever since.",
+    "xy": [
+      375,
+      161
+    ],
+    "related": [
+      "yellow-turban",
+      "guan-yu",
+      "huarong-trail"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Oath_of_the_Peach_Garden",
+    "source": {
+      "work": "Romance of the Three Kingdoms",
+      "workHanzi": "三國演義",
+      "author": "Attributed to Luo Guanzhong",
+      "published": "14th century (first printed 1522)",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "huarong-trail",
+    "title": "Guan Yu blocks Cao Cao's escape at Huarong",
+    "hanzi": "華容道",
+    "pinyin": "Huáróng dào",
+    "year": 208,
+    "era": "han",
+    "category": "fiction",
+    "icon": "🌫️",
+    "body": [
+      "After the fire at Red Cliffs, the beaten Cao Cao flees down a muddy back road, only to find Guan Yu waiting with fresh troops. Guan Yu owes him an old kindness from the days he served under Cao Cao. Faced with a ragged, pleading enemy, honour and duty pull him in opposite directions.",
+      "The confrontation is invented. Early historical sources do say the beaten Cao Cao retreated along a boggy road through Huarong, but none of them has Guan Yu waiting there. The novel added the meeting to put its favourite hero's loyalty to the test."
+    ],
+    "whyItMatters": "A perfect example of how the novel turns real campaigns into moral drama, and why readers still mistake its scenes for history.",
+    "xy": [
+      357,
+      280
+    ],
+    "related": [
+      "redcliffs",
+      "cao-cao-statesman",
+      "guan-yu"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/List_of_fictitious_stories_in_Romance_of_the_Three_Kingdoms",
+    "source": {
+      "work": "Romance of the Three Kingdoms",
+      "workHanzi": "三國演義",
+      "author": "Attributed to Luo Guanzhong",
+      "published": "14th century (first printed 1522)",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "journey-west-sets-out",
+    "title": "The monk Tripitaka leaves Chang'an for India",
+    "hanzi": "西遊記",
+    "pinyin": "Xīyóu jì",
+    "year": 639,
+    "era": "tang",
+    "category": "fiction",
+    "icon": "📜",
+    "body": [
+      "In the novel, the monk Tang Sanzang volunteers to fetch Buddhist scriptures from India, and Emperor Taizong himself sees him off with a begging bowl, a horse and his blessing. The gods have secretly arranged the trip, and a long line of demons is already waiting along the road, each hoping to eat the holy monk.",
+      "The real Xuanzang left in 629, ten years earlier than the novel's date, and he went against an imperial ban, slipping out without permission. He travelled mostly alone and came home in 645 to a warm welcome. The monsters, as far as historians know, were extra."
+    ],
+    "whyItMatters": "A real scholar's pilgrimage became East Asia's best-loved fantasy adventure.",
+    "xy": [
+      302,
+      219
+    ],
+    "related": [
+      "xuanzang-pilgrimage",
+      "wu-chengen",
+      "monkey-king-freed"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Journey_to_the_West",
+    "source": {
+      "work": "Journey to the West",
+      "workHanzi": "西遊記",
+      "author": "Traditionally attributed to Wu Cheng'en",
+      "published": "1592",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "monkey-king-freed",
+    "title": "The Monkey King is let out from under a mountain",
+    "hanzi": "孫悟空",
+    "pinyin": "Sūn Wùkōng",
+    "year": 640,
+    "era": "tang",
+    "category": "fiction",
+    "icon": "🐒",
+    "body": [
+      "Born from a stone, Sun Wukong learned magic, stole the peaches of immortality and wrecked heaven, until the Buddha trapped him under Five Elements Mountain. After 500 years of eating iron pellets, he gets a deal: guard the travelling monk Tripitaka all the way to India and win his freedom.",
+      "Sun Wukong is entirely invented. The real Xuanzang crossed the Gobi with guides and the odd horse, not a monkey with a staff that shrinks to a needle he keeps in his ear. Scholars still debate where the character came from, pointing to Chinese folk tales and possibly the Indian monkey god Hanuman."
+    ],
+    "whyItMatters": "The trickster who defied heaven is China's most famous fictional hero, from opera to video games.",
+    "xy": [
+      229,
+      197
+    ],
+    "related": [
+      "journey-west-sets-out",
+      "xuanzang-pilgrimage",
+      "wu-chengen"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Sun_Wukong",
+    "source": {
+      "work": "Journey to the West",
+      "workHanzi": "西遊記",
+      "author": "Traditionally attributed to Wu Cheng'en",
+      "published": "1592",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "liangshan-outlaws",
+    "title": "108 outlaws gather in the marshes of Mount Liang",
+    "hanzi": "梁山泊",
+    "pinyin": "Liángshān pō",
+    "year": 1120,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🏴",
+    "body": [
+      "Under Emperor Huizong, corrupt ministers push good men into crime. One by one, a disgraced drill instructor, a monk who drinks, a fisherman, a clerk named Song Jiang and many more flee to a fortress in the marshes around Mount Liang. Together they swear to act for heaven and fight injustice.",
+      "A real Song Jiang did lead a rebel band across Shandong and Henan from about 1119, and the Song general Zhang Shuye forced them to surrender in 1121. The History of Song credits him with only thirty-six companions. The 108 heroes and their marsh kingdom came from storytellers."
+    ],
+    "whyItMatters": "Water Margin made outlaws into heroes and has been admired, and at times banned, for exactly that reason.",
+    "xy": [
+      386,
+      207
+    ],
+    "related": [
+      "wu-song-tiger",
+      "jingkang-incident"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Water_Margin",
+    "source": {
+      "work": "Water Margin",
+      "workHanzi": "水滸傳",
+      "author": "Attributed to Shi Nai'an (and Luo Guanzhong)",
+      "published": "14th century",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "wu-song-tiger",
+    "title": "Wu Song kills a tiger with his bare hands",
+    "hanzi": "武松打虎",
+    "pinyin": "Wǔ Sōng dǎ hǔ",
+    "year": 1113,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🐅",
+    "body": [
+      "An inn near Jingyang Ridge warns that three bowls of its wine will floor any traveller. Wu Song drinks eighteen, ignores warnings about a man-eating tiger, and dozes off on a rock on the ridge. The tiger finds him. His staff snaps on a tree, so he finishes the job with his fists.",
+      "Wu Song is a fictional hero and there is no record of this tiger. The setting is real, though: the novel places it outside Yanggu County in Shandong, which now happily advertises the ridge. The novel gives no exact year; the scene falls in the years before the Liangshan band forms."
+    ],
+    "whyItMatters": "The most famous single scene in Water Margin, and China's favourite image of rough courage.",
+    "xy": [
+      381,
+      202
+    ],
+    "related": [
+      "liangshan-outlaws"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Wu_Song",
+    "source": {
+      "work": "Water Margin",
+      "workHanzi": "水滸傳",
+      "author": "Attributed to Shi Nai'an (and Luo Guanzhong)",
+      "published": "14th century",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "mulan-ballad",
+    "title": "Mulan takes her father's place in the army",
+    "hanzi": "花木蘭",
+    "pinyin": "Huā Mùlán",
+    "year": 430,
+    "era": "nanbei",
+    "category": "fiction",
+    "icon": "🏹",
+    "body": [
+      "A girl sits sighing at her loom. The Khan's draft lists have come, her father is too old to fight and she has no elder brother. So she buys a horse and saddle, rides north past the Yellow River to the frontier mountains, and serves for years without her comrades guessing who she is.",
+      "The Ballad of Mulan is a short folk poem, probably composed under the Northern Wei, whose armies fought long wars against the Rouran nomads to the north. There is no evidence Mulan was a real person, and the ballad gives no date. The surname Hua was added much later."
+    ],
+    "whyItMatters": "A few dozen lines of folk song became one of China's best-known stories and, via Disney, one of the world's.",
+    "xy": [
+      320,
+      141
+    ],
+    "related": [
+      "taiwu-southern-campaign",
+      "xiaowen-reforms"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Hua_Mulan",
+    "source": {
+      "work": "The Ballad of Mulan",
+      "workHanzi": "木蘭辭",
+      "author": "Anonymous",
+      "published": "c. 5th–6th century",
+      "medium": "folk"
+    }
+  },
+  {
+    "id": "bao-zheng",
+    "title": "Bao Zheng becomes prefect of Kaifeng",
+    "hanzi": "包拯",
+    "pinyin": "Bāo Zhěng",
+    "year": 1057,
+    "era": "song",
+    "category": "people",
+    "icon": "⚖️",
+    "body": [
+      "A Song official with a reputation for being unbribable, Bao Zheng spent some 25 years in government impeaching the well-connected, including a relative of the emperor's favourite consort. People joked that his smile was rarer than a clear Yellow River.",
+      "In 1057 he was made prefect of the capital, Kaifeng, and held the job for only about a year. His best-remembered reform let ordinary people bring complaints straight to him instead of paying off the clerks at the door. He died in 1062."
+    ],
+    "whyItMatters": "One honest official in one short term became China's lasting symbol of justice.",
+    "xy": [
+      366,
+      217
+    ],
+    "related": [
+      "judge-bao-chen-shimei"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Bao_Zheng"
+  },
+  {
+    "id": "judge-bao-chen-shimei",
+    "title": "Judge Bao tries the emperor's son-in-law",
+    "hanzi": "鍘美案",
+    "pinyin": "Zhá Měi àn",
+    "year": 1058,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🎭",
+    "body": [
+      "Chen Shimei tops the imperial exams, hides the wife and children he left at home, and marries a princess. When his wife Qin Xianglian turns up in the capital, he sends a man to silence her. She takes her case to Judge Bao, the black-faced magistrate who fears no one, not even the palace.",
+      "The case is fiction. The real Bao Zheng was a strict but ordinary official. Plays about him were already popular under the Yuan, and over centuries opera and story gave him magic guillotines, loyal swordsmen and a knack for solving ghostly crimes."
+    ],
+    "whyItMatters": "Chen Shimei's name is still Chinese slang for a man who abandons his wife, and Judge Bao is still the hero of TV courtroom dramas.",
+    "xy": [
+      366,
+      217
+    ],
+    "related": [
+      "bao-zheng"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Chen_Shimei_and_Qin_Xianglian",
+    "source": {
+      "work": "The Case of Chen Shimei",
+      "workHanzi": "鍘美案",
+      "author": "Traditional",
+      "published": "Qing dynasty opera",
+      "medium": "opera"
+    }
+  },
+  {
+    "id": "yang-family-generals",
+    "title": "The Yang family defends the northern border",
+    "hanzi": "楊家將",
+    "pinyin": "Yáng jiā jiàng",
+    "year": 986,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🛡️",
+    "body": [
+      "In the legend, the Yang clan, a father and his seven sons, fights the Khitan Liao for generations. When the men can no longer hold the line, the widows and daughters ride out instead, led by the formidable She Saihua and the young general Mu Guiying.",
+      "The start is real. General Yang Ye was trapped at Chenjiagu in 986 when promised reinforcements never came; he was captured and starved himself to death. His son Yang Yanzhao guarded the border for years after. Mu Guiying and the all-women army are inventions of later plays and Ming novels."
+    ],
+    "whyItMatters": "A real family's sacrifice grew into China's great saga of loyalty, with some of its most famous women warriors.",
+    "xy": [
+      332,
+      160
+    ],
+    "related": [
+      "treaty-of-chanyuan",
+      "sixteen-prefectures-ceded"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/The_Generals_of_the_Yang_Family",
+    "source": {
+      "work": "The Generals of the Yang Family",
+      "workHanzi": "楊家將",
+      "author": "Traditional",
+      "published": "Ming dynasty novels, from earlier plays",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "butterfly-lovers",
+    "title": "Zhu Yingtai goes to school disguised as a boy",
+    "hanzi": "梁山伯與祝英台",
+    "pinyin": "Liáng Shānbó yǔ Zhù Yīngtái",
+    "year": 380,
+    "era": "jin",
+    "category": "fiction",
+    "icon": "🦋",
+    "body": [
+      "Girls are not supposed to study, so Zhu Yingtai dresses as a young man and heads for school in Hangzhou. On the way she meets Liang Shanbo, a scholar from Kuaiji, and the two become inseparable classmates for years. He never works out her secret, despite some heavy hints.",
+      "The best-known versions set the story in the Eastern Jin, but it is a folk legend and versions differ in place, detail and date. The earliest surviving mentions are from the Tang dynasty, several centuries later. Liang Shanbo's supposed tomb near Ningbo is a pilgrimage spot for couples."
+    ],
+    "whyItMatters": "Often called China's Romeo and Juliet, it inspired one of the country's most famous violin concertos.",
+    "xy": [
+      448,
+      278
+    ],
+    "related": [
+      "wang-xizhi-orchid-pavilion"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Butterfly_Lovers",
+    "source": {
+      "work": "The Butterfly Lovers",
+      "workHanzi": "梁山伯與祝英台",
+      "author": "Traditional",
+      "published": "Recorded from the Tang dynasty onward",
+      "medium": "folk"
+    }
+  },
+  {
+    "id": "white-snake-west-lake",
+    "title": "A snake spirit falls for a young man at West Lake",
+    "hanzi": "白蛇傳",
+    "pinyin": "Bái shé zhuàn",
+    "year": 1140,
+    "era": "song",
+    "category": "fiction",
+    "icon": "🐍",
+    "body": [
+      "On a rainy spring day by West Lake, a shop assistant named Xu Xian lends his umbrella to a lovely woman in white and her maid in green. Lady White is really a snake spirit who has spent centuries cultivating human form, and a stern monk named Fahai is determined to expose her.",
+      "The legend changed a lot over time. The key early version, printed by Feng Menglong in 1624, sets it in Southern Song Hangzhou in the Shaoxing reign and treats the snake as a menace. Later operas made her a devoted wife and Fahai the villain. Leifeng Pagoda, central to the story, is a real tower."
+    ],
+    "whyItMatters": "One of China's four great folk legends, and a rare story whose heroine and villain swapped places over the centuries.",
+    "xy": [
+      448,
+      279
+    ],
+    "related": [
+      "yue-fei-execution",
+      "jingkang-incident"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Legend_of_the_White_Snake",
+    "source": {
+      "work": "Legend of the White Snake",
+      "workHanzi": "白蛇傳",
+      "author": "Traditional",
+      "published": "Folk legend; key version 1624",
+      "medium": "folk"
+    }
+  },
+  {
+    "id": "bodhidharma-shaolin-legend",
+    "title": "Bodhidharma arrives from India",
+    "hanzi": "達摩面壁",
+    "pinyin": "Dámó miànbì",
+    "year": 527,
+    "era": "nanbei",
+    "category": "fiction",
+    "icon": "🧘",
+    "body": [
+      "A monk from the west, often called Indian, reaches China and is later hailed as the founder of Chan (Zen) Buddhism. Tradition dates his arrival anywhere from before 479 to the 520s; Shaolin's own story puts him at the temple in 527, where he sits facing a cave wall for nine years.",
+      "Legend adds that he taught the stiff, sleepy monks exercises that became Shaolin kung fu. Historians see that as a much later invention: a manual credited to him, the Yijin Jing, was actually written around 1624, and the kung-fu link only became popular in the 20th century."
+    ],
+    "whyItMatters": "Nearly every kung fu school tells this origin story, so it is worth knowing which half is history and which half is legend.",
+    "xy": [
+      350,
+      219
+    ],
+    "related": [
+      "shaolin-thirteen-monks",
+      "southern-shaolin-burning"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Bodhidharma",
+    "source": {
+      "work": "Shaolin tradition and the Yijin Jing",
+      "workHanzi": "易筋經",
+      "author": "Traditional",
+      "published": "1624 onward; popularised in the 20th century",
+      "medium": "folk"
+    }
+  },
+  {
+    "id": "shaolin-thirteen-monks",
+    "title": "Thirteen Shaolin monks fight for the Tang",
+    "hanzi": "十三棍僧",
+    "pinyin": "Shísān gùnsēng",
+    "year": 621,
+    "era": "tang",
+    "category": "war",
+    "icon": "🥋",
+    "body": [
+      "In the civil wars that ended the Sui dynasty, Shaolin's monks sided with Li Shimin, the future Emperor Taizong, against the warlord Wang Shichong. They seized back the monastery's Cypress Valley estate from Wang's troops and captured his nephew.",
+      "Unusually for a kung fu story, this one is real. A stone stele put up at Shaolin in 728 records the episode and names thirteen monks. It does not say how they fought, but it is the oldest solid evidence of Shaolin monks going to war."
+    ],
+    "whyItMatters": "Imperial gratitude gave Shaolin land and prestige, and its fighting reputation grew from here.",
+    "xy": [
+      350,
+      219
+    ],
+    "related": [
+      "tang-founded",
+      "reign-of-zhenguan",
+      "bodhidharma-shaolin-legend"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Shaolin_kung_fu"
+  },
+  {
+    "id": "southern-shaolin-burning",
+    "title": "The Qing burn the Southern Shaolin Temple",
+    "hanzi": "火燒南少林",
+    "pinyin": "Huǒshāo Nán Shàolín",
+    "year": 1674,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🔥",
+    "body": [
+      "The story goes that Qing troops, fearing a monastery full of fighting monks loyal to the fallen Ming, torched the Southern Shaolin Temple in Fujian. A few survivors, the Five Elders, scatter across south China to teach and plot revenge.",
+      "Nobody even knows if a Southern Shaolin existed; several Fujian towns claim it. Tellings date the fire anywhere from 1647 to 1732. Historians trace the tale to the founding myth of the Heaven and Earth Society, a secret brotherhood, and to later Cantonese novels."
+    ],
+    "whyItMatters": "Half the southern kung fu styles trace their family tree back to survivors of this fire.",
+    "xy": [
+      446,
+      336
+    ],
+    "related": [
+      "qing-founding",
+      "hung-hei-kwun",
+      "ng-mui-wing-chun-legend"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Southern_Shaolin_Monastery",
+    "source": {
+      "work": "Heaven and Earth Society founding legend",
+      "workHanzi": "天地會",
+      "author": "Traditional",
+      "published": "Late 18th century onward",
+      "medium": "folk"
+    }
+  },
+  {
+    "id": "ng-mui-wing-chun-legend",
+    "title": "A nun, a crane, a snake: Wing Chun is born",
+    "hanzi": "五枚與嚴詠春",
+    "pinyin": "Wǔ Méi yǔ Yán Yǒngchūn",
+    "year": 1710,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🐍",
+    "body": [
+      "Fleeing the destruction of Shaolin, the nun Ng Mui hides in the Daliang mountains. Watching a crane fight a snake, she invents a compact new style, then teaches it to Yim Wing-chun, a tofu seller's daughter, so she can beat a bully who wants to force her into marriage.",
+      "Historians doubt Ng Mui or Yim Wing-chun ever existed. The art was passed on by word of mouth, and its first well-documented teachers are 19th-century Cantonese opera performers and the herbalist Leung Jan. The style's real origins are unknown."
+    ],
+    "whyItMatters": "Wing Chun, the style Ip Man taught Bruce Lee, credits its invention to a woman, which is rare in kung fu lore.",
+    "xy": [
+      244,
+      288
+    ],
+    "related": [
+      "southern-shaolin-burning",
+      "ip-man"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Ng_Mui",
+    "source": {
+      "work": "Wing Chun origin legend",
+      "workHanzi": "詠春拳",
+      "author": "Traditional",
+      "published": "Oral tradition",
+      "medium": "folk"
+    }
+  },
+  {
+    "id": "fong-sai-yuk",
+    "title": "Fong Sai-yuk, the teenage kung fu prodigy",
+    "hanzi": "方世玉",
+    "pinyin": "Fāng Shìyù",
+    "year": 1765,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🤸",
+    "body": [
+      "A cocky Cantonese boy with astonishing kung fu, Fong Sai-yuk picks fights with Qing bullies and joins the heroes of Shaolin. He is a regular in Qing-era adventure novels, often alongside Hung Hei-kwun. Jet Li played him as a lovestruck show-off in 1993.",
+      "Fong Sai-yuk is almost certainly invented: he first appears in Qing wuxia stories such as the 1893 novel Everlasting Qing, a tale of the Qianlong Emperor's travels in the south, which simply treats him as real. The anti-Manchu mood of those tales, though, reflected real resentment in the south."
+    ],
+    "whyItMatters": "He is the cheeky kid brother of the Shaolin legend, and one of Cantonese cinema's favourite heroes.",
+    "xy": [
+      382,
+      360
+    ],
+    "related": [
+      "hung-hei-kwun",
+      "southern-shaolin-burning",
+      "high-qing"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Fong_Sai-yuk",
+    "source": {
+      "work": "Everlasting Qing",
+      "workHanzi": "萬年青",
+      "author": "Anonymous",
+      "published": "1893",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "hung-hei-kwun",
+    "title": "Hung Hei-kwun, hero of Southern Shaolin",
+    "hanzi": "洪熙官",
+    "pinyin": "Hóng Xīguān",
+    "year": 1770,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🐯",
+    "body": [
+      "A tea merchant who falls out with Manchu officials escapes to the Southern Shaolin Temple, masters its fighting arts, and becomes the rebel hero of countless stories and films. Hung Gar, the tiger-and-crane style of Guangdong, is named after him.",
+      "Historians are split on whether he existed. No Qing records mention him, and some martial arts historians call him a novelist's invention, though others in Guangdong have claimed to find traces of him. Most of his story comes from the 1893 Cantonese novel Everlasting Qing."
+    ],
+    "whyItMatters": "Hung Gar is one of the biggest southern kung fu styles, and its founding hero may be pure fiction.",
+    "xy": [
+      381,
+      360
+    ],
+    "related": [
+      "southern-shaolin-burning",
+      "fong-sai-yuk",
+      "wong-fei-hung"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Hong_Xiguan",
+    "source": {
+      "work": "Everlasting Qing",
+      "workHanzi": "萬年青",
+      "author": "Anonymous",
+      "published": "1893",
+      "medium": "novel"
+    }
+  },
+  {
+    "id": "yang-luchan",
+    "title": "Yang Luchan takes tai chi to Beijing",
+    "hanzi": "楊露禪",
+    "pinyin": "Yáng Lùchán",
+    "year": 1850,
+    "era": "qing",
+    "category": "people",
+    "icon": "☯️",
+    "body": [
+      "A man from Yongnian in Hebei, Yang Luchan spent years learning a family fighting art from the master Chen Changxing in Chen Village, Henan. Then he took it home, taught it, and eventually carried it to the capital.",
+      "Around 1850 the imperial household hired him to teach the palace guards. The version he taught became Yang-style tai chi. He kept the post until his death in 1872, and his sons and grandsons spread the style far beyond the court."
+    ],
+    "whyItMatters": "Yang-style tai chi is the most widely practised form in the world, the one you see in parks every morning.",
+    "xy": [
+      379,
+      156
+    ],
+    "related": [
+      "dong-haichuan"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Yang_Luchan"
+  },
+  {
+    "id": "dong-haichuan",
+    "title": "Dong Haichuan walks the circle",
+    "hanzi": "董海川",
+    "pinyin": "Dǒng Hǎichuān",
+    "year": 1864,
+    "era": "qing",
+    "category": "people",
+    "icon": "🌀",
+    "body": [
+      "The man credited with founding baguazhang, a style built on walking in circles and changing direction without warning. Even his birth year is unsure, 1797 or 1813. By tradition he arrived in Beijing around 1864 and worked in the mansion of Prince Su.",
+      "There he began teaching in public, and his students passed the art on until his death in 1882. Some teachers see him as the first person to teach bagua openly rather than its inventor. In 1980, Beijing practitioners moved his tomb and its stone tablets to a new cemetery."
+    ],
+    "whyItMatters": "Baguazhang is one of the three great internal martial arts, alongside tai chi and xingyi.",
+    "xy": [
+      379,
+      156
+    ],
+    "related": [
+      "yang-luchan"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Dong_Haichuan"
+  },
+  {
+    "id": "wong-fei-hung",
+    "title": "Wong Fei-hung opens his clinic",
+    "hanzi": "黃飛鴻",
+    "pinyin": "Huáng Fēihóng",
+    "year": 1886,
+    "era": "qing",
+    "category": "people",
+    "icon": "🩺",
+    "body": [
+      "Born in 1847 near Foshan, Wong Fei-hung was a Hung Gar master and a doctor who set bones and practised acupuncture. In 1886 he opened his family clinic, Po Chi Lam, in Guangzhou, and he trained local militia in martial arts.",
+      "Stories say the Black Flag Army commander Liu Yongfu hired him as a medic and instructor, and that he went to Taiwan in 1895 to fight the Japanese; these are harder to pin down. He died in Guangzhou in 1924, a respected local figure, not yet a national hero."
+    ],
+    "whyItMatters": "A real, modest local doctor who became China's most-filmed hero after his death.",
+    "xy": [
+      381,
+      360
+    ],
+    "related": [
+      "wong-fei-hung-films",
+      "hung-hei-kwun",
+      "sino-japanese-first"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Wong_Fei-hung"
+  },
+  {
+    "id": "wong-fei-hung-films",
+    "title": "Once upon a time in Foshan",
+    "hanzi": "黃飛鴻",
+    "pinyin": "Huáng Fēihóng",
+    "year": 1880,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "🎬",
+    "body": [
+      "Master Wong runs his clinic, drills the Foshan militia, battles extortion gangs and faces pushy foreigners and a rival master, all with a straight back and spotless robes. Tsui Hark's 1991 film, starring Jet Li, is the best-known of many versions, set in the late Qing.",
+      "Screen Wong began in 1949, when Kwan Tak-hing first played him; Kwan did so in around 80 films, the longest-running film series ever. The real Wong was a local doctor and teacher, and his films' fights with foreign powers are invented."
+    ],
+    "whyItMatters": "For decades Wong Fei-hung was Cantonese cinema's model of a decent, patriotic hero.",
+    "xy": [
+      380,
+      361
+    ],
+    "related": [
+      "wong-fei-hung",
+      "unequal-treaties"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_China",
+    "source": {
+      "work": "Once Upon a Time in China",
+      "workHanzi": "黃飛鴻",
+      "author": "Tsui Hark",
+      "published": "1991 (film series from 1949)",
+      "medium": "film"
+    }
+  },
+  {
+    "id": "huo-yuanjia-jingwu",
+    "title": "Huo Yuanjia and the Jingwu Association",
+    "hanzi": "霍元甲",
+    "pinyin": "Huò Yuánjiǎ",
+    "year": 1910,
+    "era": "qing",
+    "category": "people",
+    "icon": "🏋️",
+    "body": [
+      "Born in 1868 near Tianjin, Huo Yuanjia was a sickly child who grew into a master of his family's style, mizongquan. He won fame by answering challenges from foreign strongmen who mocked the Chinese as weak; accounts differ on which bouts took place, and some challengers reportedly backed out.",
+      "In 1910 he helped found the Jingwu (Chin Woo) Athletic Association in Shanghai, alongside revolutionaries who wanted a stronger, fitter nation. He died months later, aged 42. Rumours blamed a Japanese doctor's poison; illness, possibly tuberculosis, is at least as likely."
+    ],
+    "whyItMatters": "Jingwu now has branches in dozens of countries, and Huo became a symbol of Chinese pride in a humiliating era.",
+    "xy": [
+      462,
+      268
+    ],
+    "related": [
+      "chen-zhen-fist-of-fury",
+      "revolution",
+      "boxer-rebellion"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Huo_Yuanjia"
+  },
+  {
+    "id": "chen-zhen-fist-of-fury",
+    "title": "Chen Zhen smashes the sign",
+    "hanzi": "陳真",
+    "pinyin": "Chén Zhēn",
+    "year": 1910,
+    "era": "qing",
+    "category": "fiction",
+    "icon": "👊",
+    "body": [
+      "Chen Zhen returns to Shanghai to find his teacher Huo Yuanjia dead. A rival Japanese school sends an insulting 'Sick Man of East Asia' plaque, and Chen storms their Hongkou dojo alone. At a park gate barring dogs and Chinese, he kicks the sign to pieces.",
+      "Chen Zhen was invented for the 1972 film. Shanghai's riverside Public Garden really did exclude most Chinese from 1890 to 1928, but historians have found no sign with that wording. Photos show a rules board that barred dogs and bicycles in separate lines."
+    ],
+    "whyItMatters": "The film turned a real humiliation into an unforgettable myth, and made Chen Zhen a hero reprised for decades.",
+    "xy": [
+      462,
+      267
+    ],
+    "related": [
+      "huo-yuanjia-jingwu",
+      "bruce-lee",
+      "unequal-treaties"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Fist_of_Fury",
+    "source": {
+      "work": "Fist of Fury",
+      "workHanzi": "精武門",
+      "author": "Lo Wei (director); character created by Ni Kuang",
+      "published": "1972",
+      "medium": "film"
+    }
+  },
+  {
+    "id": "ip-man-films",
+    "title": "Ip Man defies the occupiers",
+    "hanzi": "葉問",
+    "pinyin": "Yè Wèn",
+    "year": 1938,
+    "era": "roc",
+    "category": "fiction",
+    "icon": "🎬",
+    "body": [
+      "A wealthy, gentle Wing Chun master in Foshan loses everything when Japanese troops occupy the city. Forced to shovel coal to feed his family, he is drawn into a showdown with a Japanese general who wants him to teach his soldiers. Donnie Yen starred; three sequels followed.",
+      "The 2008 film is openly semi-biographical and heavily fictionalised. The real Ip Man did live in Foshan through the Japanese occupation, but the public duel with a general is invented for the screen."
+    ],
+    "whyItMatters": "The series made a little-known teacher into a household name and set off a worldwide boom in Wing Chun.",
+    "xy": [
+      380,
+      361
+    ],
+    "related": [
+      "ip-man",
+      "second-sino-japanese-war",
+      "bruce-lee"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Ip_Man_(film)",
+    "source": {
+      "work": "Ip Man",
+      "workHanzi": "葉問",
+      "author": "Wilson Yip (director)",
+      "published": "2008",
+      "medium": "film"
+    }
+  },
+  {
+    "id": "ip-man",
+    "title": "Ip Man starts teaching Wing Chun",
+    "hanzi": "葉問",
+    "pinyin": "Yè Wèn",
+    "year": 1950,
+    "era": "prc",
+    "category": "people",
+    "icon": "🥋",
+    "body": [
+      "Born in Foshan in 1893 into a wealthy family, Ip Man learned Wing Chun as a boy. He had served with the Nationalist side, so when the Communists took Foshan in 1949 he fled alone, by way of Macau, to Hong Kong.",
+      "In 1950, aged 57, he opened his first Wing Chun school in Hong Kong. He taught openly for two decades, a break from the art's secretive past, and his students included a teenager named Bruce Lee. He died in Hong Kong in 1972."
+    ],
+    "whyItMatters": "Almost every Wing Chun school in the world today traces back to his Hong Kong classes.",
+    "xy": [
+      394,
+      370
+    ],
+    "related": [
+      "ip-man-films",
+      "bruce-lee",
+      "chinese-civil-war"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Ip_Man"
+  },
+  {
+    "id": "bruce-lee",
+    "title": "Bruce Lee breaks the box office",
+    "hanzi": "李小龍",
+    "pinyin": "Lǐ Xiǎolóng",
+    "year": 1971,
+    "era": "prc",
+    "category": "people",
+    "icon": "🐉",
+    "body": [
+      "Born in San Francisco in 1940 and raised in Hong Kong, Bruce Lee was a child actor and a Wing Chun student of Ip Man before moving to the US, where he taught martial arts and played bit parts. Hollywood mostly cast him as a sidekick.",
+      "So he went back to Hong Kong. The Big Boss (1971) smashed local box office records, and two more hits followed fast. He died suddenly in Hong Kong in July 1973, aged 32, just before Enter the Dragon made him a global star."
+    ],
+    "whyItMatters": "He made kung fu a worldwide craze and gave Asian men a leading-man image Hollywood had denied them.",
+    "xy": [
+      394,
+      371
+    ],
+    "related": [
+      "ip-man",
+      "chen-zhen-fist-of-fury"
+    ],
+    "wiki": "https://en.wikipedia.org/wiki/Bruce_Lee"
   }
 ]

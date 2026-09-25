@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "event": "yue-maiden-aqing",
+    "title": "A shepherd girl with a sword",
+    "text": "Our first wuxia hero is a goat-herder who learned swordplay from a white ape. The war she fights in is real: Yue against Wu, 2,500 years ago. She is not. That mix is the whole genre."
+  },
+  {
+    "event": "bodhidharma-shaolin-legend",
+    "title": "The monk from the west",
+    "text": "Bodhidharma really came to China and is honoured as the founder of Chan (Zen). The story that he taught Shaolin's monks kung fu is a much later legend, and nearly every kung fu school still tells it."
+  },
+  {
+    "event": "shaolin-thirteen-monks",
+    "title": "Real fighting monks",
+    "text": "Here the legend has a paper trail. A stele from 728 names thirteen Shaolin monks who helped the future Tang emperor win a war. Shaolin's fighting fame starts with fact."
+  },
+  {
+    "event": "demigods-xiao-feng",
+    "title": "A hero with two homelands",
+    "text": "Northern Song, 1090s. Qiao Feng, the most admired fighter in the Song, learns he was born Khitan, the enemy. Jin Yong turns a real border rivalry into one man's tragedy."
+  },
+  {
+    "event": "condor-huashan-contest",
+    "title": "Showdown on Mount Hua",
+    "text": "Five masters duel for seven days on a real mountain to decide who is the best. 'The Mount Hua sword debate' is still what people call any clash between the very best."
+  },
+  {
+    "event": "condor-guo-jing-mongols",
+    "title": "A Song boy among the Mongols",
+    "text": "Guo Jing grows up in the camp of a chief named Temujin, who becomes Genghis Khan in 1206. The Khan and his archer Jebe are real. Guo Jing is invented."
+  },
+  {
+    "event": "return-condor-ancient-tomb",
+    "title": "Love in a tomb",
+    "text": "Yang Guo hides in the Tomb of the Living Dead and falls for his teacher, Xiaolongnü. The tomb is based on a real grave where the Taoist Wang Chongyang lived for about three years."
+  },
+  {
+    "event": "return-condor-mongke",
+    "title": "Fiction meets a Khan",
+    "text": "The novel's last great battle puts the Mongol Great Khan at Xiangyang. The real Möngke died in 1259 in Sichuan, besieging Diaoyu Fortress. Tap Read more to see where history and fiction part ways."
+  },
+  {
+    "event": "heaven-sword-zhang-sanfeng",
+    "title": "The boy who became Zhang Sanfeng",
+    "text": "A runaway Shaolin servant climbs Mount Wudang and becomes Zhang Sanfeng, founder of its school. The real Zhang Sanfeng is mostly legend: Ming emperors searched for him and never found him."
+  },
+  {
+    "event": "heaven-sword-ming-cult",
+    "title": "From secret cult to dynasty",
+    "text": "In the novel, a feared secret society helps throw out the Mongols. In reality, the Red Turban revolts began in 1351, and one rebel, Zhu Yuanzhang, founded the Ming in 1368."
+  },
+  {
+    "event": "smiling-proud-wanderer",
+    "title": "A story with no date",
+    "text": "Linghu Chong drinks, laughs and fences his way through sects that preach righteousness and crave power. Jin Yong gave it no year on purpose. Written during the Cultural Revolution, it is widely read as political allegory."
+  },
+  {
+    "event": "sword-stained-beijing-1644",
+    "title": "The year the Ming fell",
+    "text": "Yuan Chengzhi backs the rebel Li Zicheng as his army closes on Beijing. The fall of 1644 is real history: the last Ming emperor died, and within weeks the Manchus took the throne."
+  },
+  {
+    "event": "deer-cauldron-oboi",
+    "title": "A con man at the Kangxi court",
+    "text": "Jin Yong's last hero can't fight at all. Wei Xiaobao talks his way into the palace and helps the teenage Kangxi Emperor arrest the regent Oboi. The arrest happened in 1669. Wei did not."
+  },
+  {
+    "event": "southern-shaolin-burning",
+    "title": "Fire at Southern Shaolin",
+    "text": "Legend says Qing troops burned a southern Shaolin temple full of Ming loyalists, and survivors spread kung fu across the south. Nobody knows if the temple existed, but whole styles trace their roots to it."
+  },
+  {
+    "event": "hung-hei-kwun",
+    "title": "The hero behind Hung Gar",
+    "text": "Hung Hei-kwun, a Southern Shaolin rebel, gave his name to Hung Gar, one of the biggest southern styles. Historians have found no trace of him in Qing records."
+  },
+  {
+    "event": "wong-fei-hung",
+    "title": "The real Wong Fei-hung",
+    "text": "A Foshan-born doctor and Hung Gar master who opened the Po Chi Lam clinic in 1886. He lived a modest local life, and after his death he became China's most-filmed hero."
+  },
+  {
+    "event": "huo-yuanjia-jingwu",
+    "title": "Huo Yuanjia founds Jingwu",
+    "text": "A real Tianjin master who took on foreign strongmen and, in 1910, helped found the Jingwu Athletic Association in Shanghai. He died months later, and rumours of poison grew into legend."
+  },
+  {
+    "event": "chen-zhen-fist-of-fury",
+    "title": "The sign that wasn't",
+    "text": "Chen Zhen, Huo Yuanjia's invented student, kicks a 'No dogs and Chinese' sign to pieces in the 1972 film. The park really did bar most Chinese, but no sign with those exact words has been found."
+  },
+  {
+    "event": "ip-man",
+    "title": "Ip Man opens his school",
+    "text": "Ip Man fled Foshan for Hong Kong and began teaching Wing Chun there in 1950. One of his teenage students was a boy named Bruce Lee."
+  },
+  {
+    "event": "bruce-lee",
+    "title": "Kung fu goes global",
+    "text": "Bruce Lee's The Big Boss broke Hong Kong box office records in 1971. He died two years later, aged 32, just before Enter the Dragon made him and kung fu famous worldwide."
+  }
+]

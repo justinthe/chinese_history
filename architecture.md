@@ -8,7 +8,8 @@ Static single-page site. No backend, no accounts, no runtime third-party calls. 
  BUILD TIME (developer laptop / GitHub Actions)
  ┌─────────────────────────────────────────────────────────────────────┐
  │ content/                                                            │
- │   events.json  eras.json  tour.json  map-shapes.json  world.json    │
+ │   events.json  eras.json  tour.json  tour-wuxia.json                │
+ │   map-shapes.json  world.json                                       │
  │        │                                                            │
  │        ▼                                                            │
  │  scripts/validate.mjs ──fail──▶ exit 1 (CI blocks)                  │
@@ -93,15 +94,28 @@ All content is JSON under `content/`. Negative year = BCE. Ids are kebab-case, u
 | year | int | |
 | yearEnd | int \| null | For spans |
 | era | string | Era id; year must fall within era range (validate) |
-| category | enum | `dynasty` \| `war` \| `tech` \| `nature` \| `people` \| `other` |
+| category | enum | `dynasty` \| `war` \| `tech` \| `nature` \| `people` \| `other` \| `fiction` |
 | icon | string | Emoji or icon key from the SVG set |
 | summary | string | ≤ 160 chars, card text |
 | body | string[] | 2–3 paragraphs |
 | whyItMatters | string | |
 | xy | [number, number] | Pin position in SVG viewBox |
 | related | string[] | Event ids; validated |
-| legendary | bool | Optional |
+| legendary | bool | Optional. Never on `fiction` (legendary = maybe real; fiction = invented) |
+| wiki | string | Optional; required on `fiction`. `https://en.wikipedia.org/wiki/...` only (validate) |
+| source | FictionSource | Required on `fiction`, forbidden elsewhere. For fiction, `year` = when the story is set |
 | image | ImageSource \| null | See below |
+
+### FictionSource (embedded in fiction Events)
+| Field | Type | Notes |
+|---|---|---|
+| work | string | English title |
+| workHanzi | string | Original title |
+| author | string | "Anonymous", "Traditional", "Attributed to X" where apt |
+| published | string | Display string for when it was written: "1957–59", "c. 16th century" |
+| medium | enum | `novel` \| `film` \| `folk` \| `opera` |
+
+Spoiler policy: fiction bodies summarise the setup and scene only; the full plot is behind `wiki`.
 
 ### ImageSource (embedded in Event)
 Exactly one of:
@@ -132,7 +146,7 @@ AI illustrations: file dropped in `content/img-src/{id}.png` with an entry `{ "l
 ```
 Keyed by event id. `sourceHash` is the hash of the ImageSource object; fetch skips entries whose hash matches (idempotent).
 
-### TourStop (`tour.json`, array, ordered)
+### TourStop (`tour.json` = Grand Tour, `tour-wuxia.json` = Wuxia Tour; arrays, ordered)
 | Field | Type |
 |---|---|
 | event | string (event id) |
@@ -234,7 +248,7 @@ No server, no user data, no secrets. Remaining surface:
 - **No third-party runtime origins.** Fonts self-hosted, images self-hosted, JSON self-hosted.
 - **Build scripts.** Only contact hosts in the allowlist. Send identifying `User-Agent`. Throttle to 1 request/s. Verify `Content-Type` is an image and size ≤ 20 MB before processing. Never execute or eval anything fetched. Manifest records source URL and hash for audit.
 - **Content injection.** All JSON strings rendered via `textContent`, never `innerHTML`, except `body` paragraphs which are plain strings wrapped in `<p>` by code. No HTML allowed in content; validate rejects `<` in string fields.
-- **localStorage.** Only `tourStop` (int) and `cats` (string list), parsed defensively.
+- **localStorage.** Only `tourStop` (int, Grand Tour), `tourStop:wuxia` (int, Wuxia Tour) and `cats` (string list), parsed defensively.
 - **Rate limiting / abuse.** Not applicable; static host handles it.
 - **Dependencies.** `npm audit` in CI; dev-only dependencies (`sharp`, `vite`, `vitest`, `playwright`, `@axe-core/playwright`, `@lhci/cli`) never ship to the browser. Zero runtime npm dependencies.
 

@@ -400,7 +400,7 @@ decision. Out of scope, left for a future phase: closing the images-to-90% gap (
 either substantially more manual sourcing hours, reviewed AI illustrations for the abstract
 remainder, or accepting a lower target) and the popover-focus-restore fix in `detail.js`.
 
-# Fiction layer — wuxia, myth & martial legends (PLAN, awaiting check-in)
+# Fiction layer — wuxia, myth & martial legends (DONE)
 
 Decisions confirmed by the user (brainstorm, 2026-09-25):
 1. New 7th category `fiction` (📖), its own chip. 2. **On by default.**
@@ -416,7 +416,7 @@ in the committed `graphify-out/GRAPH_REPORT.md` (phase-11 run) + direct reads. A
 graph check needs graphify re-installed or runs locally — flag, don't assume.
 
 ## Open question (blocking content work)
-- [ ] **Real martial artists are not fiction.** Huo Yuanjia, Ip Man, Bruce Lee, Wong
+- [x] (Confirmed by user.) **Real martial artists are not fiction.** Huo Yuanjia, Ip Man, Bruce Lee, Wong
   Fei-hung, Yang Luchan etc. were real people. Recommendation: their *lives* go in `people`
   (real bio cards, no Fiction badge); their *screen legends* get separate `fiction` cards
   (e.g. Chen Zhen / *Fist of Fury*); both sit in the Wuxia Tour and link via `related`.
@@ -424,31 +424,31 @@ graph check needs graphify re-installed or runs locally — flag, don't assume.
   Zhang Sanfeng) → `fiction`, body says the historicity is doubtful.
 
 ## Schema (content/events.json — additive, no existing row changes)
-- [ ] `category: "fiction"` + required `source: { work, workHanzi, author, published, medium }`
+- [x] `category: "fiction"` + required `source: { work, workHanzi, author, published, medium }`
   — `published` is a display string ("1957–59", "c. 16th c.") because Ming-novel dates are
   uncertain; `medium` ∈ novel | film | folk | opera.
-- [ ] Optional `wiki` (any category): must be `https://en.wikipedia.org/wiki/...`.
-- [ ] `year` = when the story is set. Undated stories (e.g. *Smiling, Proud Wanderer*) get a
+- [x] Optional `wiki` (any category): must be `https://en.wikipedia.org/wiki/...`.
+- [x] `year` = when the story is set. Undated stories (e.g. *Smiling, Proud Wanderer*) get a
   representative year and the body says it's undated.
-- [ ] `related` must point each fiction card at the real event it touches where one exists.
+- [x] `related` must point each fiction card at the real event it touches where one exists.
 
 ## Code
-- [ ] `src/data.js` CATS: add `fiction` (label "Fiction", icon 📖, color chosen so
+- [x] `src/data.js` CATS: add `fiction` (label "Fiction", icon 📖, color chosen so
   `tests/contrast.test.js` passes ≥4.5:1 — proven by the test, not eyeballed).
-- [ ] `scripts/validate.mjs`: fiction ⇒ `source` present & complete + `wiki` present;
+- [x] `scripts/validate.mjs`: fiction ⇒ `source` present & complete + `wiki` present;
   `wiki` host allowlist; `fiction` and `legendary` mutually exclusive; wuxia tour ids resolve.
-- [ ] `src/views/detail.js`: 📖 Fiction badge; "From *Work* 作品 by Author (written X)" line;
+- [x] `src/views/detail.js`: 📖 Fiction badge; "From *Work* 作品 by Author (written X)" line;
   "Read the full story on Wikipedia ↗" link (`rel="noopener"`, built with `el()`, never
   innerHTML). Timeline card + aria-label mark fiction like they mark legendary.
-- [ ] `src/icons.js`: fiction glyph for the missing-image fallback.
-- [ ] Tours: new `content/tour-wuxia.json` (same stop schema). `data.js` exports
+- [x] `src/icons.js`: fiction glyph for the missing-image fallback.
+- [x] Tours: new `content/tour-wuxia.json` (same stop schema). `data.js` exports
   `TOURS = { grand, wuxia }`; state gains `tourId`; `tour.js` reads `TOURS[tourId]`;
   resume key per tour (`tourStop` stays for grand → no migration, `tourStop:wuxia` new);
   `timeline.js`/`map.js` highlight lookup follows `tourId`. Buttons: "⚔️ Wuxia Tour" on
   landing + explore; panel aria-label names the active tour.
-- [ ] `about.js`: "six threads" → seven, plus a note on how fiction is marked and that
+- [x] `about.js`: "six threads" → seven, plus a note on how fiction is marked and that
   novel/film summaries are our own words.
-- [ ] Returning visitors with a saved `cats` list from before fiction existed won't see it.
+- [x] Returning visitors with a saved `cats` list from before fiction existed won't see it.
   Proposed: leave as is (their saved filter is honoured; one chip click adds it) — cheapest,
   no migration logic.
 
@@ -499,13 +499,52 @@ Estimate: ~70–80 new events, ~15–20 Wuxia Tour stops.
 - No AI illustrations unless the user approves them. Image coverage % will drop — expected.
 
 ## Tests
-- [ ] Update: `tests/state.test.js` ("all 6 default categories"), `tests/coverage.test.js`
+- [x] Update: `tests/state.test.js` ("all 6 default categories"), `tests/coverage.test.js`
   fixture comment, any e2e chip-count assertions; contrast test covers the new color.
-- [ ] New: validate rules above (unit), detail renders source line + wiki link (unit),
+- [x] New: validate rules above (unit), detail renders source line + wiki link (unit),
   Wuxia Tour start/resume/finish + independent resume keys (unit + e2e), fiction chip toggles
   fiction cards off (e2e), axe run still 0 violations.
-- [ ] `npm test`, `npm run build` (JS ≤150KB gzip), `npm run e2e`, `npm run lighthouse`.
+- [x] `npm test`, `npm run build` (JS ≤150KB gzip), `npm run e2e`, `npm run lighthouse`.
 
 ## Closing
-- [ ] `/ponytail-review`, graphify after-state (if available), real-browser pass,
+- [x] `/ponytail-review`, graphify after-state (if available), real-browser pass,
   CLAUDE.md Project State + review section here.
+
+Mid-build scope changes from the user: add Bodhidharma ("the bodhisattva from India") — done as
+a Shaolin-legend fiction/folk card only; **no religion cards** (religion gets its own category
+later) — the planned Buddhism-arrival card and Guan Yu deification card were dropped.
+
+## Review
+- **Content:** 61 new events (52 fiction + 8 people + 1 war): Jin Yong 30 (12 of 15 works;
+  *Ode to Gallantry*, *White Horse Neighs* skipped — setting era unverifiable; *Young Flying Fox*
+  folded into *Fox Volant*), classical fiction/folk 16, martial artists & legends 15. 218 events
+  total. Drafted by 4 parallel subagents against a shared brief; main thread sole writer; `xy`
+  computed only for new rows from real lat/lon via a least-squares fit to the map's capital
+  anchors (all 157 existing rows asserted byte-identical before write — lessons.md phase-10 rule).
+- **Fact-check:** 2 independent subagents reviewed all 61 cards: 19 findings (5 spoilers,
+  e.g. `condor-genghis-end`/`return-condor-mongke` gave away climaxes; ~14 factual, e.g. Jebe
+  shot Temujin's *horse*, Muye's 1046 BCE is the modern not "traditional" date, Wang
+  Chongyang died 1170 so the Mount Hua contest moved 1175→1170, *A Deadly Secret* serialised
+  1964–65) — all applied, plus the matching Wuxia Tour stop text.
+- **Wuxia Tour:** 20 stops, chronological (−484 Yue Maiden → 1971 Bruce Lee), unit-tested.
+- **Bug caught in self-review:** `.panel .wiki { display: inline-block }` defeated the
+  `[hidden]` attribute, so a non-fiction card opened after a fiction one showed a stale,
+  href-less "Read the full story" link. Fixed; e2e regression test proven to fail without the fix.
+- **Checks:** `npm test` 163/163 (149 + 14 new), `npm run build` clean (JS 13.1KB gzip vs
+  150KB), `npm run e2e` 65/65 (59 existing + 5 `e2e/fiction.spec.js` + 1 axe screen for the
+  Wuxia Tour and a fiction detail, 0 WCAG 2.1 A/AA violations), Lighthouse perf 99 / a11y 100 /
+  best-practices 96 (landing page).
+- **UNPROVEN (flagged, not assumed):** (1) the 61 `wiki` URLs — en.wikipedia.org is blocked by
+  this cloud container's egress proxy for curl, WebFetch and every subagent; every URL appeared
+  as a live result in web search, but none was fetched. (2) Coordinates for fictional/legendary
+  places are approximations of the real place the story names. (3) graphify after-state — not
+  installed in this container. (4) Real-browser visual pass — no browser tooling here beyond
+  headless Playwright. Environment notes: Playwright's pinned browser build is absent here, so
+  e2e ran against the preinstalled headless shell via a throwaway config (not committed); lhci
+  needed `--no-sandbox` (root in container).
+- **Images:** none added — Jin Yong novels and modern films are under copyright; fiction cards
+  use the new 📖 icon fallback. Image coverage drops 46.5% → 33.5% (expected, flagged).
+- **Follow-ups:** image sourcing for classical-fiction cards (Ming/Qing woodblock prints on
+  Commons); candidate extra cards the drafters skipped (Qiu Chuji's real journey to Genghis
+  Khan, Siege of Albazin, Leung Jan, Chen village tai chi); the pre-existing `wu-chengen` card
+  states his *Journey to the West* authorship as fact where scholarship calls it traditional.

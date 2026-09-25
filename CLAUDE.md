@@ -12,12 +12,13 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   `tests/tween.test.js`, `tests/map-pins.test.js`, `tests/focus-trap.test.js`,
   `tests/detail-render.test.js`, `tests/search.test.js`,
   `tests/chips.test.js`, `tests/tour.test.js`, `tests/fetch-images.test.js`,
-  `tests/contrast.test.js`; 149/149 green), `npm run e2e` (playwright:
+  `tests/contrast.test.js`; 163/163 green), `npm run e2e` (playwright:
   `e2e/smoke.spec.js`, `e2e/shell.spec.js`, `e2e/timeline.spec.js`,
   `e2e/map.spec.js`, `e2e/detail.spec.js`, `e2e/search.spec.js`,
-  `e2e/tour.spec.js`, `e2e/a11y.spec.js`, `e2e/keyboard.spec.js`, plus
+  `e2e/tour.spec.js`, `e2e/a11y.spec.js`, `e2e/keyboard.spec.js`,
+  `e2e/fiction.spec.js`, plus
   `e2e/helpers.js` (shared `openCardByTitle()`, not a spec file itself);
-  builds + previews first; 59/59 green). `npm run lighthouse` (`lhci
+  builds + previews first; 65/65 green). `npm run lighthouse` (`lhci
   autorun` against `vite preview`, needs `@lhci/cli`; config in
   `lighthouserc.json`).
   Build-time image pipeline: `node scripts/fetch-images.mjs [--only <id>]
@@ -28,7 +29,22 @@ Static web app that shows ~4,000 years of Chinese history on one screen: a horiz
   the build). Manual check: `scripts/test-phase-11.sh` (also
   `scripts/test-phase-10.sh`/`-09.sh`/`-08.sh`/`-04.sh` through `-07.sh`
   still work for their own screens).
-- Current phase: Phase 11 complete — responsive, accessibility, performance
+- Current phase: Fiction layer complete (user-requested feature, between phase 11 and 12;
+  plan + review in `tasks/todo.md` "Fiction layer"). New 7th category `fiction` (📖, on by
+  default, own chip) for wuxia novels, classical fiction/folk tales and martial-arts legends,
+  pinned at the year the story is *set*; `source` {work, workHanzi, author, published, medium}
+  records when it was written, `wiki` (en.wikipedia only) carries the full plot — spoiler
+  policy: cards summarise setup/scene only. Real people (Bruce Lee, Ip Man, Huo Yuanjia, Wong
+  Fei-hung, Guan Yu, Bao Zheng…) stay `people`; their screen/novel legends get separate fiction
+  cards; doubtful folk heroes (Hung Hei-kwun, Ng Mui…) are fiction with the doubt stated.
+  `validate.mjs` rules 13–14 enforce all of it. Second tour: `content/tour-wuxia.json` (20
+  stops), `data.js` `TOURS = {grand, wuxia}` + `tourEventId()`, `state.tourId`, per-tour resume
+  key (`tourStop` unchanged for grand, `tourStop:wuxia`), 🥋 buttons on landing + explore.
+  61 new events (218 total), fact-checked by 2 independent subagents (19 fixes applied).
+  **No religion content** — user will add religion as its own category later. UNPROVEN: the
+  61 wiki URLs (en.wikipedia.org blocked in the cloud container; all seen live in web search).
+  No images for fiction (Jin Yong / modern films are copyrighted) — coverage 33.5%.
+- Prior phase: Phase 11 complete — responsive, accessibility, performance
   pass per the phase-11 prompt and PRD §7/§8. Everything below was a real,
   cited gap found by three parallel Explore audits at plan time — phases
   04-10 had already shipped detail/tour as bottom sheets, a real focus trap,

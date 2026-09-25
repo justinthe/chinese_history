@@ -234,7 +234,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .panel .hz { color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; }
 .panel p { line-height: 1.55; font-size: 15px; }
 .panel .source { background: #fde3ef; border-left: 4px solid #ef6fa8; border-radius: 8px; padding: 8px 12px; font-size: 13px; font-weight: 700; margin-bottom: 4px; }
-.panel .wiki { display: inline-block; color: var(--ink); font-weight: 800; font-size: 14px; }
+.panel .wiki { color: var(--ink); font-weight: 800; font-size: 14px; }
 .panel .wiki:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .why { background: #fff2d6; border-radius: 12px; padding: 12px 14px; margin: 16px 0; }
 .why b { display: block; font-family: 'Fredoka'; margin-bottom: 4px; }

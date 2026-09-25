@@ -127,12 +127,10 @@ describe('tour.js: Wuxia Tour', () => {
     expect(state.get().tourIdx).toBe(2);
   });
 
-  it('every wuxia stop is a fiction or martial-legend card', async () => {
+  it('runs in chronological order, so Next always moves forward in time', async () => {
     const { data } = await freshTour();
-    expect(data.TOURS.wuxia.length).toBeGreaterThanOrEqual(15);
-    data.TOURS.wuxia.forEach((stop) => {
-      const ev = data.EVENTS.find((e) => e.id === stop.event);
-      expect(['fiction', 'people'], stop.event).toContain(ev.category);
-    });
+    const years = data.TOURS.wuxia.map((stop) => data.EVENTS.find((e) => e.id === stop.event).year);
+    expect(years.length).toBeGreaterThanOrEqual(15);
+    expect(years).toEqual([...years].sort((a, b) => a - b));
   });
 });

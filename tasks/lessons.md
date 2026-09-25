@@ -77,3 +77,13 @@ derived-field computation over a merged/bulk dataset, partition it first — rec
 rows that are actually new/missing the field, and diff hand-curated rows against their
 pre-merge values before writing, don't assume "recompute for all" is safe just because the
 function is pure.**
+
+**Fiction layer — an author `display` rule silently defeats the `[hidden]` attribute.**
+`detail.js` toggles `wikiEl.hidden` per event, but `.panel .wiki { display: inline-block }`
+outranks the UA's `[hidden] { display: none }`, so the link never hid: a non-fiction card
+opened after a fiction one showed the previous card's "Read the full story on Wikipedia ↗"
+with no href. No unit test could see it; caught on self-review of the CSS diff, then proven by
+an e2e test that failed without the fix. Same family as the phase-04 popover lesson. **Rule:
+any element toggled with `hidden` must not get a `display` value from author CSS (or needs an
+explicit `[hidden] { display: none }` override) — and the e2e test for it must go A→B across
+two records in the reused panel, not just open B fresh.**

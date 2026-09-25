@@ -52,6 +52,15 @@ test('Screen 5 grand tour', async ({ page }) => {
   await scan(page);
 });
 
+test('Wuxia Tour + fiction detail', async ({ page }) => {
+  await page.locator('.hero .actions .btn.ink', { hasText: 'Wuxia Tour' }).click();
+  await expect(page.locator('.tour')).toHaveClass(/open/);
+  await scan(page);
+  await page.goto('./#event=chen-zhen-fist-of-fury');
+  await expect(page.locator('#panel')).toHaveClass(/open/);
+  await scan(page);
+});
+
 test('Screen 6 search results', async ({ page }) => {
   await page.locator('.hero .actions .btn', { hasText: 'Explore freely' }).click();
   await page.locator('#q').fill('paper');
