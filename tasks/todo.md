@@ -399,3 +399,113 @@ all 10 checks. Not committed — left as working-tree changes for the user's own
 decision. Out of scope, left for a future phase: closing the images-to-90% gap (would need
 either substantially more manual sourcing hours, reviewed AI illustrations for the abstract
 remainder, or accepting a lower target) and the popover-focus-restore fix in `detail.js`.
+
+# Fiction layer — wuxia, myth & martial legends (PLAN, awaiting check-in)
+
+Decisions confirmed by the user (brainstorm, 2026-09-25):
+1. New 7th category `fiction` (📖), its own chip. 2. **On by default.**
+3. Separate from `legendary` (legendary = *maybe real*; fiction = *invented*).
+4. Two dates: story year (`year`, drives timeline/era) + year written (`source.published`).
+5. Spoilers: summary only + a Wikipedia link. 6. A second **Wuxia Tour**.
+7. Scope: *all* candidate works below — this is the main attraction.
+Added: Huo Yuanjia, Chen Zhen, Bruce Lee, Ip Man, Wong Fei-hung, Hung Hei-kwun + other
+prominent martial figures.
+
+Architecture map: `graphify` is not installed in this cloud container, so the plan is grounded
+in the committed `graphify-out/GRAPH_REPORT.md` (phase-11 run) + direct reads. After-state
+graph check needs graphify re-installed or runs locally — flag, don't assume.
+
+## Open question (blocking content work)
+- [ ] **Real martial artists are not fiction.** Huo Yuanjia, Ip Man, Bruce Lee, Wong
+  Fei-hung, Yang Luchan etc. were real people. Recommendation: their *lives* go in `people`
+  (real bio cards, no Fiction badge); their *screen legends* get separate `fiction` cards
+  (e.g. Chen Zhen / *Fist of Fury*); both sit in the Wuxia Tour and link via `related`.
+  Semi-legendary figures with doubtful historicity (Hung Hei-kwun, Fang Sai-yuk, Ng Mui,
+  Zhang Sanfeng) → `fiction`, body says the historicity is doubtful.
+
+## Schema (content/events.json — additive, no existing row changes)
+- [ ] `category: "fiction"` + required `source: { work, workHanzi, author, published, medium }`
+  — `published` is a display string ("1957–59", "c. 16th c.") because Ming-novel dates are
+  uncertain; `medium` ∈ novel | film | folk | opera.
+- [ ] Optional `wiki` (any category): must be `https://en.wikipedia.org/wiki/...`.
+- [ ] `year` = when the story is set. Undated stories (e.g. *Smiling, Proud Wanderer*) get a
+  representative year and the body says it's undated.
+- [ ] `related` must point each fiction card at the real event it touches where one exists.
+
+## Code
+- [ ] `src/data.js` CATS: add `fiction` (label "Fiction", icon 📖, color chosen so
+  `tests/contrast.test.js` passes ≥4.5:1 — proven by the test, not eyeballed).
+- [ ] `scripts/validate.mjs`: fiction ⇒ `source` present & complete + `wiki` present;
+  `wiki` host allowlist; `fiction` and `legendary` mutually exclusive; wuxia tour ids resolve.
+- [ ] `src/views/detail.js`: 📖 Fiction badge; "From *Work* 作品 by Author (written X)" line;
+  "Read the full story on Wikipedia ↗" link (`rel="noopener"`, built with `el()`, never
+  innerHTML). Timeline card + aria-label mark fiction like they mark legendary.
+- [ ] `src/icons.js`: fiction glyph for the missing-image fallback.
+- [ ] Tours: new `content/tour-wuxia.json` (same stop schema). `data.js` exports
+  `TOURS = { grand, wuxia }`; state gains `tourId`; `tour.js` reads `TOURS[tourId]`;
+  resume key per tour (`tourStop` stays for grand → no migration, `tourStop:wuxia` new);
+  `timeline.js`/`map.js` highlight lookup follows `tourId`. Buttons: "⚔️ Wuxia Tour" on
+  landing + explore; panel aria-label names the active tour.
+- [ ] `about.js`: "six threads" → seven, plus a note on how fiction is marked and that
+  novel/film summaries are our own words.
+- [ ] Returning visitors with a saved `cats` list from before fiction existed won't see it.
+  Proposed: leave as is (their saved filter is honoured; one chip click adds it) — cheapest,
+  no migration logic.
+
+## Content (candidate list — every year below is from memory, fact-check before writing)
+Method: parallel subagents draft per group against a shared schema/style brief; main thread
+is the sole writer; xy assigned **only to new rows** (tasks/lessons.md phase-10 rule);
+fictional places pinned at the real place the story names (Peach Blossom Island → off the
+Zhejiang coast); then a fact-check subagent pass on *both* plot claims and real-history claims.
+
+**Jin Yong (15 works)** — one overview card each, plus extra cards where the plot touches
+real history:
+- *Sword of the Yue Maiden* (Wu–Yue war, ~5th c. BCE) → `goujian`
+- *Demi-Gods and Semi-Devils* (~1090s, Song/Liao/Xia/Dali; Xiao Feng)
+- *Legend of the Condor Heroes* (~1200s–1227; Guo Jing, Genghis Khan) — 3–4 cards
+- *Return of the Condor Heroes* (~1240s–1259; Yang Guo "kills" Möngke at Xiangyang vs. the
+  real Möngke dying near Diaoyu Fortress, 1259) — 3–4 cards
+- *Heaven Sword and Dragon Saber* (1270s prologue; ~1330s–1360s, Ming Cult → Ming founding
+  1368) — 3–4 cards
+- *Smiling, Proud Wanderer* (Ming, undated), *Sword Stained with Blood* (1640s, Li Zicheng),
+  *Book and Sword* (Qianlong; the "Qianlong was Han" legend), *Flying Fox of Snowy Mountain* /
+  *Fox Volant* (Qianlong), *The Deer and the Cauldron* (1660s–80s; Oboi, Three Feudatories,
+  Nerchinsk 1689) — 2–3 cards
+- *Ode to Gallantry*, *A Deadly Secret*, *Blade-Dance of Two Lovers*, *White Horse Neighs in
+  the Western Wind* — setting eras uncertain, verify first.
+
+**Classical fiction & myth** — Nezha / *Investiture of the Gods* (Shang→Zhou, → `battle-of-muye`);
+Guan Gong in three layers (real Guan Yu in `people`; *Romance of the Three Kingdoms* scenes
+such as the Peach Garden Oath in `fiction`; his deification as a god of war/wealth);
+*Journey to the West* (→ `xuanzang-pilgrimage`); *Water Margin* (Song Jiang, Wu Song's tiger);
+Hua Mulan; Judge Bao; Yang Family Generals; *Butterfly Lovers*; *Lady White Snake*.
+Pre-Xia myth (Pangu, Nüwa, Houyi & Chang'e) **out of scope** — needs a new era before −2070.
+
+**Martial artists & their legends** — Huo Yuanjia & Jingwu (real); Chen Zhen / *Fist of Fury*
+(fictional); Ip Man (real); Bruce Lee (real); Wong Fei-hung (real) and his film cycle;
+Hung Hei-kwun, Fang Sai-yuk, burning of the Southern Shaolin temple (folk legend);
+Ng Mui & Yim Wing-chun (Wing Chun origin legend); Yang Luchan (tai chi, real);
+Dong Haichuan (baguazhang, real); Thirteen Shaolin monks aiding Li Shimin (recorded, verify);
+Bodhidharma at Shaolin (legend); Zhang Sanfeng & Wudang (legend).
+Maybe / not v1: Gu Long, Liang Yusheng heroes (weak historical anchors).
+
+Estimate: ~70–80 new events, ~15–20 Wuxia Tour stops.
+
+## Images
+- Jin Yong novels and all modern films are under copyright → no covers/stills; icon fallback.
+- Classical works: look for Ming/Qing woodblock illustrations on Commons, reviewed per image
+  through the existing license allowlist.
+- Real martial artists: old photos only if the pipeline's license check passes.
+- No AI illustrations unless the user approves them. Image coverage % will drop — expected.
+
+## Tests
+- [ ] Update: `tests/state.test.js` ("all 6 default categories"), `tests/coverage.test.js`
+  fixture comment, any e2e chip-count assertions; contrast test covers the new color.
+- [ ] New: validate rules above (unit), detail renders source line + wiki link (unit),
+  Wuxia Tour start/resume/finish + independent resume keys (unit + e2e), fiction chip toggles
+  fiction cards off (e2e), axe run still 0 violations.
+- [ ] `npm test`, `npm run build` (JS ≤150KB gzip), `npm run e2e`, `npm run lighthouse`.
+
+## Closing
+- [ ] `/ponytail-review`, graphify after-state (if available), real-browser pass,
+  CLAUDE.md Project State + review section here.
