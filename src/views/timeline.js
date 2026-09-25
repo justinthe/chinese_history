@@ -1,7 +1,7 @@
 // architecture.md §4: timeline.js — mount(el), scrollToYear(y), zoom(f), pan(dir).
 // Owns the "Meanwhile in the world" strip too (F7): it's laid out inside the
 // timeline pane and there's no separate module for it in architecture §1/§8.
-import { ERAS, TOUR, WORLD, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
+import { ERAS, tourEventId, WORLD, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
 import { get, set, subscribe, YEAR_MIN, YEAR_MAX, clampPxPerYear } from '../state.js';
 import { el, textOn, reduceMotion } from '../dom.js';
 import { open as openEvent } from './detail.js';
@@ -166,9 +166,9 @@ function tickStep(pxPerYear) {
 
 function render() {
   if (!tlInnerEl) return;
-  const { year, cats, eventId, tourIdx, pxPerYear } = get();
+  const { year, cats, eventId, tourIdx, tourId, pxPerYear } = get();
   const era = eraAt(year);
-  const highlightId = eventId || (tourIdx >= 0 ? TOUR[tourIdx]?.event : null);
+  const highlightId = eventId || tourEventId(tourId, tourIdx);
 
   const lanes = laneCount();
   const catsKey = [...cats].sort().join(',');
@@ -252,11 +252,12 @@ function layoutFull(pxPerYear, cats, lanes) {
     d.style.top = TOP_ZONE + p.lane * CARD_PITCH + 'px';
     // Explicit label — a button whose content is block-level children (`.ev b`
     // is `display:block`) doesn't reliably get a flattened subtree name.
-    d.setAttribute('aria-label', `${ev.title}, ${fmtYear(ev.year)}${ev.legendary ? ', legendary' : ''}`);
+    d.setAttribute('aria-label', `${ev.title}, ${fmtYear(ev.year)}${ev.legendary ? ', legendary' : ''}${ev.category === 'fiction' ? ', fiction' : ''}`);
     const ic = el('span', 'ic', ev.icon);
     ic.style.background = catColor(ev.category);
     const b = el('b', null, ev.title);
     if (ev.legendary) b.append(el('span', 'legend-tag', 'legend'));
+    if (ev.category === 'fiction') b.append(el('span', 'fiction-tag', 'fiction'));
     const small = el('small', null, fmtYear(ev.year));
     d.append(ic, b, small);
     d.addEventListener('click', () => openEvent(ev.id));

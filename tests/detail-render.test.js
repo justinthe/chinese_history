@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { load, EVENTS, IMAGES } from '../src/data.js';
-import { imageFor, neighbors } from '../src/views/detail.js';
+import { imageFor, neighbors, sourceLine } from '../src/views/detail.js';
 
 const CONTENT_DIR = fileURLToPath(new URL('../content/', import.meta.url));
 const fsRead = (file) => JSON.parse(readFileSync(`${CONTENT_DIR}${file}`, 'utf8'));
@@ -66,5 +66,16 @@ describe('detail.js / icons.js: no innerHTML (architecture.md §7 content-inject
 
   it('icons.js never assigns innerHTML', () => {
     expect(icons).not.toMatch(/\.innerHTML\s*=/);
+  });
+});
+
+describe('detail.js: sourceLine', () => {
+  it('names work, original title, author, medium and when it was written', () => {
+    const ev = { source: { work: 'The Legend of the Condor Heroes', workHanzi: '射鵰英雄傳', author: 'Jin Yong', published: '1957–59', medium: 'novel' } };
+    expect(sourceLine(ev)).toBe('📖 From The Legend of the Condor Heroes 射鵰英雄傳 · Jin Yong · novel, 1957–59');
+  });
+
+  it('is empty for non-fiction events', () => {
+    expect(sourceLine({ category: 'war' })).toBe('');
   });
 });

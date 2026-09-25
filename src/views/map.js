@@ -1,5 +1,5 @@
 // architecture.md §4: map.js — mount(el), morphTo(shapeKey, color).
-import { CATS, SHAPES, TOUR, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
+import { CATS, SHAPES, tourEventId, fmtYear, eraAt, catColor, eventsIn } from '../data.js';
 import { get, subscribe } from '../state.js';
 import { el, reduceMotion } from '../dom.js';
 import { open as openEvent } from './detail.js';
@@ -165,9 +165,9 @@ function applyZoom(zoom) {
 
 function render() {
   if (!territoryEl) return;
-  const { year, cats, eventId, tourIdx } = get();
+  const { year, cats, eventId, tourIdx, tourId } = get();
   const era = eraAt(year);
-  const highlightId = eventId || (tourIdx >= 0 ? TOUR[tourIdx]?.event : null);
+  const highlightId = eventId || tourEventId(tourId, tourIdx);
 
   yearBadgeEl.textContent = fmtYear(year);
   eraNameEl.textContent = era.name;

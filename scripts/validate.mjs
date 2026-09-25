@@ -15,6 +15,12 @@ const CATEGORIES = Object.keys(CATS);
 // word whenever any manifest image ships under a BY-SA license (rule 12).
 export const SA_NOTICE = 'ShareAlike';
 
+// Fiction layer: every fiction card must say where it comes from (and when that
+// was written, vs. `year` = when the story is set) and link to the full plot.
+const SOURCE_REQUIRED = ['work', 'workHanzi', 'author', 'published', 'medium'];
+const MEDIA = ['novel', 'film', 'folk', 'opera'];
+const WIKI_RE = /^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/;
+
 const ERA_REQUIRED = ['id', 'name', 'hanzi', 'start', 'end', 'color', 'capital', 'capitalXY', 'shape', 'oneLiner'];
 const EVENT_REQUIRED = [
   'id', 'title', 'hanzi', 'pinyin', 'year', 'era', 'category', 'icon', 'body', 'whyItMatters', 'xy', 'related',
@@ -41,7 +47,7 @@ function findAngleBracket(value, path, errors) {
 }
 
 /** Runs every PRD F8 / architecture §3 rule against loaded content. Returns an array of error strings (empty = valid). */
-export function validate({ eras, events, tour, shapes, world, images = {}, aboutSrc = '' }) {
+export function validate({ eras, events, tour, wuxiaTour = [], shapes, world, images = {}, aboutSrc = '' }) {
   const errors = [];
   const eraIds = new Set(eras.map((e) => e.id));
   const eventIds = new Set(events.map((e) => e.id));
@@ -95,10 +101,13 @@ export function validate({ eras, events, tour, shapes, world, images = {}, about
   findAngleBracket(eras, 'eras.json', errors);
   findAngleBracket(events, 'events.json', errors);
   findAngleBracket(tour, 'tour.json', errors);
+  findAngleBracket(wuxiaTour, 'tour-wuxia.json', errors);
 
-  // 8. tour event ids resolve
-  tour.forEach((stop, i) => {
-    if (!eventIds.has(stop.event)) errors.push(`tour.json[${i}]: event id '${stop.event}' does not resolve`);
+  // 8. tour event ids resolve (both tours)
+  [['tour.json', tour], ['tour-wuxia.json', wuxiaTour]].forEach(([file, stops]) => {
+    stops.forEach((stop, i) => {
+      if (!eventIds.has(stop.event)) errors.push(`${file}[${i}]: event id '${stop.event}' does not resolve`);
+    });
   });
 
   // 9. era.shape resolves in map-shapes.json and is 16 numbers
@@ -131,6 +140,33 @@ export function validate({ eras, events, tour, shapes, world, images = {}, about
     errors.push(`images.manifest.json: a CC BY-SA image exists but About page is missing the '${SA_NOTICE}' notice`);
   }
 
+  // 13. fiction cards carry a complete source + a wiki link; nothing else carries a source;
+  // fiction is never also `legendary` (legendary = maybe real, fiction = invented)
+  events.forEach((ev) => {
+    if (ev.category === 'fiction') {
+      if (!ev.source) errors.push(`event ${ev.id}: fiction needs a 'source' {${SOURCE_REQUIRED.join(', ')}}`);
+      else {
+        SOURCE_REQUIRED.forEach((f) => {
+          if (typeof ev.source[f] !== 'string' || !ev.source[f]) errors.push(`event ${ev.id}: source.${f} missing`);
+        });
+        if (ev.source.medium && !MEDIA.includes(ev.source.medium)) {
+          errors.push(`event ${ev.id}: source.medium '${ev.source.medium}' (expected one of ${MEDIA.join(', ')})`);
+        }
+      }
+      if (!ev.wiki) errors.push(`event ${ev.id}: fiction needs a 'wiki' link (spoiler policy: full plot lives there)`);
+      if (ev.legendary) errors.push(`event ${ev.id}: fiction and legendary are mutually exclusive`);
+    } else if (ev.source !== undefined) {
+      errors.push(`event ${ev.id}: only fiction events carry a 'source'`);
+    }
+  });
+
+  // 14. wiki links are English Wikipedia articles only
+  events.forEach((ev) => {
+    if (ev.wiki !== undefined && !WIKI_RE.test(ev.wiki)) {
+      errors.push(`event ${ev.id}: wiki '${ev.wiki}' must be an https://en.wikipedia.org/wiki/ URL`);
+    }
+  });
+
   return errors;
 }
 
@@ -145,6 +181,7 @@ function main() {
     eras: readJSON('eras.json'),
     events: readJSON('events.json'),
     tour: readJSON('tour.json'),
+    wuxiaTour: readJSON('tour-wuxia.json'),
     shapes: readJSON('map-shapes.json'),
     world: readJSON('world.json'),
     images: readJSON('images.manifest.json'),
@@ -156,7 +193,7 @@ function main() {
     errors.forEach((e) => console.error(`  - ${e}`));
     process.exit(1);
   }
-  console.log(`validate: OK — ${db.eras.length} eras, ${db.events.length} events, ${db.tour.length} tour stops`);
+  console.log(`validate: OK — ${db.eras.length} eras, ${db.events.length} events, ${db.tour.length} + ${db.wuxiaTour.length} tour stops`);
   printReport(coverage(db)); // phase-10: warnings only, never affects exit code
 }
 

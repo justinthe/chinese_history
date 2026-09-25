@@ -44,8 +44,10 @@ export function mount(root) {
   const exploreBtn = el('button', 'btn', '🧭 Explore freely');
   exploreBtn.addEventListener('click', () => go('explore'));
   const tourBtn = el('button', 'btn gold', '🎒 Take the Grand Tour');
-  tourBtn.addEventListener('click', () => { go('explore'); startTour(); });
-  actions.append(exploreBtn, tourBtn);
+  tourBtn.addEventListener('click', () => { go('explore'); startTour('grand'); });
+  const wuxiaBtn = el('button', 'btn ink', '🥋 Wuxia Tour');
+  wuxiaBtn.addEventListener('click', () => { go('explore'); startTour('wuxia'); });
+  actions.append(exploreBtn, tourBtn, wuxiaBtn);
   hero.append(h1, tag, actions);
 
   const teasers = el('div', 'teasers');

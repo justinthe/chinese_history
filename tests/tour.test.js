@@ -45,7 +45,7 @@ describe('tour.js: start()', () => {
   it('starts at stop 0 with no stored tourStop', async () => {
     const { data, state, tour } = await freshTour();
     tour.start();
-    const ev = data.EVENTS.find((e) => e.id === data.TOUR[0].event);
+    const ev = data.EVENTS.find((e) => e.id === data.TOURS.grand[0].event);
     expect(state.get().tourIdx).toBe(0);
     expect(state.get().year).toBe(ev.year);
   });
@@ -53,7 +53,7 @@ describe('tour.js: start()', () => {
   it('resumes at a valid stored stop (reload mid-tour)', async () => {
     const { data, state, tour } = await freshTour({ tourStop: '3' });
     tour.start();
-    const ev = data.EVENTS.find((e) => e.id === data.TOUR[3].event);
+    const ev = data.EVENTS.find((e) => e.id === data.TOURS.grand[3].event);
     expect(state.get().tourIdx).toBe(3);
     expect(state.get().year).toBe(ev.year);
   });
@@ -75,7 +75,7 @@ describe('tour.js: step()', () => {
 
   it('stepping past the last stop finishes the tour (tourIdx -> -1)', async () => {
     const { data, state, tour } = await freshTour();
-    const last = data.TOUR.length - 1;
+    const last = data.TOURS.grand.length - 1;
     state.set({ tourIdx: last, year: 0, eventId: null });
     tour.step(1);
     expect(state.get().tourIdx).toBe(-1);
@@ -89,7 +89,7 @@ describe('tour.js: end() — exit clears', () => {
     tour.end(false);
     expect(state.get().tourIdx).toBe(-1);
     const stored = parseInt(globalThis.localStorage.getItem('tourStop'), 10);
-    expect(resumeIdx(stored, data.TOUR.length)).toBe(0);
+    expect(resumeIdx(stored, data.TOURS.grand.length)).toBe(0);
   });
 
   it('reload after exit starts a fresh Grand Tour at stop 0, not the exited stop', async () => {
@@ -102,5 +102,37 @@ describe('tour.js: end() — exit clears', () => {
     const { state: state2, tour: tour2 } = await freshTour({ tourStop: storedRaw });
     tour2.start();
     expect(state2.get().tourIdx).toBe(0);
+  });
+});
+
+describe('tour.js: Wuxia Tour', () => {
+  it('starts at its own first stop and keeps its own resume key', async () => {
+    const { data, state, tour } = await freshTour({ tourStop: '3' }); // grand progress must not leak in
+    tour.start('wuxia');
+    const ev = data.EVENTS.find((e) => e.id === data.TOURS.wuxia[0].event);
+    expect(state.get().tourId).toBe('wuxia');
+    expect(state.get().tourIdx).toBe(0);
+    expect(state.get().year).toBe(ev.year);
+    tour.step(1);
+    expect(globalThis.localStorage.getItem('tourStop:wuxia')).toBe('1');
+    expect(globalThis.localStorage.getItem('tourStop')).toBe('3');
+  });
+
+  it('switching tours mid-way resumes each at its own stop', async () => {
+    const { state, tour } = await freshTour({ tourStop: '2', 'tourStop:wuxia': '4' });
+    tour.start('wuxia');
+    expect(state.get().tourIdx).toBe(4);
+    tour.start('grand');
+    expect(state.get().tourId).toBe('grand');
+    expect(state.get().tourIdx).toBe(2);
+  });
+
+  it('every wuxia stop is a fiction or martial-legend card', async () => {
+    const { data } = await freshTour();
+    expect(data.TOURS.wuxia.length).toBeGreaterThanOrEqual(15);
+    data.TOURS.wuxia.forEach((stop) => {
+      const ev = data.EVENTS.find((e) => e.id === stop.event);
+      expect(['fiction', 'people'], stop.event).toContain(ev.category);
+    });
   });
 });

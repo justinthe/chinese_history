@@ -18,6 +18,7 @@ const SHAPES = {
   nature: () => [svgEl('path', { d: 'M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0M3 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0' })],
   people: () => [svgEl('circle', { cx: 12, cy: 8, r: 4 }), svgEl('path', { d: 'M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8' })],
   other: () => [svgEl('rect', { x: 4, y: 5, width: 16, height: 14, rx: 1 }), svgEl('path', { d: 'M7 9h10M7 13h10M7 17h6' })],
+  fiction: () => [svgEl('path', { d: 'M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5zM12 6v13' })],
 };
 
 /** Category icon as an <svg>, 110×110 (the detail hero's only call site), stroking in currentColor. */

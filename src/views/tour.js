@@ -1,12 +1,18 @@
 // architecture.md §4: tour.js — mount(el), start(), step(d), end(); consumes
 // state, data, and detail.js ("Read more" opens the panel without leaving
 // the tour, per storyboard Screen 5).
-import { TOUR, EVENTS, fmtYear } from '../data.js';
-import { get, set, subscribe } from '../state.js';
+import { TOURS, EVENTS, fmtYear } from '../data.js';
+import { get, set, subscribe, tourKey } from '../state.js';
 import { el, toast } from '../dom.js';
 import { open as openEvent } from './detail.js';
 
-let tourEl, dotsEl, titleEl, smallEl, textEl, readMoreEl, nextBtn;
+// Per-tour chrome. Stops live in content/tour.json / tour-wuxia.json (data.js TOURS).
+export const TOUR_META = {
+  grand: { label: 'Grand Tour', guide: '🐼', done: '🎉 Tour complete! Explore freely, or search anything.' },
+  wuxia: { label: 'Wuxia Tour', guide: '🥋', done: '🎉 Wuxia Tour complete! The jianghu awaits: explore freely.' },
+};
+
+let tourEl, dotsEl, guideEl, titleEl, smallEl, textEl, readMoreEl, nextBtn;
 let opener = null; // element to return focus to on close, same pattern as detail.js
 
 export function mount(root) {
@@ -17,7 +23,7 @@ export function mount(root) {
 
   dotsEl = el('div', 'dots');
   dotsEl.setAttribute('aria-hidden', 'true'); // "Stop N of X" text below carries the same info
-  const guide = el('span', 'guide', '🐼');
+  guideEl = el('span', 'guide', '🐼');
   const h3 = el('h3');
   titleEl = document.createTextNode('');
   smallEl = el('small');
@@ -28,7 +34,7 @@ export function mount(root) {
   readMoreEl = el('button', 'link', 'Read more →');
   readMoreEl.style.color = 'var(--gold)';
   readMoreEl.addEventListener('click', () => {
-    const stop = TOUR[get().tourIdx];
+    const stop = stops()[get().tourIdx];
     if (stop) openEvent(stop.event);
   });
   p.append(textEl, ' ', readMoreEl);
@@ -43,7 +49,7 @@ export function mount(root) {
   exitBtn.addEventListener('click', () => end(false));
   row.append(backBtn, nextBtn, spacer, exitBtn);
 
-  tourEl.append(dotsEl, guide, h3, p, row);
+  tourEl.append(dotsEl, guideEl, h3, p, row);
   root.append(tourEl);
 
   // Left/Right step, Esc exits — only while focus is inside the tour panel.
@@ -62,10 +68,16 @@ export function mount(root) {
   return unsubscribe;
 }
 
-function gotoStop(idx) {
-  const stop = TOUR[idx];
+/** Stops of a tour (default: the active one). */
+function stops(tourId = get().tourId) {
+  return TOURS[tourId] || TOURS.grand;
+}
+
+// tourId and tourIdx change in one set() so render never sees an index from the other tour.
+function gotoStop(idx, tourId = get().tourId) {
+  const stop = stops(tourId)[idx];
   const ev = EVENTS.find((e) => e.id === stop.event);
-  set({ tourIdx: idx, year: ev.year, eventId: null });
+  set({ tourId, tourIdx: idx, year: ev.year, eventId: null });
 }
 
 /** Stop to resume at: stored index if in range, else 0. Pure. */
@@ -73,26 +85,27 @@ export function resumeIdx(raw, len) {
   return Number.isInteger(raw) && raw >= 0 && raw < len ? raw : 0;
 }
 
-export function start() {
+/** Starts (or resumes) a tour: 'grand' or 'wuxia'. Each keeps its own resume stop. */
+export function start(tourId = 'grand') {
   let stored = NaN;
   try {
-    stored = parseInt(localStorage.getItem('tourStop'), 10);
+    stored = parseInt(localStorage.getItem(tourKey(tourId)), 10);
   } catch {
     // storage unavailable (private mode, quota, SSR) — resumeIdx falls back to 0
   }
-  gotoStop(resumeIdx(stored, TOUR.length));
+  gotoStop(resumeIdx(stored, stops(tourId).length), tourId);
 }
 
 export function step(d) {
   let idx = get().tourIdx + d;
   if (idx < 0) idx = 0;
-  if (idx >= TOUR.length) return end(true);
+  if (idx >= stops().length) return end(true);
   gotoStop(idx);
 }
 
 export function end(finished) {
   set({ tourIdx: -1 });
-  if (finished) toast('🎉 Tour complete! Explore freely, or search anything.');
+  if (finished) toast((TOUR_META[get().tourId] || TOUR_META.grand).done);
 }
 
 function render() {
@@ -106,16 +119,21 @@ function render() {
     }
     return;
   }
-  const stop = TOUR[tourIdx];
+  const tour = stops();
+  const meta = TOUR_META[get().tourId] || TOUR_META.grand;
+  const stop = tour[tourIdx];
   const ev = EVENTS.find((e) => e.id === stop.event);
 
+  tourEl.setAttribute('aria-label', meta.label);
+  tourEl.classList.toggle('wuxia', get().tourId === 'wuxia');
+  guideEl.textContent = meta.guide;
   dotsEl.textContent = '';
-  TOUR.forEach((_, i) => dotsEl.append(el('i', i <= tourIdx ? 'done' : '')));
+  tour.forEach((_, i) => dotsEl.append(el('i', i <= tourIdx ? 'done' : '')));
 
   titleEl.textContent = stop.title;
-  smallEl.textContent = `Stop ${tourIdx + 1} of ${TOUR.length} · ${fmtYear(ev.year)}`;
+  smallEl.textContent = `Stop ${tourIdx + 1} of ${tour.length} · ${fmtYear(ev.year)}`;
   textEl.textContent = stop.text;
-  nextBtn.textContent = tourIdx === TOUR.length - 1 ? 'Finish 🎉' : 'Next →';
+  nextBtn.textContent = tourIdx === tour.length - 1 ? 'Finish 🎉' : 'Next →';
 
   if (!tourEl.classList.contains('open')) {
     opener = document.activeElement;

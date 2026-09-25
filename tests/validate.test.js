@@ -132,3 +132,68 @@ describe('validate: each rule has a failing fixture', () => {
     expect(validate(db).some((e) => e.includes(SA_NOTICE))).toBe(false);
   });
 });
+
+describe('validate: fiction layer (rules 13–14)', () => {
+  function fictionDB() {
+    const db = clone(baseDB());
+    db.events[0] = {
+      ...db.events[0],
+      category: 'fiction',
+      wiki: 'https://en.wikipedia.org/wiki/The_Legend_of_the_Condor_Heroes',
+      source: { work: 'W', workHanzi: '作', author: 'Jin Yong', published: '1957–59', medium: 'novel' },
+    };
+    return db;
+  }
+
+  it('accepts a complete fiction event', () => {
+    expect(validate(fictionDB())).toEqual([]);
+  });
+
+  it('rejects fiction without a source', () => {
+    const db = fictionDB();
+    delete db.events[0].source;
+    expect(validate(db).some((e) => e.includes("fiction needs a 'source'"))).toBe(true);
+  });
+
+  it('rejects a source missing a field', () => {
+    const db = fictionDB();
+    delete db.events[0].source.published;
+    expect(validate(db).some((e) => e.includes('source.published missing'))).toBe(true);
+  });
+
+  it('rejects an unknown medium', () => {
+    const db = fictionDB();
+    db.events[0].source.medium = 'podcast';
+    expect(validate(db).some((e) => e.includes("source.medium 'podcast'"))).toBe(true);
+  });
+
+  it('rejects fiction without a wiki link', () => {
+    const db = fictionDB();
+    delete db.events[0].wiki;
+    expect(validate(db).some((e) => e.includes("fiction needs a 'wiki'"))).toBe(true);
+  });
+
+  it('rejects fiction that is also legendary', () => {
+    const db = fictionDB();
+    db.events[0].legendary = true;
+    expect(validate(db).some((e) => e.includes('mutually exclusive'))).toBe(true);
+  });
+
+  it('rejects a source on a non-fiction event', () => {
+    const db = fictionDB();
+    db.events[1].source = db.events[0].source;
+    expect(validate(db).some((e) => e.includes("only fiction events carry a 'source'"))).toBe(true);
+  });
+
+  it('rejects a wiki link that is not English Wikipedia', () => {
+    const db = fictionDB();
+    db.events[0].wiki = 'https://example.com/wiki/X';
+    expect(validate(db).some((e) => e.includes('must be an https://en.wikipedia.org/wiki/ URL'))).toBe(true);
+  });
+
+  it('rejects a Wuxia Tour stop whose event id does not resolve', () => {
+    const db = fictionDB();
+    db.wuxiaTour = [{ event: 'missing', title: 't', text: 'x' }];
+    expect(validate(db).some((e) => e.includes("tour-wuxia.json[0]: event id 'missing'"))).toBe(true);
+  });
+});

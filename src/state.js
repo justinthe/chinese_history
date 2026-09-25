@@ -2,12 +2,18 @@
 // sync (architecture.md §3 "Runtime state" / §4 state.js contract), and
 // localStorage persistence for `tourIdx`/`cats` only (§7: "Only tourStop
 // (int) and cats (string list), parsed defensively").
+import { CATS } from './data.js';
 
 const Y0 = -2250, Y1 = 2030;
 export const YEAR_MIN = Y0;
 export const YEAR_MAX = Y1;
 
-const ALL_CATS = ['dynasty', 'war', 'tech', 'nature', 'people', 'other'];
+const ALL_CATS = Object.keys(CATS);
+
+/** localStorage key holding a tour's resume stop. Grand keeps the original key (no migration). */
+export function tourKey(tourId) {
+  return tourId === 'grand' ? 'tourStop' : `tourStop:${tourId}`;
+}
 
 /** Default zoom: timeline ~2.5 screens wide (PRD F2). */
 export function defaultPxPerYear(viewW = typeof window !== 'undefined' ? window.innerWidth : 1000) {
@@ -26,6 +32,7 @@ const defaults = () => ({
   eventId: null,
   cats: new Set(ALL_CATS),
   tourIdx: -1,
+  tourId: 'grand',
   pxPerYear: defaultPxPerYear(),
 });
 
@@ -94,7 +101,7 @@ export function set(patch) {
   s = { ...s, ...patch };
   if (typeof localStorage !== 'undefined') {
     if ('cats' in patch) writeStorage('cats', [...s.cats].join(','));
-    if ('tourIdx' in patch) writeStorage('tourStop', String(s.tourIdx));
+    if ('tourIdx' in patch) writeStorage(tourKey(s.tourId), String(s.tourIdx));
   }
   // history.replaceState never fires 'hashchange' (only user navigation /
   // location.hash assignment does), so this can't loop back into the

@@ -61,9 +61,10 @@ describe('state: URL hash', () => {
 });
 
 describe('state: localStorage (parsed defensively)', () => {
-  it('garbage cats value falls back to all 6 default categories', async () => {
+  it('garbage cats value falls back to all 7 default categories (fiction on by default)', async () => {
     const { get } = await freshState({ cats: 'zzz,yyy,not-real' });
-    expect(get().cats.size).toBe(6);
+    expect(get().cats.size).toBe(7);
+    expect(get().cats.has('fiction')).toBe(true);
   });
 
   it('a valid stored cats list is respected on boot', async () => {

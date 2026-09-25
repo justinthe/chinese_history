@@ -10,6 +10,7 @@ const CATEGORIES = [
   ['🌊', 'Nature and disasters'],
   ['👤', 'Famous figures and why they matter'],
   ['📰', 'Other big news'],
+  ['📖', 'Fiction: wuxia novels, classic tales and martial-arts legends, pinned to the years they are set in'],
 ];
 
 export function mount(root) {
@@ -22,12 +23,12 @@ export function mount(root) {
 
   const p1 = el('p');
   p1.append(el('b', null, 'Middle Kingdom Explorer'), ' is a free, ad-free way to see the whole shape of Chinese history without reading a 600-page book first.');
-  const p2 = el('p', null, 'We cover roughly 4,000 years, from the legendary Xia dynasty to the present day, across six threads:');
+  const p2 = el('p', null, 'We cover roughly 4,000 years, from the legendary Xia dynasty to the present day, across seven threads:');
 
   const ul = el('ul');
   CATEGORIES.forEach(([icon, text]) => ul.append(el('li', null, `${icon} ${text}`)));
 
-  const p3 = el('p', null, 'Legendary content is clearly badged. Modern events are described factually and neutrally, with sources. Images come from public-domain collections, our own icon set, and reviewed AI illustrations. Every image carries a credit.');
+  const p3 = el('p', null, 'Legendary content is clearly badged. Fiction is its own category with its own chip, so you can switch it off: each fiction card names the book, film or folk tale it comes from and when it was written, sums up the story in our own words without spoilers, and links to Wikipedia for the full plot. Modern events are described factually and neutrally, with sources. Images come from public-domain collections, our own icon set, and reviewed AI illustrations. Every image carries a credit.');
   const p4 = el('p', null, 'Built as a static site. No accounts, no tracking beyond a page count.');
 
   const backBtn = el('button', 'btn', '← Back');

@@ -13,18 +13,19 @@ export const CATS = {
   nature: { label: 'Nature', icon: '🌊', color: '#3fa67a' },
   people: { label: 'People', icon: '👤', color: '#9b59b6' },
   other: { label: 'Big news', icon: '📰', color: '#f08a5d' },
+  fiction: { label: 'Fiction', icon: '📖', color: '#ef6fa8' },
 };
 
 import { fold, parseYear } from './lib/normalize.js';
 
 export let ERAS = [];
 export let EVENTS = [];
-export let TOUR = [];
+export let TOURS = { grand: [], wuxia: [] };
 export let SHAPES = {};
 export let WORLD = {};
 export let IMAGES = {};
 
-const FILES = ['eras.json', 'events.json', 'tour.json', 'map-shapes.json', 'world.json', 'images.manifest.json'];
+const FILES = ['eras.json', 'events.json', 'tour.json', 'tour-wuxia.json', 'map-shapes.json', 'world.json', 'images.manifest.json'];
 
 /** Default reader: fetch content/*.json relative to the app base (vite.config.js `base`). */
 async function fetchRead(file) {
@@ -41,15 +42,20 @@ async function fetchRead(file) {
  * is the build year, computed not hard-coded).
  */
 export async function load(read = fetchRead) {
-  const [eras, events, tour, shapes, world, images] = await Promise.all(FILES.map(read));
+  const [eras, events, tour, wuxiaTour, shapes, world, images] = await Promise.all(FILES.map(read));
   const buildYear = new Date().getFullYear();
   ERAS = eras.map((e) => (e.end === null ? { ...e, end: buildYear } : e));
   EVENTS = events;
-  TOUR = tour;
+  TOURS = { grand: tour, wuxia: wuxiaTour };
   SHAPES = shapes;
   WORLD = world;
   IMAGES = images;
-  return { eras: ERAS, events: EVENTS, tour: TOUR, shapes: SHAPES, world: WORLD, images: IMAGES };
+  return { eras: ERAS, events: EVENTS, tours: TOURS, shapes: SHAPES, world: WORLD, images: IMAGES };
+}
+
+/** Event id at a tour stop, or null when no tour is running (tourIdx -1). */
+export function tourEventId(tourId, tourIdx) {
+  return tourIdx >= 0 ? TOURS[tourId]?.[tourIdx]?.event ?? null : null;
 }
 
 /** "221 BCE" / "105 CE" */

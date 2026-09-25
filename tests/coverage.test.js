@@ -8,10 +8,10 @@ function ev(id, era, category) {
   return { id, title: id, hanzi: id, pinyin: id, year: 0, era, category, icon: '?', body: ['p'], whyItMatters: 'w', xy: [0, 0], related: [] };
 }
 
-// One era, six categories (matches real CATS keys) — enough events per
+// One era, seven categories (matches real CATS keys) — enough events per
 // category/era/total to clear every threshold, used as the "all clear" base.
 function passingDB() {
-  const cats = ['dynasty', 'war', 'tech', 'nature', 'people', 'other'];
+  const cats = ['dynasty', 'war', 'tech', 'nature', 'people', 'other', 'fiction'];
   const events = [];
   for (let i = 0; i < 150; i += 1) {
     events.push(ev(`e${i}`, 'a', cats[i % cats.length]));

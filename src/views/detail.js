@@ -7,7 +7,7 @@ import { el, toast, textOn } from '../dom.js';
 import { icon } from '../icons.js';
 import { trap } from '../lib/focus-trap.js';
 
-let panelEl, scrimEl, artEl, badgesEl, titleEl, hanziEl, bodyEl, whyEl, relatedEl, prevBtn, nextBtn, creditEl;
+let panelEl, scrimEl, artEl, badgesEl, titleEl, hanziEl, sourceEl, wikiEl, bodyEl, whyEl, relatedEl, prevBtn, nextBtn, creditEl;
 let lastId = null; // re-render guard: only rebuild content on an actual eventId change
 let opener = null; // element to return focus to on close
 let releaseTrap = null;
@@ -34,6 +34,14 @@ export function imageFor(id, images = IMAGES) {
   if (!entry) return null;
   const base = typeof import.meta !== 'undefined' && import.meta.env ? import.meta.env.BASE_URL : '/';
   return { src: `${base}${entry.detail}`, alt: entry.alt, credit: entry.credit, license: entry.license, licenseUrl: entry.licenseUrl };
+}
+
+/** Fiction cards' "where this comes from" line: work, original title, author,
+ *  medium and when it was written (vs. `year`, when the story is set). Pure. */
+export function sourceLine(ev) {
+  const s = ev.source;
+  if (!s) return '';
+  return `📖 From ${s.work} ${s.workHanzi} · ${s.author} · ${s.medium}, ${s.published}`;
 }
 
 /** Same-category neighbors by year (chronological, not content/events.json's
@@ -66,7 +74,11 @@ export function mount(root) {
   titleEl.id = 'panel-title';
   panelEl.setAttribute('aria-labelledby', 'panel-title');
   hanziEl = el('div', 'hz');
+  sourceEl = el('div', 'source');
   bodyEl = el('div');
+  wikiEl = el('a', 'wiki');
+  wikiEl.target = '_blank';
+  wikiEl.rel = 'noopener';
   const why = el('div', 'why');
   why.append(el('b', null, '💡 Why it matters'), (whyEl = el('span')));
   const relatedLabel = el('div', 'fredoka', 'Related');
@@ -78,7 +90,7 @@ export function mount(root) {
   navRow.append(prevBtn, nextBtn);
   creditEl = el('div', 'credit');
 
-  content.append(badgesEl, titleEl, hanziEl, bodyEl, why, relatedLabel, relatedEl, navRow, creditEl);
+  content.append(badgesEl, titleEl, hanziEl, sourceEl, bodyEl, wikiEl, why, relatedLabel, relatedEl, navRow, creditEl);
   panelEl.append(closeBtn, artEl, content);
   root.append(scrimEl, panelEl);
 
@@ -192,8 +204,19 @@ function render() {
     titleEl.textContent = ev.title;
     hanziEl.textContent = `${ev.hanzi} · ${ev.pinyin}`;
 
+    sourceEl.textContent = sourceLine(ev);
+    sourceEl.hidden = !ev.source;
+
     bodyEl.textContent = '';
     ev.body.forEach((p) => bodyEl.append(el('p', null, p)));
+    // Spoiler policy: fiction cards summarise only; the full plot lives on Wikipedia.
+    wikiEl.hidden = !ev.wiki;
+    if (ev.wiki) {
+      wikiEl.href = ev.wiki;
+      wikiEl.textContent = ev.category === 'fiction' ? 'Read the full story on Wikipedia ↗' : 'Read more on Wikipedia ↗';
+    } else {
+      wikiEl.removeAttribute('href');
+    }
     whyEl.textContent = ev.whyItMatters;
 
     relatedEl.textContent = '';

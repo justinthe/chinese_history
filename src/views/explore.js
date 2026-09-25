@@ -21,10 +21,12 @@ export function mount(root) {
   const logo = el('button', 'logo', '🐉 Middle Kingdom');
   logo.addEventListener('click', () => go('landing'));
   const tourBtn = el('button', 'btn gold sm', '🎒 Grand Tour');
-  tourBtn.addEventListener('click', () => tour.start());
+  tourBtn.addEventListener('click', () => tour.start('grand'));
+  const wuxiaBtn = el('button', 'btn ink sm', '🥋 Wuxia Tour');
+  wuxiaBtn.addEventListener('click', () => tour.start('wuxia'));
   topbar.append(logo);
   const cleanupSearch = search.mount(topbar);
-  topbar.append(tourBtn);
+  topbar.append(tourBtn, wuxiaBtn);
 
   const stage = el('div', 'stage');
   const maprow = el('div', 'maprow');
